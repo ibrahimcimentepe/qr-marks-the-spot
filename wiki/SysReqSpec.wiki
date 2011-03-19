@@ -10,14 +10,13 @@
 
 == User Requirements ==
 
-== System Architecture ==
-
-
 == System Requirements ==
 
 === Functional Requirements ===
 
 === Non-Functional Requirements ===
+
+== System Architecture ==
 
 == System Models ==
 
