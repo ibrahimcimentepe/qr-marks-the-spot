@@ -9,12 +9,12 @@
 
 
 == User Requirements ==
-1.1 Various mobile mass-participant games must be devised.
-2.1 A website which enables creation of instances of the games by the users should be implemented. 
-2.2 Thorough that website users shall be able to communicate. 
-2.3 Users can upload puzzles, maps etc. to enhance game-play experience.
-3.1 Familiar assets like Facebook, Google Maps should be integrated to the games
-4.1 GPS or mobile data traffic should not be a necessity to participate in the games.
+ 1 Various mobile mass-participant games must be devised.
+ # A website which enables creation of instances of the games by the users should be implemented. 
+   * Thorough that website users shall be able to communicate. 
+   * Users can upload puzzles, maps etc. to enhance game-play experience.
+ # Familiar assets like Facebook, Google Maps should be integrated to the games
+ # GPS or mobile data traffic should not be a necessity to participate in the games.
 
 == System Requirements ==
 
