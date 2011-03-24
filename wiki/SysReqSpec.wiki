@@ -16,6 +16,11 @@
  # Familiar assets like Facebook, Google Maps should be integrated to the games
  # GPS or mobile data traffic should not be a necessity to participate in the games.
 
+ 2 There will be two types of customers. Standard and commercial.(cagdas)
+ 3 Commercial customers may offer commercial games which awards discounts etc(cagdas)
+
+ 
+
 == System Requirements ==
 
 === Functional Requirements ===
@@ -31,8 +36,12 @@
 
  5 There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.[alikerim]
 
+ 6 System need an authentication module.(cagdas)
+
 
 === Non-Functional Requirements ===
+
+ 1 Users may use their Facebook or OpenID accounts. We shouldn't force them to sign-in(cagdas)
 
 == System Architecture ==
 
