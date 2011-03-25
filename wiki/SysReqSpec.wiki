@@ -16,8 +16,8 @@
  # Familiar assets like Facebook, Google Maps should be integrated to the games
  # GPS or mobile data traffic should not be a necessity to participate in the games.
 
- 2 There will be two types of customers. Standard and commercial.(cagdas)
- 3 Commercial customers may offer commercial games which awards discounts etc(cagdas)
+ #2 There will be two types of customers. Standard and commercial.(cagdas)
+ #3 Commercial customers may offer commercial games which awards discounts etc(cagdas)
 
  
 
