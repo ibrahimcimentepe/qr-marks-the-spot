@@ -28,20 +28,20 @@
   *Creating a new game
   *Monitoring existing games
   *Sharing information about the game's state through other players[alikerim]
- 2 Users(both members and non-merbers of a specific game) can exchange ideas or create new game scenarios all together.[alikerim]
+ 2 Users(both members and non-merbers of a specific game) can exchange ideas or create new game scenarios all together.(alikerim)
 
- 3 The places of the root QR barcodes can be shown on Google maps.[alikerim]
+ 3 The places of the root QR barcodes can be shown on Google maps.(alikerim)
 
- 4 There will be a best players of the week/month page and this rankings will be voted by other players.[alikerim]
+ 4 There will be a best players of the week/month page and this rankings will be voted by other players.(alikerim)
 
- 5 There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.[alikerim]
+ 5 There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.(alikerim)
 
  6 System need an authentication module.(cagdas)
 
 
 === Non-Functional Requirements ===
 
- 1 Users may use their Facebook or OpenID accounts. We shouldn't force them to sign-in(cagdas)
+ 1 Users may use their Facebook or OpenID accounts. System shouldn't force them to sign-in(cagdas)
 
 == System Architecture ==
 
