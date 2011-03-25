@@ -37,7 +37,9 @@
  5 There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.(alikerim)
 
  6 System need an authentication module.(cagdas)
-
+ 7 There should be a game creation wizard which helps new users(cagdas)
+ 8 System should have synchronous and asynchronous messaging modules(cagdas) 
+ 9 System should have a module which creates QR Codes with desired data(cagdas)
 
 === Non-Functional Requirements ===
 
