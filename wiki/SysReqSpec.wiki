@@ -27,7 +27,7 @@
  1-Users can manage scenarios for the games
   *Creating a new game
   *Monitoring existing games
-  *Sharing information about the game's state through other players[alikerim]
+  *Sharing information about the game's state through other players(alikerim)
  2 Users(both members and non-merbers of a specific game) can exchange ideas or create new game scenarios all together.(alikerim)
 
  3 The places of the root QR barcodes can be shown on Google maps.(alikerim)
