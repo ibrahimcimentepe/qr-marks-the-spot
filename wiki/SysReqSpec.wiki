@@ -46,7 +46,7 @@
 === Non-Functional Requirements ===
 
  1 Users may use their Facebook or OpenID accounts. System shouldn't force them to sign-in(cagdas)
-#2 Game site may have integrated Google maps application to make users find places which QR barcodes placed.
+#2 Game site may have integrated Google maps application to make users find places which QR barcodes placed.(aziz)
 
 == System Architecture ==
 
