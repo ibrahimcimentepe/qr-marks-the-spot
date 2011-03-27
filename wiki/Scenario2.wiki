@@ -1,0 +1,9 @@
+== Local Commercial User Scenario ==
+
+# A Local commercial user is a cooperation like Doydos , Taksim Burger etc.
+
+# Commercial Users may offer a game which awards discount etc.
+
+# COmmercial games are not free. In order to start a game they have to pay it.
+
+# CGM, Commercial Game Master, creates a game 
