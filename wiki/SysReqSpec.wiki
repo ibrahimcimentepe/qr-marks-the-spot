@@ -19,6 +19,8 @@
  #2 There will be two types of customers. Standard and commercial.(cagdas)
  #3 Commercial customers may offer commercial games which awards discounts etc(cagdas)
 
+ #1 Users must have a device which can read QR barcodes in the game place.(aziz)
+
  
 
 == System Requirements ==
