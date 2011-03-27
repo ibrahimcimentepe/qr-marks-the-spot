@@ -4,6 +4,20 @@
 
 # Commercial Users may offer a game which awards discount etc.
 
-# COmmercial games are not free. In order to start a game they have to pay it.
+# Commercial game creation are not free. In order to start a game they have to pay it.
 
-# CGM, Commercial Game Master, creates a game 
+# CGM, Commercial Game Master, creates a game by using Commercial Game Wizard.
+
+#Cevahir AVM is a CGM.
+
+# CGM chooses the place where the game will be played from google map. Şişli
+
+# CGM prepares related Images , sounds or videos and upload them to each game step.
+
+# CGM creates QR Codes and prints them.
+
+# CGM prefers starting game with QR Codes and distributes QR Codes by using newspapers etc.  
+
+# Players read QR Codes and get first clue.
+
+# QR Codes ....
