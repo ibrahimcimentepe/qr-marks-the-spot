@@ -20,7 +20,7 @@
  #3 Commercial customers may offer commercial games which awards discounts etc(cagdas)
 
  #1 Users must have a device which can read QR barcodes in the game place.(aziz)
- #2 Users must have account in the game site to create a game or join to a game.(aziz)
+ #2 Users can have account in the game site to create a game or join to a game.(aziz)
  
 
 == System Requirements ==
