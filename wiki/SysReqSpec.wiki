@@ -42,6 +42,7 @@
  7 There should be a game creation wizard which helps new users(cagdas)
  8 System should have synchronous and asynchronous messaging modules(cagdas) 
  9 System should have a module which creates QR Codes with desired data(cagdas)
+#10.Game site may have database to keep uploaded photos.(aziz)
 
 === Non-Functional Requirements ===
 
