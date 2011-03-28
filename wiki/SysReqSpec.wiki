@@ -9,7 +9,7 @@
 
 
 == User Requirements ==
- 1 Various mobile mass-participant games must be devised.
+ 1 Various mobile mass-participant games must be devised by general users.
  # A website which enables creation of instances of the games by the users should be implemented. 
    * Thorough that website users shall be able to communicate. 
    * Users can upload puzzles, maps etc. to enhance game-play experience.
@@ -39,9 +39,19 @@
  5 There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.(alikerim)
 
  6 System need an authentication module.(cagdas)
+
  7 There should be a game creation wizard which helps new users(cagdas)
+
  8 System should have synchronous and asynchronous messaging modules(cagdas) 
+
  9 System should have a module which creates QR Codes with desired data(cagdas)
+
+ 10 System should also support creation and deletion of teams.(cem)
+
+ 11 It should be possible to create and participate in the games as groups(cem)
+
+ 12 In commercial games the awards for the groups should be greater, and should be regulated accordingly by the game creator. (cem)
+
  1.Game site may have database to keep uploaded photos.2 A user can add his/her friends to his/her profile in the game site.(aziz)
 
 === Non-Functional Requirements ===
