@@ -22,4 +22,8 @@
 
 # Players read QR Codes and get first clue, which is A Picture of Smartphones in TeknoSA
 
-# QR Codes ....
+# Players go to TeknoSA and a special offer awaits them for smartphones.
+
+# Players find next QR Code , which is a link to sound file. 
+
+# Game continues with special offers for players etc and ends at a restaurant with a discount.
