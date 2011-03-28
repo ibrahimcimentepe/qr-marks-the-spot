@@ -5,7 +5,7 @@
  # User(game master) must print-out this created QR barcode and put it in reel place showed by photo.
  # User must do these things for different places and different QR barcodes.
  # When game master do these things,he/she opens photo of the first place to joined people to game.
- # Players try to find barcode in reel place with a device which can read QR barcodes.
+ # Players try to find barcode in real place with a device which can read QR barcodes.
  # When a player find barcode, he/she reads information which QR barcode tells.
  # This information may be a url of the photo of next place.Also he/she can change place of barcode in the same photo to make it hard to find by other players.
  # Players trace this clues and one who gets last QR barcode first gets price from game creator.  
