@@ -15,10 +15,8 @@
    * Users can upload puzzles, maps etc. to enhance game-play experience.
  # Familiar assets like Facebook, Google Maps should be integrated to the games
  # GPS or mobile data traffic should not be a necessity to participate in the games.
-
- #2 There will be two types of customers. Standard and commercial.(cagdas)
- #3 Commercial customers may offer commercial games which awards discounts etc(cagdas)
-
+ # There will be two types of customers. Standard and commercial.(cagdas)
+ # Commercial customers may offer commercial games which awards discounts etc(cagdas)
  # Users must have a device which can read QR barcodes in the game place.(aziz)
  # Users can have account in the game site to create a game or join to a game.(aziz)
  
@@ -30,29 +28,18 @@
   *Creating a new game
   *Monitoring existing games
   *Sharing information about the game's state through other players(alikerim)
- 2# Users(both members and non-merbers of a specific game) can exchange ideas or create new game scenarios all together.(alikerim)
-
- 3# The places of the root QR barcodes can be shown on Google maps.(alikerim)
-
- 4# There will be a best players of the week/month page and this rankings will be voted by other players.(alikerim)
-
- 5# There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.(alikerim)
-
- 6# System need an authentication module.(cagdas)
-
- 7# There should be a game creation wizard which helps new users(cagdas)
-
- 8# System should have synchronous and asynchronous messaging modules(cagdas) 
-
- 9# System should have a module which creates QR Codes with desired data(cagdas)
-
- 10# System should also support creation and deletion of teams.(cem)
-
- 11# It should be possible to create and participate in the games as groups(cem)
-
- 12# In commercial games the awards for the groups should be greater, and should be regulated accordingly by the game creator. (cem)
-
- 13# Game site may have database to keep uploaded photos.2 A user can add his/her friends to his/her profile in the game site.(aziz)
+ # Users(both members and non-merbers of a specific game) can exchange ideas or create new game scenarios all together.(alikerim)
+ # The places of the root QR barcodes can be shown on Google maps.(alikerim)
+ # There will be a best players of the week/month page and this rankings will be voted by other players.(alikerim)
+ # There will be a page for finished games explaining them with summaries and pictures for the purpose of new players as tutorials.(alikerim)
+ # System need an authentication module.(cagdas)
+ # There should be a game creation wizard which helps new users(cagdas)
+ # System should have synchronous and asynchronous messaging modules(cagdas) 
+ # System should have a module which creates QR Codes with desired data(cagdas)
+ # System should also support creation and deletion of teams.(cem)
+ # It should be possible to create and participate in the games as groups(cem)
+ # In commercial games the awards for the groups should be greater, and should be regulated accordingly by the game creator. (cem)
+ # Game site may have database to keep uploaded photos.2 A user can add his/her friends to his/her profile in the game site.(aziz)
 
 === Non-Functional Requirements ===
 
