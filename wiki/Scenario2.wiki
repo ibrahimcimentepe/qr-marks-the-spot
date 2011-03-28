@@ -1,5 +1,5 @@
 == Local Commercial User Scenario ==
- Steps:
+ Steps :
 
 * A Local commercial user is a cooperation like Doydos , Taksim Burger , Cevahir AVM etc.
 
