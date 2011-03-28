@@ -1,5 +1,4 @@
 == Local Commercial User Scenario ==
- Steps :
 
  * A Local commercial user is a cooperation like Doydos , Taksim Burger , Cevahir AVM etc.
 
@@ -14,8 +13,8 @@
  * CGM chooses the place where the game will be played from google map. ---> Şişli - Cevahir
 
  * CGM prepares related Images , sounds or videos and upload them to each game step. 
--A picture in TeknoSA
--Voices recorded at Game Park
+ # A picture in TeknoSA
+ # Voices recorded at Game Park
 
 
 
