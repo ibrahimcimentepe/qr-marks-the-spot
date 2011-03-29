@@ -4,9 +4,9 @@
 
  * Commercial Users may offer a game which awards discount etc. 
 
- * Commercial game creation is not free. In order to start a game they have to pay it.
+ * Advertorial game creation is not free. In order to start a game they have to pay it.
 
- * CGM, Commercial Game Master, creates a game by using Commercial Game Wizard.
+ * CGM, Advertorial Game Master, creates a game by using Advertorial Game Wizard.
 
  * Cevahir AVM is a CGM.
 
@@ -16,9 +16,9 @@
  # A picture in TeknoSA
  # Voices recorded at Game Park
 
+ * CGM prepares QR COdes by using QR COde Wizard in system
 
-
- * CGM pstarts game with QR Codes and distributes QR Codes by using newspapers etc.  
+ * CGM starts game with QR Codes and distributes QR Codes by using newspapers etc.  
 
  * Players read QR Codes and get first clue, which is A Picture of Smartphones in TeknoSA
 
