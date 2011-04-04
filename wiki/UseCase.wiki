@@ -1,0 +1,12 @@
+http://yuml.me/3dd6410a
+
+[Commercial Player]^[Player] ,
+[Actvie Player]^[Player],
+[Random Player]^[Player],
+[Player]-(sign up/out),
+[Player]-(play),
+[Player]-(continue playing),
+[Player]-(see tutorial),
+[Player]-(view game calendar),
+[Player]-(view game history),
+[Player]-(use your awards),
