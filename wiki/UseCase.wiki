@@ -10,3 +10,5 @@ http://yuml.me/3dd6410a
 [Player]-(view game calendar),
 [Player]-(view game history),
 [Player]-(use your awards),
+
+http://yuml.me/7db4e0fa
