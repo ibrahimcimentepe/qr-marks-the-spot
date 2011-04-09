@@ -1,0 +1,25 @@
+We use MVC Pattern for this project.
+
+=Controller=
+==Components==
+ * Data Validation
+ * QR Code Generation
+ * File Upload Handling -Users May upload Images etc-
+ * Access Control
+ * Form Validation
+ * Security Controls
+ * Google Map Integration
+ * Game Step Handlers
+
+==Interactions==
+
+=View=
+==Components==
+
+==Interactions==
+
+=Model=
+
+==Components==
+
+==Interactions==
