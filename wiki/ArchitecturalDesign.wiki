@@ -21,5 +21,7 @@ We use MVC Pattern for this project.
 =Model=
 
 ==Components==
+Account Database
+History Database
 
 ==Interactions==
