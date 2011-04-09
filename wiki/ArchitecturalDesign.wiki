@@ -12,6 +12,12 @@ We use MVC Pattern for this project.
  * Game Step Handlers
 
 ==Interactions==
+Show QR Code --> View
+Authorize for Next Game Step -- > Model
+Store Form Data -> Model
+Show Game Location -> View
+Store Files -> Model
+
 
 =View=
 ==Components==
