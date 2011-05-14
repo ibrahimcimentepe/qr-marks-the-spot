@@ -3,9 +3,11 @@
   * 1.1 System shall provide a "Registration Module" 
    * 1.1.1  In order to register , users have to provide their names, emails and date of birth
    * 1.1.2 In order to avoid fake users such as bots or spammers Registration procedure should include CAPTCHA and Email validation
+   * 1.1.3 System shall provide password remainder . If a user forget his password he should enter his email address a new created password should be sent to user
+
 
  * 2 Profile Management:
-  * 2.1 System shall provide to user Profile Management .
+  * 2.1 System shall provide  Profile Management .
   * 2.1.1 Users should be able to update their Picture, location, website and email addresses
 
  * 3. Friendship Management
@@ -17,13 +19,13 @@
 
  * 5 Game Creator
   * 5.1 S stem shall provide a game type creation module for Game Creators.
-   * 5.1.1 Game Creators are assigned by System administration.
+   * 5.1.1 Game Creators are assigned by System administrator.
    * 5.1.2 Game Creators shouldn't use system without training for a specific amount of time. (How a new game type created etc)
 
  * 6 Commercial Users
   * 6.1 System Shall Provide a commercial user Module.
-   * 6.1.1 Commercial Users shall pay to use system and accept term of use.
-   * 6.1.2 Commercial users may hire a Game Creator for their "adverorial" games or prefer a free training 
+   * 6.1.1 Commercial Users shall pay to use system (via paypal) and accept term of use.
+   * 6.1.2 Commercial users may hire a Game Creator for their "adverorial" games or prefer a free online-training 
 
 
  * 7 Authentication Module
@@ -31,6 +33,10 @@
    * 7.1.1 Users shall have different access rights. Administration , Game Creator , Commercial User and Standard User
 
 
+// BU onemli konsulmadi çağdaş uyduruyor.
+ * 8 Game Creation Module
+  * 8.1 System shall provide a game Creation Module
+  * 8.1.1 Game Creator shall 
 
  * QR Code Generation Module
  # System shall provide a wizard which creates QR Code with desired data and in desired sizes
