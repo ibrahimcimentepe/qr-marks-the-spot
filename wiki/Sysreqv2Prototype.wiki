@@ -44,3 +44,8 @@
   * 10.1 System shall provide a training module
   * 10.2 Game creator shall be trained by a system-supported video
   * 10.3 Game Creator shall prepare "screencasts" in order to show how they game types are played
+
+
+
+ Non-Functional Requirements
+ * 1 
