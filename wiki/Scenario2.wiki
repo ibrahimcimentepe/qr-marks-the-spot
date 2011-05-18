@@ -1,29 +1,5 @@
-== Local Commercial User Scenario ==
+== Commercial User Scenario ==
+Doydos is a commercial user for the qr-marks game and he plans a treasure hunt game designed in Hisarüstü region for advertisement issues.He first registers to the system and starts a game using game creation sub-system.He generates suitable qr barcodes and plants them on suitable buildings.In this specific game five hamburgers are hidden in some places around Hisarüstü and the coordinates of these hamburgers are given by qr barcodes.The five qr barcodes are planted on some buildings in Boğaziçi University.After He starts the game ,other users(i.e. players) starts to follow the topic in web page.A student  from university catches a qr-barcode in engineering building's entrance and by using his mobile device reads the coordinates.After looking for coordinates he finds the place of the hidden hamburger and becomes one of the winners of the game.He sends the picture of the hamburger to the game's discussion board and verifies that he found one of the hamburgers.After all the hamburgers are found by other players the game ends.
 
- * A Local commercial user is a cooperation like Doydos , Taksim Burger , Cevahir AVM etc.
-
- * Commercial Users may offer a game which awards discount etc. 
-
- * Advertorial game creation is not free. In order to start a game they have to pay it.
-
- * CGM, Advertorial Game Master, creates a game by using Advertorial Game Wizard.
-
- * Cevahir AVM is a CGM.
-
- * CGM chooses the place where the game will be played from google map. ---> Şişli - Cevahir
-
- * CGM prepares related Images , sounds or videos and upload them to each game step. 
- # A picture in TeknoSA
- # Voices recorded at Game Park
-
- * CGM prepares QR COdes by using QR COde Wizard in system
-
- * CGM starts game with QR Codes and distributes QR Codes by using newspapers etc.  
-
- * Players read QR Codes and get first clue, which is A Picture of Smartphones in TeknoSA
-
- * Players go to TeknoSA and a special offer awaits them for smartphones.
-
- * Players find next QR Code , which is a link to sound file. 
- 
- * Game continues with special offers for players etc and ends at a restaurant with a discount.
+== Normal (i.e. non-commercial) User Scenario ==
+	A user wants to design a small historical tour guided by qr-marks through İstanbul.He first registers to the site and creates a game.He plants qr barcodes to the historical buildings of İstanbul so that every qr barcode shows a link to an internet page which explains some details about the building and the next building to visit.He creates this explanatory pages beforehand.After he creates the game a tourist who is an anonymous user visits the tour's page first and then he starts traveling through İstanbul by reading explanatory informations via qr barcodes.
