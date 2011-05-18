@@ -1,5 +1,14 @@
 == Commercial User Scenario ==
-Doydos is a commercial user for the qr-marks game and he plans a treasure hunt game designed in Hisarüstü region for advertisement issues.He first registers to the system and starts a game using game creation sub-system.He generates suitable qr barcodes and plants them on suitable buildings.In this specific game five hamburgers are hidden in some places around Hisarüstü and the coordinates of these hamburgers are given by qr barcodes.The five qr barcodes are planted on some buildings in Boğaziçi University.After He starts the game ,other users(i.e. players) starts to follow the topic in web page.A student  from university catches a qr-barcode in engineering building's entrance and by using his mobile device reads the coordinates.After looking for coordinates he finds the place of the hidden hamburger and becomes one of the winners of the game.He sends the picture of the hamburger to the game's discussion board and verifies that he found one of the hamburgers.After all the hamburgers are found by other players the game ends.
+
+
+        Doydos is a commercial user for the qr-marks game and he plans a treasure hunt game designed in Hisarüstü region for advertisement issues.He first registers to the system and starts a game using game creation sub-system.He generates suitable qr barcodes and plants them on suitable buildings.In this specific game five hamburgers are hidden in some places around Hisarüstü and the coordinates of these hamburgers are given by qr barcodes.The five qr barcodes are planted on some buildings in Boğaziçi University.After He starts the game ,other users(i.e. players) starts to follow the topic in web page.A student  from university catches a qr-barcode in engineering building's entrance and by using his mobile device reads the coordinates.After looking for coordinates he finds the place of the hidden hamburger and becomes one of the winners of the game.He sends the picture of the hamburger to the game's discussion board and verifies that he found one of the hamburgers.After all the hamburgers are found by other players the game ends.
+
+
+
+
+
 
 == Normal (i.e. non-commercial) User Scenario ==
+
+
 	A user wants to design a small historical tour guided by qr-marks through İstanbul.He first registers to the site and creates a game.He plants qr barcodes to the historical buildings of İstanbul so that every qr barcode shows a link to an internet page which explains some details about the building and the next building to visit.He creates this explanatory pages beforehand.After he creates the game a tourist who is an anonymous user visits the tour's page first and then he starts traveling through İstanbul by reading explanatory informations via qr barcodes.
