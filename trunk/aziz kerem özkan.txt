@@ -1,0 +1,14 @@
+1.Google code is useful for teamworking.When a group work 
+on a project,project can go in an efficient way with google code 
+without much meeting.People who work on project can write 
+google code page their developments on project.
+
+2.Our project is QR barcode game.It makes people search something
+for an award.And also it provides a competition with other 
+people.
+
+3.Yes,i would like to work on this project in CMPE 451.
+
+4.Yes,i gained some inspect of how works go in a development 
+of a project.With software engineering principles,development 
+go in consistent way. 
