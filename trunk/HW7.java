@@ -10,5 +10,10 @@ class HW7 {
     fib1 = fibonacci(32);
     System.out.println(fib1);
  } 
+ 
+ public static int factorial (int n)  //added by alikerimerkan
+  {
+  return n*factorial(n-1);
+  }
 
 }
