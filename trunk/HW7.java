@@ -19,4 +19,14 @@ class HW7 {
     return n*factorial(n-1);
   }
 
+public static int lucas (int n) //added by pinarbilgic
+  {
+  if (n<0) 
+    System.out.println("not defined");
+  else if (n==0)
+    return 2;
+  else if (n==1)
+    return 1;
+  else return (lucas(n-1) + lucas(n-2));
+  }
 }
