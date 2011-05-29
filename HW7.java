@@ -5,6 +5,20 @@ class HW7 {
 	    return 1;
 	else return fibonacci(n-1) + fibonacci (n - 2);
     }
+    
+    public static void testFibo2()
+  {
+    int test1 = fibonacci (4);
+    int test2 = fibonacci (5);
+    int test3 = fibonacci (6);
+    if(test1+test2=test3){
+      System.out.println("Method Fibonacci runs correctly");
+    }
+    else{
+      System.out.println("Method Fibonacci runs faulty");
+    }
+  }
+    
  public static void main(String[] args)  {
   
     fib1 = fibonacci(32);
