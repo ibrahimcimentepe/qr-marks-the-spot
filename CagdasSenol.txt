@@ -1,0 +1,9 @@
+1 It is a very handy system for open source projects. Issue tracking and Wiki is very helpfull for project documenting and evolution. Although version management has limited space , it is enoguh for small-medium projects.
+In addition , customization support for project homepage is farily enough for small projects.
+For large projects I would prefer github
+
+2 Our project is a trendy web project which has some social aspects. However , as an internet user I wouldt participate any game of this project. I dont see any point of playing a game with some people on real world. There have to be  motives to make you go out of your home , but we couldn't find any such motive.   
+
+3 Since I am a master student , I wont take CMPE 451. 
+
+4 The tools we have used are DIA , google code and Subversion. I've already used these tools before this course and I really like those. However , I never experienced requiremnts engineering. After this course I realized core part  of a software is requirement.
