@@ -13,7 +13,10 @@ class HW7 {
  
  public static int factorial (int n)  //added by alikerimerkan
   {
-  return n*factorial(n-1);
+  if(n<0)  //control for negative input.
+    System.out.println("factorial is not defined for negative integers!");
+  else
+    return n*factorial(n-1);
   }
 
 }
