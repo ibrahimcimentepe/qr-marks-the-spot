@@ -6,17 +6,30 @@ class HW7 {
 	else return fibonacci(n-1) + fibonacci (n - 2);
     }
     
-    public static void testFibo2()
+  public static bool testFiboLog()
   {
-    int test1 = fibonacci (4);
-    int test2 = fibonacci (5);
-    int test3 = fibonacci (6);
+    int rndNumber = (int)(100*Math.Random());
+    int test1 = fibonacci (rndNumber);
+    int test2 = fibonacci (rndNumber++);
+    int test3 = fibonacci (rndNumber++);
     if(test1+test2=test3){
-      System.out.println("Method Fibonacci runs correctly");
+      return true;
     }
     else{
-      System.out.println("Method Fibonacci runs faulty");
+      return false;
     }
+  }
+    public static void testFibo2()
+  {
+    for(int i=0;i<3;i++)
+    {
+    if(!testFiboLog())
+      {
+      System.out.println("Method Fibonacci runs faulty");
+      return;
+      }
+    }
+    System.out.println("Method Fibonacci runs correctly");       
   }
     
  public static void main(String[] args)  {
@@ -29,6 +42,8 @@ class HW7 {
   {
   if(n<0)  //control for negative input.
     System.out.println("factorial is not defined for negative integers!");
+  else if(n=0)
+    return 1;
   else
     return n*factorial(n-1);
   }
