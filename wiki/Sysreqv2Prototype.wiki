@@ -19,28 +19,23 @@
    * 5.1.1 Game Creators are assigned by System administrator.
    * 5.1.2 Game Creators shouldn't use system without training for a specific amount of time. (How a new game type created etc)
 
- * 6 Commercial Users
-  * 6.1 System Shall Provide a commercial user Module.
-   * 6.1.1 Commercial Users shall pay to use system (via paypal) and accept term of use.
-   * 6.1.2 Commercial users may hire a Game Creator for their "adverorial" games or prefer a free online-training 
+
+ * 6 Authentication Module
+  * 6.1 System shall provide an authentication module
+   * 6.1.1 Users shall have different access levels as Administrator , Game Creator , Commercial User and Standard User
 
 
- * 7 Authentication Module
-  * 7.1 System shall provide an authentication module
-   * 7.1.1 Users shall have different access levels as Administrator , Game Creator , Commercial User and Standard User
+ * 7 Game Creation Module
+  * 7.1 System shall provide a game Creation Module
+  * 7.1.1 Game Creator shall design each step of a game type
+  * 7.1.1.1 A game consists of several steps which designed by game creator 
+  * 7.1.2 Each step consist of an input output and next step
+  * 7.1.3 Game designer specify each steps input output and which is next step after completion of current step
 
+ * 8 QR Code Generation Module
+  * 8.1 System shall provide a wizard which creates QR Code with desired data and in desired sizes
 
- * 8 Game Creation Module
-  * 8.1 System shall provide a game Creation Module
-  * 8.1.1 Game Creator shall design each step of a game type
-  * 8.1.1.1 A game consists of several steps which designed by game creator 
-  * 8.1.2 Each step consist of an input output and next step
-  * 8.1.3 Game designer specify each steps input output and which is next step after completion of current step
-
- * 9 QR Code Generation Module
-  * 9.1 System shall provide a wizard which creates QR Code with desired data and in desired sizes
-
- * 10 Training module
-  * 10.1 System shall provide a training module
-  * 10.2 Game creator shall be trained by a system-supported video
-  * 10.3 Game Creator shall prepare "screencasts" in order to show how they game types are played
+ * 9 Training module
+  * 9.1 System shall provide a training module
+  * 9.2 Game creator shall be trained by a system-supported video
+  * 9.3 Game Creator shall prepare "screencasts" in order to show how they game types are played
