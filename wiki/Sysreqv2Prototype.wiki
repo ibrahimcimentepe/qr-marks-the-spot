@@ -19,12 +19,6 @@
    * 5.1.1 Game Creators are assigned by System administrator.
    * 5.1.2 Game Creators shouldn't use system without training for a specific amount of time. (How a new game type created etc)
 
-
- * 6 Authentication Module
-  * 6.1 System shall provide an authentication module
-   * 6.1.1 Users shall have different access levels as Administrator , Game Creator , Commercial User and Standard User
-
-
  * 7 Game Creation Module
   * 7.1 System shall provide a game Creation Module
   * 7.1.1 Game Creator shall design each step of a game type
