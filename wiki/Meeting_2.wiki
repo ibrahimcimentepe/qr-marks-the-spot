@@ -2,8 +2,7 @@
  * Date : 10.10.2011 - Monday
  * Time : Between 17:00 - 18:30
  * Type : Standard table meeting
- * Participants (4): 
-  Ali - Cem - İbrahim - Ünsal
+ * Participants (4): Ali - Cem - İbrahim - Ünsal
 ===Decisions :===
  * The games will be deployed for our project is decided and it will be held as a scenario based presentation at Thursday.
  * Requirements have been reviewed.
