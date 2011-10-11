@@ -7,8 +7,8 @@
  
  Decisions : 
  * It is decided to use Friday and Monday for our weekly based meetings. 
- #Friday : Between 22:00 - 23:00, Online through Gtalk
- #Monday : Between 17:00 - 18:30, At ETA building entrance
+   # Friday : Between 22:00 - 23:00, Online through Gtalk
+   # Monday : Between 17:00 - 18:30, At ETA building entrance
  * At Friday, the information taken by the customer at Thursday will be taken into consideration and assignments will be done. 
  * Monday will be used to negotiate and have feedbacks.
  * Requirements have been updated at System Requirements section
