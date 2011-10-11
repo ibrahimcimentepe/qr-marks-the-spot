@@ -2,10 +2,9 @@
  * Date : 07.10.2011 - Friday
  * Time : Between 22:00 - 23:00
  * Type : Online - Through Gtalk
- * Participants (7) : 
-  Ali Aziz Bilal Cem İbrahim Pınar Ünsal 
+ * Participants (7) : Ali Aziz Bilal Cem İbrahim Pınar Ünsal 
  
- Decisions : 
+ ===Decisions :=== 
  * It is decided to use Friday and Monday for our weekly based meetings. 
    # Friday : Between 22:00 - 23:00, Online through Gtalk
    # Monday : Between 17:00 - 18:30, At ETA building entrance
