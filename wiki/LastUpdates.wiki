@@ -1,4 +1,4 @@
 You can see the latest updates related to project development here.
-  * Recent meeting reports
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  
+  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meetings Recent meeting notes]
+  * [http://code.google.com/p/qr-marks-the-spot/wiki/Development Development Plan]
