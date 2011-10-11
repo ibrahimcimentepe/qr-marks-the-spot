@@ -3,13 +3,7 @@ Team Meeting #1
  - Time : Between 22:00 - 23:00
  - Type : Online - Through Gtalk
  - Participants (7) : 
-   Ali
-   Aziz
-   Bilal
-   Cem
-   İbrahim
-   Pınar
-   Ünsal 
+  Ali Aziz Bilal Cem İbrahim Pınar Ünsal 
  
  Decisions : 
  * It is decided to use Friday and Monday for our weekly based meetings. 
