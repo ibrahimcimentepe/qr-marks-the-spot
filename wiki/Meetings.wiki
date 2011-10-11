@@ -1,3 +1,3 @@
 Meeting Notes:
-* [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_1 Meeting #1]
-* [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_2_2 Meeting #2]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_1 Meeting #1]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_2_2 Meeting #2]
