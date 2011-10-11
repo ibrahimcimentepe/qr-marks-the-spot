@@ -4,7 +4,7 @@
  * Type : Standard table meeting
  * Participants (4): 
   Ali - Cem - İbrahim - Ünsal
- =Decisions :=
+===Decisions :===
  * The games will be deployed for our project is decided and it will be held as a scenario based presentation at Thursday.
  * Requirements have been reviewed.
  * Environment will be a web site that is used to give information to the related devices through browser.
