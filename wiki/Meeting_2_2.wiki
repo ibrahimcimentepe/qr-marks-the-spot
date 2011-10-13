@@ -8,4 +8,4 @@
  * Requirements have been reviewed.
  * Environment will be a web site that is used to give information to the related devices through browser.
  * A planning section for development is in process, and notes related to it are updated on "development plan" part for later discussions.
- * For this week, our priority subobjective is to determine the environment for the deployment of the requirements.
+ * For this week, our priority objective is to determine the environment for the deployment of the requirements.
