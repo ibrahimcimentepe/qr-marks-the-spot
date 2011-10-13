@@ -29,16 +29,16 @@
   * 9.3 Game Creator shall prepare "screencasts" in order to show how they game types are played
 ==Nonfunctional Requirements==
  * 1. Accessability
-  * 1.1 Every person who has a device that enables him/her to use internet and who has proper user account is available to play and create a game.
-  * 1.2 Proper account is the meaning of the completion of the registration properly.
+  * Every person who has a device that enables him/her to use internet and who has proper user account is available to play and create a game.
+  * Proper account is the meaning of the completion of the registration properly.
  * 2. Availability
-  * 2.1 Web design will provide a web service that is accessible through any internet browser.
+  * Web design will provide a web service that is accessible through any internet browser.
  * 3. Environmental Protection
-  * 3.1 This project has no harm any human being or other environmental factors.
+  * This project has no harm any human being or other environmental factors.
  * 4. Extensibility
-  * 4.1 In case there is an emergence of a necessity, the project will be upgraded in accordance with the external situations.
-  * 4.2 Necessity means, when the requirements cannot be deployed with the given internal and the external input.
+  * In case there is an emergence of a necessity, the project will be upgraded in accordance with the external situations.
+  * Necessity means, when the requirements cannot be deployed with the given internal and the external input.
  * 5. Interoperability
-  * 5.1 The subsystems of the design will be able to exchange data without any problem of information failure.
+  * The subsystems of the design will be able to exchange data without any problem of information failure.
  * 6. Privacy
-  * 6.1 Any kind of special information related to the user of the system will not be shared to any other companies or foundations.
+  * Any kind of special information related to the user of the system will not be shared to any other companies or foundations.
