@@ -26,10 +26,10 @@ a textbox.He writes the number "4" into the textbox and clicks "next".
 
 password of each step and the location of each step's qr code.The user enters the following fields:
 
-	*	Location of qr code for step 1 ="Engineering faculty building"     Password of step 1 = "12345abc" *
-	*	Location of qr code for step 2 ="Faculty of arts and sciences"     Password of step 2 = "ad332bcd" *
-	*	Location of qr code for step 3 ="Entrance of orta kantin"          Password of step 3 = "gfs33abc" * 
-	*	Location of qr code for step 4 ="Entrance of swimming pool"        Password of step 4 = "mist5abc" *
+	* *Location of qr code for step 1 ="Engineering faculty building"     Password of step 1 = "12345abc" *
+	* *Location of qr code for step 2 ="Faculty of arts and sciences"     Password of step 2 = "ad332bcd" *
+	* *Location of qr code for step 3 ="Entrance of orta kantin"          Password of step 3 = "gfs33abc" * 
+	* *Location of qr code for step 4 ="Entrance of swimming pool"        Password of step 4 = "mist5abc" *
 
 	* After user enters all the password and location fields he cliks on "finish creating the game" and the game is created in main web 
 
