@@ -28,3 +28,6 @@
   * 9.2 Game creator shall be trained by a system-supported video
   * 9.3 Game Creator shall prepare "screencasts" in order to show how they game types are played
 ==Nonfunctional Requirements==
+ * 1. Accessability
+  * 1.1 Every person who has a device that enables him/her to use internet and who has proper user account is available to play and create a game.
+  * 1.2 Proper account is 
