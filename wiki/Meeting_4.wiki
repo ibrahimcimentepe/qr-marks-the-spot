@@ -7,4 +7,4 @@
  * Architectural design and its component will be MVC pattern as it was decided on the CMPE351 with some minor changes. This update + Context Diagram will be done by Akif Cem.
  * The diagrams such as; Use Case, Sequence , Class Diagrams will be done by İbrahim and Bilal. Also the test cases will be prepared as a powerpoint presentation being associated with Use Case Diagrams and Scenarios.
  * The last week's work, which is "Preparing Mock Up Scenarios" will be prepared as powerpoint presentation by Ali Kerim.
- * Other than this, because of the lack of participants, it couldn't ve decided how other participants can join this sharing of duties. Therefore, it is expected that the other members to find a way to help the running processes. 
+ * Other than this, because of the lack of participants, it couldn't be decided how other participants can join this sharing of duties. Therefore, it is expected that the other members to find a way to help the running processes. 
