@@ -1,10 +1,10 @@
 THE GENERAL VİEW OF OUR PAGE USAGE
 
-http://qr-marks-the-spot.googlecode.com/files/SequenceDiagrams.png
+http://qr-marks-the-spot.googlecode.com/files/SequenceDiagram.png
 
 ADDITION OF THE USE OF ADMIN
 
-http://qr-marks-the-spot.googlecode.com/files/sequence_diagram.png
+http://qr-marks-the-spot.googlecode.com/files/sequence_diagrams.png
 
 THE USAGE OF FORUMS
 
