@@ -1,6 +1,6 @@
 THE GENERAL VİEW OF OUR PAGE USAGE
 
-http://qr-marks-the-spot.googlecode.com/files/SequenceDiagram.png
+http://qr-marks-the-spot.googlecode.com/files/SequenceDiagrams.png
 
 ADDITION OF THE USE OF ADMIN
 
