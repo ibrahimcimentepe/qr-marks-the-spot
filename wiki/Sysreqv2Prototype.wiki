@@ -30,9 +30,12 @@
 
  * 7 Information sharing
   * 7.1 Users shall be able to share their memories or interesting notes through photos or comments. 
-  * 7.1.1 For this purpose, sub forum pages shall be integrated to the website.
+   * 7.1.1 For this purpose, sub forum pages shall be integrated to the website.
   * 7.2 Users shall be able to track currently played games and to view the notes about the past game experiences.
-  * 7.2.1 The steps that the other playing users are currently at shall be updated to the website for everyone to get this information.
+   * 7.2.1 The steps that the other playing users are currently at shall be updated to the website for everyone to get this information.
+  * 7.3 Game Search module shall be deployed into the website.
+   * 7.3.1 Through Game Search Module, users shall be able to find the game they wanted it to be shown.
+   * 7.3.2 In Game Search Module, the criteria for the games can be any specification realted to the game, such as, total step number, step locations and name of the game.
 
  * 8 Ranking System
   * 8.1 Ranking system is such a system that user playing or creating games more than the others, will have a greater experience point, therefore rank in the website than the others.
@@ -42,6 +45,12 @@
  * 9 Admins
   * 9.1 Admins shall be able to access every game and make any change related to this game.
   * 9.1.1 Word "admin" is used to describe owners of the website.
+
+ * 10 Abusive conditions
+  * 10.1 Any Creator shall not be able to make more than 50 games.
+   * 10.1.1 To increase the maximum number of games can be created by any specific user is Admin's to decide according to game experience of such user.
+  * 10.2 Every user has a right to inform admins about any kind of abusive conditions.
+   * 10.2.1 These abusive conditions can be listed as; creation of uncomplatable game, using debased, humiliating, insulting or discreditable elements in the game, comments or pictures, using more than one account to get into the game etc..
 
 ==Nonfunctional Requirements==
  * 1. Accessability
