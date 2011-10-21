@@ -1,5 +1,5 @@
 Meeting Notes:
- * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_1 Meeting #1 - 07.10.2011]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_1 Meeting #1 - (07.10.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_2_2 Meeting #2]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_3 Meeting #3]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_4 Meeting #4]
