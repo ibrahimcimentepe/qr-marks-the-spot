@@ -1,0 +1,35 @@
+==Team Meeting #6==
+ * Date : 21.10.2011 - Friday
+ * Time : Between 22:00 - 23:00
+ * Type : Online Meeting Through Gtalk
+ * Participants (4): Ali - Aziz - Bilal - İbrahim
+
+===Subjects:===
+ * 1. What should be done for next Thursday?
+ * 2. The results of the meeting of today's other meeting.
+ * 3. Test scenarios, Diagrams, and restrictions.
+
+===Decisions :===
+ * 1. If there is no objections of any kind, jobs are shared as;
+ Bilal :  
+  a. Using Game Search module (Test Scenario)
+  b. Playing a game using game search module (Test Scenario)
+ Aziz :
+  a. After signing to the game, the process through its end (Test Scenario)
+  b. Sharing Notes (Test Scenario)
+  c. Rating a game after being played (Test Scenario)
+ Pınar :
+  a. Creating a game (Test Scenario)
+  b. Deleting a game (Test Scenario)
+  c. Editing a game (Test Scenario)
+ İbrahim :
+  a. Reporting Abuse case (Test Scenario)
+  b. State Diagram
+ Ünsal :
+  a. Activity Diagram
+ Akif :
+  a. Development Process Details
+ Ali Kerim
+  a. Bug Report & Going over related documents
+ * 2. Test Scenarios and Diagrams will be finished until Monday, so we can discuss them.
+ * 3. The next week's job will be asked and learned by Asistants. İbrahim will inform everyone after taking the feedback.
