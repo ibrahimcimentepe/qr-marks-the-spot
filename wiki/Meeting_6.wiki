@@ -12,24 +12,24 @@
 ===Decisions :===
  * 1. If there is no objections of any kind, jobs are shared as;
  Bilal :  
-  a. Using Game Search module (Test Scenario)
-  b. Playing a game using game search module (Test Scenario)
+ a. Using Game Search module (Test Scenario)
+ b. Playing a game using game search module (Test Scenario)
  Aziz :
-  a. After signing to the game, the process through its end (Test Scenario)
-  b. Sharing Notes (Test Scenario)
-  c. Rating a game after being played (Test Scenario)
+ a. After signing to the game, the process through its end (Test Scenario)
+ b. Sharing Notes (Test Scenario)
+ c. Rating a game after being played (Test Scenario)
  Pınar :
-  a. Creating a game (Test Scenario)
-  b. Deleting a game (Test Scenario)
-  c. Editing a game (Test Scenario)
+ a. Creating a game (Test Scenario)
+ b. Deleting a game (Test Scenario)
+ c. Editing a game (Test Scenario)
  İbrahim :
-  a. Reporting Abuse case (Test Scenario)
-  b. State Diagram
+ a. Reporting Abuse case (Test Scenario)
+ b. State Diagram
  Ünsal :
-  a. Activity Diagram
+ a. Activity Diagram
  Akif :
-  a. Development Process Details
+ a. Development Process Details
  Ali Kerim
-  a. Bug Report & Going over related documents
+ a. Bug Report & Going over related documents
  * 2. Test Scenarios and Diagrams will be finished until Monday, so we can discuss them.
  * 3. The next week's job will be asked and learned by Asistants. İbrahim will inform everyone after taking the feedback.
