@@ -35,7 +35,7 @@ First of all let us assume that the user whoose name is "Zeynep" is already sign
     <td>You should see its details which are entered by its creater</td>
   </tr>
   <tr>
-    <td>5</td>
+    <td>6</td>
     <td>From game details page click "Play" button</td>
     <td>You should see the first clue or QR Code location to start the game</td>
   </tr>
