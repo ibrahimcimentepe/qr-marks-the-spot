@@ -44,7 +44,44 @@ First of all let us assume that the user whoose name is "Zeynep" is already sign
 After the last step Zeynep can play the game as it is described in the play game test scenario.
 
 == Test Case 2 ==
- add your content here;
+ <table border="1">
+  <tr>
+    <th align = "left">Steps</th>
+    <th align = "left">Actions</th>
+    <th align = "left">Expected Results</th>
+  </tr>
+  <tr>
+    <td align = "center">1</td>
+    <td>Click "Create a new game" link on the profile page</td>
+    <td>The page that includes text boxes that asks details about the game should appear</td>
+  </tr>
+  <tr>
+    <td align = "center">2</td>
+    <td>Write the name of the game, "Conquer the south campus". in the text box "game name"</td>
+    <td>Since there is no game in the database with name "Conquer the south campus", you should be allowed the enter the name "Conquer the south campus"</td>
+  </tr>
+  <tr>
+    <td align = "center">3</td>
+    <td>Write the following text in the "description" text box: This game is designed to give an orientation about south campus of
+Bosphorus University</td>
+    <td>?</td>
+  </tr>
+  <tr>
+    <td align = "center">4</td>
+    <td>Write the following text in the "borders" text box: All the qr codes of this game are located inside the south campus of Bosphorus University"</td>
+    <td>?</td>
+  </tr>
+  <tr>
+    <td align = "center">5</td>
+    <td>the following into "start location" text box:The first qr code is located on engineering faculty's building</td>
+    <td>?</td>
+  </tr>
+  <tr>
+    <td align = "center">6</td>
+    <td>Click the "Create Game" button</td>
+    <td>It is checked if there are any empty field or not. SInce there are none, passwords and qr spots" page is opened. </td>
+  </tr>
+</table>
 == Test Case 3 ==
  add your content here;
 == Test Case 4 ==
