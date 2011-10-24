@@ -97,7 +97,35 @@ Assume that the game creator Seniye has signed up and created a profile page as 
 The game is ready to be played.
 
 == Test Case 3 ==
- add your content here;
+ 
+Assume that the game creator Seniye has has logged in, opened her profile page and wants to delete one of the games she has created. Below is the test case for deleting the game "Conquer the south campus".
+
+ <table border="1">
+  <tr>
+    <th align = "left">Steps</th>
+    <th align = "left">Actions</th>
+    <th align = "left">Expected Results</th>
+  </tr>
+  <tr>
+    <td align = "center">1</td>
+    <td>Click "My games" link on the profile page</td>
+    <td>The page that includes the games you have created should appear in a list.</td>
+  </tr>
+  <tr>
+    <td align = "center">2</td>
+    <td>Click on the game, "Conquer the south campus".</td>
+    <td>The options "edit" and delete" will appear. </td>
+  </tr>
+  <tr>
+    <td align = "center">3</td>
+    <td>Click on the button "delete". </td>
+    <td>The game "Conquer the south campus" will be deleted.</td>
+  
+</tr>
+</table>
+
+The game will be deleted from the database.
+
 == Test Case 4 ==
  add your content here;
 == Test Case 5 ==
