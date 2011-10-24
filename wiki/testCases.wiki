@@ -44,6 +44,8 @@ First of all let us assume that the user whoose name is "Zeynep" is already sign
 After the last step Zeynep can play the game as it is described in the play game test scenario.
 
 == Test Case 2 ==
+Assume that the game creator Seniye has signed up and created a profile page as a "game creator". Below is the test case for creating the game "Conquer the south campus".
+
  <table border="1">
   <tr>
     <th align = "left">Steps</th>
@@ -62,8 +64,7 @@ After the last step Zeynep can play the game as it is described in the play game
   </tr>
   <tr>
     <td align = "center">3</td>
-    <td>Write the following text in the "description" text box: This game is designed to give an orientation about south campus of
-Bosphorus University</td>
+    <td>Write the following text in the "description" text box: This game is designed to give an orientation about south campus of Bosphorus University</td>
     <td>?</td>
   </tr>
   <tr>
@@ -73,15 +74,27 @@ Bosphorus University</td>
   </tr>
   <tr>
     <td align = "center">5</td>
-    <td>the following into "start location" text box:The first qr code is located on engineering faculty's building</td>
+    <td>Write the following into "start location" text box:The first qr code is located on engineering faculty's building</td>
     <td>?</td>
   </tr>
   <tr>
     <td align = "center">6</td>
     <td>Click the "Create Game" button</td>
     <td>It is checked if there are any empty field or not. SInce there are none, passwords and qr spots" page is opened. </td>
+    <td>?</td>
   </tr>
+  <tr>
+    <td align = "center">7</td>
+<td>Write the number "4" into the text box that asks for the number of steps planned for the game and click the "next" button</td>
+    <td> Once clicked next, 4x2=8 new textboxes are created under the page for each step; and these text boxes stand for the fields where you will enter the password of each step and the location of each step's qr code.</td>
+  </tr>
+  <tr>
+    <td align = "center">8</td>
+<td>Write the "Location of qr code for step 1"as: "Engineering faculty building" Password of step 1 = "12345abc". Repeat this for the following 3 steps, and click "finish creating the game button". </td>
+    <td>It is checked if there are any empty field or not. SInce there are none, the game is created in the main page.
+</tr>
 </table>
+The game is ready to be played.
 == Test Case 3 ==
  add your content here;
 == Test Case 4 ==
