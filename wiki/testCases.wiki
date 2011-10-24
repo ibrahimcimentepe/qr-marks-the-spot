@@ -91,10 +91,12 @@ Assume that the game creator Seniye has signed up and created a profile page as 
   <tr>
     <td align = "center">8</td>
 <td>Write the "Location of qr code for step 1"as: "Engineering faculty building" Password of step 1 = "12345abc". Repeat this for the following 3 steps, and click "finish creating the game button". </td>
-    <td>It is checked if there are any empty field or not. SInce there are none, the game is created in the main page.
+    <td>It is checked if there are any empty field or not. SInce there are none, the game is created in the main page. </td>
 </tr>
 </table>
+
 The game is ready to be played.
+
 == Test Case 3 ==
  add your content here;
 == Test Case 4 ==
