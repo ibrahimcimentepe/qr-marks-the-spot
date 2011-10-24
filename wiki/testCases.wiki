@@ -65,23 +65,22 @@ Assume that the game creator Seniye has signed up and created a profile page as 
   <tr>
     <td align = "center">3</td>
     <td>Write the following text in the "description" text box: This game is designed to give an orientation about south campus of Bosphorus University</td>
-    <td>?</td>
+    <td>The description should appear in the relevant text box.</td>
   </tr>
   <tr>
     <td align = "center">4</td>
     <td>Write the following text in the "borders" text box: All the qr codes of this game are located inside the south campus of Bosphorus University"</td>
-    <td>?</td>
+    <td>The border info should appear in the relevant text box.</td>
   </tr>
   <tr>
     <td align = "center">5</td>
     <td>Write the following into "start location" text box:The first qr code is located on engineering faculty's building</td>
-    <td>?</td>
+    <td>The start location info should appear in the relevant text box.</td>
   </tr>
   <tr>
     <td align = "center">6</td>
     <td>Click the "Create Game" button</td>
     <td>It is checked if there are any empty field or not. SInce there are none, passwords and qr spots" page is opened. </td>
-    <td>?</td>
   </tr>
   <tr>
     <td align = "center">7</td>
