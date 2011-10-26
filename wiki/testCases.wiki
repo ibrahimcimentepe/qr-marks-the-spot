@@ -1,7 +1,7 @@
 = TEST CASES =
 
 == Test Case 1 Using Game Search Module==
-First of all let us assume that the user whoose name is "Zeynep" is already signed in to our system. Note that the sign in and sign up processes are described in other test case scenarios. Also let us assume there are already some games created in the database. One of these games is called “South Campus”. Also there is no such game in the database named as “North Campus”. After these assumptions using game search module to find and play a game is as follows:
+First of all let us assume that the user whose name is "Zeynep" is already signed in to our system. Note that the sign in and sign up processes are described in other test case scenarios. Also let us assume there are already some games created in the database. One of these games is called “South Campus”. Also there is no such game in the database named as “North Campus”. After these assumptions using game search module to find and play a game is as follows:
 
 <table border="1">
   <tr>
