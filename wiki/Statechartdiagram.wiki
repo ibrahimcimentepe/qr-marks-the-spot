@@ -1,0 +1,4 @@
+#summary statechart diagram
+
+
+http://qr-marks-the-spot.googlecode.com/files/STATECHART.jpeg
