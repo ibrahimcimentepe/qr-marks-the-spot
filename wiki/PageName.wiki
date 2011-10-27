@@ -1,4 +1,4 @@
-#activity diagram
+#summary activity diagram
 
 = Activity Diagram =
 
