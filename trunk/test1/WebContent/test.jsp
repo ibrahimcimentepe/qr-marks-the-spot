@@ -1,11 +1,11 @@
 
 <HTML>
 <HEAD>
-<TITLE>Student Schedule</TITLE>
+<TITLE>User Subscribe</TITLE>
 </HEAD>
 
 <BODY>
-<FORM action="" method="post">
+<FORM action="/test1/userServlet" method="post">
 User Name: <INPUT type="text" name="username" size="35"><BR>
 Password: <INPUT type="text" name="pass" size="35"><BR>
 Course Time: 

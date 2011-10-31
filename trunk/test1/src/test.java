@@ -21,7 +21,9 @@ public class test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
+		userServlet us = new userServlet();
+		test newtestobject = new test();
+		//newtestobject.addUser(us.doPost(req, resp));
 		
 	}
 
