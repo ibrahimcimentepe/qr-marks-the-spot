@@ -1,6 +1,4 @@
 
-
-
 <HTML>
 <HEAD>
 <TITLE>Student Schedule</TITLE>
