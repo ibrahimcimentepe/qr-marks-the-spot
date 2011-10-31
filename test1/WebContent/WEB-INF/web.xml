@@ -6,7 +6,7 @@
 		<display-name>userServlet</display-name>
 		<servlet-name>userServlet</servlet-name>
 		<servlet-class>
-			test1.src.default package.userServlet.java
+			akif.userServlet
 		</servlet-class>
 		</servlet>
 		<servlet-mapping>
