@@ -1,0 +1,12 @@
+==Team Meeting #7==
+ * Date : 24.10.2011 - Monday
+ * Time : Between 17:00 - 18:00
+ * Type : Standard Table Meeting
+ * Participants (6): Ali - Akif - Bilal - İbrahim - Pınar - Ünsal 
+
+===Subjects:===
+ * 1. What should be done for next Thursday?
+ * 2. Test scenarios, Diagrams, and restrictions.
+
+===Decisions :===
+ 
