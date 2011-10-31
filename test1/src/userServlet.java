@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class userServlet extends HttpServlet implements Servlet {
 
+	test n = new test();
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -18,6 +20,7 @@ public class userServlet extends HttpServlet implements Servlet {
 		u.setUserName(req.getParameter("username"));
 		u.setPassword(req.getParameter("pass"));
 		
+		n.addUser(u);
 		
 		super.doPost(req, resp);
 	}
