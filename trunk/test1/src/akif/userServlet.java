@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class userServlet extends HttpServlet implements Servlet {
 
-	
+	MySqlConnection connection = new MySqlConnection();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -21,7 +21,7 @@ public class userServlet extends HttpServlet implements Servlet {
 		u.setUserName(req.getParameter("username"));
 		u.setPassword(req.getParameter("pass"));
 		
-		
+		connection.addUser(req.getParameter("username"),req.getParameter("pass"));
 		
 		super.doPost(req, resp);
 	}
