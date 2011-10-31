@@ -1,0 +1,8 @@
+* [http://code.google.com/p/qr-marks-the-spot/wiki/PageName Activity Diagram]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/DatabaseDiagram Database Diagram]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/UseCaseDiagram  Use Case Diagrams]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/StateChartDiagram  StateChart Diagram]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Sequence_Diagram Sequence Diagrams]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/contextDiagram Context Diagrams]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/ArchitecturalDesign Architectural Design]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/classDiagram Class Diagram]
