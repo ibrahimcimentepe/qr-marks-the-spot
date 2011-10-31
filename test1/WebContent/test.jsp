@@ -6,7 +6,8 @@
 
 <BODY>
 <FORM action="" method="post">
-Course Name: <INPUT type="text" name="title" size="35"><BR>
+User Name: <INPUT type="text" name="username" size="35"><BR>
+Password: <INPUT type="text" name="pass" size="35"><BR>
 Course Time: 
 Sun<INPUT type="checkbox" name="day" value="sun"> 
 Mon<INPUT type="checkbox" name="day" value="mon"> 
