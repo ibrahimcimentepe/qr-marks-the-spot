@@ -125,20 +125,3 @@ Assume that the game creator Seniye has has logged in, opened her profile page a
 </table>
 
 The game will be deleted from the database.
-
-== Test Case 4 ==
- add your content here;
-== Test Case 5 ==
- add your content here;
-== Test Case 6 ==
- add your content here;
-== Test Case 7 ==
- add your content here;
-== Test Case 8 ==
- add your content here;
-== Test Case 9 ==
- add your content here;
-== Test Case 10 ==
- add your content here;
-== Test Case 11 ==
- add your content here;
