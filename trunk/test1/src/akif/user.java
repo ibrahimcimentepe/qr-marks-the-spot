@@ -1,3 +1,4 @@
+package akif;
 
 public class user {
 
