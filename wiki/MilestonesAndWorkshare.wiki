@@ -1,42 +1,37 @@
-
 = Milestones =
 
 <table border="1">
   <tr>
     <th align = "left">Steps</th>
-    <th align = "left">Actions</th>
-    <th align = "left">Expected Results</th>
+    <th align = "left">Dates</th>
+    <th align = "left">Systems to be completed</th>
   </tr>
   <tr>
     <td align = "center">1</td>
-    <td>Click "Search Game" button from the main page</td>
-    <td>The page for searching games which includes a text field to write the keywords and a search button should appear</td>
+    <td>10.11.2011</td>
+    <td>Master page,User sign-up,User Sign-in and Newsfeed</td>
   </tr>
   <tr>
     <td align = "center">2</td>
-    <td>Write keywords North Campus with quotation marks so that it will be searched exactly as it is</td>
-    <td>Since there is no game in the database with name "North Campus", you should see no games found with keywords "North Campus"</td>
+    <td>24.11.2011</td>
+    <td>Game creation module</td>
   </tr>
   <tr>
     <td align = "center">3</td>
-    <td>Write keywords North Campus without quotation marks so that all the games containing north and campus keyword will be searched</td>
-    <td>You should see all the games including north and campus words in their names. In our case you should be able to view the game named "South Campus"</td>
+    <td>08.12.2011</td>
+    <tdGame search,Game Play,Admin management</td>
   </tr>
   <tr>
     <td align = "center">4</td>
-    <td>Write keywords South Campus with quotation marks so that it will be searched exactly as it is</td>
-    <td>You should see the game named as "South Campus".</td>
+    <td>22.12.2011</td>
+    <td>Forums,Tutorial,Documentation of all implemented modules</td>
   </tr>
   <tr>
     <td align = "center">5</td>
-    <td>Click to the game "South Campus"</td>
-    <td>You should see its details which are entered by its creater</td>
+    <td>29.12.2011</td>
+    <td>Testing and deployment</td>
   </tr>
-  <tr>
-    <td align = "center">6</td>
-    <td>From game details page click "Play" button</td>
-    <td>You should see the first clue or QR Code location to start the game</td>
-  </tr>
+  
 </table>
 
 
