@@ -40,3 +40,36 @@
 
 
 = Workshare =
+
+<table border="1">
+  <tr>
+    <th align = "left">Modules and/or actions</th>
+    <th align = "left">Responsible member</th>
+  </tr>
+
+  <tr>
+    <td>Game Creation module</td>
+    <td>Akif Cem Heren,Bilal Acar</td>
+  </tr>
+
+  <tr>
+    <td>Master Page,Newsfeed,Sign-up and Sign-in pages</td>
+    <td>Ali Kerim Erkan,İbrahim Çimentepe</td>
+  </tr>
+
+  <tr>
+    <td>Forums page,Tutorials</td>
+    <td>Pınar Bilgiç,Ünsal Gökdağ</td>
+  </tr>
+
+  <tr>
+    <td>Admin Management pages,Game Search,Game Play modules</td>
+    <td>Aziz Kerem Özkan,İbrahim Çimentepe,Ali Kerim Erkan</td>
+  </tr>
+  <tr>
+    <td align = "center">5</td>
+    <td>Testing,Deployment and Documentation process</td>
+    <td>All together</td>
+  </tr>
+  
+</table>
