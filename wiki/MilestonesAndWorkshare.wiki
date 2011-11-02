@@ -26,10 +26,12 @@
   </tr>
 
   <tr>
+    <td align = "center">4</td>
     <td>22.12.2011</td>
     <td>Forums,Tutorial,Documentation of all implemented modules</td>
   </tr>
   <tr>
+    <td align = "center">5</td>
     <td>29.12.2011</td>
     <td>Testing and deployment</td>
   </tr>
@@ -65,7 +67,6 @@
     <td>Aziz Kerem Özkan,İbrahim Çimentepe,Ali Kerim Erkan</td>
   </tr>
   <tr>
-    <td align = "center">5</td>
     <td>Testing,Deployment and Documentation process</td>
     <td>All together</td>
   </tr>
