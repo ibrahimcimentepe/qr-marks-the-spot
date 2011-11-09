@@ -25,7 +25,7 @@ public class userServlet extends HttpServlet implements Servlet {
 		
 		//connection.addUser(req.getParameter("username"),req.getParameter("pass"));
 		
-		resp.sendRedirect("http://localhost:8080/test1/login.jsp");
+		resp.sendRedirect("http://localhost:8080/test1/main.jsp");
 		
 		//super.doPost(req, resp);
 	}
