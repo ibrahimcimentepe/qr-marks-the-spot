@@ -1,4 +1,5 @@
 package akif;
+
 import java.io.IOException;
 
 import javax.servlet.Servlet;
@@ -7,8 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class userServlet extends HttpServlet implements Servlet {
+public class userServletLogin extends HttpServlet implements Servlet {
 
 	//MySqlConnection connection = new MySqlConnection();
 	
@@ -21,14 +21,13 @@ public class userServlet extends HttpServlet implements Servlet {
 		u.setUserName(req.getParameter("username"));
 		u.setPassword(req.getParameter("pass"));
 		
-		test.addUser(u);
+		boolean found = test.findUser(u);
 		
 		//connection.addUser(req.getParameter("username"),req.getParameter("pass"));
 		
-		resp.sendRedirect("http://localhost:8080/test1/login.jsp");
+		resp.sendRedirect("http://localhost:8080/test1/test.jsp");
 		
 		//super.doPost(req, resp);
-	}
-
+	} 	
 	
 }

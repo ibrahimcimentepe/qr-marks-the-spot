@@ -1,7 +1,7 @@
 package akif;
 import java.util.ArrayList;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+//import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 
 public class test {
@@ -10,12 +10,30 @@ public class test {
 	 * @param args
 	 */
 	
-	private ArrayList<user> Users = new ArrayList<user>();
+	private static ArrayList<user> users = new ArrayList<user>();
 	
 	
-	public void addUser(user user){
+	public static void addUser(user user){
 		
-		Users.add(user);
+		users.add(user);
+	}
+	
+	public static boolean findUser(user user){
+		
+		for(int i=0; i < users.size();i++){
+			
+			if(users.get(i).getUserName().equals(user.getUserName())){
+				
+				if(users.get(i).getPassword().equals(user.getPassword())){
+					
+					return true;
+				}
+				
+			}
+			
+		}
+
+		return false;
 	}
 	
 	
