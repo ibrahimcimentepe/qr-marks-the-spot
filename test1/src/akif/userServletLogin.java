@@ -24,8 +24,11 @@ public class userServletLogin extends HttpServlet implements Servlet {
 		boolean found = test.findUser(u);
 		
 		//connection.addUser(req.getParameter("username"),req.getParameter("pass"));
-		
-		resp.sendRedirect("http://localhost:8080/test1/main.jsp");
+		if(!found){
+			
+			resp.sendRedirect("http://localhost:8080/test1/loginUnsuccessfull.jsp");
+		}else
+			resp.sendRedirect("http://localhost:8080/test1/main.jsp");
 		
 		//super.doPost(req, resp);
 	} 	
