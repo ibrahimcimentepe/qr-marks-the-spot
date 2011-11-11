@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class userServletLogin extends HttpServlet implements Servlet {
 
-	//MySqlConnection connection = new MySqlConnection();
+	MySqlConnection connection = new MySqlConnection();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -21,9 +21,9 @@ public class userServletLogin extends HttpServlet implements Servlet {
 		u.setUserName(req.getParameter("username"));
 		u.setPassword(req.getParameter("pass"));
 		
-		boolean found = test.findUser(u);
+		//boolean found = test.findUser(u);
 		
-		//connection.addUser(req.getParameter("username"),req.getParameter("pass"));
+		boolean found = connection.userExists(req.getParameter("username"),req.getParameter("pass"));
 		if(!found){
 			
 			resp.sendRedirect("http://localhost:8080/test1/loginUnsuccessfull.jsp");
