@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class userServlet extends HttpServlet implements Servlet {
 
-	//MySqlConnection connection = new MySqlConnection();
+	MySqlConnection connection = new MySqlConnection();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -23,7 +23,7 @@ public class userServlet extends HttpServlet implements Servlet {
 		
 		test.addUser(u);
 		
-		//connection.addUser(req.getParameter("username"),req.getParameter("pass"));
+		connection.addUser(req.getParameter("username"),req.getParameter("pass"));
 		
 		resp.sendRedirect("http://localhost:8080/test1/main.jsp");
 		
