@@ -41,11 +41,14 @@ public class MySqlConnection {
         }
 	}
     
-    public void addUser(String username, String password)
+    public boolean addUser(String username, String password)
     {
     	try
         {
             Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `myusers` WHERE `username` = '"+username+"'");
+            if(rs.next())
+            	return false;
 			System.out.println(username + " " + password);
 			statement.executeUpdate("INSERT INTO myusers VALUES('"+username+"','"+password+"')");
              
@@ -55,6 +58,7 @@ public class MySqlConnection {
         {
              System.out.println("Error");
         }
+    	return true;
     }
     
     public String getpassword(String username)

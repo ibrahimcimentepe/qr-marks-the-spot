@@ -4,16 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Username Exist</title>
 </head>
 <body>
+<FORM action="/test1/userServlet" method="post">
+User Name: <INPUT type="text" name="username" size="35">USERNAME ALREADY EXIST PLEASE TRY ANOTHER ONE<BR>
+Password: <INPUT type="password" name="pass" size="35"><BR>
 
-	<FORM action="/test1/userServletLogin" method="post">
-	User Name: <INPUT type="text" name="username" size="35"><BR>
-	Password: <INPUT type="password" name="pass" size="35"><BR>
-	
-	<INPUT type="submit" name="Submit" value="Login">
-	</FORM>
-	
+<INPUT type="submit" name="Submit" value="Sign Up">
+</FORM>
 </body>
 </html>
