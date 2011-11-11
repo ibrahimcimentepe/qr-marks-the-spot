@@ -23,9 +23,12 @@ public class userServlet extends HttpServlet implements Servlet {
 		
 		test.addUser(u);
 		
-		connection.addUser(req.getParameter("username"),req.getParameter("pass"));
+		boolean added = connection.addUser(req.getParameter("username"),req.getParameter("pass"));
 		
-		resp.sendRedirect("http://localhost:8080/test1/main.jsp");
+		if(added)
+			resp.sendRedirect("http://localhost:8080/test1/main.jsp");
+		else
+			resp.sendRedirect("http://localhost:8080/test1/signUpUnsuccesful.jsp");
 		
 		//super.doPost(req, resp);
 	}

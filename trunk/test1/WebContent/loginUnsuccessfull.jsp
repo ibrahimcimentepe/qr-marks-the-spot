@@ -10,7 +10,7 @@
 
 	<FORM action="/test1/userServletLogin" method="post">
 	User Name: <INPUT type="text" name="username" size="35"><BR>
-	Password: <INPUT type="text" name="pass" size="35"><BR>
+	Password: <INPUT type="password" name="pass" size="35"><BR>
 	<p> LOGIN ATTEMT WAS UNSUCCESSFULL TRY AGAIN!<p>
 	<INPUT type="submit" name="Submit" value="Login"> <BR>
 	</FORM>
