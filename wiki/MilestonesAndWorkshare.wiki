@@ -1,4 +1,3 @@
-
 = Project Outline =
 
 http://qr-marks-the-spot.googlecode.com/files/ProjectOutline.png
@@ -16,7 +15,7 @@ http://qr-marks-the-spot.googlecode.com/files/ProjectOutline.png
   <tr>
     <td align = "center">1</td>
     <td>10.11.2011</td>
-    <td>Master page,User sign-up,User Sign-in and Newsfeed</td>
+    <td>Master page,User sign-up and User Sign-in</td>
   </tr>
 
   <tr>
@@ -34,7 +33,7 @@ http://qr-marks-the-spot.googlecode.com/files/ProjectOutline.png
   <tr>
     <td align = "center">4</td>
     <td>22.12.2011</td>
-    <td>Forums,Tutorial,Documentation of all implemented modules</td>
+    <td>Forums,Newsfeed,Tutorial,Documentation of all implemented modules</td>
   </tr>
   <tr>
     <td align = "center">5</td>
