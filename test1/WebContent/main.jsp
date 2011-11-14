@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%String test = (String) request.getSession().getAttribute("user"); %>
+<%out.println(test);%> 
 <FORM action="/test1/test.jsp" method="post">
 <INPUT type="submit" name="Submit" value="signup">
 </FORM>
