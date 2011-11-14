@@ -8,15 +8,15 @@ import java.sql.Statement;
 public class MySqlConnection {
 	private static String connecter = "com.mysql.jdbc.Driver";
 
-    private static String database = "Deneme";
+    private static String database = "database1";
     
-    private static String pfad = "jdbc:mysql://localhost:3306/"+database+"";
+    private static String pfad = "jdbc:mysql://titan.cmpe.boun.edu.tr:8088/"+database+"";
 
-    private static String table = "users";
+    private static String table = "Users";
 
-    private static String user = "root";
+    private static String user = "project1";
 
-    private static String pWord = "";
+    private static String pWord = "d8rop";
 
     private static Connection con;
     
@@ -46,11 +46,11 @@ public class MySqlConnection {
     	try
         {
             Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM `myusers` WHERE `username` = '"+username+"'");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `Users` WHERE `username` = '"+username+"'");
             if(rs.next())
             	return false;
 			System.out.println(username + " " + password);
-			statement.executeUpdate("INSERT INTO myusers VALUES('"+username+"','"+password+"')");
+			statement.executeUpdate("INSERT INTO Users VALUES('"+username+"','"+password+"')");
              
         }
     
@@ -66,7 +66,7 @@ public class MySqlConnection {
     	String str = null;
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT * FROM myusers");
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM Users");
 	    	
 	    	if(rs.next()){
 	    		str = rs.getString(1);
@@ -84,7 +84,7 @@ public class MySqlConnection {
     	boolean found = false;
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT * FROM `myusers` WHERE `username` = '"+username+
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `Users` WHERE `username` = '"+username+
 					 		"' and `password` = '"+password+"'");
 	    	
 	    	if(rs.next()){
