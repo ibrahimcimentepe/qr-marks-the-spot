@@ -12,7 +12,7 @@ public class MySqlConnection {
 
     private static String database = "database1";
 
-    private static String pfad = "jdbc:mysql://titan.cmpe.boun.edu.tr:3306/"+database+"";
+    private static String pfad = "jdbc:mysql://titan.cmpe.boun.edu.tr/"+database+"";
 
     private static String table = "users";
 
@@ -25,7 +25,7 @@ public class MySqlConnection {
     public MySqlConnection() {
     	try
         {
-            Class.forName(connecter);
+            Class.forName(connecter).newInstance();
         }
         catch(Exception e)
         {
@@ -92,23 +92,27 @@ public class MySqlConnection {
 	    	Statement statement = con.createStatement();
 	    	ResultSet rs = statement.executeQuery("SELECT * FROM `users` WHERE `UserName` = '"+username+
 					 		"' and `Password` = '"+password+"'");
-
 	    	if(rs.next()){
 	    		System.out.println("USER FOUND");
 	    		String passwd = rs.getString("password");
 	    		System.out.println("USER PASSWORD: "+passwd);
-	    		if(passwd.equals(password))
-	    			found = true;
-	    		else
+	    		if(passwd.equals(password)){
+                    found = true;
+                }
+	    		else{
 	    			found = false;
+                }
 	    	}
-	    	else
+	    	else{
 	    		found = false;
+            }
     	}
     	catch(Exception e){
 
     	}
-    	return found;
+        finally{
+            return found;
+        }
     }
 
     @Override
