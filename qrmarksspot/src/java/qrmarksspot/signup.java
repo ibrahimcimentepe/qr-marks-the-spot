@@ -10,7 +10,6 @@ import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import java.util.Calendar;
 import java.util.Date;
 import javax.faces.FacesException;
-import org.hibernate.Hibernate;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
