@@ -17,11 +17,19 @@
                         <webuijsf:label id="label1" style="position: absolute; left: 168px; top: 72px" text="User Name"/>
                         <webuijsf:label id="label2" style="position: absolute; left: 168px; top: 96px" text="Password"/>
                         <webuijsf:label id="label3" style="position: absolute; left: 168px; top: 120px" text="Birth Day"/>
-                        <webuijsf:textField id="username" style="left: 288px; top: 72px; position: absolute" text="#{signup.username}"/>
-                        <webuijsf:passwordField id="password" password="#{signup.password}" style="left: 288px; top: 96px; position: absolute"/>
-                        <webuijsf:calendar id="birthday" selectedDate="#{signup.birthday}" style="left: 288px; top: 120px; position: absolute"/>
-                        <webuijsf:button actionExpression="#{signup.signup_action}" id="signup" style="position: absolute; left: 168px; top: 144px" text="Sign Up"/>
-                        <webuijsf:label id="warning" style="position: absolute; left: 432px; top: 72px" text="#{signup.warning}"/>
+                        <webuijsf:textField id="username" required="true" style="left: 288px; top: 72px; position: absolute" text="#{signup.username}"/>
+                        <webuijsf:passwordField id="password" password="#{signup.password}" required="true" style="left: 288px; top: 96px; position: absolute"/>
+                        <webuijsf:calendar id="birthday" required="true" selectedDate="#{signup.birthday}" style="left: 278px; top: 120px; position: absolute"/>
+                        <webuijsf:button actionExpression="#{signup.signup_action}" id="signup" style="position: absolute; left: 168px; top: 240px" text="Sign Up"/>
+                        <webuijsf:label id="warning1" style="left: 432px; top: 72px; position: absolute" styleClass="errorMessage" text="#{signup.warning}"/>
+                        <webuijsf:label id="label4" style="position: absolute; left: 168px; top: 144px" text="Website"/>
+                        <webuijsf:label id="label5" style="position: absolute; left: 168px; top: 168px" text="Twitter"/>
+                        <webuijsf:label id="label6" style="position: absolute; left: 168px; top: 192px" text="Facebook"/>
+                        <webuijsf:label id="label7" style="position: absolute; left: 168px; top: 216px" text="Picture"/>
+                        <webuijsf:textField id="website" style="position: absolute; left: 288px; top: 144px" text="#{signup.website}"/>
+                        <webuijsf:textField id="twitter" style="position: absolute; left: 288px; top: 168px" text="#{signup.twitter}"/>
+                        <webuijsf:textField id="facebook" style="position: absolute; left: 288px; top: 192px" text="#{signup.facebook}"/>
+                        <webuijsf:upload id="picture" immediate="true" preservePath="true" style="position: absolute; left: 288px; top: 216px" uploadedFile="#{signup.picture}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
