@@ -7,6 +7,8 @@ package qrmarksspot;
 
 import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.model.UploadedFile;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import javax.faces.FacesException;
@@ -28,6 +30,10 @@ public class signup extends AbstractPageBean {
     String password;
     Date birthday;
     String warning;
+    String website;
+    String twitter;
+    String facebook;
+    UploadedFile picture;
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -148,11 +154,25 @@ public class signup extends AbstractPageBean {
         MySqlConnection con = new MySqlConnection();
         Calendar cal = Calendar.getInstance();
         cal.setTime(birthday);
-        
-        boolean added = con.addUser(username, password, String.format("%d-%d-%d", cal.get(Calendar.YEAR),
-                                                            cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH)));
-        if(added)
+        boolean added = false;
+        try {
+            added = con.addUser(username, password, String.format("%d-%d-%d", cal.get(Calendar.YEAR),
+                                                                cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH)));
+        } catch (Exception ex) {
+            warning = "An Error Occured During Database Connection";
+            return "fail";
+        }
+        if(added){
+            if(picture.getClientFilePath() != null){
+                try {
+                    con.updateUserPicture(username, picture.getInputStream());
+                } catch (IOException ex) {
+                    warning = "An Error Occured During File Upload";
+                    return "fail";
+                }
+            }
             return "success";
+        }
         else{
             warning = "A USER WITH THE SAME NAME ALREADY EXIST!";
             return "fail";
@@ -189,6 +209,38 @@ public class signup extends AbstractPageBean {
 
     public void setWarning(String warning) {
         this.warning = warning;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public UploadedFile getPicture() {
+        return picture;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public void setPicture(UploadedFile picture) {
+        this.picture = picture;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 }
 
