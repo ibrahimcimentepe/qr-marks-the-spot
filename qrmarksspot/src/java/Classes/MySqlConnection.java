@@ -13,26 +13,18 @@ import java.util.logging.Logger;
 
 
 public class MySqlConnection {
-	public static String hostURL = "titan.cmpe.boun.edu.tr:8080/";
-
-	private static String connecter = "com.mysql.jdbc.Driver";
-
+	public static String hostURL = "titan.cmpe.boun.edu.tr:3306/";
+	private static String driver = "com.mysql.jdbc.Driver";
     private static String database = "database1";
-
-    private static String pfad = "jdbc:mysql://titan.cmpe.boun.edu.tr:3306/"+database+"";
-
-    private static String table = "users";
-
+    private static String url = "jdbc:mysql://titan.cmpe.boun.edu.tr:3306/"+database+"";
     private static String user = "project1";
-
-    private static String pWord = "d8rop";
-
+    private static String password = "d8rop";
     private static Connection con;
 
     public MySqlConnection() {
     	try
         {
-            Class.forName(connecter).newInstance();
+            Class.forName(driver).newInstance();
         }
         catch(Exception e)
         {
@@ -42,7 +34,7 @@ public class MySqlConnection {
 
         try
         {
-            con = DriverManager.getConnection(pfad,user,pWord);
+            con = DriverManager.getConnection(url,user,password);
         }
         catch(Exception e)
         {
@@ -146,7 +138,7 @@ public class MySqlConnection {
     	String str = null;
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT * FROM "+table);
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `users`");
 	    	if(rs.next()){
 	    		str = rs.getString(1);
 	    	}
