@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package qrmarksspot;
 
 import Classes.MySqlConnection;
@@ -22,9 +17,7 @@ import javax.faces.FacesException;
  *
  * @version signup.java
  * @version Created on 18.Kas.2011, 15:42:02
- * @author acar
  */
-
 public class signup extends AbstractPageBean {
     String username;
     String password;
@@ -171,6 +164,7 @@ public class signup extends AbstractPageBean {
                     return "fail";
                 }
             }
+            getSessionBean1().login("Logged in as: "+username);
             return "success";
         }
         else{
