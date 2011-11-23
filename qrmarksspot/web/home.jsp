@@ -2,7 +2,6 @@
 <!-- 
     Document   : home
     Created on : 18.Kas.2011, 15:40:54
-    Author     : acar
 -->
 <jsp:root version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <jsp:directive.page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"/>
@@ -14,12 +13,55 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:label id="label1" style="left: 336px; top: 48px; position: absolute" text="QR MARKS THE SPOT"/>
-                        <webuijsf:label id="label2" style="position: absolute; left: 168px; top: 96px" text="News Feed"/>
-                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="left: 504px; top: 96px; position: absolute; width: 71px" text="Sign Up"/>
-                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="left: 504px; top: 120px; position: absolute; width: 71px" text="Log In"/>
-                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial"
-                            style="left: 504px; top: 144px; position: absolute; width: 71px" text="Tutorial"/>
+                        <table align="center" border="0" width="%90">
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        <webuijsf:label id="label1"
+                                            style="font-family: Geneva,Arial,Helvetica,sans-serif; font-size: 36px; font-weight: bold; text-decoration: underline" text="QR MARKS THE SPOT"/>
+                                    </th>
+                                    <th align="right">
+                                        <webuijsf:label id="usernameLabel" text="#{SessionBean1.userName}"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td align="right">
+                                        <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <webuijsf:label id="label2" text="News Feed"/>
+                                    </td>
+                                    <td></td>
+                                    <td align="right">
+                                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td align="right">
+                                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="width: 80px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td align="right">
+                                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="width: 80px" text="Tutorial"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
