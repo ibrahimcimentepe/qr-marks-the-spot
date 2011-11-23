@@ -11,7 +11,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class MySqlConnection {
 	public static String hostURL = "titan.cmpe.boun.edu.tr:3306/";
 	private static String driver = "com.mysql.jdbc.Driver";

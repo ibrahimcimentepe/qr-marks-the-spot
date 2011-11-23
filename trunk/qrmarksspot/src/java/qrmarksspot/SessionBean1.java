@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractSessionBean;
@@ -20,9 +15,7 @@ import javax.faces.FacesException;
  *
  * @version SessionBean1.java
  * @version Created on 18.Kas.2011, 15:40:54
- * @author acar
  */
-
 public class SessionBean1 extends AbstractSessionBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
@@ -35,6 +28,8 @@ public class SessionBean1 extends AbstractSessionBean {
     }
     // </editor-fold>
 
+    String userName;
+    boolean loggedIn;
     /**
      * <p>Construct a new session data bean instance.</p>
      */
@@ -124,4 +119,31 @@ public class SessionBean1 extends AbstractSessionBean {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+
+    public void login(String username)
+    {
+        userName = username;
+        loggedIn = true;
+    }
+
+    public void logout()
+    {
+        userName = "";
+        loggedIn = false;
+    }
 }

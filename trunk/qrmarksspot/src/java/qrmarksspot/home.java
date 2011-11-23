@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
@@ -17,9 +12,7 @@ import javax.faces.FacesException;
  *
  * @version home.java
  * @version Created on 18.Kas.2011, 15:40:54
- * @author acar
  */
-
 public class home extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
@@ -146,6 +139,11 @@ public class home extends AbstractPageBean {
     }
 
     public String tutorial_action() {
+        return null;
+    }
+
+    public String hyperlink1_action() {
+        getSessionBean1().logout();
         return null;
     }
 
