@@ -33,26 +33,29 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td style="height: 19px">
                                         <webuijsf:label id="label2" text="News Feed"/>
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        <webuijsf:textField id="textField1"/>
+                                        <webuijsf:button actionExpression="#{home.button1_action}" id="button1" style="height: 20px; width: 161px" text="Search"/>
+                                    </td>
                                     <td align="right">
-                                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
+                                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="height: 24px; width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td style="height: 14px"></td>
                                     <td></td>
                                     <td align="right">
-                                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="width: 80px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
+                                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="height: 24px; width: 80px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td style="height: 16px"></td>
                                     <td></td>
                                     <td align="right">
-                                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="width: 80px" text="Tutorial"/>
+                                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="height: 24px; width: 80px" text="Tutorial"/>
                                     </td>
                                 </tr>
                                 <tr>
