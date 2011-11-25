@@ -30,6 +30,7 @@ public class home extends AbstractPageBean {
      * <p>Construct a new Page bean instance.</p>
      */
     public home() {
+        
     }
 
     /**
