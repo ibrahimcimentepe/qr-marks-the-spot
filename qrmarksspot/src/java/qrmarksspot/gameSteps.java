@@ -1,3 +1,8 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
@@ -10,10 +15,12 @@ import javax.faces.FacesException;
  * lifecycle methods and event handlers where you may add behavior
  * to respond to incoming events.</p>
  *
- * @version home.java
- * @version Created on 18.Kas.2011, 15:40:54
+ * @version gameSteps.java
+ * @version Created on Nov 25, 2011, 5:25:35 AM
+ * @author alke
  */
-public class home extends AbstractPageBean {
+
+public class gameSteps extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -29,8 +36,7 @@ public class home extends AbstractPageBean {
     /**
      * <p>Construct a new Page bean instance.</p>
      */
-    public home() {
-        
+    public gameSteps() {
     }
 
     /**
@@ -59,7 +65,7 @@ public class home extends AbstractPageBean {
         try {
             _init();
         } catch (Exception e) {
-            log("home Initialization Failure", e);
+            log("gameSteps Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);
         }
         
@@ -103,15 +109,6 @@ public class home extends AbstractPageBean {
     @Override
     public void destroy() {
     }
-    
-    /**
-     * <p>Return a reference to the scoped data bean.</p>
-     *
-     * @return reference to the scoped data bean
-     */
-    protected SessionBean1 getSessionBean1() {
-        return (SessionBean1) getBean("SessionBean1");
-    }
 
     /**
      * <p>Return a reference to the scoped data bean.</p>
@@ -131,28 +128,14 @@ public class home extends AbstractPageBean {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
 
-    public String signup_action() {
-        return "signup";
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
+    protected SessionBean1 getSessionBean1() {
+        return (SessionBean1) getBean("SessionBean1");
     }
-
-    public String login_action() {
-        return "login";
-    }
-
-    public String tutorial_action() {
-        return null;
-    }
-
-    public String hyperlink1_action() {
-        getSessionBean1().logout();
-        return null;
-    }
-
-    public String button1_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
+    
 }
 
