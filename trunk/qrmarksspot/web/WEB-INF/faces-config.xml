@@ -46,6 +46,10 @@
             <from-outcome>login</from-outcome>
             <to-view-id>/login.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>createGame</from-outcome>
+            <to-view-id>/createGame.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -72,6 +76,11 @@
     <managed-bean>
         <managed-bean-name>createGame</managed-bean-name>
         <managed-bean-class>qrmarksspot.createGame</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>gameSteps</managed-bean-name>
+        <managed-bean-class>qrmarksspot.gameSteps</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>
