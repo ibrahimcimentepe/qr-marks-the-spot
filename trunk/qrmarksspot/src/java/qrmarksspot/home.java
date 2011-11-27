@@ -143,15 +143,21 @@ public class home extends AbstractPageBean {
         return null;
     }
 
-    public String hyperlink1_action() {
+    public String logoutLink_action() {
         getSessionBean1().logout();
         return null;
     }
 
-    public String button1_action() {
+    public String searchButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return null;
+    }
+
+    public String gameCreateButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "createGame";
     }
 
 }
