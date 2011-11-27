@@ -11,3 +11,6 @@ Meeting Notes:
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_10 Meeting #10 - (9.11.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_11 Meeting #11 - (12.11.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_12 Meeting #12 - (14.11.2011)]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_13 Meeting #13 - (21.11.2011)]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_14 Meeting #14 - (25.11.2011)]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_15 Meeting #15 - (27.11.2011)]
