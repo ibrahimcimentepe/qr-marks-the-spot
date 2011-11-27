@@ -13,10 +13,7 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
-                    <webuijsf:form id="form1">
-                        <webuijsf:label id="label1" style="left: 192px; top: 144px; position: absolute" text="Number of steps in this game:"/>
-                        <webuijsf:textField id="textField1" style="left: 432px; top: 144px; position: absolute" text="1"/>
-                    </webuijsf:form>
+                    <webuijsf:form id="form1"/>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>

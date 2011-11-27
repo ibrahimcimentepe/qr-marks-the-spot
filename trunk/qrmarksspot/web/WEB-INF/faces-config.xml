@@ -83,4 +83,11 @@
         <managed-bean-class>qrmarksspot.gameSteps</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <navigation-rule>
+        <from-view-id>/createGame.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/gameSteps.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
