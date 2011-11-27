@@ -13,7 +13,18 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
-                    <webuijsf:form id="form1"/>
+                    <webuijsf:form id="form1">
+                        <webuijsf:label id="label1" style="left: 192px; top: 144px; position: absolute" text="#{gameSteps.gameStepString}"/>
+                        <webuijsf:label id="label2" style="position: absolute; left: 192px; top: 168px" text="QR Code of The Step:"/>
+                        <webuijsf:label id="label3" style="left: 192px; top: 240px; position: absolute" text="Location:"/>
+                        <webuijsf:label id="label4" style="left: 192px; top: 264px; position: absolute" text="Password:"/>
+                        <webuijsf:textArea columns="32" id="textArea1" rows="4" style="left: 360px; top: 168px; position: absolute"
+                            text="#{gameSteps.qrCodeString}" valueChangeListenerExpression="#{gameSteps.textArea1_processValueChange}"/>
+                        <webuijsf:textField columns="35" id="textField1" style="left: 360px; top: 240px; position: absolute" text="#{gameSteps.location}"/>
+                        <webuijsf:textField columns="35" id="textField2" style="left: 360px; top: 264px; position: absolute" text="#{gameSteps.password}"/>
+                        <webuijsf:button actionExpression="#{gameSteps.button1_action}" id="button1"
+                            style="height: 24px; left: 455px; top: 312px; position: absolute; width: 120px" text="#{gameSteps.buttonText}"/>
+                    </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>

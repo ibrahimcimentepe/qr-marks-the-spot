@@ -90,4 +90,11 @@
             <to-view-id>/gameSteps.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/gameSteps.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>finished</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
