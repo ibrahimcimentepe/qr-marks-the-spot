@@ -15,24 +15,25 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:label id="label1" style="height: 22px; left: 192px; top: 144px; position: absolute; width: 96px" text="Game name       :"/>
-                        <webuijsf:textField columns="50" id="gameName" style="left: 384px; top: 144px; position: absolute"/>
-                        <webuijsf:textArea columns="47" id="gameDescription" rows="10" style="border-width: 8px; left: 384px; top: 168px; position: absolute"/>
+                        <webuijsf:textField columns="50" id="gameName" required="true" style="left: 384px; top: 144px; position: absolute" text="#{createGame.gameName}"/>
+                        <webuijsf:textArea columns="47" id="gameDescription" required="true" rows="10"
+                            style="border-width: 8px; left: 384px; top: 168px; position: absolute" text="#{createGame.description}"/>
                         <webuijsf:label id="label3" style="height: 22px; left: 192px; top: 336px; position: absolute; width: 166px" text="Starting point of the game                          :"/>
-                        <webuijsf:textField columns="50" id="startingPoint" style="position: absolute; left: 384px; top: 336px"/>
+                        <webuijsf:textField columns="50" id="startingPoint" required="true" style="position: absolute; left: 384px; top: 336px" text="#{createGame.startingPoint}"/>
                         <webuijsf:label id="label4" style="height: 22px; left: 192px; top: 360px; position: absolute; width: 166px" text="Borders                                                         :"/>
                         <webuijsf:label id="label2" style="height: 22px; left: 192px; top: 168px; position: absolute; width: 96px" text="Description :"/>
-                        <webuijsf:textArea columns="47" id="borders" style="position: absolute; left: 384px; top: 360px"/>
+                        <webuijsf:textArea columns="47" id="borders" required="true" style="position: absolute; left: 384px; top: 360px" text="#{createGame.borders}"/>
                         <webuijsf:label id="label6" style="height: 24px; left: 192px; top: 432px; position: absolute; width: 166px" text="Tags:"/>
-                        <webuijsf:textField id="tag1" style="left: 384px; top: 432px; position: absolute"/>
+                        <webuijsf:textField id="tag1" style="left: 384px; top: 432px; position: absolute" text="#{createGame.tag1}"/>
                         <br style="left: 480px; top: 72px; position: absolute"/>
-                        <webuijsf:textField id="tag2" style="left: 384px; top: 456px; position: absolute"/>
-                        <webuijsf:textField id="tag3" style="left: 384px; top: 480px; position: absolute"/>
-                        <webuijsf:textField id="tag4" style="left: 384px; top: 504px; position: absolute"/>
-                        <webuijsf:textField id="tag5" style="left: 384px; top: 528px; position: absolute"/>
+                        <webuijsf:textField id="tag2" style="left: 384px; top: 456px; position: absolute" text="#{createGame.tag2}"/>
+                        <webuijsf:textField id="tag3" style="left: 384px; top: 480px; position: absolute" text="#{createGame.tag3}"/>
+                        <webuijsf:textField id="tag4" style="left: 384px; top: 504px; position: absolute" text="#{createGame.tag4}"/>
+                        <webuijsf:textField id="tag5" style="left: 384px; top: 528px; position: absolute" text="#{createGame.tag5}"/>
                         <webuijsf:button actionExpression="#{createGame.nextButtonOfCreateGame_action}" id="nextButtonOfCreateGame"
                             style="height: 24px; left: 599px; top: 600px; position: absolute; width: 96px" text="Next &gt;"/>
                         <webuijsf:label id="label5" style="height: 24px; left: 192px; top: 576px; position: absolute" text="Number of steps in this game:"/>
-                        <webuijsf:textField id="numberOfSteps" style="left: 384px; top: 576px; position: absolute"/>
+                        <webuijsf:textField id="numberOfSteps" required="true" style="left: 384px; top: 576px; position: absolute" text="#{createGame.numberOfSteps}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
