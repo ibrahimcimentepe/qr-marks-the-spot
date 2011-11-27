@@ -4,8 +4,8 @@
  * Type : TeamWork
  * Participants (4): Ali - Akif - Bilal - İbrahim 
 ===Subjects :===
-  1. 1st and 2nd milestones, which are Game Creation and Play Modules.
-  2. QR Libraries (zxing package deployment)
+ 1. 1st and 2nd milestones, which are Game Creation and Play Modules.
+ 2. QR Libraries (zxing package deployment)
 ===Results :====
   1. Game Creation Module has come almost to an end. Only the database part of the jsf and java codes remain.
   2. Monday Standard Meeting is off. We will have a TeamWork beginning at 23:00 pm Wednesday.
