@@ -29,7 +29,7 @@
                                     <td></td>
                                     <td></td>
                                     <td align="right">
-                                        <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
+                                        <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -37,8 +37,8 @@
                                         <webuijsf:label id="label2" text="News Feed"/>
                                     </td>
                                     <td>
-                                        <webuijsf:textField id="textField1"/>
-                                        <webuijsf:button actionExpression="#{home.button1_action}" id="button1" style="height: 20px; width: 161px" text="Search"/>
+                                        <webuijsf:textField id="gameSearchTextField"/>
+                                        <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton" style="height: 20px; width: 80px" text="Search"/>
                                     </td>
                                     <td align="right">
                                         <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="height: 24px; width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
@@ -61,7 +61,10 @@
                                 <tr>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
+                                    <td align="right">
+                                        <webuijsf:button actionExpression="#{home.gameCreateButton_action}" id="gameCreateButton"
+                                            style="height: 24px; width: 80px" text="Create Game" visible="#{SessionBean1.loggedIn}"/>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
