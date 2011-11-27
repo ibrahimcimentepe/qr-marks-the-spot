@@ -1,5 +1,6 @@
 package qrmarksspot;
 
+import Classes.GameAttributes;
 import com.sun.rave.web.ui.appbase.AbstractSessionBean;
 import javax.faces.FacesException;
 
@@ -30,6 +31,7 @@ public class SessionBean1 extends AbstractSessionBean {
 
     String userName;
     boolean loggedIn;
+    GameAttributes newGame = new GameAttributes();
     /**
      * <p>Construct a new session data bean instance.</p>
      */
@@ -145,5 +147,13 @@ public class SessionBean1 extends AbstractSessionBean {
     {
         userName = "";
         loggedIn = false;
+    }
+
+    public GameAttributes getNewGame() {
+        return newGame;
+    }
+
+    public void setNewGame(GameAttributes newGame) {
+        this.newGame = newGame;
     }
 }

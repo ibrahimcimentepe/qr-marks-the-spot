@@ -5,6 +5,7 @@
 
 package qrmarksspot;
 
+import Classes.GameAttributes;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.MultipleSelectOptionsList;
@@ -36,6 +37,16 @@ public class createGame extends AbstractPageBean {
 
     // </editor-fold>
 
+    String GameName;
+    String Description;
+    String StartingPoint;
+    String Borders;
+    String Tag1;
+    String Tag2;
+    String Tag3;
+    String Tag4;
+    String Tag5;
+    String NumberofSteps;
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -141,10 +152,105 @@ public class createGame extends AbstractPageBean {
     }
 
     public String nextButtonOfCreateGame_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
+        GameAttributes game = new GameAttributes();
+        game.setGameName(GameName);
+        game.setBorders(Borders);
+        game.setDescription(Description);
+        game.setStartingPoint(StartingPoint);
+        game.setNumberOfSteps(Integer.parseInt(NumberofSteps));
+        if(!Tag1.isEmpty())
+            game.addTag(Tag1);
+        if(!Tag2.isEmpty())
+            game.addTag(Tag2);
+        if(!Tag3.isEmpty())
+            game.addTag(Tag3);
+        if(!Tag4.isEmpty())
+            game.addTag(Tag4);
+        if(!Tag5.isEmpty())
+            game.addTag(Tag5);
+        getSessionBean1().setNewGame(game);
+        //TODO Check game name if it is in the database
         return "case1";
     }
-    
+
+    public String getBorders() {
+        return Borders;
+    }
+
+    public void setBorders(String borders) {
+        this.Borders = borders;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        this.Description = description;
+    }
+
+    public String getGameName() {
+        return GameName;
+    }
+
+    public void setGameName(String gameName) {
+        this.GameName = gameName;
+    }
+
+    public String getNumberOfSteps() {
+        return NumberofSteps;
+    }
+
+    public void setNumberOfSteps(String numberOfSteps) {
+        this.NumberofSteps = numberOfSteps;
+    }
+
+    public String getStartingPoint() {
+        return StartingPoint;
+    }
+
+    public void setStartingPoint(String startingPoint) {
+        this.StartingPoint = startingPoint;
+    }
+
+    public String getTag1() {
+        return Tag1;
+    }
+
+    public void setTag1(String tag1) {
+        this.Tag1 = tag1;
+    }
+
+    public String getTag2() {
+        return Tag2;
+    }
+
+    public void setTag2(String tag2) {
+        this.Tag2 = tag2;
+    }
+
+    public String getTag3() {
+        return Tag3;
+    }
+
+    public void setTag3(String tag3) {
+        this.Tag3 = tag3;
+    }
+
+    public String getTag4() {
+        return Tag4;
+    }
+
+    public void setTag4(String tag4) {
+        this.Tag4 = tag4;
+    }
+
+    public String getTag5() {
+        return Tag5;
+    }
+
+    public void setTag5(String tag5) {
+        this.Tag5 = tag5;
+    }
 }
 
