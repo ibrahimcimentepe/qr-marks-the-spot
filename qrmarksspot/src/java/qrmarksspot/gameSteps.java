@@ -5,6 +5,7 @@
 
 package qrmarksspot;
 
+import Classes.GameAttributes.GameSteps;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import javax.faces.FacesException;
 
@@ -32,7 +33,11 @@ public class gameSteps extends AbstractPageBean {
     }
 
     // </editor-fold>
-
+    String gameStepString;
+    String qrCodeString;
+    String password;
+    String location;
+    String buttonText;
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -57,8 +62,8 @@ public class gameSteps extends AbstractPageBean {
         super.init();
         // Perform application initialization that must complete
         // *before* managed components are initialized
-        // TODO - add your own initialiation code here
-        
+        gameStepString = "Your are designing the step 1";
+        buttonText = "Proceed To Step 2";
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -136,6 +141,76 @@ public class gameSteps extends AbstractPageBean {
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
     }
-    
+
+    public String getGameStepString() {
+        return gameStepString;
+    }
+
+    public void setGameStepString(String gameStepString) {
+        this.gameStepString = gameStepString;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getQrCodeString() {
+        return qrCodeString;
+    }
+
+    public void setQrCodeString(String qrCodeString) {
+        this.qrCodeString = qrCodeString;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getButtonText() {
+        return buttonText;
+    }
+
+    public void setButtonText(String buttonText) {
+        this.buttonText = buttonText;
+    }
+
+    public String button1_action() {
+        GameSteps step = new GameSteps();
+        step.setLocation(location);
+        step.setPassword(password);
+        step.setQrCodeOfStep(qrCodeString);
+        getSessionBean1().getNewGame().addGameStep(step);
+        int currentStep = getSessionBean1().getNewGame().getCurrentDesigningStep() + 1;
+        int numberOfStep = getSessionBean1().getNewGame().getNumberOfSteps();
+        if(currentStep == numberOfStep){
+            location = "";
+            password = "";
+            qrCodeString = "";
+            buttonText = "Create The Game!";
+            gameStepString = String.format("Now you are designing %d", currentStep);
+        }
+        else if(currentStep == numberOfStep + 1){
+            //TODO Insert to database
+            return "finished";
+        }
+        else{
+            buttonText = String.format("Proceed to step %d", currentStep+1);
+            gameStepString = String.format("Now you are designing %d", currentStep);
+            location = "";
+            password = "";
+            qrCodeString = "";
+        }
+        getSessionBean1().getNewGame().setCurrentDesigningStep(currentStep);
+        return null;
+    }
+
 }
 
