@@ -13,6 +13,9 @@ public class Main {
 
     /**
      * @param args the command line arguments
+     *
+     * burdaki main değişcek tabi
+     * ama qr yaratılış kodunun kullanılış biçimi böyle olacak
      */
     public static void main(String[] args) {
         // TODO code application logic here
