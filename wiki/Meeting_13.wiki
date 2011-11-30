@@ -10,5 +10,5 @@
 ===Decisions :===
  * There was actually no meeting.
 ===Problems :===
- * 1. Bilal has informed us about his unavailability, therefore he proposed to have a meeting at Tuesday, but no others have been agreed or disagreed this. Therefore we tried to have regular meeting.
+ * 1. Bilal has informed us about his unavailability, therefore he proposed to have a meeting at Tuesday, but no others have agreed or disagreed this. Therefore we tried to have regular meeting.
  * 2. Eclipse is still problematic, Bilal was the one who is working on it. Therefore if to change the environment is possible, it is useless working on Eclipse.
