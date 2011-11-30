@@ -62,6 +62,31 @@ public class MySqlConnection {
     	return true;
     }
 
+    public boolean addGame(GameAttributes gameAtt){
+    
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameName` = '"+gameAtt.gameName+"'");
+            System.out.println("STATEMENT EXECUTED");
+            if(rs.next())
+            	return false; // sama name problem
+
+			statement.executeUpdate("INSERT INTO `"+database+"`.`games` (`GameName`, `Description`, `NumberOfSteps` , `CurrentStep`" +
+                    ", `Borders`, `Rating`, `NumberOfPlayers`, `CreatorName`, `CreaterId`, `IsFinished`" +
+                    ") VALUES ('"+
+					gameAtt.gameName+"', '"+gameAtt.description+"', '"+gameAtt.numberOfSteps+"', '"
+                    +gameAtt.currentDesigningStep+"', '"+gameAtt.borders+"', '"+gameAtt.rating+"','"+gameAtt.numberOfPlayers+"'," +
+                    "'"+gameAtt.CreatorName+"','"+gameAtt.CreaterId+"', '"+gameAtt.isFinished+"')");
+			System.out.println(gameAtt.gameName + " " + gameAtt.CreatorName);
+        } catch(Exception e) {
+             System.out.println("Error");
+             return false;
+        }
+    	return true;
+        
+    }
+
     public boolean updateUserPicture(String username, InputStream in)
     {
         String INSERT_PICTURE = "update `database1`.`users` set `Picture` = ? where `UserName` = ?";
