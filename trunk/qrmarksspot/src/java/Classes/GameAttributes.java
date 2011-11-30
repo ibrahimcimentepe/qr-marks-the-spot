@@ -17,8 +17,13 @@ public class GameAttributes {
     String startingPoint;
     String borders;
     ArrayList<String> tags = new ArrayList<String>();
+    int rating;
     int numberOfSteps;
     int currentDesigningStep;
+    String CreatorName;
+    int CreaterId;
+    int numberOfPlayers;
+    boolean isFinished;
     ArrayList<GameSteps> gameSteps = new ArrayList<GameSteps>();
 
     public static class GameSteps {
