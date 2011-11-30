@@ -74,7 +74,7 @@ public class profilePage extends AbstractPageBean {
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
         try {
-            _init();
+            //_init();
         } catch (Exception e) {
             log("profilePage Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);

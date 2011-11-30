@@ -1,5 +1,6 @@
 package qrmarksspot;
 
+//import Classes.QR;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import javax.faces.FacesException;
 
@@ -52,7 +53,7 @@ public class home extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-        
+      
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -140,6 +141,7 @@ public class home extends AbstractPageBean {
     }
 
     public String tutorial_action() {
+        
         return null;
     }
 
