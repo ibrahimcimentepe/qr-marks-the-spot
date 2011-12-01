@@ -107,6 +107,7 @@ public class MySqlConnection {
 
     public ResultSet getNews(int number){
 
+        //MySqlConnection con = new MySqlConnection();
         //TODO: use the number
         try {
             Statement statement = con.createStatement();

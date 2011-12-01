@@ -1,8 +1,12 @@
 package qrmarksspot;
 
 //import Classes.QR;
+import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Label;
+import java.sql.ResultSet;
 import javax.faces.FacesException;
+import sun.swing.UIAction;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -27,6 +31,7 @@ public class home extends AbstractPageBean {
 
     // </editor-fold>
 
+     public String[] labels = new String[4];
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -53,7 +58,28 @@ public class home extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-      
+
+        MySqlConnection con = new MySqlConnection();
+        ResultSet rs = con.getNews(4);
+        
+        int i = 0;
+        try{
+        
+            while(rs.next()){
+        
+                labels[i] = rs.getString("News")+" "+
+                        rs.getDate("DateAndTime").toString();
+                i++;
+                //SessionBean1["label"] = labels[i];
+            }
+
+        }catch(Exception e){
+        
+        }
+
+
+
+
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -112,6 +138,11 @@ public class home extends AbstractPageBean {
      */
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
+    }
+
+    protected String getLabel(int i){
+
+        return labels[i];
     }
 
     /**
