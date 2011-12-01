@@ -1,7 +1,7 @@
 ==Team Meeting #15==
  * Date : 27.10.2011 - Monday
  * Time : Between 15:00 - 20:00
- * Type : TeamWork
+ * Type : Teamwork
  * Participants (4): Ali - Akif - Bilal - İbrahim 
 ===Subjects :===
  * 1. 2nd and 3rd milestones, which are Game Creation and Play Modules.
