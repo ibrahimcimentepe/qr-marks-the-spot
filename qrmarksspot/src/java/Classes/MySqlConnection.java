@@ -202,6 +202,35 @@ public class MySqlConnection {
         }
     }
 
+    public int getUserIdbyUserName(String username){
+
+        boolean found = false;
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `users` WHERE `UserName` = '"+username+"'");
+	    	if(rs.next()){
+	    		System.out.println("USER FOUND");
+	    		//String passwd = rs.getString("password");
+	    		//System.out.println("USER PASSWORD: "+passwd);
+	    		if(passwd.equals(password)){
+                    found = true;
+                }
+	    		else{
+	    			found = false;
+                }
+	    	}
+	    	else{
+	    		found = false;
+            }
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return found;
+        }
+    }
+
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
