@@ -52,7 +52,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 16px"></td>
+                                    <td style="height: 24px"></td>
                                     <td></td>
                                     <td align="right">
                                         <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="height: 24px; width: 80px" text="Tutorial"/>
@@ -68,6 +68,10 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <webuijsf:label id="label3" style="left: 96px; top: 192px; position: absolute" text="#{}"/>
+                        <webuijsf:label id="label4" style="left: 96px; top: 333px; position: absolute" text="Label"/>
+                        <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="Label"/>
+                        <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="Label"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
