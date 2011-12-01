@@ -155,6 +155,7 @@ public class createGame extends AbstractPageBean {
     }
 
     public String nextButtonOfCreateGame_action() {
+        MySqlConnection con = new MySqlConnection();
         GameAttributes game = new GameAttributes();
         game.setGameName(GameName);
         game.setBorders(Borders);
@@ -175,11 +176,10 @@ public class createGame extends AbstractPageBean {
         getSessionBean1().setNewGame(game);
         //TODO Check game name if it is in the database
         game.CreatorName = getSessionBean1().userName;
-        game.CreaterId = 0; //şimdilik
+        game.CreaterId = con.getUserIdbyUserName(getSessionBean1().getUserName());
         game.numberOfPlayers = 4;
-        game.isFinished = 0;
+        game.isFinished = false;
 
-        MySqlConnection con = new MySqlConnection();
         boolean added = con.addGame(game);
 
         return "case1";
