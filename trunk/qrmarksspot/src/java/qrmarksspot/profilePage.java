@@ -96,8 +96,17 @@ public class profilePage extends AbstractPageBean {
      */
     @Override
     public void init() {
+        this.userName1=         "nightsurfer23";
+        this.dateOfBirth=       "17.03.1989";
+        this.location=          "İzmir";
+        this.nameSurname=       "Ibrahim Çimentepe";
+        this.faceAccount=       "ibrahim.cimentepe@facebook.com";
+        this.twitterAccount=    "ibrahim.cimentepe@twitter.com";
+        
 
         // Perform initializations inherited from our superclass
+        
+        
         super.init();
         // Perform application initialization that must complete
         // *before* managed components are initialized
@@ -208,6 +217,12 @@ public class profilePage extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "case2";
+    }
+
+    public String button1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
     }
 
     
