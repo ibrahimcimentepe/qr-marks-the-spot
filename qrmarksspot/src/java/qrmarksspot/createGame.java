@@ -176,8 +176,8 @@ public class createGame extends AbstractPageBean {
 
         getSessionBean1().setNewGame(game);
         //TODO Check game name if it is in the database
-        game.CreatorName = getSessionBean1().userName;
-        game.CreaterId = con.getUserIdbyUserName(getSessionBean1().getUserName());
+        game.CreatorName = getSessionBean1().getEffectiveUserName();
+        game.CreaterId = con.getUserIdbyUserName(getSessionBean1().getEffectiveUserName());
         game.numberOfPlayers = 4;
         game.isFinished = false;
 

@@ -140,7 +140,7 @@ public class login extends AbstractPageBean {
             warning = "WRONG USER NAME OR PASSWORD!";
 			return "fail";
 		}else{
-            getSessionBean1().login("Logged in as: "+username);
+            getSessionBean1().login(username);
 			return "success";
         }
     }
