@@ -2,7 +2,7 @@
  * Date : 31.10.2011 - Monday
  * Time : Between 17:00 - 19:30
  * Type : Teamwork
- * Participants (6): Ali - Akif - Bilal - İbrahim
+ * Participants (3): Ali - Akif - Bilal - İbrahim
 
 ===Subjects:===
  * 1. Using Apache Tomcat, Svn Servers, Eclipse to create our webpage.
