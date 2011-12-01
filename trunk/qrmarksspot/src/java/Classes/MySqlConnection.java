@@ -74,11 +74,26 @@ public class MySqlConnection {
             	return false; // sama name problem
 
 			statement.executeUpdate("INSERT INTO `"+database+"`.`games` (`GameName`, `Description`, `NumberOfSteps` , `CurrentStep`" +
-                    ", `Borders`, `Rating`, `NumberOfPlayers`, `CreatorName`, `CreaterId`, `IsFinished`" +
-                    ") VALUES ('"+
+                    ", `Borders`, `Rating`, `NumberOfPlayers`, `CreatorName`, `CreaterId`, `IsFinished`, `StartLocation`) VALUES ('"+
 					gameAtt.gameName+"', '"+gameAtt.description+"', '"+gameAtt.numberOfSteps+"', '"
                     +gameAtt.currentDesigningStep+"', '"+gameAtt.borders+"', '"+gameAtt.rating+"','"+gameAtt.numberOfPlayers+"'," +
-                    "'"+gameAtt.CreatorName+"','"+gameAtt.CreaterId+"', '"+(gameAtt.isFinished ? 1:0)+"')");
+                    "'"+gameAtt.CreatorName+"','"+gameAtt.CreaterId+"', '"+(gameAtt.isFinished ? 1:0)+"', '"+gameAtt.startingPoint+"')");
+
+            String insertQuery = "insert into `database1`.`gametags` (`GameId`";
+            for(int i = 1;i<=gameAtt.tags.size();i++){
+                insertQuery += ", `TAG"+String.valueOf(i)+"`";
+            }
+            rs = statement.executeQuery("SELECT `GameId` FROM `games` WHERE `GameName` = '"+gameAtt.gameName+"'");
+            System.out.println("STATEMENT EXECUTED");
+            int gameId = 0;
+            if(rs.next())
+                gameId = rs.getInt("GameId");
+            insertQuery += ") VALUES ('"+gameId+"'";
+            for(int i=0;i<gameAtt.tags.size();i++){
+                insertQuery += ", '"+gameAtt.tags.get(i)+"'";
+            }
+            insertQuery += ")";
+            statement.executeUpdate(insertQuery);
 			System.out.println(gameAtt.gameName + " " + gameAtt.CreatorName);
         } catch(Exception e) {
              System.out.println("Error During Adding A Game");
@@ -86,6 +101,33 @@ public class MySqlConnection {
         }
     	return true;
         
+    }
+
+    public boolean addGameStep(GameAttributes gameAtt, int step)
+    {
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT `GameId` FROM `games` WHERE `GameName` = '"+gameAtt.gameName+"'");
+            System.out.println("STATEMENT EXECUTED");
+            int gameId = 0;
+            if(rs.next()){
+                gameId = rs.getInt("GameId");
+            }
+
+            GameAttributes.GameSteps gameStep = gameAtt.gameSteps.get(step-1);
+			String insertQuery = "insert into `database1`.`gamesteps` (`GameId`, `StepNumber`, `LocationOfQrCode`,"
+                    +" `PasswordOfStep`, `IsSolved`) VALUES ('"+gameId+"', '"+step+"', '"+gameStep.location+"', '"
+                    +gameStep.password+"', '0')";
+            statement.executeUpdate(insertQuery);
+            System.out.println("STATEMENT EXECUTED");
+
+			System.out.println(gameAtt.gameName + " " + gameAtt.CreatorName);
+        } catch(Exception e) {
+             System.out.println("Error During Adding A Game");
+             return false;
+        }
+        return true;
     }
 
     public boolean addNews(String News, Date DateAndTime)

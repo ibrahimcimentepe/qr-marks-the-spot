@@ -6,6 +6,7 @@
 package qrmarksspot;
 
 import Classes.GameAttributes.GameSteps;
+import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import javax.faces.FacesException;
 
@@ -190,6 +191,8 @@ public class gameSteps extends AbstractPageBean {
         getSessionBean1().getNewGame().addGameStep(step);
         int currentStep = getSessionBean1().getNewGame().getCurrentDesigningStep() + 1;
         int numberOfStep = getSessionBean1().getNewGame().getNumberOfSteps();
+        MySqlConnection con = new MySqlConnection();
+        con.addGameStep(getSessionBean1().getNewGame(), currentStep-1);
         if(currentStep == numberOfStep){
             location = "";
             password = "";

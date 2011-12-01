@@ -166,7 +166,7 @@ public class signup extends AbstractPageBean {
                     return "fail";
                 }
             }
-            getSessionBean1().login("Logged in as: "+username);
+            getSessionBean1().login(username);
 
             Date d = new Date();
             java.sql.Date sqlDate = new java.sql.Date(d.getTime());
