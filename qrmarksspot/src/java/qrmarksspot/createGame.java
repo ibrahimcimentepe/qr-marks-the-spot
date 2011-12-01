@@ -6,11 +6,13 @@
 package qrmarksspot;
 
 import Classes.GameAttributes;
+import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.MultipleSelectOptionsList;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import javax.faces.FacesException;
+import javax.faces.event.ValueChangeEvent;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -47,6 +49,7 @@ public class createGame extends AbstractPageBean {
     String Tag4;
     String Tag5;
     String NumberofSteps;
+
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -168,8 +171,16 @@ public class createGame extends AbstractPageBean {
             game.addTag(Tag4);
         if(!Tag5.isEmpty())
             game.addTag(Tag5);
+
         getSessionBean1().setNewGame(game);
         //TODO Check game name if it is in the database
+        game.CreatorName = getSessionBean1().userName;
+        game.CreaterId = 0; //şimdilik
+        game.numberOfPlayers = 4;
+
+        MySqlConnection con = new MySqlConnection();
+        con.addGame(game);
+
         return "case1";
     }
 
@@ -251,6 +262,9 @@ public class createGame extends AbstractPageBean {
 
     public void setTag5(String tag5) {
         this.Tag5 = tag5;
+    }
+
+    public void numberOfSteps_processValueChange(ValueChangeEvent event) {
     }
 }
 
