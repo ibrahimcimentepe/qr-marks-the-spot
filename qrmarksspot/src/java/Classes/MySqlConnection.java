@@ -103,7 +103,26 @@ public class MySqlConnection {
              return false;
         }
     	
-    } 
+    }
+
+    public ResultSet getNews(int number){
+
+        //TODO: use the number
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `news` ");
+	    	if(rs.next()){
+	    		System.out.println("NEWS FOUND");
+	    	}
+
+            return rs;
+        } catch(Exception e) {
+             System.out.println("Error");
+
+             return null;
+        }
+    }
     
     public boolean updateUserPicture(String username, InputStream in)
     {
