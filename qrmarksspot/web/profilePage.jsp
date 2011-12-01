@@ -20,9 +20,9 @@
                         <webuijsf:label id="label4" style="left: 24px; top: 192px; position: absolute; width: 168px" text="Date of Birth :"/>
                         <webuijsf:button actionExpression="#{profilePage.editButton_action}" id="editButton" style="left: 23px; top: 312px; position: absolute" text="Edit Profile"/>
                         <webuijsf:button actionExpression="#{profilePage.homePageButton_action}" id="homePageButton"
-                            style="left: 143px; top: 312px; position: absolute" text="Go to Homepage"/>
+                            style="left: 119px; top: 312px; position: absolute" text="Go to Homepage"/>
                         <webuijsf:button actionExpression="#{profilePage.signOutButton_action}" id="signOutButton"
-                            style="left: 287px; top: 312px; position: absolute" text="Sign Out"/>
+                            style="left: 263px; top: 312px; position: absolute" text="Sign Out"/>
                         <webuijsf:label id="nameLabel" style="font-size: 24px; height: 24px; left: 144px; top: 24px; position: absolute; width: 120px" text="#{profilePage.nameSurname}"/>
                         <webuijsf:image id="image1" style="left: 456px; top: 144px; position: absolute"/>
                         <webuijsf:label id="label5" style="position: absolute; left: 24px; top: 216px" text="Facebook account : "/>
