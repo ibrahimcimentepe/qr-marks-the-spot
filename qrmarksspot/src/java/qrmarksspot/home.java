@@ -193,5 +193,13 @@ public class home extends AbstractPageBean {
         return "createGame";
     }
 
+    public String[] getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String[] labels) {
+        this.labels = labels;
+    }
+
 }
 
