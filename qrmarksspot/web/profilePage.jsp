@@ -16,7 +16,7 @@
                     <webuijsf:form id="form1">
                         <webuijsf:label id="label1" style="font-size: 24px; height: 22px; left: 24px; top: 24px; position: absolute; width: 118px" text="Welcome"/>
                         <webuijsf:label id="label2" style="height: 24px; left: 24px; top: 144px; position: absolute; width: 168px" text="User Name :"/>
-                        <webuijsf:label id="label3" style="left: 24px; top: 168px; position: absolute; width: 168px" text="Location :"/>
+                        <webuijsf:label for="textField2" id="label3" style="left: 24px; top: 168px; position: absolute; width: 168px" text="Location :"/>
                         <webuijsf:label id="label4" style="left: 24px; top: 192px; position: absolute; width: 168px" text="Date of Birth :"/>
                         <webuijsf:button actionExpression="#{profilePage.editButton_action}" id="editButton" style="left: 23px; top: 312px; position: absolute" text="Edit Profile"/>
                         <webuijsf:button actionExpression="#{profilePage.homePageButton_action}" id="homePageButton"
@@ -27,6 +27,11 @@
                         <webuijsf:image id="image1" style="left: 432px; top: 96px; position: absolute"/>
                         <webuijsf:label id="label5" style="position: absolute; left: 24px; top: 216px" text="Facebook account : "/>
                         <webuijsf:label id="label6" style="position: absolute; left: 24px; top: 240px" text="Twitter acount : "/>
+                        <webuijsf:textField id="textField1" style="left: 192px; top: 144px; position: absolute" text="#{profilePage.userName1}"/>
+                        <webuijsf:textField id="textField2" style="position: absolute; left: 192px; top: 168px" text="#{profilePage.location}"/>
+                        <webuijsf:textField id="textField3" style="position: absolute; left: 192px; top: 192px" text="#{profilePage.dateOfBirth}"/>
+                        <webuijsf:textField id="textField4" style="position: absolute; left: 192px; top: 216px" text="#{profilePage.faceAccount}"/>
+                        <webuijsf:textField id="textField5" style="position: absolute; left: 192px; top: 240px" text="#{profilePage.twitterAccount}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
