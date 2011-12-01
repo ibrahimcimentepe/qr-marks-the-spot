@@ -33,7 +33,8 @@
                         <webuijsf:button actionExpression="#{createGame.nextButtonOfCreateGame_action}" id="nextButtonOfCreateGame"
                             style="height: 24px; left: 599px; top: 600px; position: absolute; width: 96px" text="Next &gt;"/>
                         <webuijsf:label id="label5" style="height: 24px; left: 192px; top: 576px; position: absolute" text="Number of steps in this game:"/>
-                        <webuijsf:textField id="numberOfSteps" required="true" style="left: 384px; top: 576px; position: absolute" text="#{createGame.numberOfSteps}"/>
+                        <webuijsf:textField id="numberOfSteps" required="true" style="left: 384px; top: 576px; position: absolute"
+                            text="#{createGame.numberOfSteps}" valueChangeListenerExpression="#{createGame.numberOfSteps_processValueChange}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
