@@ -177,9 +177,10 @@ public class createGame extends AbstractPageBean {
         game.CreatorName = getSessionBean1().userName;
         game.CreaterId = 0; //şimdilik
         game.numberOfPlayers = 4;
+        game.isFinished = 0;
 
         MySqlConnection con = new MySqlConnection();
-        con.addGame(game);
+        boolean added = con.addGame(game);
 
         return "case1";
     }
