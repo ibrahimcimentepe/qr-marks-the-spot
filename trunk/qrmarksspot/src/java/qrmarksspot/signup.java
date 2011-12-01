@@ -4,6 +4,7 @@ import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.model.UploadedFile;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.faces.FacesException;
@@ -165,6 +166,10 @@ public class signup extends AbstractPageBean {
                 }
             }
             getSessionBean1().login("Logged in as: "+username);
+
+            Date d = new Date();
+            java.sql.Date sqlDate = new java.sql.Date(d.getTime());
+            con.addNews(username + "has just signed up", sqlDate );
             return "success";
         }
         else{

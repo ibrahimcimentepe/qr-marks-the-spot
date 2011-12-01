@@ -11,6 +11,7 @@ import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.MultipleSelectOptionsList;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
+import java.util.Date;
 import javax.faces.FacesException;
 import javax.faces.event.ValueChangeEvent;
 
@@ -181,6 +182,9 @@ public class createGame extends AbstractPageBean {
         game.isFinished = false;
 
         boolean added = con.addGame(game);
+        Date d = new Date();
+        java.sql.Date sqlDate = new java.sql.Date(d.getTime());
+        con.addNews(game.CreatorName + " has just created game " + getGameName() , sqlDate );
 
         return "case1";
     }
