@@ -78,6 +78,6 @@ http://qr-marks-the-spot.googlecode.com/files/ProjectOutline.png
   
 </table>
 
-http://qr-marks-the-spot.googlecode.com/files/qr-marks-the-spot.pod
+http://qr-marks-the-spot.googlecode.com/files/qr-marks-the-spot-new.pod
 
 http://qr-marks-the-spot.googlecode.com/files/Responsibility_Matrix.xlsx
