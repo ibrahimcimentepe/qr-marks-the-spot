@@ -118,4 +118,9 @@
             <to-view-id>/signup.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>gamePage</managed-bean-name>
+        <managed-bean-class>qrmarksspot.gamePage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
