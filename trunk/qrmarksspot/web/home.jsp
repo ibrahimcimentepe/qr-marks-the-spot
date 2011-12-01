@@ -68,10 +68,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <webuijsf:label id="label3" style="left: 96px; top: 192px; position: absolute" text="#{}"/>
-                        <webuijsf:label id="label4" style="left: 96px; top: 333px; position: absolute" text="Label"/>
-                        <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="Label"/>
-                        <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="Label"/>
+                        <webuijsf:label id="label3" style="left: 96px; top: 192px; position: absolute" text="#{home.labels[0]}"/>
+                        <webuijsf:label id="label4" style="left: 96px; top: 333px; position: absolute" text="#{home.labels[1]}"/>
+                        <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
+                        <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
