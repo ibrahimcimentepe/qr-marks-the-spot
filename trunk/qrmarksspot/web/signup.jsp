@@ -11,7 +11,7 @@
                 <webuijsf:head id="head1" title="Sign Up">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" style="-rave-layout: grid">
+                <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:label id="label1" style="position: absolute; left: 168px; top: 72px" text="User Name"/>
                         <webuijsf:label id="label2" style="position: absolute; left: 168px; top: 96px" text="Password"/>
