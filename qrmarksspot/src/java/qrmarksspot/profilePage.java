@@ -156,6 +156,23 @@ public class profilePage extends AbstractPageBean {
         return null;
     }
 
+    /**
+     * <p>Automatically managed component initialization.  <strong>WARNING:</strong>
+     * This method is automatically generated, so any user-specified code inserted
+     * here is subject to being replaced.</p>
+     */
+    private void _init() {
+    }
+
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
+    protected createGame getcreateGame() {
+        return (createGame) getBean("createGame");
+    }
+
     
 }
 

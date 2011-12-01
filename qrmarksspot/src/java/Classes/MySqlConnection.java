@@ -77,10 +77,10 @@ public class MySqlConnection {
                     ") VALUES ('"+
 					gameAtt.gameName+"', '"+gameAtt.description+"', '"+gameAtt.numberOfSteps+"', '"
                     +gameAtt.currentDesigningStep+"', '"+gameAtt.borders+"', '"+gameAtt.rating+"','"+gameAtt.numberOfPlayers+"'," +
-                    "'"+gameAtt.CreatorName+"','"+gameAtt.CreaterId+"', '"+gameAtt.isFinished+"')");
+                    "'"+gameAtt.CreatorName+"','"+gameAtt.CreaterId+"', '"+(gameAtt.isFinished ? 1:0)+"')");
 			System.out.println(gameAtt.gameName + " " + gameAtt.CreatorName);
         } catch(Exception e) {
-             System.out.println("Error");
+             System.out.println("Error During Adding A Game");
              return false;
         }
     	return true;
@@ -204,30 +204,20 @@ public class MySqlConnection {
 
     public int getUserIdbyUserName(String username){
 
-        boolean found = false;
+        int userId = -1;
     	try{
 	    	Statement statement = con.createStatement();
 	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `users` WHERE `UserName` = '"+username+"'");
 	    	if(rs.next()){
 	    		System.out.println("USER FOUND");
-	    		//String passwd = rs.getString("password");
-	    		//System.out.println("USER PASSWORD: "+passwd);
-	    		if(passwd.equals(password)){
-                    found = true;
-                }
-	    		else{
-	    			found = false;
-                }
+                userId = rs.getInt("UserId");
 	    	}
-	    	else{
-	    		found = false;
-            }
     	}
     	catch(Exception e){
 
     	}
         finally{
-            return found;
+            return userId;
         }
     }
 
