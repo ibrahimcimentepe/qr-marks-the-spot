@@ -162,7 +162,7 @@ public class MySqlConnection {
     	String str = null;
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT * FROM `users`");
+	    	ResultSet rs = statement.executeQuery("SELECT `users`.password FROM `users` WHERE `UserName` = '" + username + "'" );
 	    	if(rs.next()){
 	    		str = rs.getString(1);
 	    	}
