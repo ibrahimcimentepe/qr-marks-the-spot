@@ -147,9 +147,10 @@ public class signup extends AbstractPageBean {
     public String signup_action() {
         MySqlConnection con = new MySqlConnection();
         Calendar cal = Calendar.getInstance();
-        cal.setTime(birthday);
+       
         boolean added = false;
         try {
+            cal.setTime(birthday);
             added = con.addUser(username, password, String.format("%d-%d-%d", cal.get(Calendar.YEAR),
                                                                 cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH)));
         } catch (Exception ex) {
