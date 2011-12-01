@@ -3,6 +3,7 @@ package Classes;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -87,6 +88,23 @@ public class MySqlConnection {
         
     }
 
+    public boolean addNews(String News, Date DateAndTime)
+    {
+    	try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+           
+			statement.executeUpdate("INSERT INTO `"+database+"`.`newsfeed` (`News`, `DateAndTime`) VALUES ('"+
+					News+"', '"+DateAndTime+"'");
+			//System.out.println(username + " " + password);
+            return true;
+        } catch(Exception e) {
+             System.out.println("Error");
+             return false;
+        }
+    	
+    } 
+    
     public boolean updateUserPicture(String username, InputStream in)
     {
         String INSERT_PICTURE = "update `database1`.`users` set `Picture` = ? where `UserName` = ?";
