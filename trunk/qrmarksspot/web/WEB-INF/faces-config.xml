@@ -83,11 +83,6 @@
         <managed-bean-class>qrmarksspot.gameSteps</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
-    <managed-bean>
-        <managed-bean-name>profilePage</managed-bean-name>
-        <managed-bean-class>qrmarksspot.profilePage</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
     <navigation-rule>
         <from-view-id>/createGame.jsp</from-view-id>
         <navigation-case>
@@ -107,27 +102,9 @@
         <managed-bean-class>qrmarksspot.profilePage</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
-    <navigation-rule>
-        <from-view-id>/profilePage.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/home.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>case2</from-outcome>
-            <to-view-id>/signup.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
     <managed-bean>
         <managed-bean-name>gamePage</managed-bean-name>
         <managed-bean-class>qrmarksspot.gamePage</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
-    <navigation-rule>
-        <from-view-id>/gamePage.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>home</from-outcome>
-            <to-view-id>/home.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
 </faces-config>
