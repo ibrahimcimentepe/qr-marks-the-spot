@@ -21,11 +21,44 @@ import javax.faces.event.ValueChangeEvent;
  */
 
 public class profilePage extends AbstractPageBean {
-    public String userName="nightsurfer23";
+    public String userName1="nightsurfer23";
     public String dateOfBirth="17.03.1989";
     public String location="İzmir";
     public String nameSurname="Ibrahim Çimentepe";
+    public String faceAccount="ibrahim.cimentepe@facebook.com";
 
+    public String getFaceAccount() {
+        return faceAccount;
+    }
+
+    public void setFaceAccount(String faceAccount) {
+        this.faceAccount = faceAccount;
+    }
+
+    public String getTwitterAccount() {
+        return twitterAccount;
+    }
+
+    public void setTwitterAccount(String twitterAccount) {
+        this.twitterAccount = twitterAccount;
+    }
+    public String twitterAccount="ibrahim.cimentepe@twitter.com";
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getUserName1() {
+        return userName1;
+    }
+
+    public void setUserName1(String userName1) {
+        this.userName1 = userName1;
+    }
     public String getNameSurname() {
         return nameSurname;
     }
@@ -74,6 +107,7 @@ public class profilePage extends AbstractPageBean {
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
         try {
+            init();
             //_init();
         } catch (Exception e) {
             log("profilePage Initialization Failure", e);
@@ -150,7 +184,7 @@ public class profilePage extends AbstractPageBean {
     public void textField1_processValueChange(ValueChangeEvent vce) {
     }
 
-    public String button1_action() {
+    public String editButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return null;
@@ -164,13 +198,16 @@ public class profilePage extends AbstractPageBean {
     private void _init() {
     }
 
-    /**
-     * <p>Return a reference to the scoped data bean.</p>
-     *
-     * @return reference to the scoped data bean
-     */
-    protected createGame getcreateGame() {
-        return (createGame) getBean("createGame");
+    public String homePageButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "case1";
+    }
+
+    public String signOutButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "case2";
     }
 
     
