@@ -107,4 +107,15 @@
         <managed-bean-class>qrmarksspot.profilePage</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <navigation-rule>
+        <from-view-id>/profilePage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>case2</from-outcome>
+            <to-view-id>/signup.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
