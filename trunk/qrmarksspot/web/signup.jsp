@@ -28,7 +28,7 @@
                         <webuijsf:textField id="twitter" style="left: 288px; top: 192px; position: absolute" text="#{signup.twitter}"/>
                         <webuijsf:textField id="facebook" style="left: 288px; top: 216px; position: absolute" text="#{signup.facebook}"/>
                         <webuijsf:upload id="picture" immediate="true" preservePath="true" style="left: 288px; top: 240px; position: absolute" uploadedFile="#{signup.picture}"/>
-                        <webuijsf:calendar id="calendar1" style="left: 288px; top: 120px; position: absolute"/>
+                        <webuijsf:calendar id="calendar1" selectedDate="#{signup.birthday}" style="left: 288px; top: 120px; position: absolute"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
