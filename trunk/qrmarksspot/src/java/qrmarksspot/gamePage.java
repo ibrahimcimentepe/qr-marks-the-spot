@@ -140,7 +140,7 @@ public class gamePage extends AbstractPageBean {
     public String backButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        return null;
+        return "home";
     }
     
 }
