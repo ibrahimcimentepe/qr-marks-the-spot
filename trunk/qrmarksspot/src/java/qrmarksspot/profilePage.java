@@ -5,7 +5,13 @@
 
 package qrmarksspot;
 
+import Classes.GameAttributes;
+import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.model.DefaultOptionsList;
+import com.sun.webui.jsf.model.MultipleSelectOptionsList;
+import com.sun.webui.jsf.model.SingleSelectOptionsList;
+import java.util.Date;
 import javax.faces.FacesException;
 import javax.faces.event.ValueChangeEvent;
 /**
@@ -73,6 +79,15 @@ public class profilePage extends AbstractPageBean {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+    private DefaultOptionsList listbox1DefaultOptions = new DefaultOptionsList();
+
+    public DefaultOptionsList getListbox1DefaultOptions() {
+        return listbox1DefaultOptions;
+    }
+
+    public void setListbox1DefaultOptions(DefaultOptionsList dol) {
+        this.listbox1DefaultOptions = dol;
     }
 
     /**
@@ -210,16 +225,22 @@ public class profilePage extends AbstractPageBean {
     public String homePageButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        return "case1";
+        return "homepage";
     }
 
     public String signOutButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        return "case2";
+        return "login";
     }
 
     public String button1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "play";
+    }
+
+    public String playGame_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return null;
