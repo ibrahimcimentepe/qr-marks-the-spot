@@ -15,12 +15,12 @@ import javax.faces.FacesException;
  * lifecycle methods and event handlers where you may add behavior
  * to respond to incoming events.</p>
  *
- * @version playGame.java
- * @version Created on 04.Ara.2011, 18:55:23
+ * @version gameFinish.java
+ * @version Created on 04.Ara.2011, 19:57:28
  * @author 23
  */
 
-public class playGame extends AbstractPageBean {
+public class gameFinish extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -36,7 +36,7 @@ public class playGame extends AbstractPageBean {
     /**
      * <p>Construct a new Page bean instance.</p>
      */
-    public playGame() {
+    public gameFinish() {
     }
 
     /**
@@ -65,7 +65,7 @@ public class playGame extends AbstractPageBean {
         try {
             _init();
         } catch (Exception e) {
-            log("playGame Initialization Failure", e);
+            log("gameFinish Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);
         }
         
@@ -135,12 +135,6 @@ public class playGame extends AbstractPageBean {
      */
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
-    }
-
-    public String button1_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return "case1";
     }
     
 }
