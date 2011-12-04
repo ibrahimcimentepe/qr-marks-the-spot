@@ -20,7 +20,8 @@
                         <webuijsf:textArea id="textArea1" style="height: 96px; left: 72px; top: 192px; position: absolute; width: 408px"/>
                         <webuijsf:textField id="textField1" style="position: absolute; left: 144px; top: 312px; width: 240px; height: 24px"/>
                         <webuijsf:label id="label4" style="height: 22px; left: 72px; top: 312px; position: absolute; width: 70px" text="Password:"/>
-                        <webuijsf:button id="button1" style="height: 24px; left: 383px; top: 312px; position: absolute; width: 72px" text="GO"/>
+                        <webuijsf:button actionExpression="#{playGame.button1_action}" id="button1"
+                            style="height: 24px; left: 383px; top: 312px; position: absolute; width: 72px" text="GO"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

@@ -131,4 +131,21 @@
         <managed-bean-class>qrmarksspot.playGame</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>gameFinish</managed-bean-name>
+        <managed-bean-class>qrmarksspot.gameFinish</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>success</managed-bean-name>
+        <managed-bean-class>qrmarksspot.success</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/playGame.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/success.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
