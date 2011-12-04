@@ -11,7 +11,7 @@
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
+                <webuijsf:body id="body1" imageURL="resources/logo.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <table align="center" border="0" width="%90">
                             <tbody>
@@ -72,6 +72,9 @@
                         <webuijsf:label id="label4" style="left: 96px; top: 333px; position: absolute" text="#{home.labels[1]}"/>
                         <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
                         <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
+                        <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
+                            style="height: 24px; left: 456px; top: 168px; position: absolute; width: 22px" text="#{SessionBean1.userName}"/>
+                        <br/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
