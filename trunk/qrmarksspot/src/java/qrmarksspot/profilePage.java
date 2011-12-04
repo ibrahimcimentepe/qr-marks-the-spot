@@ -234,16 +234,12 @@ public class profilePage extends AbstractPageBean {
         return "login";
     }
 
-    public String button1_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return "play";
-    }
+
 
     public String playGame_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        return null;
+        return "play";
     }
 
     
