@@ -34,7 +34,7 @@
                         <webuijsf:textField id="textField5" style="position: absolute; left: 192px; top: 240px" text="#{profilePage.twitterAccount}"/>
                         <webuijsf:button actionExpression="#{profilePage.button1_action}" id="button1" style="left: 431px; top: 120px; position: absolute" text="Upload Image"/>
                         <webuijsf:listbox id="listbox1" items="#{profilePage.listbox1DefaultOptions.options}" style="left: 432px; top: 144px; position: absolute"/>
-                        <webuijsf:button id="playGame" style="left: 503px; top: 144px; position: absolute" text="GO!"/>
+                        <webuijsf:button actionExpression="#{profilePage.playGame_action}" id="playGame" style="left: 503px; top: 144px; position: absolute" text="GO!"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

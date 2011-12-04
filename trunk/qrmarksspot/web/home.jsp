@@ -73,7 +73,7 @@
                         <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
                         <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
-                            style="height: 24px; left: 456px; top: 168px; position: absolute; width: 22px" text="#{SessionBean1.userName}"/>
+                            style="height: 24px; left: 264px; top: 192px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
                     </webuijsf:form>
                 </webuijsf:body>
