@@ -80,6 +80,15 @@ public class profilePage extends AbstractPageBean {
     public void setLocation(String location) {
         this.location = location;
     }
+    private DefaultOptionsList gameListDefaultOptions = new DefaultOptionsList();
+
+    public DefaultOptionsList getGameListDefaultOptions() {
+        return gameListDefaultOptions;
+    }
+
+    public void setGameListDefaultOptions(DefaultOptionsList dol) {
+        this.gameListDefaultOptions = dol;
+    }
     private DefaultOptionsList listbox1DefaultOptions = new DefaultOptionsList();
 
     public DefaultOptionsList getListbox1DefaultOptions() {
@@ -220,6 +229,7 @@ public class profilePage extends AbstractPageBean {
      * here is subject to being replaced.</p>
      */
     private void _init() {
+        gameListDefaultOptions.setOptions(new com.sun.webui.jsf.model.Option[]{new com.sun.webui.jsf.model.Option("item1", "Game 1"), new com.sun.webui.jsf.model.Option("item2", "Game 2"), new com.sun.webui.jsf.model.Option("item3", "Game 3")});
     }
 
     public String homePageButton_action() {
@@ -241,6 +251,14 @@ public class profilePage extends AbstractPageBean {
         // case name where null will return to the same page.
         return "play";
     }
+
+
+    public String button2_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "success";
+    }
+
 
     
 }
