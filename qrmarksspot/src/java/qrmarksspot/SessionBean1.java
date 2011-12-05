@@ -53,9 +53,7 @@ public class SessionBean1 extends AbstractSessionBean {
     @Override
     public void init() {
         // Perform initializations inherited from our superclass
-        if(!this.isLoggedIn()){
-            this.userName="Guest";
-        }
+        
 
         super.init();
         // Perform application initialization that must complete
