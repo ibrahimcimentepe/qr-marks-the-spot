@@ -23,8 +23,8 @@
                             style="left: 95px; top: 312px; position: absolute" text="Go to Homepage"/>
                         <webuijsf:button actionExpression="#{profilePage.signOutButton_action}" id="signOutButton"
                             style="left: 191px; top: 312px; position: absolute" text="Sign Out"/>
-                        <webuijsf:label id="nameLabel" style="font-size: 24px; height: 24px; left: 144px; top: 24px; position: absolute; width: 120px" text="#{SessionBean1.userName}"/>
-                        <webuijsf:image id="image1" style="left: 432px; top: 48px; position: absolute"/>
+                        <webuijsf:label id="nameLabel" style="font-size: 24px; height: 24px; left: 144px; top: 24px; position: absolute; width: 120px" text="#{SessionBean1.effectiveUserName}"/>
+                        <webuijsf:image id="image1" style="left: 888px; top: 96px; position: absolute"/>
                         <webuijsf:label id="label5" style="position: absolute; left: 24px; top: 216px" text="Facebook account : "/>
                         <webuijsf:label id="label6" style="position: absolute; left: 24px; top: 240px" text="Twitter acount : "/>
                         <webuijsf:textField id="textField1" style="left: 192px; top: 144px; position: absolute" text="#{profilePage.userName1}"/>
@@ -32,9 +32,11 @@
                         <webuijsf:textField id="textField3" style="position: absolute; left: 192px; top: 192px" text="#{profilePage.dateOfBirth}"/>
                         <webuijsf:textField id="textField4" style="position: absolute; left: 192px; top: 216px" text="#{profilePage.faceAccount}"/>
                         <webuijsf:textField id="textField5" style="position: absolute; left: 192px; top: 240px" text="#{profilePage.twitterAccount}"/>
-                        <webuijsf:button actionExpression="#{profilePage.button1_action}" id="button1" style="left: 431px; top: 120px; position: absolute" text="Upload Image"/>
-                        <webuijsf:listbox id="listbox1" items="#{profilePage.listbox1DefaultOptions.options}" style="left: 432px; top: 144px; position: absolute"/>
-                        <webuijsf:button actionExpression="#{profilePage.playGame_action}" id="playGame" style="left: 503px; top: 144px; position: absolute" text="GO!"/>
+                        <webuijsf:button actionExpression="#{profilePage.button1_action}" id="button1" style="left: 887px; top: 216px; position: absolute" text="Upload Image"/>
+                        <webuijsf:button actionExpression="#{profilePage.playGame_action}" id="playGame" style="left: 335px; top: 336px; position: absolute" text="GO!"/>
+                        <webuijsf:listbox id="listbox1" items="#{profilePage.listbox1DefaultOptions.options}" style="left: 336px; top: 144px; position: absolute"/>
+                        <webuijsf:button actionExpression="#{profilePage.button2_action}" id="button2"
+                            style="height: 24px; left: 335px; top: 336px; position: absolute; width: 48px" text="GO"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
