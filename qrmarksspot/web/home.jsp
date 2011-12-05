@@ -26,14 +26,14 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td style="height: 1px"></td>
                                     <td></td>
                                     <td align="right">
                                         <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 19px">
+                                    <td style="height: 22px">
                                         <webuijsf:label id="label2" text="News Feed"/>
                                     </td>
                                     <td>
@@ -73,7 +73,7 @@
                         <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
                         <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
-                            style="height: 24px; left: 480px; top: 216px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
+                            style="height: 24px; left: 696px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
                     </webuijsf:form>
                 </webuijsf:body>
