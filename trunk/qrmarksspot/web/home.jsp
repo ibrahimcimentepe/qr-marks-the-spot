@@ -16,7 +16,7 @@
                         <table align="center" border="0" width="%90">
                             <tbody>
                                 <tr>
-                                    <th></th>
+                                    <th style="height: 42px"></th>
                                     <th>
                                         <webuijsf:label id="label1"
                                             style="font-family: Geneva,Arial,Helvetica,sans-serif; font-size: 36px; font-weight: bold; text-decoration: underline" text="QR MARKS THE SPOT"/>
@@ -45,14 +45,14 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 14px"></td>
+                                    <td style="height: 21px"></td>
                                     <td></td>
                                     <td align="right">
                                         <webuijsf:button actionExpression="#{home.login_action}" id="login" style="height: 24px; width: 80px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 24px"></td>
+                                    <td style="height: 25px"></td>
                                     <td></td>
                                     <td align="right">
                                         <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="height: 24px; width: 80px" text="Tutorial"/>
@@ -73,7 +73,7 @@
                         <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
                         <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
-                            style="height: 24px; left: 696px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
+                            style="height: 24px; left: 864px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
                     </webuijsf:form>
                 </webuijsf:body>
