@@ -150,6 +150,7 @@ public class SessionBean1 extends AbstractSessionBean {
     public void logout()
     {
         userName = "Guest User";
+        effectiveUserName="";
         loggedIn = false;
     }
 
