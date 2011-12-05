@@ -31,7 +31,7 @@ public class SessionBean1 extends AbstractSessionBean {
 
     String userName;
     String effectiveUserName;
-    boolean loggedIn;
+    boolean loggedIn=false;
     GameAttributes newGame = new GameAttributes();
     /**
      * <p>Construct a new session data bean instance.</p>
