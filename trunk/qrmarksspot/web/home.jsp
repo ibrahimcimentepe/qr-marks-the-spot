@@ -21,9 +21,7 @@
                                         <webuijsf:label id="label1"
                                             style="font-family: Geneva,Arial,Helvetica,sans-serif; font-size: 36px; font-weight: bold; text-decoration: underline" text="QR MARKS THE SPOT"/>
                                     </th>
-                                    <th align="right">
-                                        <webuijsf:label id="usernameLabel" text="#{SessionBean1.userName}"/>
-                                    </th>
+                                    <th align="right"/>
                                 </tr>
                                 <tr>
                                     <td style="height: 1px"></td>
@@ -73,8 +71,9 @@
                         <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
                         <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
-                            style="height: 24px; left: 864px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
+                            style="height: 24px; left: 72px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
+                        <webuijsf:label id="usernameLabel1" style="left: 48px; top: 24px; position: absolute" text="#{SessionBean1.userName}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
