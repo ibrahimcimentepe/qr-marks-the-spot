@@ -141,7 +141,7 @@ public class SessionBean1 extends AbstractSessionBean {
     public void login(String username)
     {
         effectiveUserName = username;
-        if(loggedIn){
+        if(isLoggedIn()){
             this.userName = "Logged in as: "+username;
         }
         else{
