@@ -53,6 +53,10 @@ public class SessionBean1 extends AbstractSessionBean {
     @Override
     public void init() {
         // Perform initializations inherited from our superclass
+        if(!this.isLoggedIn()){
+            this.userName="Guest";
+        }
+
         super.init();
         // Perform application initialization that must complete
         // *before* managed components are initialized
@@ -141,12 +145,7 @@ public class SessionBean1 extends AbstractSessionBean {
     public void login(String username)
     {
         effectiveUserName = username;
-        if(isLoggedIn()){
-            this.userName = "Logged in as: "+username;
-        }
-        else{
-            this.userName = "Guest User";
-        }
+        this.userName = "Logged in as: "+username;
         loggedIn = true;
     }
 
