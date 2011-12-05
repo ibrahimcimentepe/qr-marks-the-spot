@@ -29,7 +29,7 @@ public class SessionBean1 extends AbstractSessionBean {
     }
     // </editor-fold>
 
-    String userName;
+    String userName="Guest User";
     String effectiveUserName;
     boolean loggedIn=false;
     GameAttributes newGame = new GameAttributes();
@@ -143,13 +143,13 @@ public class SessionBean1 extends AbstractSessionBean {
     public void login(String username)
     {
         effectiveUserName = username;
-        this.userName = "Logged in as: "+username;
+        this.userName = "Logged in as: ";
         loggedIn = true;
     }
 
     public void logout()
     {
-        userName = "";
+        userName = "Guest User";
         loggedIn = false;
     }
 
