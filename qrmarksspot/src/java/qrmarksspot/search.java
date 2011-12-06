@@ -7,6 +7,9 @@ package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import javax.faces.FacesException;
+import javax.faces.event.ValueChangeEvent;
+import Classes.MySqlConnection;
+import Classes.GameAttributes;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -21,6 +24,8 @@ import javax.faces.FacesException;
  */
 
 public class search extends AbstractPageBean {
+    String gamename;
+
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -135,6 +140,31 @@ public class search extends AbstractPageBean {
      */
     protected RequestBean1 getRequestBean1() {
         return (RequestBean1) getBean("RequestBean1");
+    }
+
+    public String search_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+
+        MySqlConnection con = new MySqlConnection();
+        GameAttributes game = new GameAttributes();
+        //burda gamename e göre select from where like sorgusu yapılacak
+        //server a bağlanamadığım için ben yapamadım
+
+
+        return null;
+    }
+
+    public String getGamename() {
+        return gamename;
+    }
+
+    public void setGamename(String gamename) {
+        this.gamename = gamename;
+    }
+
+
+    public void game_name_processValueChange(ValueChangeEvent event) {
     }
     
 }
