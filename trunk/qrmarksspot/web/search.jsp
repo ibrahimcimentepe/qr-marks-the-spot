@@ -14,8 +14,8 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:textField columns="47" id="textField1" style="position: absolute; left: 144px; top: 144px; width: 288px; height: 24px"/>
-                        <webuijsf:button id="button1" style="height: 24px; left: 455px; top: 144px; position: absolute; width: 71px" text="Search"/>
+                        <webuijsf:textField columns="47" id="textField1" style="height: 24px; left: 120px; top: 96px; position: absolute; width: 288px"/>
+                        <webuijsf:button id="button1" style="height: 24px; left: 455px; top: 96px; position: absolute; width: 71px" text="Search"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
