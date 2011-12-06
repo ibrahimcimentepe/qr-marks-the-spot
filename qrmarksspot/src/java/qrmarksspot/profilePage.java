@@ -27,11 +27,12 @@ import javax.faces.event.ValueChangeEvent;
  */
 
 public class profilePage extends AbstractPageBean {
-    public String userName1="nightsurfer23";
+    public String userName1;//="nightsurfer23";
     public String dateOfBirth="17.03.1989";
     public String location="İzmir";
     public String nameSurname="Ibrahim Çimentepe";
     public String faceAccount="ibrahim.cimentepe@facebook.com";
+    public String twitterAccount="ibrahim.cimentepe@twitter.com";
 
     public String getFaceAccount() {
         return faceAccount;
@@ -48,7 +49,6 @@ public class profilePage extends AbstractPageBean {
     public void setTwitterAccount(String twitterAccount) {
         this.twitterAccount = twitterAccount;
     }
-    public String twitterAccount="ibrahim.cimentepe@twitter.com";
 
     public String getDateOfBirth() {
         return dateOfBirth;
