@@ -63,6 +63,23 @@ public class MySqlConnection {
     	return true;
     }
 
+    public boolean addPlayGame(String username,String gamename)
+    {
+    try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            int userID=this.getUserIdbyUserName(username);
+            int gameID=this.getGameIdbyGameName(gamename);
+            int firstStep=0;
+			statement.executeUpdate("INSERT INTO `"+database+"`.`playgame` (`UserId`, `GameId`,`UserName`,`CurrentStepOfPlayer`) " +
+                    "VALUES ('"+userID+"', '"+gameID+"','"+username+"','"+firstStep+"')");
+
+        } catch(Exception e) {
+             System.out.println("Error");
+             return false;
+        }
+    	return true;
+    }
     public boolean addGame(GameAttributes gameAtt){
     
         try {
@@ -291,6 +308,24 @@ public class MySqlConnection {
 	    	if(rs.next()){
 	    		System.out.println("USER FOUND");
                 userId = rs.getInt("UserId");
+	    	}
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return userId;
+        }
+    }
+
+    public int getGameIdbyGameName(String gamename){
+        int userId = -1;
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `games` WHERE `GameName` = '"+gamename+"'");
+	    	if(rs.next()){
+	    		System.out.println("GAME FOUND");
+                userId = rs.getInt("GameId");
 	    	}
     	}
     	catch(Exception e){
