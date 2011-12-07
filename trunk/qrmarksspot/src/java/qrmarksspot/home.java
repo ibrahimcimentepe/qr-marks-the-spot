@@ -33,7 +33,15 @@ public class home extends AbstractPageBean {
     // </editor-fold>
 
      public String[] labels = new String[20];
+     public String gameToBePlayed;
 
+    public String getGameToBePlayed() {
+        return gameToBePlayed;
+    }
+
+    public void setGameToBePlayed(String gameToBePlayed) {
+        this.gameToBePlayed = gameToBePlayed;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -82,6 +90,7 @@ public class home extends AbstractPageBean {
         
         }
 
+        
 
 
 
@@ -213,6 +222,22 @@ public class home extends AbstractPageBean {
     }
 
     public String goToGameButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        try{
+            MySqlConnection con = new MySqlConnection();
+            this.getSessionBean1().selectedGameId=con.getGameIdbyGameName(gameToBePlayed);
+
+        }catch(Exception e){
+            System.out.println("Error, going to homepage");
+            gameToBePlayed="There is no such game!";
+            return "failPlay";
+        }
+
+        return "gamePage";
+    }
+
+    public String hyperlink2_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "gamePage";

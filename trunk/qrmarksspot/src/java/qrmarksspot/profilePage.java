@@ -124,7 +124,7 @@ public class profilePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-        fillTextFields();
+        //fillTextFields();
         
 
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
@@ -240,10 +240,10 @@ public class profilePage extends AbstractPageBean {
         userName1="QRseeker";
         try{
             MySqlConnection con = new MySqlConnection();
-            ResultSet rs = con.getUserInformationbyUserName(userName1);
+            ResultSet rs = con.getUserInformationbyUserName("QRseeker");
             this.dateOfBirth=rs.getString("DateOfBirth");
-            this.faceAccount=rs.getString("Facebook");
-            this.twitterAccount=rs.getString("Twitter");
+            this.faceAccount="Facebook";//rs.getString("Facebook");
+            this.twitterAccount="Twitter";//rs.getString("Twitter");
         }
         catch(Exception e){
 
