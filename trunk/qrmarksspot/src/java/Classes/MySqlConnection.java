@@ -3,12 +3,16 @@ package Classes;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.Date;
+//import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -152,9 +156,13 @@ public class MySqlConnection {
     	try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-           
-			statement.executeUpdate("INSERT INTO `"+database+"`.`newsfeed` (`News`, `DateAndTime`) VALUES ('"+
-					News+"', '"+DateAndTime+"'");
+
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+            //System.out.println(dateFormat.format(date));
+
+            statement.executeUpdate("INSERT INTO `"+database+"`.`newsfeed` (`News`) VALUES ('"+
+					News+"') ");
 			//System.out.println(username + " " + password);
             return true;
         } catch(Exception e) {
@@ -171,7 +179,7 @@ public class MySqlConnection {
         try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT * FROM `news` ");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `newsfeed` ");
 	    	if(rs.next()){
 	    		System.out.println("NEWS FOUND");
 	    	}
