@@ -118,9 +118,9 @@ public class profilePage extends AbstractPageBean {
         this.nameSurname=       "Ibrahim Çimentepe";
         this.faceAccount=       "ibrahim.cimentepe@facebook.com";
         this.twitterAccount=    "ibrahim.cimentepe@twitter.com";
-        
-        
-        
+        /*this.gameList[0]=1;
+        this.gameList[1]=9;
+        */
 
         // Perform initializations inherited from our superclass
         
@@ -236,6 +236,12 @@ public class profilePage extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "login";
+    }
+
+    public void fillTextFields(){
+        MySqlConnection con = new MySqlConnection();
+
+
     }
 
     public void fillBox(){
