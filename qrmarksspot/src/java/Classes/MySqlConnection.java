@@ -386,7 +386,6 @@ public class MySqlConnection {
             {
                 results[j]=results2[j];
             }
-
         }
         catch(Exception e)
         {}
