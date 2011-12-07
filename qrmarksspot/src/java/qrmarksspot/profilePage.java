@@ -33,6 +33,7 @@ public class profilePage extends AbstractPageBean {
     public String nameSurname;
     public String faceAccount;
     public String twitterAccount;
+    public String infos[];
     public int gameList[];
 
     public String getFaceAccount() {
@@ -112,7 +113,7 @@ public class profilePage extends AbstractPageBean {
      */
     @Override
     public void init() {
-        this.fillTextFields();
+        //this.fillTextFields();
         
 
         // Perform initializations inherited from our superclass
@@ -122,7 +123,16 @@ public class profilePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
+        MySqlConnection con = new MySqlConnection();
+        this.userName1=         getSessionBean1().effectiveUserName;
+        this.infos=new String[5];
+        this.infos=con.getUserInformationbyUserName(userName1);
+        this.location=infos[0];
+        this.nameSurname=infos[1];
+        this.faceAccount=infos[2]; 
+        this.twitterAccount=infos[3];
         
+
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -138,6 +148,7 @@ public class profilePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+
     }
 
     /**
@@ -234,12 +245,12 @@ public class profilePage extends AbstractPageBean {
     public void fillTextFields(){
         MySqlConnection con = new MySqlConnection();
         this.userName1=         getSessionBean1().effectiveUserName;
-        this.dateOfBirth=       con.getUserInformationbyUserName(userName1, 1);
+        /*this.dateOfBirth=       con.getUserInformationbyUserName(userName1, 1);
         this.location=          con.getUserInformationbyUserName(userName1, 1);
         this.nameSurname=       con.getUserInformationbyUserName(userName1, 1);
         this.faceAccount=       con.getUserInformationbyUserName(userName1, 1);
         this.twitterAccount=    con.getUserInformationbyUserName(userName1, 1);
-
+        */
     }
 
     public void fillBox(){

@@ -347,22 +347,19 @@ public class MySqlConnection {
         }
     }
 
-    public String getUserInformationbyUserName(String username,int col){
+    public String[] getUserInformationbyUserName(String username){
 
-        String userInfo="";
+        String[] userInfo=new String[5];
     	try{
 	    	Statement statement = con.createStatement();
 	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `users` WHERE `UserName` = '"+username+"'");
 	    	if(rs.next()){
 	    		System.out.println("USER FOUND");
-                /*
-                case "password":        userInfo=rs.getString(2); break;
-                case "dateofbirth":     userInfo=rs.getString(3); break;
-                case "websiteofuser":   userInfo=rs.getString(5); break;
-                case "twitter":         userInfo=rs.getString(6); break;
-                case "facebook":        userInfo=rs.getString(7); break;
-                */
-                userInfo=rs.getString(col);
+                userInfo[0]=rs.getString(2);
+                userInfo[1]=rs.getString(3);
+                userInfo[2]=rs.getString(5);
+                userInfo[3]=rs.getString(6);
+                userInfo[4]=rs.getString(7);
              }
     	}
     	catch(Exception e){
