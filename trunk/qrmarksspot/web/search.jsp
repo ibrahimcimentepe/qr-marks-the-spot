@@ -17,7 +17,6 @@
                         <webuijsf:textField columns="47" id="textField1" style="height: 24px; left: 120px; top: 96px; position: absolute; width: 288px" text="#{search.searchString}"/>
                         <webuijsf:button actionExpression="#{search.button1_action}" id="button1"
                             style="height: 24px; left: 455px; top: 96px; position: absolute; width: 71px" text="Search"/>
-                        <webuijsf:textField id="textField2" style="left: 120px; top: 168px; position: absolute" text="#{search.gamename}" valueChangeListenerExpression="#{search.textField2_processValueChange}"/>
                         <webuijsf:hyperlink id="hyperlink1" style="position: absolute; left: 120px; top: 216px" text="Hyperlink"/>
                         <webuijsf:hyperlink id="hyperlink2" style="position: absolute; left: 120px; top: 264px" text="Hyperlink"/>
                         <webuijsf:hyperlink id="hyperlink3" style="position: absolute; left: 120px; top: 312px" text="Hyperlink"/>
