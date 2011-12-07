@@ -35,7 +35,7 @@
                                         <webuijsf:label id="label2" text="News Feed"/>
                                     </td>
                                     <td>
-                                        <webuijsf:textField id="gameSearchTextField"/>
+                                        <webuijsf:textField id="gameSearchTextField" text="#{home.gameToBePlayed}"/>
                                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton" style="height: 20px; width: 80px" text="Search"/>
                                     </td>
                                     <td align="right">
