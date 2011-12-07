@@ -12,7 +12,7 @@
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
+                <webuijsf:body focus="form1:listbox1" id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:label id="label1" style="font-size: 24px; height: 22px; left: 24px; top: 24px; position: absolute; width: 118px" text="Welcome"/>
                         <webuijsf:label id="label2" style="height: 24px; left: 24px; top: 144px; position: absolute; width: 168px" text="User Name :"/>
