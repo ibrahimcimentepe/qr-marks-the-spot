@@ -6,13 +6,21 @@
 /* Style rules to make Java Server faces Standarad data tables look better */
 
 .list-header {
+  
   background-color: #eeeeee;
   font-size: larger;
   font-weight: bold;
 }
 
+body
+{
+    background-image:url('logobg.jpg');
+    background-position:center top;
+}
+
 .list-paging-header {
   background-color: white;
+  
 }
 
 .list-paging-footer {
