@@ -7,9 +7,6 @@ package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import javax.faces.FacesException;
-import javax.faces.event.ValueChangeEvent;
-import Classes.MySqlConnection;
-import Classes.GameAttributes;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -18,23 +15,12 @@ import Classes.GameAttributes;
  * lifecycle methods and event handlers where you may add behavior
  * to respond to incoming events.</p>
  *
- * @version search.java
- * @version Created on 05.Ara.2011, 18:31:22
- * @author 23
+ * @version forum.java
+ * @version Created on 07.Ara.2011, 23:07:08
+ * @author Unsal
  */
 
-public class search extends AbstractPageBean {
-    String gamename;
-    String searchString;
-
-    public String getSearchString() {
-        return searchString;
-    }
-
-    public void setSearchString(String searchString) {
-        this.searchString = searchString;
-    }
-
+public class forum extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -50,7 +36,7 @@ public class search extends AbstractPageBean {
     /**
      * <p>Construct a new Page bean instance.</p>
      */
-    public search() {
+    public forum() {
     }
 
     /**
@@ -79,7 +65,7 @@ public class search extends AbstractPageBean {
         try {
             _init();
         } catch (Exception e) {
-            log("search Initialization Failure", e);
+            log("forum Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);
         }
         
@@ -129,15 +115,6 @@ public class search extends AbstractPageBean {
      *
      * @return reference to the scoped data bean
      */
-    protected SessionBean1 getSessionBean1() {
-        return (SessionBean1) getBean("SessionBean1");
-    }
-
-    /**
-     * <p>Return a reference to the scoped data bean.</p>
-     *
-     * @return reference to the scoped data bean
-     */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
@@ -151,34 +128,13 @@ public class search extends AbstractPageBean {
         return (RequestBean1) getBean("RequestBean1");
     }
 
-    public String search_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-
-        MySqlConnection con = new MySqlConnection();
-        GameAttributes game = new GameAttributes();
-        String[] temp=con.getGameNamebyGameTag(this.searchString);
-
-        //this.searchString;
-        //this.
-
-        //burda gamename e göre select from where like sorgusu yapılacak
-        //server a bağlanamadığım için ben yapamadım
-
-
-        return temp[0];
-    }
-
-    public String getGamename() {
-        return gamename;
-    }
-
-    public void setGamename(String gamename) {
-        this.gamename = gamename;
-    }
-
-
-    public void game_name_processValueChange(ValueChangeEvent event) {
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
+    protected SessionBean1 getSessionBean1() {
+        return (SessionBean1) getBean("SessionBean1");
     }
     
 }

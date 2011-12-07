@@ -369,7 +369,7 @@ public class MySqlConnection {
 
     public String[] getGameNamebyGameTag(String tag)
     {
-        String[] results;
+        String[] results=new String[1];
         try
         {
             String[] results2=new String[100];
