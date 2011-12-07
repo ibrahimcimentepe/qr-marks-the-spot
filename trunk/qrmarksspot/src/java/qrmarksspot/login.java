@@ -141,6 +141,8 @@ public class login extends AbstractPageBean {
 			return "fail";
 		}else{
             getSessionBean1().login(username);
+            connection.addNews(username+ " has just logged in " , null );
+
 			return "success";
         }
     }
