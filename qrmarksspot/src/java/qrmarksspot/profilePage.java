@@ -7,6 +7,7 @@ package qrmarksspot;
 
 import Classes.GameAttributes;
 import Classes.MySqlConnection;
+import java.sql.ResultSet;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.MultipleSelectOptionsList;
@@ -113,7 +114,7 @@ public class profilePage extends AbstractPageBean {
      */
     @Override
     public void init() {
-        //this.fillTextFields();
+        
         
 
         // Perform initializations inherited from our superclass
@@ -123,14 +124,7 @@ public class profilePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-        MySqlConnection con = new MySqlConnection();
-        this.userName1="QRseeker";
-        this.infos=new String[5];
-        this.infos=con.getUserInformationbyUserName(userName1);
-        this.location=infos[0];
-        this.nameSurname=infos[1];
-        this.faceAccount=infos[2]; 
-        this.twitterAccount=infos[3];
+        fillTextFields();
         
 
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
@@ -243,14 +237,17 @@ public class profilePage extends AbstractPageBean {
     }
 
     public void fillTextFields(){
-        MySqlConnection con = new MySqlConnection();
-        this.userName1=         getSessionBean1().effectiveUserName;
-        /*this.dateOfBirth=       con.getUserInformationbyUserName(userName1, 1);
-        this.location=          con.getUserInformationbyUserName(userName1, 1);
-        this.nameSurname=       con.getUserInformationbyUserName(userName1, 1);
-        this.faceAccount=       con.getUserInformationbyUserName(userName1, 1);
-        this.twitterAccount=    con.getUserInformationbyUserName(userName1, 1);
-        */
+        userName1="QRseeker";
+        try{
+            MySqlConnection con = new MySqlConnection();
+            ResultSet rs = con.getUserInformationbyUserName(userName1);
+            this.dateOfBirth=rs.getString("DateOfBirth");
+            this.faceAccount=rs.getString("Facebook");
+            this.twitterAccount=rs.getString("Twitter");
+        }
+        catch(Exception e){
+
+        }
     }
 
     public void fillBox(){

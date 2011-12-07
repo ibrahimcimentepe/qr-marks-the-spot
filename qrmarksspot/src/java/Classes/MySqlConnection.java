@@ -347,26 +347,23 @@ public class MySqlConnection {
         }
     }
 
-    public String[] getUserInformationbyUserName(String username){
+    public ResultSet getUserInformationbyUserName(String username){
 
-        String[] userInfo=new String[5];
-    	try{
-	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `users` WHERE `UserName` = '"+username+"'");
-	    	if(rs.next()){
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+
+            ResultSet rs = statement.executeQuery("SELECT * FROM `users` WHERE `UserName` = '" + username + "'" );
+
+	        System.out.println("STATEMENT EXECUTED,USER FOUND");
+            if(rs.next()){
 	    		System.out.println("USER FOUND");
-                userInfo[0]=rs.getString(2);
-                userInfo[1]=rs.getString(3);
-                userInfo[2]=rs.getString(5);
-                userInfo[3]=rs.getString(6);
-                userInfo[4]=rs.getString(7);
-             }
-    	}
-    	catch(Exception e){
+	    	}
+            return rs;
 
-    	}
-        finally{
-            return userInfo;
+        } catch(Exception e) {
+             System.out.println("Error");
+             return null;
         }
     }
 
