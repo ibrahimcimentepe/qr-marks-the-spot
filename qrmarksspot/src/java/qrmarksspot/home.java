@@ -224,17 +224,23 @@ public class home extends AbstractPageBean {
     public String goToGameButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+        String result="";
         try{
             MySqlConnection con = new MySqlConnection();
-            this.getSessionBean1().selectedGameId=con.getGameIdbyGameName(gameToBePlayed);
-
+            if(con.gameExists(gameToBePlayed)){
+                this.getSessionBean1().selectedGameId=con.getGameIdbyGameName(gameToBePlayed);
+                result="gamePage";
+            }else{
+                gameToBePlayed="There is no such game!";
+                result="failPlay";
+            }
         }catch(Exception e){
             System.out.println("Error, going to homepage");
             gameToBePlayed="There is no such game!";
-            return "failPlay";
+            result="failPlay";
+        }finally{
+            return result;
         }
-
-        return "gamePage";
     }
 
     public String hyperlink2_action() {
