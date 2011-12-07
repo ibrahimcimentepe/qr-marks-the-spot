@@ -25,7 +25,21 @@ import Classes.GameAttributes;
  */
 
 public class search extends AbstractPageBean {
-    String gamename;
+    String gamename1;
+
+    public void setGamename1(String gamename1) {
+        this.gamename1 = gamename1;
+    }
+
+    public void setGamename2(String gamename2) {
+        this.gamename2 = gamename2;
+    }
+
+    public void setGamename3(String gamename3) {
+        this.gamename3 = gamename3;
+    }
+    String gamename2;
+    String gamename3;
     String searchString;
 
     public String getSearchString() {
@@ -152,7 +166,7 @@ public class search extends AbstractPageBean {
         return (RequestBean1) getBean("RequestBean1");
     }
 
-    public String search_action() {
+    public String[] search_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
 
@@ -164,17 +178,10 @@ public class search extends AbstractPageBean {
         //server a bağlanamadığım için ben yapamadım
 
 
-        return temp[0];
+        return temp;
     }
 
-    public String getGamename() {
-        return gamename;
-    }
-
-    public void setGamename(String gamename) {
-        this.gamename = gamename;
-    }
-
+    
 
     public void game_name_processValueChange(ValueChangeEvent event) {
     }
@@ -182,7 +189,11 @@ public class search extends AbstractPageBean {
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        this.gamename=search_action();
+        
+        String[] temp=search_action();
+        setGamename1(temp[0]);
+        setGamename2(temp[1]);
+        setGamename3(temp[2]);
         return null;
     }
 
