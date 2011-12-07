@@ -318,6 +318,31 @@ public class MySqlConnection {
         }
     }
 
+    public String getUserInformationbyUserName(String username,String info){
+
+        String userInfo="";
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT '"+info+"' FROM `users` WHERE `UserName` = '"+username+"'");
+	    	if(rs.next()){
+	    		System.out.println("USER FOUND");
+                /*switch (info.toLowerCase()) {
+                    case "password":        userInfo=rs.getString(2); break;
+                    case "dateofbirth":     userInfo=rs.getString(3); break;
+                    case "websiteofuser":   userInfo=rs.getString(5); break;
+                    case "twitter":         userInfo=rs.getString(6); break;
+                    case "facebook":        userInfo=rs.getString(7); break;
+                }*/
+	    	}
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return userInfo;
+        }
+    }
+
     public int getGameIdbyGameName(String gamename){
         int userId = -1;
     	try{
