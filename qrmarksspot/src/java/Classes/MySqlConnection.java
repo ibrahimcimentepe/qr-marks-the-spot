@@ -335,6 +335,45 @@ public class MySqlConnection {
             return userId;
         }
     }
+    
+    public int sizeOfGameBox(String username){
+        int res = 0;
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `playgame` WHERE `UserName` = '"+username+"'");
+	    	while(rs.next()){
+	    		System.out.println("GAME FOUND");
+                res++;
+	    	}
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return res;
+        }
+    }
+    public int[] gameBoxList(String username){
+        int sizeOfList=this.sizeOfGameBox(username);
+        int res[]=new int[sizeOfList];
+        int gameId;
+        try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT GameId FROM `playgame` WHERE `UserName` = '"+username+"'");
+            int i=0;
+            while(rs.next()){
+	    		gameId=rs.getInt(2);
+                res[i]=gameId;
+                i++;
+	    	}
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return res;
+        }
+    }
 
     @Override
     protected void finalize() throws Throwable {
