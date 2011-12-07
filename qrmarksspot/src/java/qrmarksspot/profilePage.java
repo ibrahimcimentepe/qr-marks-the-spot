@@ -27,12 +27,13 @@ import javax.faces.event.ValueChangeEvent;
  */
 
 public class profilePage extends AbstractPageBean {
-    public String userName1;//="nightsurfer23";
-    public String dateOfBirth="17.03.1989";
-    public String location="İzmir";
-    public String nameSurname="Ibrahim Çimentepe";
-    public String faceAccount="ibrahim.cimentepe@facebook.com";
-    public String twitterAccount="ibrahim.cimentepe@twitter.com";
+    public String userName1;
+    public String dateOfBirth;
+    public String location;
+    public String nameSurname;
+    public String faceAccount;
+    public String twitterAccount;
+    public int gameList[];
 
     public String getFaceAccount() {
         return faceAccount;
@@ -89,15 +90,6 @@ public class profilePage extends AbstractPageBean {
     public void setGameListDefaultOptions(DefaultOptionsList dol) {
         this.gameListDefaultOptions = dol;
     }
-    private DefaultOptionsList listbox1DefaultOptions = new DefaultOptionsList();
-
-    public DefaultOptionsList getListbox1DefaultOptions() {
-        return listbox1DefaultOptions;
-    }
-
-    public void setListbox1DefaultOptions(DefaultOptionsList dol) {
-        this.listbox1DefaultOptions = dol;
-    }
 
     /**
      * <p>Construct a new Page bean instance.</p>
@@ -120,12 +112,14 @@ public class profilePage extends AbstractPageBean {
      */
     @Override
     public void init() {
-        this.userName1=         "nightsurfer23";
+        this.userName1=         "QRseeker";
         this.dateOfBirth=       "17.03.1989";
         this.location=          "İzmir";
         this.nameSurname=       "Ibrahim Çimentepe";
         this.faceAccount=       "ibrahim.cimentepe@facebook.com";
         this.twitterAccount=    "ibrahim.cimentepe@twitter.com";
+        
+        
         
 
         // Perform initializations inherited from our superclass
@@ -244,7 +238,11 @@ public class profilePage extends AbstractPageBean {
         return "login";
     }
 
+    public void fillBox(){
+        MySqlConnection con = new MySqlConnection();
+        this.gameList=con.gameBoxList(this.userName1);
 
+    }
 
     public String playGame_action() {
         // TODO: Process the action. Return value is a navigation
