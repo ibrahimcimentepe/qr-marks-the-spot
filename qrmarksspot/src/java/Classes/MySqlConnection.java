@@ -124,25 +124,19 @@ public class MySqlConnection {
         
     }
 
-    public String getGame(int gameId)
+    public ResultSet getGame(int gameId)
     {
-        //MySqlConnection con = new MySqlConnection();
-        //TODO: use the number
         try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            //ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = " + gameId + "" );
-            ResultSet rs = statement.executeQuery("SELECT * FROM `" +database+ "`.`games` WHERE `GameId` = " + gameId + "" );
-                                               //     +database+"`.`users`
+            
+            ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = " + gameId + "" );
+                                            
 	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
-
-
             if(rs.next()){
 	    		System.out.println("NEWS FOUND");
 	    	}
-
-
-            return rs.getNString(2);
+            return rs;
            
         } catch(Exception e) {
              System.out.println("Error");
