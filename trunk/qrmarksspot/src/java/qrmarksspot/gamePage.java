@@ -8,6 +8,9 @@ package qrmarksspot;
 import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Label;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.FacesException;
 
 /**
@@ -34,7 +37,7 @@ public class gamePage extends AbstractPageBean {
     }
 
     // </editor-fold>
-        int gameId = 16;   //simdilik bir game ID
+        int gameId = 17;   //simdilik bir game ID
         String result = "bos"; //simdilik result set bos
     /**
      * <p>Construct a new Page bean instance.</p>
@@ -70,6 +73,16 @@ public class gamePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
+
+        try {
+            MySqlConnection con = new MySqlConnection();
+            this.result = con.getGame(this.gameId).getString("Description");
+            this.resultLabel.setText(this.result);
+         //   return null;
+        } catch (SQLException ex) {
+            Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -155,13 +168,15 @@ public class gamePage extends AbstractPageBean {
         return "home";
     }
 
-    public String bring_action() {
-        MySqlConnection con = new MySqlConnection();
-        this.result = con.getGame(this.gameId);
-        this.resultLabel.setText(this.result);
-
-
-        return null;
+    public void bring_action() {
+        try {
+            MySqlConnection con = new MySqlConnection();
+            this.result = con.getGame(this.gameId).getString("Description");
+            this.resultLabel.setText(this.result);
+         //   return null;
+        } catch (SQLException ex) {
+            Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
