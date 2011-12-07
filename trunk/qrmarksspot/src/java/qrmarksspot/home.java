@@ -32,7 +32,7 @@ public class home extends AbstractPageBean {
 
     // </editor-fold>
 
-     public String[] labels = new String[4];
+     public String[] labels = new String[20];
 
     /**
      * <p>Construct a new Page bean instance.</p>
@@ -73,7 +73,7 @@ public class home extends AbstractPageBean {
             while(rs.next()){
         
                 labels[i] = rs.getString("News")+" "+
-                        rs.getDate("DateAndTime").toString();
+                        rs.getTimestamp("DateAndTime").toString();
                 i++;
                 //SessionBean1["label"] = labels[i];
             }
