@@ -346,10 +346,10 @@ public class MySqlConnection {
     public ResultSet getUserInformationbyUserName(String username){
 
         try {
-            Statement statement = con.createStatement();
+            Statement st = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
 
-            ResultSet rs = statement.executeQuery("SELECT * FROM `users` WHERE `UserName` = '" + username + "'" );
+            ResultSet rs = st.executeQuery("SELECT * FROM `users` WHERE `UserName` = '"+username+"'" );
 
 	        System.out.println("STATEMENT EXECUTED,USER FOUND");
             if(rs.next()){
