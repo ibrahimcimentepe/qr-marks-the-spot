@@ -323,6 +323,27 @@ public class MySqlConnection {
             return found;
         }
     }
+    public boolean gameExists(String gamename)
+    {
+    	boolean found = false;
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameName` = '"+gamename+"'");
+	    	if(rs.next()){
+	    		System.out.println("GAME FOUND");
+                found=true;
+	    	}
+            else{
+                found=false;
+            }
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return found;
+        }
+    }
 
     public int getUserIdbyUserName(String username){
 
