@@ -58,6 +58,10 @@
             <from-outcome>gamePage</from-outcome>
             <to-view-id>/gamePage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/search.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -160,8 +164,13 @@
         </navigation-case>
     </navigation-rule>
     <managed-bean>
-        <managed-bean-name>resources$forum</managed-bean-name>
-        <managed-bean-class>qrmarksspot.resources.forum</managed-bean-class>
+        <managed-bean-name>forum</managed-bean-name>
+        <managed-bean-class>qrmarksspot.forum</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>search</managed-bean-name>
+        <managed-bean-class>qrmarksspot.search</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>
