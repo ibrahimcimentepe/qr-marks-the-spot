@@ -371,7 +371,7 @@ public class MySqlConnection {
             String[] results2=new String[100];
             int i=0;
             Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT games.GameName FROM games , gametags WHERE `gametags.TAG1 OR gametags.TAG2 OR gametags.TAG3 OR gametags.TAG4 OR gametags.TAG5` = '"+tag+"'");
+	    	ResultSet rs = statement.executeQuery("SELECT GameName FROM games, gametags WHERE TAG1 =  '"+tag+"'");
 	    	while(rs.next()){
 	    		System.out.println("GAMES FOUND");
                 results2[i]=rs.getString("GameName");
