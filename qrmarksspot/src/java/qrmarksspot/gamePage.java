@@ -5,7 +5,9 @@
 
 package qrmarksspot;
 
+import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Label;
 import javax.faces.FacesException;
 
 /**
@@ -32,10 +34,20 @@ public class gamePage extends AbstractPageBean {
     }
 
     // </editor-fold>
-
+        int gameId = 16;   //simdilik bir game ID
+        String result = "bos"; //simdilik result set bos
     /**
      * <p>Construct a new Page bean instance.</p>
      */
+    private Label resultLabel = new Label();
+
+    public Label getResultLabel() {
+        return resultLabel;
+    }
+
+    public void setResultLabel(Label l) {
+        this.resultLabel = l;
+    }
     public gamePage() {
     }
 
@@ -141,6 +153,15 @@ public class gamePage extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "home";
+    }
+
+    public String bring_action() {
+        MySqlConnection con = new MySqlConnection();
+        this.result = con.getGame(this.gameId);
+        this.resultLabel.setText(this.result);
+
+
+        return null;
     }
     
 }
