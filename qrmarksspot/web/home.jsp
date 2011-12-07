@@ -11,7 +11,7 @@
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" imageURL="resources/logo.jpg" style="-rave-layout: grid">
+                <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <table align="center" border="0" width="%90">
                             <tbody>
@@ -44,7 +44,9 @@
                                 </tr>
                                 <tr>
                                     <td style="height: 21px"></td>
-                                    <td></td>
+                                    <td>
+                                        <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton" text="to the game -&gt;"/>
+                                    </td>
                                     <td align="right">
                                         <webuijsf:button actionExpression="#{home.login_action}" id="login" style="height: 24px; width: 80px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
                                     </td>

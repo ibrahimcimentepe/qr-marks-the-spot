@@ -27,6 +27,8 @@
                         <webuijsf:label id="label10" style="left: 72px; top: 576px; position: absolute" text="Pictures"/>
                         <webuijsf:button actionExpression="#{gamePage.backButton_action}" id="backButton"
                             style="height: 24px; left: 71px; top: 48px; position: absolute" text="&lt; Back to home"/>
+                        <webuijsf:button actionExpression="#{gamePage.bring_action}" id="bring" style="position: absolute; left: 384px; top: 72px" text="bring the game"/>
+                        <webuijsf:label binding="#{gamePage.resultLabel}" id="resultLabel" style="height: 24px; left: 408px; top: 168px; position: absolute; width: 168px"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
