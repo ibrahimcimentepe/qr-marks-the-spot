@@ -55,6 +55,10 @@
         <servlet-name>BarcodeServlet</servlet-name>
         <servlet-class>Classes.BarcodeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>Classes.NewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/qrmarksthespot/*</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>BarcodeServlet</servlet-name>
         <url-pattern>/BarcodeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
