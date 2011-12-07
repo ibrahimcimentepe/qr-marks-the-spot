@@ -112,15 +112,8 @@ public class profilePage extends AbstractPageBean {
      */
     @Override
     public void init() {
-        this.userName1=         "QRseeker";
-        this.dateOfBirth=       "17.03.1989";
-        this.location=          "İzmir";
-        this.nameSurname=       "Ibrahim Çimentepe";
-        this.faceAccount=       "ibrahim.cimentepe@facebook.com";
-        this.twitterAccount=    "ibrahim.cimentepe@twitter.com";
-        /*this.gameList[0]=1;
-        this.gameList[1]=9;
-        */
+        this.fillTextFields();
+        
 
         // Perform initializations inherited from our superclass
         
@@ -240,7 +233,12 @@ public class profilePage extends AbstractPageBean {
 
     public void fillTextFields(){
         MySqlConnection con = new MySqlConnection();
-
+        this.userName1=         getSessionBean1().effectiveUserName;
+        this.dateOfBirth=       con.getUserInformationbyUserName(userName1, 1);
+        this.location=          con.getUserInformationbyUserName(userName1, 1);
+        this.nameSurname=       con.getUserInformationbyUserName(userName1, 1);
+        this.faceAccount=       con.getUserInformationbyUserName(userName1, 1);
+        this.twitterAccount=    con.getUserInformationbyUserName(userName1, 1);
 
     }
 
