@@ -8,6 +8,7 @@ package qrmarksspot;
 import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Label;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +40,7 @@ public class gamePage extends AbstractPageBean {
     // </editor-fold>
         int gameId = 17;   //simdilik bir game ID
         String result = "bos"; //simdilik result set bos
+        ResultSet selectedGame;
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -76,8 +78,12 @@ public class gamePage extends AbstractPageBean {
 
         try {
             MySqlConnection con = new MySqlConnection();
-            this.result = con.getGame(this.gameId).getString("Description");
-            this.resultLabel.setText(this.result);
+  //          ResultSet selectedGame;
+            this.selectedGame = con.getGame(this.gameId);
+            this.result =this.selectedGame.getString("Description");
+  //          this.   .getString("Description");
+  //          this.resultLabel.setText(this.result);
+
          //   return null;
         } catch (SQLException ex) {
             Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);

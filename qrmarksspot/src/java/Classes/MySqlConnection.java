@@ -128,19 +128,15 @@ public class MySqlConnection {
     {
         try {
             Statement statement = con.createStatement();
-            System.out.println("CONNECTION ESTABLISHED");
-            
-            ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = " + gameId + "" );
-                                            
+            System.out.println("CONNECTION ESTABLISHED");            
+            ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = " + gameId + "" );                                           
 	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
             if(rs.next()){
 	    		System.out.println("NEWS FOUND");
 	    	}
-            return rs;
-           
+            return rs;           
         } catch(Exception e) {
              System.out.println("Error");
-
              return null;
         }
 

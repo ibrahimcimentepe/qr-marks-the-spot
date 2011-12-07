@@ -33,6 +33,12 @@ public class SessionBean1 extends AbstractSessionBean {
     String effectiveUserName;
     boolean loggedIn=false;
     GameAttributes newGame = new GameAttributes();
+
+    int selectedGameId;
+
+
+
+
     /**
      * <p>Construct a new session data bean instance.</p>
      */
@@ -162,11 +168,20 @@ public class SessionBean1 extends AbstractSessionBean {
         this.newGame = newGame;
     }
 
+    
     public String getEffectiveUserName() {
         return effectiveUserName;
     }
 
     public void setEffectiveUserName(String effectiveUserName) {
         this.effectiveUserName = effectiveUserName;
+    }
+
+    public int getSelectedGameId() {
+        return selectedGameId;
+    }
+
+    public void setSelectedGameId(int selectedGameId) {
+        this.selectedGameId = selectedGameId;
     }
 }
