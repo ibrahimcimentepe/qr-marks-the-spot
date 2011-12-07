@@ -34,7 +34,7 @@ public class SessionBean1 extends AbstractSessionBean {
     boolean loggedIn=false;
     GameAttributes newGame = new GameAttributes();
 
-    int selectedGameId;
+    int selectedGameId = 16;
 
 
 
