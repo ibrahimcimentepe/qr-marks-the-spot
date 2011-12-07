@@ -54,6 +54,10 @@
             <from-outcome>profile</from-outcome>
             <to-view-id>/profilePage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>gamePage</from-outcome>
+            <to-view-id>/gamePage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -148,9 +152,11 @@
             <to-view-id>/success.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <managed-bean>
-        <managed-bean-name>search</managed-bean-name>
-        <managed-bean-class>qrmarksspot.search</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/gamePage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
