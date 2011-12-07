@@ -27,7 +27,11 @@ import Classes.GameAttributes;
 public class search extends AbstractPageBean {
     String gamename1;
 
-    public void setGamename1(String gamename1) {
+    
+    String gamename2;
+    String gamename3;
+    String searchString;
+public void setGamename1(String gamename1) {
         this.gamename1 = gamename1;
     }
 
@@ -38,10 +42,6 @@ public class search extends AbstractPageBean {
     public void setGamename3(String gamename3) {
         this.gamename3 = gamename3;
     }
-    String gamename2;
-    String gamename3;
-    String searchString;
-
     public String getSearchString() {
         return searchString;
     }
