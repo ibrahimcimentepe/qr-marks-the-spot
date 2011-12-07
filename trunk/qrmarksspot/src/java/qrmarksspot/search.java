@@ -6,6 +6,7 @@
 package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import javax.faces.FacesException;
 import javax.faces.event.ValueChangeEvent;
 import Classes.MySqlConnection;
@@ -159,9 +160,6 @@ public class search extends AbstractPageBean {
         GameAttributes game = new GameAttributes();
         String[] temp=con.getGameNamebyGameTag(this.searchString);
 
-        //this.searchString;
-        //this.
-
         //burda gamename e göre select from where like sorgusu yapılacak
         //server a bağlanamadığım için ben yapamadım
 
@@ -179,6 +177,16 @@ public class search extends AbstractPageBean {
 
 
     public void game_name_processValueChange(ValueChangeEvent event) {
+    }
+
+    public String button1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        this.gamename=search_action();
+        return null;
+    }
+
+    public void textField2_processValueChange(ValueChangeEvent event) {
     }
     
 }
