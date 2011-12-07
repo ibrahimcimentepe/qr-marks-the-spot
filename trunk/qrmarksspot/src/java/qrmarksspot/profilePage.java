@@ -124,7 +124,7 @@ public class profilePage extends AbstractPageBean {
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
         MySqlConnection con = new MySqlConnection();
-        this.userName1=         getSessionBean1().effectiveUserName;
+        this.userName1="QRseeker";
         this.infos=new String[5];
         this.infos=con.getUserInformationbyUserName(userName1);
         this.location=infos[0];
