@@ -38,9 +38,124 @@ public class gamePage extends AbstractPageBean {
     }
 
     // </editor-fold>
-        int gameId = 17;   //simdilik bir game ID
+        
         String result = "bos"; //simdilik result set bos
         ResultSet selectedGame;
+
+        int gameId = 17;   //simdilik bir game ID
+        String gameName;
+        String description;
+        String startingPoint;
+        String borders;
+        int numberOfSteps;
+        int currentStep;
+        int numberOfPlayers;
+        int rating ;
+        String creatorName;
+        
+        
+    public String getBorders() {
+        return borders;
+    }
+
+    public void setBorders(String borders) {
+        this.borders = borders;
+    }
+
+    public String getCreatorName() {
+        return creatorName;
+    }
+
+    public void setCreatorName(String creatorName) {
+        this.creatorName = creatorName;
+    }
+
+    public int getCurrentStep() {
+        return currentStep;
+    }
+
+    public void setCurrentStep(int currentStep) {
+        this.currentStep = currentStep;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getGameId() {
+        return gameId;
+    }
+
+    public void setGameId(int gameId) {
+        this.gameId = gameId;
+    }
+
+    public String getGameName() {
+        return gameName;
+    }
+
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
+    }
+
+    public int getNumberOfPlayers() {
+        return numberOfPlayers;
+    }
+
+    public void setNumberOfPlayers(int numberOfPlayers) {
+        this.numberOfPlayers = numberOfPlayers;
+    }
+
+    public int getNumberOfSteps() {
+        return numberOfSteps;
+    }
+
+    public void setNumberOfSteps(int numberOfSteps) {
+        this.numberOfSteps = numberOfSteps;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public ResultSet getSelectedGame() {
+        return selectedGame;
+    }
+
+    public void setSelectedGame(ResultSet selectedGame) {
+        this.selectedGame = selectedGame;
+    }
+
+    public String getStartingPoint() {
+        return startingPoint;
+    }
+
+    public void setStartingPoint(String startingPoint) {
+        this.startingPoint = startingPoint;
+    }
+        
+
+
+
+
+
+
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -77,12 +192,25 @@ public class gamePage extends AbstractPageBean {
         // TODO - add your own initialiation code here
 
         try {
+            this.gameId = getSessionBean1().getSelectedGameId();
             MySqlConnection con = new MySqlConnection();
-  //          ResultSet selectedGame;
             this.selectedGame = con.getGame(this.gameId);
-            this.result =this.selectedGame.getString("Description");
-  //          this.   .getString("Description");
-  //          this.resultLabel.setText(this.result);
+     //       this.result =this.selectedGame.getString("Description");
+            this.gameName = this.selectedGame.getString("GameName");
+            this.description = this.selectedGame.getString("Description");
+            this.startingPoint = this.selectedGame.getString("StartLocation");
+            this.borders = this.selectedGame.getString("Borders");
+            this.numberOfSteps = this.selectedGame.getInt("NumberOfSteps");
+            this.currentStep = this.selectedGame.getInt("CurrentStep");
+            this.numberOfPlayers = this.selectedGame.getInt("NumberOfPlayers");
+            this.rating = this.selectedGame.getInt("Rating");
+            this.creatorName = this.selectedGame.getString("CreatorName");
+
+
+
+
+            
+
 
          //   return null;
         } catch (SQLException ex) {
@@ -179,6 +307,7 @@ public class gamePage extends AbstractPageBean {
             MySqlConnection con = new MySqlConnection();
             this.result = con.getGame(this.gameId).getString("Description");
             this.resultLabel.setText(this.result);
+
          //   return null;
         } catch (SQLException ex) {
             Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
