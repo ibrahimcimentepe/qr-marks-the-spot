@@ -11,7 +11,7 @@
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
+                <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <table align="center" border="0" width="%90">
                             <tbody>
@@ -69,31 +69,67 @@
                             </tbody>
                         </table>
                         <ul>
-                            <li> <webuijsf:label text="#{home.labels[0]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[1]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[2]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[3]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[4]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[5]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[6]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[7]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[8]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[9]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[10]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[11]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[12]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[13]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[14]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[15]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[16]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[17]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[18]}"/> </li>
-                            <li> <webuijsf:label text="#{home.labels[19]}"/> </li>
-                            
-
+                            <li>
+                                <webuijsf:label text="#{home.labels[0]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[1]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[2]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[3]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[4]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[5]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[6]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[7]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[8]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[9]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[10]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[11]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[12]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[13]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[14]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[15]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[16]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[17]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[18]}"/>
+                            </li>
+                            <li>
+                                <webuijsf:label text="#{home.labels[19]}"/>
+                            </li>
                         </ul>
-
-                       
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
                             style="height: 24px; left: 336px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
