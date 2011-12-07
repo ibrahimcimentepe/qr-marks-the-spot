@@ -66,10 +66,32 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <webuijsf:label id="label3" style="left: 96px; top: 192px; position: absolute" text="#{home.labels[0]}"/>
-                        <webuijsf:label id="label4" style="left: 96px; top: 333px; position: absolute" text="#{home.labels[1]}"/>
-                        <webuijsf:label id="label5" style="left: 96px; top: 237px; position: absolute" text="#{home.labels[2]}"/>
-                        <webuijsf:label id="label6" style="left: 96px; top: 285px; position: absolute" text="#{home.labels[3]}"/>
+                        <ul>
+                            <li> <webuijsf:label text="#{home.labels[0]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[1]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[2]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[3]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[4]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[5]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[6]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[7]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[8]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[9]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[10]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[11]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[12]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[13]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[14]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[15]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[16]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[17]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[18]}"/> </li>
+                            <li> <webuijsf:label text="#{home.labels[19]}"/> </li>
+                            
+
+                        </ul>
+
+                       
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
                             style="height: 24px; left: 336px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
