@@ -11,6 +11,7 @@
             <webuijsf:html id="html1">
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
+                    <webuijsf:link id="link2" url=""/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/success.JPG" style="-rave-layout: grid">
                     <webuijsf:form id="form1">

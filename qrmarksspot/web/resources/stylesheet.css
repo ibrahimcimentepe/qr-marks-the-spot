@@ -14,9 +14,11 @@
 
 body
 {
-    background-color:aqua;
-    background-image:url("./logomuz.jpg");
+  
+    background-image:url("./logobg.jpg");
     background-position:center;
+
+  
 }
   
 .list-paging-header {
