@@ -82,34 +82,38 @@ public class MySqlConnection {
     	return res;
     }
 
-    public String getLocationOfCurrentStep(int gameId,int currentStep){
+    public ResultSet getInfoOfCurrentStep(int gameId,int currentStep){
         String res="";
     	try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT * FROM `gamesteps` WHERE `GameId` = '"+gameId+"' and `StepNumber` = '"+currentStep+"'");
             System.out.println("STATEMENT EXECUTED");
-            res=rs.getString("LocationOfQrCode");
+            if(rs.next()){
+	    		System.out.println("GAME FOUND");
+	    	}
+            return rs;
         } catch(Exception e) {
              System.out.println("Error");
+             return null;
         }
-    	return res;
     }
 
-    public int getCurrentStep(int userID,int gameID){
-        int res=-1;
-    	try {
+
+    public ResultSet getCurrentStep(int userID,int gameID){
+        try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `UserId` = " + userID + " and `GameId` = " + gameID + " ");
-            System.out.println("STATEMENT EXECUTED");
-            res = rs.getInt("CurrentStepOfPlayer");
-
+            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and `UserId` = " + userID +"" );
+	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
+            if(rs.next()){
+	    		System.out.println("GAME FOUND");
+	    	}
+            return rs;
         } catch(Exception e) {
              System.out.println("Error");
+             return null;
         }
-    	return res;
-
 
     }
 
@@ -397,7 +401,7 @@ public class MySqlConnection {
         String res="";
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = '"+gameId+"'");
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = "+gameId+"");
 	    	if(rs.next()){
 	    		System.out.println("GAME FOUND");
                 res = rs.getString("GameName");
@@ -535,6 +539,23 @@ public class MySqlConnection {
         finally{
             return res;
         }
+    }
+
+    public void sendAbusementReport(int userId, String message)
+    {
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+
+
+            statement.executeUpdate("INSERT INTO `"+database+"`.`abusementMessages` (`userId`,`message`) VALUES (" +userId + " , " + "'" + message + "')" );
+			//System.out.println(username + " " + password);
+        //    return true;
+        } catch(Exception e) {
+             System.out.println("Error");
+       //      return false;
+        }
+
     }
 
     @Override
