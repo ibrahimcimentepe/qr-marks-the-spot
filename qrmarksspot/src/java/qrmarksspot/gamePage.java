@@ -303,7 +303,7 @@ public class gamePage extends AbstractPageBean {
     public String buttonPlayGame_action() {
 
    //     getSessionBean1().set
-
+   //     this.result = "sonuclar : gameId" + getSessionBean1().selectedGameId +"  userId "+ getSessionBean1().userId;
         return "playGame";
     }
     
