@@ -96,21 +96,21 @@ public class MySqlConnection {
     	return res;
     }
 
-    public int getCurrentStepByPlayGameID(int playGameID){
+    public int getCurrentStep(int userID,int gameID){
         int res=-1;
     	try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `PlayGameId` = '"+playGameID+"'");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `UserId` = " + userID + " and `GameId` = " + gameID + " ");
             System.out.println("STATEMENT EXECUTED");
-            res=rs.getInt("CurrentStepOfPlayer");
+            res = rs.getInt("CurrentStepOfPlayer");
+
         } catch(Exception e) {
              System.out.println("Error");
-             res=-1;
         }
     	return res;
 
-    
+
     }
 
     public boolean addPlayGame(String username,int gameID)
