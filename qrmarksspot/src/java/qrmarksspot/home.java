@@ -228,7 +228,7 @@ public class home extends AbstractPageBean {
         try{
             MySqlConnection con = new MySqlConnection();
             if(con.gameExists(gameToBePlayed)){
-                this.getSessionBean1().selectedGameId=con.getGameIdbyGameName(gameToBePlayed);
+                this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gameToBePlayed));
                 result="gamePage";
             }else{
                 gameToBePlayed="There is no such game!";
