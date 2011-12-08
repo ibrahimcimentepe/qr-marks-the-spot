@@ -71,9 +71,8 @@ public class playGame extends AbstractPageBean {
         
         try{
             MySqlConnection con = new MySqlConnection();
-            playGameID=con.getPlayGameID(this.getSessionBean1().userId, this.getSessionBean1().getSelectedGameId());
             gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
-            currentStep=con.getCurrentStepByPlayGameID(playGameID);
+            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
             currentStepString=""+currentStepString + currentStep;
             location=con.getLocationOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep);
         }catch(Exception e){
