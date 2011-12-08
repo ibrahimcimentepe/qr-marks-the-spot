@@ -13,7 +13,7 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                     <webuijsf:link id="link2" url=""/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" imageURL="resources/success.JPG" style="-rave-layout: grid">
+                <webuijsf:body id="body1" imageURL="resources/success_1.JPG" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <br/>
                     </webuijsf:form>
