@@ -246,7 +246,7 @@ public class home extends AbstractPageBean {
     public String hyperlink2_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        return "gamePage";
+        return "abusementMessage";
     }
 
 }
