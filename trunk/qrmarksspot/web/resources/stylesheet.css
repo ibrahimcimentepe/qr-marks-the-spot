@@ -14,7 +14,8 @@
 
 body
 {
-    background-image:url('logobg.jpg');
+    background-color:aqua;
+    background-image:url("./logomuz.jpg");
     background-position:center;
 }
   
