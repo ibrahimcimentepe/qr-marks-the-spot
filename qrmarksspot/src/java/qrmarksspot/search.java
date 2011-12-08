@@ -27,6 +27,18 @@ import Classes.GameAttributes;
 public class search extends AbstractPageBean {
     String gamename1;
 
+    public String getGamename1() {
+        return gamename1;
+    }
+
+    public String getGamename2() {
+        return gamename2;
+    }
+
+    public String getGamename3() {
+        return gamename3;
+    }
+
     
     String gamename2;
     String gamename3;
