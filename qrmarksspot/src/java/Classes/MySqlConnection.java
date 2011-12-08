@@ -80,8 +80,37 @@ public class MySqlConnection {
              res=-1;
         }
     	return res;
+    }
 
+    public String getLocationOfCurrentStep(int gameId,int currentStep){
+        String res="";
+    	try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `gamesteps` WHERE `GameId` = '"+gameId+"' and `StepNumber` = '"+currentStep+"'");
+            System.out.println("STATEMENT EXECUTED");
+            res=rs.getString("LocationOfQrCode");
+        } catch(Exception e) {
+             System.out.println("Error");
+        }
+    	return res;
+    }
 
+    public int getCurrentStepByPlayGameID(int playGameID){
+        int res=-1;
+    	try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `PlayGameId` = '"+playGameID+"'");
+            System.out.println("STATEMENT EXECUTED");
+            res=rs.getInt("CurrentStepOfPlayer");
+        } catch(Exception e) {
+             System.out.println("Error");
+             res=-1;
+        }
+    	return res;
+
+    
     }
 
     public boolean addPlayGame(String username,int gameID)
@@ -100,6 +129,8 @@ public class MySqlConnection {
         }
     	return true;
     }
+
+
     public boolean addGame(GameAttributes gameAtt){
     
         try {
@@ -360,6 +391,26 @@ public class MySqlConnection {
             return found;
         }
     }
+
+    public String getGameNameByGameId(int gameId){
+
+        String res="";
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = '"+gameId+"'");
+	    	if(rs.next()){
+	    		System.out.println("GAME FOUND");
+                res = rs.getString("GameName");
+	    	}
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return res;
+        }
+    }
+    
 
     public int getUserIdbyUserName(String username){
 
