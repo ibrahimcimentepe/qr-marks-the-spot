@@ -67,14 +67,13 @@ public class MySqlConnection {
     	return true;
     }
 
-    public boolean addPlayGame(String username,String gamename)
+    public boolean addPlayGame(String username,int gameID)
     {
     try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
+            int firstStep=1;
             int userID=this.getUserIdbyUserName(username);
-            int gameID=this.getGameIdbyGameName(gamename);
-            int firstStep=0;
 			statement.executeUpdate("INSERT INTO `"+database+"`.`playgame` (`UserId`, `GameId`,`UserName`,`CurrentStepOfPlayer`) " +
                     "VALUES ('"+userID+"', '"+gameID+"','"+username+"','"+firstStep+"')");
 
