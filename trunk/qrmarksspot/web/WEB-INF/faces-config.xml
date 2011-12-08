@@ -66,6 +66,10 @@
             <from-outcome>case2</from-outcome>
             <to-view-id>/profilePage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>abusementMessage</from-outcome>
+            <to-view-id>/abusementMessage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -186,4 +190,37 @@
         <managed-bean-class>qrmarksspot.success</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+
+    <navigation-rule>
+        <from-view-id>/abusementMessage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>abusementMessage</from-outcome>
+            <to-view-id>/abusementMessage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>messageSent</from-outcome>
+            <to-view-id>/messageSent.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>messageSent</managed-bean-name>
+        <managed-bean-class>qrmarksspot.messageSent</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>abusementMessage</managed-bean-name>
+        <managed-bean-class>qrmarksspot.abusementMessage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/messageSent.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
