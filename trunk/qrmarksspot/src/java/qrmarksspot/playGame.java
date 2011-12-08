@@ -5,8 +5,12 @@
 
 package qrmarksspot;
 
+import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import javax.faces.FacesException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -32,7 +36,12 @@ public class playGame extends AbstractPageBean {
     }
 
     // </editor-fold>
-
+    String title;
+    int playGameID;
+    String gameName;
+    int currentStep;
+    String currentStepString="You are currently at ";
+    String location;
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -58,7 +67,22 @@ public class playGame extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
+        title="WELCOME "+this.getSessionBean1().effectiveUserName;
         
+        try{
+            MySqlConnection con = new MySqlConnection();
+            playGameID=con.getPlayGameID(this.getSessionBean1().userId, this.getSessionBean1().getSelectedGameId());
+            gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
+            currentStep=con.getCurrentStepByPlayGameID(playGameID);
+            currentStepString=""+currentStepString + currentStep;
+            location=con.getLocationOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep);
+        }catch(Exception e){
+            System.out.println("There is an error");
+        }
+
+
+
+
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -73,6 +97,54 @@ public class playGame extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+    }
+
+    public int getCurrentStep() {
+        return currentStep;
+    }
+
+    public void setCurrentStep(int currentStep) {
+        this.currentStep = currentStep;
+    }
+
+    public String getCurrentStepString() {
+        return currentStepString;
+    }
+
+    public void setCurrentStepString(String currentStepString) {
+        this.currentStepString = currentStepString;
+    }
+
+    public String getGameName() {
+        return gameName;
+    }
+
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getPlayGameID() {
+        return playGameID;
+    }
+
+    public void setPlayGameID(int playGameID) {
+        this.playGameID = playGameID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
