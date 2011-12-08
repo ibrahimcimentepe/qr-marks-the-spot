@@ -63,7 +63,7 @@
             <to-view-id>/home.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>profile</from-outcome>
+            <from-outcome>case2</from-outcome>
             <to-view-id>/profilePage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>

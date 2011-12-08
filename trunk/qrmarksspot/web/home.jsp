@@ -36,7 +36,6 @@
                                     </td>
                                     <td>
                                         <webuijsf:textField id="gameSearchTextField" text="#{home.gameToBePlayed}"/>
-                                        <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton" style="height: 20px; width: 80px" text="Search"/>
                                     </td>
                                     <td align="right">
                                         <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="height: 24px; width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
@@ -134,6 +133,8 @@
                             style="height: 24px; left: 336px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
                         <webuijsf:label id="usernameLabel1" style="left: 240px; top: 24px; position: absolute" text="#{SessionBean1.userName}"/>
+                        <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
+                            style="height: 48px; left: 503px; top: 240px; position: absolute; width: 80px" text="Search"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
