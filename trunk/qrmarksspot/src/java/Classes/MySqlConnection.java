@@ -385,7 +385,7 @@ public class MySqlConnection {
 
     public String[] getGameNamebyGameTag(String tag)
     {
-        String[] results=new String[1];
+        String[] results=new String[3];
         try
         {
             String[] results2=new String[100];
@@ -397,7 +397,8 @@ public class MySqlConnection {
                 results2[i]=rs.getString("GameName");
                 i++;
 	    	}
-            results=new String[i];
+            if (i>3) results=new String[i];
+            else results=new String[3];
             for(int j=0;j<i;j++)
             {
                 results[j]=results2[j];
