@@ -67,6 +67,23 @@ public class MySqlConnection {
     	return true;
     }
 
+    public int getPlayGameID(int userID,int gameID){
+        int res=-1;
+    	try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `UserId` = '"+userID+"' and `GameId` = '"+gameID+"'");
+            System.out.println("STATEMENT EXECUTED");
+            res=rs.getInt("PlayGameId");
+        } catch(Exception e) {
+             System.out.println("Error");
+             res=-1;
+        }
+    	return res;
+
+
+    }
+
     public boolean addPlayGame(String username,int gameID)
     {
     try {
