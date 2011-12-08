@@ -5,16 +5,12 @@
 
 package qrmarksspot;
 
-import Classes.GameAttributes;
-import Classes.MySqlConnection;
-import java.sql.ResultSet;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.model.DefaultOptionsList;
-import com.sun.webui.jsf.model.MultipleSelectOptionsList;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
-import java.util.Date;
 import javax.faces.FacesException;
 import javax.faces.event.ValueChangeEvent;
+
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
  * class contains component definitions (and initialization code) for
@@ -23,35 +19,29 @@ import javax.faces.event.ValueChangeEvent;
  * to respond to incoming events.</p>
  *
  * @version profilePage.java
- * @version Created on 27.Kas.2011, 17:21:10
+ * @version Created on 08.Ara.2011, 02:35:16
  * @author 23
  */
 
 public class profilePage extends AbstractPageBean {
-    public String userName1;
-    public String dateOfBirth;
-    public String location;
-    public String nameSurname;
-    public String faceAccount;
-    public String twitterAccount;
-    public String infos[];
-    public int gameList[];
+    // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
-    public String getFaceAccount() {
-        return faceAccount;
+    /**
+     * <p>Automatically managed component initialization.  <strong>WARNING:</strong>
+     * This method is automatically generated, so any user-specified code inserted
+     * here is subject to being replaced.</p>
+     */
+    private void _init() throws Exception {
     }
 
-    public void setFaceAccount(String faceAccount) {
-        this.faceAccount = faceAccount;
-    }
-
-    public String getTwitterAccount() {
-        return twitterAccount;
-    }
-
-    public void setTwitterAccount(String twitterAccount) {
-        this.twitterAccount = twitterAccount;
-    }
+    // </editor-fold>
+    String title;
+    String userName;
+    String passWord;
+    String dateOfBirth;
+    String webAddress;
+    String facebook;
+    String twitter;
 
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -61,43 +51,58 @@ public class profilePage extends AbstractPageBean {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getUserName1() {
-        return userName1;
+    public String getFacebook() {
+        return facebook;
     }
 
-    public void setUserName1(String userName1) {
-        this.userName1 = userName1;
-    }
-    public String getNameSurname() {
-        return nameSurname;
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
     }
 
-    public void setNameSurname(String nameSurname) {
-        this.nameSurname = nameSurname;
+    public String getPassWord() {
+        return passWord;
     }
 
-    public String getLocation() {
-        return location;
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-    private DefaultOptionsList gameListDefaultOptions = new DefaultOptionsList();
-
-    public DefaultOptionsList getGameListDefaultOptions() {
-        return gameListDefaultOptions;
+    public String getTwitter() {
+        return twitter;
     }
 
-    public void setGameListDefaultOptions(DefaultOptionsList dol) {
-        this.gameListDefaultOptions = dol;
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getWebAddress() {
+        return webAddress;
+    }
+
+    public void setWebAddress(String webAddress) {
+        this.webAddress = webAddress;
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
     public profilePage() {
-
     }
 
     /**
@@ -114,25 +119,18 @@ public class profilePage extends AbstractPageBean {
      */
     @Override
     public void init() {
-        
-        
-
         // Perform initializations inherited from our superclass
-        
-        
         super.init();
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-        //fillTextFields();
-        
+        title="WELCOME " + this.getSessionBean1().effectiveUserName;
 
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
         try {
-            init();
-            //_init();
+            _init();
         } catch (Exception e) {
             log("profilePage Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);
@@ -142,7 +140,6 @@ public class profilePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
-
     }
 
     /**
@@ -206,69 +203,24 @@ public class profilePage extends AbstractPageBean {
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
-    public void textField1_processValueChange(ValueChangeEvent vce) {
-    }
 
-    public String editButton_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
-    /**
-     * <p>Automatically managed component initialization.  <strong>WARNING:</strong>
-     * This method is automatically generated, so any user-specified code inserted
-     * here is subject to being replaced.</p>
-     */
-    private void _init() {
-        gameListDefaultOptions.setOptions(new com.sun.webui.jsf.model.Option[]{new com.sun.webui.jsf.model.Option("item1", "Game 1"), new com.sun.webui.jsf.model.Option("item2", "Game 2"), new com.sun.webui.jsf.model.Option("item3", "Game 3")});
-    }
-
-    public String homePageButton_action() {
+    public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "homepage";
     }
 
-    public String signOutButton_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return "login";
-    }
-
-    public void fillTextFields(){
-        userName1="QRseeker";
-        try{
-            MySqlConnection con = new MySqlConnection();
-            ResultSet rs = con.getUserInformationbyUserName("QRseeker");
-            this.dateOfBirth=rs.getString("DateOfBirth");
-            this.faceAccount="Facebook";//rs.getString("Facebook");
-            this.twitterAccount="Twitter";//rs.getString("Twitter");
-        }
-        catch(Exception e){
-
-        }
-    }
-
-    public void fillBox(){
-        MySqlConnection con = new MySqlConnection();
-        this.gameList=con.gameBoxList(this.userName1);
-
-    }
-
-    public String playGame_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return "play";
-    }
-
-
     public String button2_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        return "play";
+        return "signup";
     }
 
+    public String button3_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "edit";
+    }
 
     
 }
