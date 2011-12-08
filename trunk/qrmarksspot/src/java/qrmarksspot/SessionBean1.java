@@ -35,7 +35,16 @@ public class SessionBean1 extends AbstractSessionBean {
     GameAttributes newGame = new GameAttributes();
 
     int selectedGameId = 16;
+    int userId = -1;
 
+    
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
 
 

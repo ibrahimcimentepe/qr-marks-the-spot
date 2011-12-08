@@ -149,25 +149,6 @@ public class gamePage extends AbstractPageBean {
     public void setStartingPoint(String startingPoint) {
         this.startingPoint = startingPoint;
     }
-        
-
-
-
-
-
-
-    /**
-     * <p>Construct a new Page bean instance.</p>
-     */
-    private Label resultLabel = new Label();
-
-    public Label getResultLabel() {
-        return resultLabel;
-    }
-
-    public void setResultLabel(Label l) {
-        this.resultLabel = l;
-    }
     public gamePage() {
     }
 
@@ -297,21 +278,11 @@ public class gamePage extends AbstractPageBean {
     }
 
     public void bring_action() {
-//        try {
-//            MySqlConnection con = new MySqlConnection();
-//            this.result = con.getGame(this.gameId).getString("Description");
-//            this.resultLabel.setText(this.result);
-//
-//         //   return null;
-//        } catch (SQLException ex) {
-//            Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
-//        }
 
         try {
             this.gameId = getSessionBean1().getSelectedGameId();
             MySqlConnection con = new MySqlConnection();
             this.selectedGame = con.getGame(this.gameId);
-     //       this.result =this.selectedGame.getString("Description");
             this.gameName = this.selectedGame.getString("GameName");
             this.description = this.selectedGame.getString("Description");
             this.startingPoint = this.selectedGame.getString("StartLocation");
@@ -322,12 +293,18 @@ public class gamePage extends AbstractPageBean {
             this.rating = this.selectedGame.getInt("Rating");
             this.creatorName = this.selectedGame.getString("CreatorName");
 
-         //   return null;
         } catch (SQLException ex) {
             Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
+    }
+
+    public String buttonPlayGame_action() {
+
+   //     getSessionBean1().set
+
+        return "playGame";
     }
     
 }

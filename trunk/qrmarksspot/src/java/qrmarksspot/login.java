@@ -142,7 +142,7 @@ public class login extends AbstractPageBean {
 		}else{
             getSessionBean1().login(username);
             connection.addNews(username+ " has just logged in " , null );
-
+            getSessionBean1().setUserId(connection.getUserIdbyUserName(username));
 			return "success";
         }
     }
