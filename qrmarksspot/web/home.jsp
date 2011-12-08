@@ -135,6 +135,8 @@
                         <webuijsf:label id="usernameLabel1" style="left: 240px; top: 24px; position: absolute" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
                             style="height: 48px; left: 503px; top: 240px; position: absolute; width: 80px" text="Search"/>
+                        <webuijsf:hyperlink actionExpression="#{home.hyperlink2_action}" id="hyperlink2"
+                            style="height: 22px; left: 360px; top: 360px; position: absolute; width: 94px" text="Report Abuse"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
