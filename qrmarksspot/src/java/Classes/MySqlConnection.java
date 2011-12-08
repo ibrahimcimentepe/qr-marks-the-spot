@@ -412,22 +412,22 @@ public class MySqlConnection {
         }
     }
 
-    public int getGameIdbyGameName(String gamename){
-        int userId = -1;
+    public int getGameIdbyGameName(String gameName){
+        int gameId = -1;
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT UserId FROM `games` WHERE `GameName` = '"+gamename+"'");
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameName` = '"+gameName+"'");
 	    	if(rs.next()){
 	    		System.out.println("GAME FOUND");
-                userId = rs.getInt("GameId");
+                gameId = rs.getInt("GameId");
 	    	}
     	}
     	catch(Exception e){
 
     	}
-        finally{
-            return userId;
-        }
+
+        return gameId;
+    
     }
     
     public int sizeOfGameBox(String username){
