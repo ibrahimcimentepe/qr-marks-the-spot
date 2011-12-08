@@ -42,6 +42,7 @@ public class playGame extends AbstractPageBean {
     int currentStep;
     String currentStepString="You are currently at ";
     String location;
+    String password;
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -72,9 +73,10 @@ public class playGame extends AbstractPageBean {
         try{
             MySqlConnection con = new MySqlConnection();
             gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
-            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
+            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt(5);
             currentStepString=""+currentStepString + currentStep;
-            location=con.getLocationOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep);
+            location=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString(4);
+            password=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString(5);
         }catch(Exception e){
             System.out.println("There is an error");
         }
@@ -211,6 +213,7 @@ public class playGame extends AbstractPageBean {
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+      
         return "case1";
     }
     
