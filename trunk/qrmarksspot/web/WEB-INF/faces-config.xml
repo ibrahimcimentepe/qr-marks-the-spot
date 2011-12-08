@@ -51,10 +51,6 @@
             <to-view-id>/createGame.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>profile</from-outcome>
-            <to-view-id>/profilePage.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>gamePage</from-outcome>
             <to-view-id>/gamePage.jsp</to-view-id>
         </navigation-case>
@@ -65,6 +61,10 @@
         <navigation-case>
             <from-outcome>failPlay</from-outcome>
             <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>profile</from-outcome>
+            <to-view-id>/profilePage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -114,30 +114,10 @@
         </navigation-case>
     </navigation-rule>
     <managed-bean>
-        <managed-bean-name>profilePage</managed-bean-name>
-        <managed-bean-class>qrmarksspot.profilePage</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
         <managed-bean-name>gamePage</managed-bean-name>
         <managed-bean-class>qrmarksspot.gamePage</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
-    <navigation-rule>
-        <from-view-id>/profilePage.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>homepage</from-outcome>
-            <to-view-id>/home.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>login</from-outcome>
-            <to-view-id>/login.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>play</from-outcome>
-            <to-view-id>/playGame.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
     <managed-bean>
         <managed-bean-name>playGame</managed-bean-name>
         <managed-bean-class>qrmarksspot.playGame</managed-bean-class>
@@ -177,4 +157,24 @@
         <managed-bean-class>qrmarksspot.search</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>profilePage</managed-bean-name>
+        <managed-bean-class>qrmarksspot.profilePage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/profilePage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>homepage</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>signup</from-outcome>
+            <to-view-id>/signup.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/profilePage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

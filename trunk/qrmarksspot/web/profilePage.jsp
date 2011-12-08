@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
     Document   : profilePage
-    Created on : 27.Kas.2011, 17:21:10
+    Created on : 08.Ara.2011, 02:35:15
     Author     : 23
 -->
 <jsp:root version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
@@ -12,32 +12,31 @@
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body focus="form1:listbox1" id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
+                <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:label id="label1" style="font-size: 24px; height: 22px; left: 24px; top: 24px; position: absolute; width: 118px" text="Welcome"/>
-                        <webuijsf:label id="label2" style="height: 24px; left: 24px; top: 168px; position: absolute; width: 168px" text="User Name :"/>
-                        <webuijsf:label id="label4" style="left: 24px; top: 192px; position: absolute; width: 168px" text="Date of Birth :"/>
-                        <webuijsf:button actionExpression="#{profilePage.editButton_action}" id="editButton" style="left: 23px; top: 312px; position: absolute" text="Edit Profile"/>
-                        <webuijsf:button actionExpression="#{profilePage.homePageButton_action}" id="homePageButton"
-                            style="left: 95px; top: 312px; position: absolute" text="Go to Homepage"/>
-                        <webuijsf:button actionExpression="#{profilePage.signOutButton_action}" id="signOutButton"
-                            style="left: 191px; top: 312px; position: absolute" text="Sign Out"/>
-                        <webuijsf:label id="nameLabel" style="font-size: 24px; height: 24px; left: 144px; top: 24px; position: absolute; width: 120px" text="#{SessionBean1.effectiveUserName}"/>
-                        <webuijsf:image id="image1" style="left: 888px; top: 96px; position: absolute"/>
-                        <webuijsf:label id="label5" style="position: absolute; left: 24px; top: 216px" text="Facebook account : "/>
-                        <webuijsf:label id="label6" style="position: absolute; left: 24px; top: 240px" text="Twitter acount : "/>
-                        <webuijsf:textField id="textField1" style="left: 192px; top: 168px; position: absolute" text="#{profilePage.userName1}"/>
-                        <webuijsf:textField id="textField3" style="position: absolute; left: 192px; top: 192px" text="#{profilePage.dateOfBirth}"/>
-                        <webuijsf:textField id="textField4" style="position: absolute; left: 192px; top: 216px" text="#{profilePage.faceAccount}"/>
-                        <webuijsf:textField id="textField5" style="position: absolute; left: 192px; top: 240px" text="#{profilePage.twitterAccount}"/>
-                        <webuijsf:button actionExpression="#{profilePage.button1_action}" id="button1" style="left: 887px; top: 216px; position: absolute" text="Upload Image"/>
-                        <webuijsf:button actionExpression="#{profilePage.playGame_action}" id="playGame" style="left: 335px; top: 336px; position: absolute" text="GO!"/>
-                        <webuijsf:listbox id="listbox1" items="#{profilePage.gameListDefaultOptions}" style="left: 336px; top: 144px; position: absolute"/>
-                        <webuijsf:button actionExpression="#{profilePage.button2_action}" id="button2"
-                            style="height: 24px; left: 335px; top: 336px; position: absolute; width: 48px" text="GO"/>
+                        <webuijsf:label id="label1" style="font-size: 24px; height: 46px; left: 24px; top: 24px; position: absolute; width: 262px" text="#{profilePage.title}"/>
+                        <webuijsf:textField id="textField1" readOnly="true" style="left: 144px; top: 120px; position: absolute" text="#{profilePage.userName}"/>
+                        <webuijsf:label id="label2" style="left: 24px; top: 120px; position: absolute" text="USERNAME :"/>
+                        <webuijsf:label id="label3" style="left: 24px; top: 144px; position: absolute" text="PASSWORD"/>
+                        <webuijsf:label id="label4" style="left: 24px; top: 168px; position: absolute" text="DATE OF BIRTH :"/>
+                        <webuijsf:label id="label5" style="left: 24px; top: 192px; position: absolute" text="WEB ADDRESS :"/>
+                        <webuijsf:label id="label6" style="position: absolute; left: 24px; top: 216px" text="FACEBOOK"/>
+                        <webuijsf:textField id="textField2" readOnly="true" style="left: 144px; top: 144px; position: absolute" text="#{profilePage.passWord}" visible="false"/>
+                        <webuijsf:textField id="textField3" readOnly="true" style="left: 144px; top: 168px; position: absolute" text="#{profilePage.dateOfBirth}"/>
+                        <webuijsf:textField id="textField4" readOnly="true" style="left: 144px; top: 192px; position: absolute" text="#{profilePage.webAddress}"/>
+                        <webuijsf:textField id="textField5" readOnly="true" style="left: 144px; top: 216px; position: absolute" text="#{profilePage.facebook}"/>
+                        <webuijsf:label id="label7" style="position: absolute; left: 24px; top: 240px" text="TWITTER"/>
+                        <webuijsf:textField id="textField6" readOnly="true" style="left: 144px; top: 240px; position: absolute" text="#{profilePage.twitter}"/>
+                        <webuijsf:button actionExpression="#{profilePage.button1_action}" id="button1" style="position: absolute; left: 24px; top: 288px" text="Go to Homepage"/>
+                        <webuijsf:button actionExpression="#{profilePage.button2_action}" id="button2" style="left: 143px; top: 288px; position: absolute" text="Sign Out"/>
+                        <webuijsf:button actionExpression="#{profilePage.button3_action}" id="button3" style="left: 215px; top: 288px; position: absolute" text="Edit"/>
+                        <webuijsf:hyperlink id="hyperlink1" style="left: 336px; top: 120px; position: absolute" text="Hyperlink"/>
+                        <webuijsf:hyperlink id="hyperlink2" style="left: 336px; top: 144px; position: absolute" text="Hyperlink"/>
+                        <webuijsf:hyperlink id="hyperlink3" style="position: absolute; left: 336px; top: 168px" text="Hyperlink"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>
     </f:view>
+    <h:panelGrid id="gridPanel1"/>
 </jsp:root>
