@@ -17,7 +17,7 @@
                         <webuijsf:label id="label1" style="font-size: 24px; height: 24px; left: 72px; top: 96px; position: absolute; width: 384px" text="#{playGame.gameName}"/>
                         <webuijsf:label id="label2" style="font-size: 24px; height: 24px; left: 72px; top: 144px; position: absolute; width: 384px" text="#{playGame.currentStepString}"/>
                         <webuijsf:label id="label3" style="height: 24px; left: 72px; top: 216px; position: absolute; width: 384px" text="Information related to next target is given below!"/>
-                        <webuijsf:textField columns="37" id="textField1" style="height: 24px; left: 144px; top: 360px; position: absolute; width: 240px"/>
+                        <webuijsf:textField columns="37" id="textField1" style="height: 24px; left: 144px; top: 360px; position: absolute; width: 240px" text="#{playGame.givenPass}"/>
                         <webuijsf:label id="label4" style="height: 22px; left: 72px; top: 360px; position: absolute; width: 70px" text="Password:"/>
                         <webuijsf:button actionExpression="#{playGame.button1_action}" id="button1"
                             style="height: 24px; left: 383px; top: 360px; position: absolute; width: 72px" text="GO"/>
