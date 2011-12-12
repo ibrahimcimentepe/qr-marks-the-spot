@@ -396,6 +396,27 @@ public class MySqlConnection {
         }
     }
 
+    public boolean playGameExists(int userID,int gameID)
+    {
+    	boolean found = false;
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and 'UserId' = " + userID + " ");
+	    	if(rs.next()){
+	    		System.out.println("GAME FOUND");
+                found=true;
+	    	}
+            else{
+                found=false;
+            }
+    	}
+    	catch(Exception e){
+
+    	}
+        finally{
+            return found;
+        }
+    }
     public String getGameNameByGameId(int gameId){
 
         String res="";
@@ -413,6 +434,20 @@ public class MySqlConnection {
         finally{
             return res;
         }
+    }
+
+    public void incrementStep(int userId, int gameId){
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = '"+gameId+"' and `UserId` = '"+userId+"'");
+            int counter=rs.getInt(5);
+            counter++;
+	    	statement.executeUpdate("UPDATE `playgame` SET `CurrentStepOfPlayer` = '" + counter + "' WHERE `GameId` = '" + gameId + "' and `UserId` = '" + userId + "' ");
+        }
+        catch(Exception e){
+
+        }
+        
     }
     
 
@@ -491,7 +526,7 @@ public class MySqlConnection {
 	    	ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameName` = '"+gameName+"'");
 	    	if(rs.next()){
 	    		System.out.println("GAME FOUND");
-                gameId = rs.getInt("GameId");
+                gameId = rs.getInt(1);
 	    	}
     	}
     	catch(Exception e){
