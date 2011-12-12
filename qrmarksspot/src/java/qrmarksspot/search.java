@@ -26,7 +26,9 @@ import Classes.GameAttributes;
 
 public class search extends AbstractPageBean {
     String gamename1;
-
+    String gamename2;
+    String gamename3;
+    String searchString;
     public String getGamename1() {
         return gamename1;
     }
@@ -40,9 +42,6 @@ public class search extends AbstractPageBean {
     }
 
     
-    String gamename2;
-    String gamename3;
-    String searchString;
 public void setGamename1(String gamename1) {
         this.gamename1 = gamename1;
     }
@@ -210,6 +209,45 @@ public void setGamename1(String gamename1) {
     }
 
     public void textField2_processValueChange(ValueChangeEvent event) {
+    }
+
+    public String hyperlink1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        try{
+            MySqlConnection con = new MySqlConnection();
+            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename1));
+        }
+        catch(Exception e){
+
+        }
+        return "case1";
+    }
+
+    public String hyperlink2_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        try{
+            MySqlConnection con = new MySqlConnection();
+            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename2));
+        }
+        catch(Exception e){
+
+        }
+        return "case2";
+    }
+
+    public String hyperlink3_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        try{
+            MySqlConnection con = new MySqlConnection();
+            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename3));
+        }
+        catch(Exception e){
+
+        }
+        return "case3";
     }
 
 
