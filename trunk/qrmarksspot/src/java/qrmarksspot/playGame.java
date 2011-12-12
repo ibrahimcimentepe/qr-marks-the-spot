@@ -40,9 +40,27 @@ public class playGame extends AbstractPageBean {
     int playGameID;
     String gameName;
     int currentStep;
+    int nofSteps;
     String currentStepString="You are currently at ";
     String location;
     String password;
+    String givenPass;
+
+    public String getGivenPass() {
+        return givenPass;
+    }
+
+    public void setGivenPass(String givenPass) {
+        this.givenPass = givenPass;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -73,6 +91,7 @@ public class playGame extends AbstractPageBean {
         try{
             MySqlConnection con = new MySqlConnection();
             gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
+            nofSteps=con.getGame(this.getSessionBean1().getSelectedGameId()).getInt(4);
             currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt(5);
             currentStepString=""+currentStepString + currentStep;
             location=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString(4);
@@ -213,9 +232,30 @@ public class playGame extends AbstractPageBean {
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-      
-        return "case1";
+        String result="";
+        try{
+            if(password.equalsIgnoreCase(givenPass)){
+                if(currentStep+1>nofSteps){
+                    result="success";
+                }
+                else{
+                    result="normal";
+                }
+                MySqlConnection con = new MySqlConnection();
+                con.incrementStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
+            }
+            else{
+                givenPass="Wrong password!";
+                result="normal";
+            }
+
+        }catch(Exception e){
+
+        }
+        return result;
     }
+
+    
     
 }
 
