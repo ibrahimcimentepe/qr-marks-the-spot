@@ -82,11 +82,11 @@
                             </ul>
                         </div>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
-                            style="height: 24px; left: 1056px; top: 288px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
+                            style="height: 24px; left: 1008px; top: 288px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
                         <webuijsf:label id="usernameLabel1" style="left: 1008px; top: 240px; position: absolute; width: 72px" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
-                            style="height: 24px; left: 671px; top: 168px; position: absolute; width: 96px" text="Search"/>
+                            style="height: 24px; left: 671px; top: 216px; position: absolute; width: 96px" text="Search"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink2_action}" id="hyperlink2"
                             style="height: 22px; left: 1008px; top: 336px; position: absolute; width: 94px" text="Report Abuse"/>
                         <webuijsf:textField id="gameSearchTextField1" style="left: 504px; top: 168px; position: absolute" text="#{home.gameToBePlayed}"/>
@@ -97,7 +97,8 @@
                         <webuijsf:button actionExpression="#{home.signup_action}" id="signup1"
                             style="height: 24px; left: 1007px; top: 96px; position: absolute; width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
                         <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton1"
-                            style="height: 24px; left: 671px; top: 216px; position: absolute; width: 96px" text="to the game -&gt;"/>
+                            style="height: 24px; left: 671px; top: 168px; position: absolute; width: 96px" text="to the game -&gt;"/>
+                        <webuijsf:button id="button1" style="height: 24px; left: 671px; top: 120px; position: absolute; width: 95px" text="Forum"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

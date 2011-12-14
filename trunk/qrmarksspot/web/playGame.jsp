@@ -22,7 +22,7 @@
                         <webuijsf:button actionExpression="#{playGame.nextButton_action}" id="nextButton"
                             style="height: 24px; left: 383px; top: 360px; position: absolute; width: 72px" text="GO"/>
                         <webuijsf:label id="label5" style="font-size: 36px; height: 46px; left: 72px; top: 24px; position: absolute; width: 262px" text="#{SessionBean1.effectiveUserName}"/>
-                        <webuijsf:textArea columns="60" id="textArea1" rows="5" style="left: 72px; top: 264px; position: absolute" text="#{playGame.location}"/>
+                        <webuijsf:textArea columns="60" id="textArea1" readOnly="true" rows="5" style="left: 72px; top: 264px; position: absolute" text="#{playGame.location}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
