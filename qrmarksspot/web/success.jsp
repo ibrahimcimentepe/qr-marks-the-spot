@@ -15,6 +15,7 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/success_1.JPG" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
+                        <webuijsf:label id="label1" style="font-size: 36px; height: 192px; left: 48px; top: 48px; position: absolute; width: 408px" text="YOU WON!!!"/>
                         <br/>
                     </webuijsf:form>
                 </webuijsf:body>

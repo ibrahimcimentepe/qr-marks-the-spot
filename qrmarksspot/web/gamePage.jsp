@@ -49,7 +49,7 @@
                         <webuijsf:textField columns="100" id="textFieldGameName" readOnly="true"
                             style="border: 2px solid red; left: 336px; top: 144px; position: absolute" text="#{gamePage.gameName}"/>
                         <webuijsf:button actionExpression="#{gamePage.buttonPlayGame_action}" id="buttonPlayGame"
-                            style="height: 24px; left: 264px; top: 48px; position: absolute; width: 287px" text="PLAY THIS GAME !!!"/>
+                            style="height: 24px; left: 264px; top: 48px; position: absolute; width: 287px" text="#{gamePage.playButton}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
