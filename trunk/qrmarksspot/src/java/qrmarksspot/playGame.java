@@ -41,7 +41,24 @@ public class playGame extends AbstractPageBean {
     String gameName;
     int currentStep;
     int nofSteps;
-    String currentStepString="You are currently at ";
+    String currentStepString="You are currently at step ";
+    String currentGameString="You are playing ";
+
+    public String getCurrentGameString() {
+        return currentGameString;
+    }
+
+    public void setCurrentGameString(String currentGameString) {
+        this.currentGameString = currentGameString;
+    }
+
+    public int getNofSteps() {
+        return nofSteps;
+    }
+
+    public void setNofSteps(int nofSteps) {
+        this.nofSteps = nofSteps;
+    }
     String location;
     String password;
     String givenPass;
@@ -91,11 +108,14 @@ public class playGame extends AbstractPageBean {
         try{
             MySqlConnection con = new MySqlConnection();
             gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
-            nofSteps=con.getGame(this.getSessionBean1().getSelectedGameId()).getInt(4);
-            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt(5);
+            currentGameString=""+currentGameString+gameName;
+            
+            nofSteps=con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps");
+            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer");;
+
             currentStepString=""+currentStepString + currentStep;
-            location=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString(4);
-            password=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString(5);
+            location=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode");
+            password=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep");
         }catch(Exception e){
             System.out.println("There is an error");
         }
@@ -229,7 +249,7 @@ public class playGame extends AbstractPageBean {
         return (SessionBean1) getBean("SessionBean1");
     }
 
-    public String button1_action() {
+    public String nextButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         String result="";
@@ -243,6 +263,7 @@ public class playGame extends AbstractPageBean {
                 }
                 MySqlConnection con = new MySqlConnection();
                 con.incrementStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
+                
             }
             else{
                 givenPass="Wrong password!";

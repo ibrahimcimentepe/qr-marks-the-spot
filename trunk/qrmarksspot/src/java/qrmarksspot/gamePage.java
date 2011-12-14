@@ -52,6 +52,15 @@ public class gamePage extends AbstractPageBean {
         int numberOfPlayers;
         int rating ;
         String creatorName;
+        String playButton="PLAY THIS GAME!";
+
+    public String getPlayButton() {
+        return playButton;
+    }
+
+    public void setPlayButton(String playButton) {
+        this.playButton = playButton;
+    }
         
         
     public String getBorders() {
@@ -176,7 +185,7 @@ public class gamePage extends AbstractPageBean {
             this.gameId = getSessionBean1().getSelectedGameId();
             MySqlConnection con = new MySqlConnection();
             this.selectedGame = con.getGame(this.gameId);
-     //       this.result =this.selectedGame.getString("Description");
+     //     this.result =this.selectedGame.getString("Description");
             this.gameName = this.selectedGame.getString("GameName");
             this.description = this.selectedGame.getString("Description");
             this.startingPoint = this.selectedGame.getString("StartLocation");
@@ -186,6 +195,12 @@ public class gamePage extends AbstractPageBean {
             this.numberOfPlayers = this.selectedGame.getInt("NumberOfPlayers");
             this.rating = this.selectedGame.getInt("Rating");
             this.creatorName = this.selectedGame.getString("CreatorName");
+            //oyun önceden oynanmış mı? ona göre buton farklılaşacak.
+            if(!(con.playGameExists(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId())))
+                this.playButton="PLAY THIS GAME!!!";
+            else
+                this.playButton="CONTINUE THIS GAME!!!";
+
 
          //   return null;
         } catch (SQLException ex) {
