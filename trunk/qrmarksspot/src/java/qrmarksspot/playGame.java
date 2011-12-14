@@ -119,9 +119,7 @@ public class playGame extends AbstractPageBean {
         }catch(Exception e){
             System.out.println("There is an error");
         }
-
-
-
+        
 
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -272,6 +270,9 @@ public class playGame extends AbstractPageBean {
         }catch(Exception e){
 
         }
+
+        givenPass="";
+
         return result;
     }  
 }
