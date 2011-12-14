@@ -182,10 +182,14 @@ public class createGame extends AbstractPageBean {
         game.isFinished = false;
 
         boolean added = con.addGame(game);
-        Date d = new Date();
+        if(added){
+
+            Date d = new Date();
         java.sql.Date sqlDate = new java.sql.Date(d.getTime());
         con.addNews(game.CreatorName + " has just created game " + getGameName() , sqlDate );
 
+
+        }
         return "case1";
     }
 
