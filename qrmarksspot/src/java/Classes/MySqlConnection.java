@@ -440,9 +440,11 @@ public class MySqlConnection {
         try{
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = '"+gameId+"' and `UserId` = '"+userId+"'");
-            int counter=rs.getInt(5);
-            counter++;
-	    	statement.executeUpdate("UPDATE `playgame` SET `CurrentStepOfPlayer` = '" + counter + "' WHERE `GameId` = '" + gameId + "' and `UserId` = '" + userId + "' ");
+            if(rs.next()){
+                int counter=rs.getInt("CurrentStepOfPlayer");
+                counter++;
+                statement.executeUpdate("UPDATE `playgame` SET `CurrentStepOfPlayer` = '" + counter + "' WHERE `GameId` = '" + gameId + "' and `UserId` = '" + userId + "' ");
+            }
         }
         catch(Exception e){
 
