@@ -43,6 +43,17 @@ body
   color: black;
 }
 
+label {
+    
+    color: white;
+}
+
+.link {
+
+    color: aqua;
+
+}
+
 .warnMessage {
   color: orange;
   font-weight: bold;

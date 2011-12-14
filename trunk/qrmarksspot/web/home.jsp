@@ -9,12 +9,9 @@
         <webuijsf:page id="page1">
             <webuijsf:html id="html1">
                 <webuijsf:head id="head1">
-                    <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
+                    <webuijsf:link type="link" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
-                    <webuijsf:label id="label1"
-                        style="color: rgb(255, 255, 255); font-family: 'Geneva','Arial','Helvetica',sans-serif; font-size: 36px; font-weight: bold; left: 456px; top: 0px; position: absolute; text-decoration: underline" text="QR MARKS THE SPOT"/>
-                    <legend>QR MARKS THE SPOT</legend>
                     <webuijsf:form id="form1">
                         <div>
                             <webuijsf:label id="label2" style="left: 48px; color: rgb(255, 255, 255); top: 96px; position: absolute" text="News Feed"/>
@@ -84,7 +81,7 @@
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
                             style="height: 24px; left: 1008px; top: 288px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <br/>
-                        <webuijsf:label id="usernameLabel1" style="left: 1008px; top: 240px; position: absolute; width: 72px" text="#{SessionBean1.userName}"/>
+                        <webuijsf:label id="usernameLabel1" style="left: 240px; top: 24px; position: absolute" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
                             style="height: 24px; left: 671px; top: 216px; position: absolute; width: 96px" text="Search"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink2_action}" id="hyperlink2"
