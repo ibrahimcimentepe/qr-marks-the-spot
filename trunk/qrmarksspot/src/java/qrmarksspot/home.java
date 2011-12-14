@@ -182,7 +182,7 @@ public class home extends AbstractPageBean {
     }
 
     public String login_action() {
-        return "login";
+        return "case3";
     }
 
     public String tutorial_action() {
@@ -249,18 +249,11 @@ public class home extends AbstractPageBean {
         return "abusementMessage";
     }
 
-    public void button1_action() {
+    public String seeQrCodesButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        try
-        {
-            java.awt.Desktop.getDesktop().browse(new java.net.URI("http://titan.cmpe.boun.edu.tr:8080/jforum/forums/list.page"));
-            
-        }     
-        catch(Exception e)
-        {}
+        return "showQr";
     }
-
 
 }
 
