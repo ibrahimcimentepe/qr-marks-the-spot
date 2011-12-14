@@ -206,7 +206,7 @@ public class MySqlConnection {
             GameAttributes.GameSteps gameStep = gameAtt.gameSteps.get(step-1);
 			String insertQuery = "insert into `database1`.`gamesteps` (`GameId`, `StepNumber`, `LocationOfQrCode`,"
                     +" `PasswordOfStep`, `IsSolved`) VALUES ('"+gameId+"', '"+step+"', '"+gameStep.location+"', '"
-                    +gameStep.password+"', '0')";
+                    +gameStep.password+"', '0','" +gameStep.qrCodeOfStep+ "')";
             statement.executeUpdate(insertQuery);
             System.out.println("STATEMENT EXECUTED");
 
@@ -591,6 +591,48 @@ public class MySqlConnection {
              System.out.println("Error");
        //      return false;
         }
+
+    }
+
+
+
+    public ResultSet getGameNameByUserId (int userId)
+    {
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT 'gameId','gameName' FROM 'games' WHERE 'userId' = '" + userId +"'");
+	    	if(rs.next()){
+	    		System.out.println("Gamesteps found");
+	    	}
+
+            return rs;
+        } catch(Exception e) {
+             System.out.println("Error");
+
+             return null;
+        }
+    }
+
+
+
+    public ResultSet getGameStepsByUserId (int userId)
+    {
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM gamesteps INNER JOIN games on gamesteps.GameId=games.GameId INNER JOIN users on games.CreaterId=users.userId WHERE users.userId= '"+ userId + "'");
+	    	if(rs.next()){
+	    		System.out.println("Gamesteps found");
+	    	}
+
+            return rs;
+        } catch(Exception e) {
+             System.out.println("Error");
+
+             return null;
+        }
+
 
     }
 

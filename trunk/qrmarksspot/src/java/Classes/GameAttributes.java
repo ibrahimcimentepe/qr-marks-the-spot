@@ -16,6 +16,15 @@ public class GameAttributes {
     String description;
     String startingPoint;
     String borders;
+    String qrString;
+
+    public String getQrString() {
+        return qrString;
+    }
+
+    public void setQrString(String qrString) {
+        this.qrString = qrString;
+    }
     ArrayList<String> tags = new ArrayList<String>();
     int rating = 0;
     public int numberOfSteps = 0;
@@ -30,6 +39,15 @@ public class GameAttributes {
         String qrCodeOfStep;
         String location;
         String password;
+        String qrString;
+
+    public String getQrString() {
+        return qrString;
+    }
+
+    public void setQrString(String qrString) {
+        this.qrString = qrString;
+    }
 
         public String getLocation() {
             return location;
