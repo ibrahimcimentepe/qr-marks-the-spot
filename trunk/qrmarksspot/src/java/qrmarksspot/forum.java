@@ -29,6 +29,7 @@ public class forum extends AbstractPageBean {
      * here is subject to being replaced.</p>
      */
     private void _init() throws Exception {
+
     }
 
     // </editor-fold>
@@ -70,6 +71,7 @@ public class forum extends AbstractPageBean {
         }
         
         // </editor-fold>
+
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
