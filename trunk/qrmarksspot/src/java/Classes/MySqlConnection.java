@@ -83,7 +83,6 @@ public class MySqlConnection {
     }
 
     public ResultSet getInfoOfCurrentStep(int gameId,int currentStep){
-        String res="";
     	try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
