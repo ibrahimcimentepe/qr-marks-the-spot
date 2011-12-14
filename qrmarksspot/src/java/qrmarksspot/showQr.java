@@ -5,11 +5,10 @@
 
 package qrmarksspot;
 
-import Classes.GameAttributes.GameSteps;
-import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.model.SingleSelectOptionsList;
+import java.util.ArrayList;
 import javax.faces.FacesException;
-import qr.QR;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -18,12 +17,12 @@ import qr.QR;
  * lifecycle methods and event handlers where you may add behavior
  * to respond to incoming events.</p>
  *
- * @version gameSteps.java
- * @version Created on Nov 25, 2011, 5:25:35 AM
+ * @version showQr.java
+ * @version Created on Dec 14, 2011, 9:07:52 PM
  * @author alke
  */
 
-public class gameSteps extends AbstractPageBean {
+public class showQr extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -33,26 +32,35 @@ public class gameSteps extends AbstractPageBean {
      */
     private void _init() throws Exception {
     }
+    private SingleSelectOptionsList gameStepDropDownDefaultOptions = new SingleSelectOptionsList();
+
+    public SingleSelectOptionsList getGameStepDropDownDefaultOptions() {
+        return gameStepDropDownDefaultOptions;
+    }
+
+    public void setGameStepDropDownDefaultOptions(SingleSelectOptionsList ssol) {
+        this.gameStepDropDownDefaultOptions = ssol;
+    }
+    private SingleSelectOptionsList gameNameDropDownDefaultOptions = new SingleSelectOptionsList();
+
+    public SingleSelectOptionsList getGameNameDropDownDefaultOptions() {
+        return gameNameDropDownDefaultOptions;
+    }
+
+    public void setGameNameDropDownDefaultOptions(SingleSelectOptionsList ssol) {
+        this.gameNameDropDownDefaultOptions = ssol;
+    }
 
     // </editor-fold>
-    String gameStepString;
-    String qrCodeString;
-    String password;
-    String location;
-    String buttonText;
-    String qrString;
+    ArrayList<String> gameNames = new ArrayList();
 
-    public String getQrString() {
-        return qrString;
-    }
 
-    public void setQrString(String qrString) {
-        this.qrString = qrString;
-    }
+
+
     /**
      * <p>Construct a new Page bean instance.</p>
      */
-    public gameSteps() {
+    public showQr() {
     }
 
     /**
@@ -73,15 +81,15 @@ public class gameSteps extends AbstractPageBean {
         super.init();
         // Perform application initialization that must complete
         // *before* managed components are initialized
-        gameStepString = "Your are designing the step 1";
-        buttonText = "Proceed To Step 2";
+        // TODO - add your own initialiation code here
+        
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
         try {
             _init();
         } catch (Exception e) {
-            log("gameSteps Initialization Failure", e);
+            log("showQr Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);
         }
         
@@ -131,6 +139,15 @@ public class gameSteps extends AbstractPageBean {
      *
      * @return reference to the scoped data bean
      */
+    protected SessionBean1 getSessionBean1() {
+        return (SessionBean1) getBean("SessionBean1");
+    }
+
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
     protected RequestBean1 getRequestBean1() {
         return (RequestBean1) getBean("RequestBean1");
     }
@@ -143,89 +160,6 @@ public class gameSteps extends AbstractPageBean {
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
-
-    /**
-     * <p>Return a reference to the scoped data bean.</p>
-     *
-     * @return reference to the scoped data bean
-     */
-    protected SessionBean1 getSessionBean1() {
-        return (SessionBean1) getBean("SessionBean1");
-    }
-
-    public String getGameStepString() {
-        return gameStepString;
-    }
-
-    public void setGameStepString(String gameStepString) {
-        this.gameStepString = gameStepString;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getQrCodeString() {
-        return qrCodeString;
-    }
-
-    public void setQrCodeString(String qrCodeString) {
-        this.qrCodeString = qrCodeString;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getButtonText() {
-        return buttonText;
-    }
-
-    public void setButtonText(String buttonText) {
-        this.buttonText = buttonText;
-    }
-
-    public String button1_action() {
-        GameSteps step = new GameSteps();
-        //step.setQrString(qrString);
-        step.setLocation(location);
-        step.setPassword(password);
-        step.setQrCodeOfStep(qrCodeString);
-        getSessionBean1().getNewGame().addGameStep(step);
-        int currentStep = getSessionBean1().getNewGame().getCurrentDesigningStep() + 1;
-        int numberOfStep = getSessionBean1().getNewGame().getNumberOfSteps();
-        MySqlConnection con = new MySqlConnection();
-        con.addGameStep(getSessionBean1().getNewGame(), currentStep-1);
-         
-        if(currentStep == numberOfStep){
-            location = "";
-            password = "";
-            qrCodeString = "";
-            buttonText = "Create The Game!";
-            gameStepString = String.format("Now you are designing %d", currentStep);
-        }
-        else if(currentStep == numberOfStep + 1){
-            //TODO Insert to database
-            return "finished";
-        }
-        else{
-            buttonText = String.format("Proceed to step %d", currentStep+1);
-            gameStepString = String.format("Now you are designing %d", currentStep);
-            location = "";
-            password = "";
-            qrCodeString = "";
-        }
-        getSessionBean1().getNewGame().setCurrentDesigningStep(currentStep);
-        return null;
-    }
-
+    
 }
 
