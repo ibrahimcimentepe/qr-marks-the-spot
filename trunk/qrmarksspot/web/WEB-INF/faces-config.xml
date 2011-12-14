@@ -70,6 +70,14 @@
             <from-outcome>abusementMessage</from-outcome>
             <to-view-id>/abusementMessage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>showQr</from-outcome>
+            <to-view-id>/showQr.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>case3</from-outcome>
+            <to-view-id>/login.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -216,6 +224,11 @@
     <managed-bean>
         <managed-bean-name>abusementMessage</managed-bean-name>
         <managed-bean-class>qrmarksspot.abusementMessage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>showQr</managed-bean-name>
+        <managed-bean-class>qrmarksspot.showQr</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>
