@@ -400,7 +400,7 @@ public class MySqlConnection {
     	boolean found = false;
     	try{
 	    	Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and 'UserId' = " + userID + " ");
+	    	ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = '" + gameID + "' and `UserId` = '" + userID + "'");
 	    	if(rs.next()){
 	    		System.out.println("GAME FOUND");
                 found=true;
