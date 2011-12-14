@@ -319,6 +319,7 @@ public class gamePage extends AbstractPageBean {
 
    //     getSessionBean1().set
    //     this.result = "sonuclar : gameId" + getSessionBean1().selectedGameId +"  userId "+ getSessionBean1().userId;
+        String result="";
         try{
             MySqlConnection con = new MySqlConnection();
             if(!(con.playGameExists(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId())))
@@ -326,7 +327,12 @@ public class gamePage extends AbstractPageBean {
         }catch(Exception e){
             
         }
-        return "playGame";
+        if(this.getSessionBean1().loggedIn)
+            result="playGame";
+        else
+            result="signUp";
+
+        return result;
     }
     
 }
