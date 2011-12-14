@@ -139,6 +139,8 @@
                             style="height: 22px; left: 672px; top: 192px; position: absolute; width: 94px" text="Report Abuse"/>
                         <webuijsf:button actionExpression="#{home.seeQrCodesButton_action}" id="seeQrCodesButton"
                             style="height: 24px; left: 671px; top: 240px; position: absolute; width: 72px" text="See Qr Codes"/>
+                        <webuijsf:button actionExpression="#{home.button1_action}" id="button1"
+                            style="height: 24px; left: 671px; top: 288px; position: absolute; width: 73px" text="Forum"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
