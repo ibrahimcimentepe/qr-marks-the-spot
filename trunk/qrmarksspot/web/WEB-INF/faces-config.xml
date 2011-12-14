@@ -204,4 +204,14 @@
             <to-view-id>/gamePage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>messageSent</managed-bean-name>
+        <managed-bean-class>qrmarksspot.messageSent</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>abusementMessage</managed-bean-name>
+        <managed-bean-class>qrmarksspot.abusementMessage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
