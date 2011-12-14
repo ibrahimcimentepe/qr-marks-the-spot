@@ -158,6 +158,10 @@
             <from-outcome>playGame</from-outcome>
             <to-view-id>/playGame.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>signUp</from-outcome>
+            <to-view-id>/signup.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>forum</managed-bean-name>
