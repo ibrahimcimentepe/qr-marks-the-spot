@@ -98,7 +98,8 @@
                             style="height: 24px; left: 1007px; top: 96px; position: absolute; width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
                         <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton1"
                             style="height: 24px; left: 671px; top: 168px; position: absolute; width: 96px" text="to the game -&gt;"/>
-                        <webuijsf:button id="button1" style="height: 24px; left: 671px; top: 120px; position: absolute; width: 95px" text="Forum"/>
+                        <webuijsf:button actionExpression="#{home.button1_action}" id="button1"
+                            style="height: 24px; left: 671px; top: 120px; position: absolute; width: 95px" text="Forum"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
