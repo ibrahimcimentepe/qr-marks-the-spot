@@ -585,7 +585,7 @@ public class MySqlConnection {
             System.out.println("CONNECTION ESTABLISHED");
 
 
-            statement.executeUpdate("INSERT INTO `"+database+"`.`abusementMessages` (`userId`,`message`) VALUES (" +userId + " , " + "'" + message + "')" );
+            statement.executeUpdate("INSERT INTO `"+database+"`.`abusementMessages` (`userId`,`message`) VALUES (" + userId + " , " + "'" + message + "') " );
 			//System.out.println(username + " " + password);
         //    return true;
         } catch(Exception e) {
