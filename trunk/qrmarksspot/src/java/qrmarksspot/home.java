@@ -249,5 +249,18 @@ public class home extends AbstractPageBean {
         return "abusementMessage";
     }
 
+    public void button1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        try
+        {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("http://titan.cmpe.boun.edu.tr:8080/jforum/forums/list.page"));
+            
+        }     
+        catch(Exception e)
+        {}
+    }
+
+
 }
 
