@@ -247,7 +247,7 @@ public class MySqlConnection {
         try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT * FROM `newsfeed` ");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `newsfeed` ORDER BY DateAndTime DESC ");
 	    	if(rs.next()){
 	    		System.out.println("NEWS FOUND");
 	    	}
