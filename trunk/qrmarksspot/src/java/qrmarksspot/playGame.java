@@ -108,14 +108,14 @@ public class playGame extends AbstractPageBean {
         try{
             MySqlConnection con = new MySqlConnection();
             gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
-            currentGameString=""+currentGameString+gameName;
+            currentGameString=String.format(""+currentGameString+gameName);
             
             nofSteps=con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps");
-            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer");;
+            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer");
 
-            currentStepString=""+currentStepString + currentStep;
-            location=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode");
-            password=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep");
+            currentStepString=String.format(""+currentStepString + currentStep);
+            location=String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode"));
+            password=String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep"));
         }catch(Exception e){
             System.out.println("There is an error");
         }
@@ -255,15 +255,14 @@ public class playGame extends AbstractPageBean {
         String result="";
         try{
             if(password.equalsIgnoreCase(givenPass)){
-                if(currentStep+1>nofSteps){
+                if(currentStep==nofSteps){
                     result="success";
                 }
                 else{
                     result="normal";
+                    MySqlConnection con = new MySqlConnection();
+                    con.incrementStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
                 }
-                MySqlConnection con = new MySqlConnection();
-                con.incrementStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
-                
             }
             else{
                 givenPass="Wrong password!";
@@ -274,9 +273,6 @@ public class playGame extends AbstractPageBean {
 
         }
         return result;
-    }
-
-    
-    
+    }  
 }
 
