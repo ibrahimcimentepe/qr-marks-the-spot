@@ -6,11 +6,13 @@
 package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import javax.faces.FacesException;
 import javax.faces.event.ValueChangeEvent;
 import Classes.MySqlConnection;
 import Classes.GameAttributes;
+import java.util.*;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -29,6 +31,7 @@ public class search extends AbstractPageBean {
     String gamename2;
     String gamename3;
     String searchString;
+    List<String> myList=new ArrayList<String>();
     public String getGamename1() {
         return gamename1;
     }
@@ -98,6 +101,9 @@ public void setGamename1(String gamename1) {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
+
+        this.myList.add("Hello");
+        this.myList.add("world");
         
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -113,6 +119,14 @@ public void setGamename1(String gamename1) {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+    }
+
+    public List<String> getMyList() {
+        return myList;
+    }
+
+    public void setMyList(List<String> myList) {
+        this.myList = myList;
     }
 
     /**
@@ -216,11 +230,12 @@ public void setGamename1(String gamename1) {
         // case name where null will return to the same page.
         try{
             MySqlConnection con = new MySqlConnection();
-            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename1));
-        }
-        catch(Exception e){
-
-        }
+            if(con.gameExists(gamename1)){
+                this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename1));
+           }
+        }catch(Exception e){
+            System.out.println("Error, going to homepage");
+            }
         return "case1";
     }
 
@@ -229,7 +244,7 @@ public void setGamename1(String gamename1) {
         // case name where null will return to the same page.
         try{
             MySqlConnection con = new MySqlConnection();
-            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename2));
+            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(this.getGamename2()));
         }
         catch(Exception e){
 
@@ -242,13 +257,14 @@ public void setGamename1(String gamename1) {
         // case name where null will return to the same page.
         try{
             MySqlConnection con = new MySqlConnection();
-            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(gamename3));
+            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(this.getGamename3()));
         }
         catch(Exception e){
 
         }
         return "case3";
     }
+
 
 
     

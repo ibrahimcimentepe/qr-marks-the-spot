@@ -103,23 +103,23 @@ public class playGame extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
+        clearTheBoxes();
         title="WELCOME "+this.getSessionBean1().effectiveUserName;
         
         try{
             MySqlConnection con = new MySqlConnection();
-            gameName=con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId());
-            currentGameString=String.format(""+currentGameString+gameName);
-            
-            nofSteps=con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps");
-            currentStep=con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer");
+            this.setGameName(con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId()));
+            this.setCurrentGameString(""+currentGameString+gameName);
 
-            currentStepString=String.format(""+currentStepString + currentStep);
-            location=String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode"));
-            password=String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep"));
+            this.setNofSteps(con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps"));
+            this.setCurrentStep(con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer"));
+
+            this.setCurrentStepString(""+currentStepString + currentStep);
+            this.setLocation(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode")));
+            this.setPassword(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep")));
         }catch(Exception e){
             System.out.println("There is an error");
-        }
-        
+        } 
 
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -136,10 +136,37 @@ public class playGame extends AbstractPageBean {
         // *after* managed components are initialized
         // TODO - add your own initialization code here
     }
+    public void clearTheBoxes(){
+        title="";
+        playGameID=0;
+        gameName="";
+        currentStep=0;
+        nofSteps=0;
+        currentStepString="You are currently at step ";
+        currentGameString="You are playing ";
+    }
+    public void fillTheBoxes(){
+        try{
+            MySqlConnection con = new MySqlConnection();
+            this.setGameName(con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId()));
+            this.setCurrentGameString(currentGameString=String.format(""+currentGameString+gameName));
+            
+            this.setNofSteps(con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps"));
+            this.setCurrentStep(con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer"));
+
+            this.setCurrentStepString(String.format(""+currentStepString + currentStep));
+            this.setLocation(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode")));
+            this.setPassword(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep")));
+        }catch(Exception e){
+            System.out.println("There is an error");
+        }        
+    }
 
     public int getCurrentStep() {
         return currentStep;
     }
+
+
 
     public void setCurrentStep(int currentStep) {
         this.currentStep = currentStep;
@@ -257,21 +284,21 @@ public class playGame extends AbstractPageBean {
                     result="success";
                 }
                 else{
-                    result="normal";
+                    result=null;
                     MySqlConnection con = new MySqlConnection();
                     con.incrementStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
                 }
             }
             else{
                 givenPass="Wrong password!";
-                result="normal";
+                result=null;
             }
 
         }catch(Exception e){
 
         }
 
-        givenPass="";
+        //this.fillTheBoxes();
 
         return result;
     }  
