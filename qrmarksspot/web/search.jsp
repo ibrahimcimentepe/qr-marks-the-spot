@@ -20,6 +20,7 @@
                         <webuijsf:hyperlink actionExpression="#{search.hyperlink1_action}" id="hyperlink1" style="position: absolute; left: 120px; top: 216px" text="#{search.gamename1}"/>
                         <webuijsf:hyperlink actionExpression="#{search.hyperlink2_action}" id="hyperlink2" style="position: absolute; left: 120px; top: 264px" text="#{search.gamename2}"/>
                         <webuijsf:hyperlink actionExpression="#{search.hyperlink3_action}" id="hyperlink3" style="position: absolute; left: 120px; top: 312px" text="#{search.gamename3}"/>
+                        <webuijsf:listbox id="listbox1" items="#{search.myList}" style="left: 456px; top: 192px; position: absolute" valueChangeListenerExpression="#{search.listbox1_processValueChange}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
