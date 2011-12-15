@@ -42,7 +42,7 @@ public class gamePage extends AbstractPageBean {
         String result = "bos"; //simdilik result set bos
         ResultSet selectedGame;
 
-        int gameId = 17;   //simdilik bir game ID
+        int gameId ;   //simdilik bir game ID
         String gameName;
         String description;
         String startingPoint;
