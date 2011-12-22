@@ -1,12 +1,10 @@
-==Team Meeting #16==
- * Date : 30.11.2011 - Wednesday
- * Time : Started at 23:00 - Ended at 6:27 am (Thursday)
- * Type : Teamwork
- * Participants (4): Ali - Akif(Online) - Bilal - İbrahim
- * Place : Property of Ali Kerim 
+==Team Meeting #17==
+ * Date : 02.12.2011 - Friday
+ * Time : 22:30 - 23:00
+ * Type : Online Meeting
+ * Participants (5): Aziz - Ali - Bilal - İbrahim - Unsal
+ * Place : ETA
 ===Subjects :===
- * 1. 2nd and 3rd milestones
+ * 1. 3rd Milestone
 ===Results :====
- * 1. Game Creation Module has been finished. Therefore the 2nd deliverables are ready.
- * 2. The design of the homepage is stylized. This design will be used for every pages. 
- * 3. Other than these, we are gonna use these teamwork to finish our jobs in time. On the other hand, for the sake of documentation process, we are gonna build a draft for our current progress. What is done, what are the components, what are the relationships etc.
+ * There will be a teamwork at Monday. Everyone is expected to be there to learn how the coding works and to share information about the current works.
