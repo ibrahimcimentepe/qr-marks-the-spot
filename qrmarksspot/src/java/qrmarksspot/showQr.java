@@ -7,11 +7,16 @@ package qrmarksspot;
 
 import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.faces.FacesException;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
+import javax.servlet.http.HttpServletRequest;
+import qr.QR;
+import qrmarksspot.SessionBean1;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -290,6 +295,25 @@ public class showQr extends AbstractPageBean {
             selectedGameStepQR = gamesteps_qrString[index];
         }
 
+
+    }
+
+    public String generateButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+
+        QR code  = new QR();
+        String message ="default"; // selectedGameStepQR; //bu olmalı
+        int heigth = 300 ;
+        int width = 300 ;
+        HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+
+        String filepath  = req.getPathTranslated().substring(0, req.getPathTranslated().lastIndexOf('\\')) + "\\"+ this.getSessionBean1().getUserId() +".png";
+        //SessionBean1["QRpath"] = filepath;
+
+        code.create(message, heigth, width, filepath);
+
+        return "case1";
     }
     
 }
