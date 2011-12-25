@@ -17,7 +17,7 @@
                         <webuijsf:label id="label1"
                             style="background-color: rgb(51, 255, 51); color: rgb(255, 0, 0); height: 22px; left: 288px; top: 216px; position: absolute; width: 262px" text="YOUR MESSAGE IS SENT TO ADMINISTRATOR"/>
                         <webuijsf:button actionExpression="#{messageSent.button1_action}" id="button1"
-                            style="height: 48px; left: 335px; top: 264px; position: absolute; width: 168px" text="&lt; Back To Home"/>
+                            style="color: red; height: 48px; left: 335px; top: 264px; position: absolute; width: 168px" text="&lt; Back To Home"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

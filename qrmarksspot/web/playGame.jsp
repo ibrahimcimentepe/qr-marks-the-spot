@@ -14,14 +14,17 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:label id="label1" style="font-size: 24px; height: 24px; left: 72px; top: 96px; position: absolute; width: 384px" text="#{playGame.currentGameString}"/>
-                        <webuijsf:label id="label2" style="font-size: 24px; height: 24px; left: 72px; top: 144px; position: absolute; width: 384px" text="#{playGame.currentStepString}"/>
-                        <webuijsf:label id="label3" style="height: 24px; left: 72px; top: 216px; position: absolute; width: 384px" text="Information related to next target is given below!"/>
+                        <webuijsf:label id="label1"
+                            style="color: orange; font-size: 24px; height: 24px; left: 72px; top: 96px; position: absolute; width: 384px" text="#{playGame.currentGameString}"/>
+                        <webuijsf:label id="label2"
+                            style="color: orange; font-size: 24px; height: 24px; left: 72px; top: 144px; position: absolute; width: 384px" text="#{playGame.currentStepString}"/>
+                        <webuijsf:label id="label3" style="color: orange; height: 24px; left: 72px; top: 216px; position: absolute; width: 384px" text="Information related to next target is given below!"/>
                         <webuijsf:textField columns="37" id="textField1" style="height: 24px; left: 144px; top: 360px; position: absolute; width: 240px" text="#{playGame.givenPass}"/>
-                        <webuijsf:label id="label4" style="height: 22px; left: 72px; top: 360px; position: absolute; width: 70px" text="Password:"/>
+                        <webuijsf:label id="label4" style="color: orange; height: 22px; left: 72px; top: 360px; position: absolute; width: 70px" text="Password:"/>
                         <webuijsf:button actionExpression="#{playGame.nextButton_action}" id="nextButton"
-                            style="height: 24px; left: 383px; top: 360px; position: absolute; width: 72px" text="GO"/>
-                        <webuijsf:label id="label5" style="font-size: 36px; height: 46px; left: 72px; top: 24px; position: absolute; width: 262px" text="#{SessionBean1.effectiveUserName}"/>
+                            style="color: red; height: 24px; left: 383px; top: 360px; position: absolute; width: 72px" text="GO"/>
+                        <webuijsf:label id="label5"
+                            style="color: orange; font-size: 36px; height: 46px; left: 72px; top: 24px; position: absolute; width: 262px" text="#{SessionBean1.effectiveUserName}"/>
                         <webuijsf:textArea columns="60" id="textArea1" readOnly="true" rows="5" style="left: 72px; top: 264px; position: absolute" text="#{playGame.location}"/>
                     </webuijsf:form>
                 </webuijsf:body>

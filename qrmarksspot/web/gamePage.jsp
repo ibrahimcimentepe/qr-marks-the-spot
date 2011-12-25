@@ -26,7 +26,7 @@
                         <webuijsf:label id="labelRating" style="color: orange; height: 24px; left: 72px; top: 552px; position: absolute; width: 214px" text="Rating:"/>
                         <webuijsf:label id="labelPictures" style="color: orange; left: 72px; top: 672px; position: absolute" text="Pictures"/>
                         <webuijsf:button actionExpression="#{gamePage.backButton_action}" id="backButton"
-                            style="height: 24px; left: 71px; top: 48px; position: absolute" text="&lt; Back to home"/>
+                            style="color: red; height: 24px; left: 71px; top: 48px; position: absolute" text="&lt; Back to home"/>
                         <webuijsf:button actionExpression="#{gamePage.bring_action}" id="bring" style="position: absolute; left: 384px; top: 72px"
                             text="bring the game" visible="false"/>
                         <webuijsf:textArea columns="96" id="textAreaDescription" readOnly="true" rows="4"
@@ -49,7 +49,7 @@
                         <webuijsf:textField columns="100" id="textFieldGameName" readOnly="true"
                             style="border: 2px solid red; left: 336px; top: 144px; position: absolute" text="#{gamePage.gameName}"/>
                         <webuijsf:button actionExpression="#{gamePage.buttonPlayGame_action}" id="buttonPlayGame"
-                            style="height: 24px; left: 264px; top: 48px; position: absolute; width: 287px" text="#{gamePage.playButton}"/>
+                            style="color: red; height: 24px; left: 264px; top: 48px; position: absolute; width: 287px" text="#{gamePage.playButton}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

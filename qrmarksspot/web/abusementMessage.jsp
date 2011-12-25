@@ -17,9 +17,9 @@
                         <webuijsf:label id="label1" style="color: orange; height: 24px; left: 96px; top: 168px; position: absolute" text="Your message to administrator: "/>
                         <webuijsf:textArea columns="100" id="textArea1" rows="30" style="position: absolute; left: 336px; top: 168px" text="#{abusementMessage.abuseMessage}"/>
                         <webuijsf:button actionExpression="#{abusementMessage.buttonSendMessage_action}" id="buttonSendMessage"
-                            style="height: 24px; left: 815px; top: 624px; position: absolute; width: 139px" text="Send"/>
+                            style="color: red; height: 24px; left: 815px; top: 624px; position: absolute; width: 139px" text="Send"/>
                         <webuijsf:button actionExpression="#{abusementMessage.button1_action}" id="button1"
-                            style="height: 24px; left: 96px; top: 96px; position: absolute; width: 95px" text="&lt; Back to home"/>
+                            style="color: red; height: 24px; left: 96px; top: 96px; position: absolute; width: 95px" text="&lt; Back to home"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
