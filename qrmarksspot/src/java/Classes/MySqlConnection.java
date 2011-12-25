@@ -88,9 +88,7 @@ public class MySqlConnection {
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT * FROM `gamesteps` WHERE `GameId` = '"+gameId+"' and `StepNumber` = '"+currentStep+"'");
             System.out.println("STATEMENT EXECUTED");
-            if(rs.next()){
-	    		System.out.println("GAME FOUND");
-	    	}
+            
             return rs;
         } catch(Exception e) {
              System.out.println("Error");
@@ -105,9 +103,8 @@ public class MySqlConnection {
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and `UserId` = " + userID +"" );
 	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
-            if(rs.next()){
-	    		System.out.println("GAME FOUND");
-	    	}
+
+
             return rs;
         } catch(Exception e) {
              System.out.println("Error");
@@ -181,9 +178,8 @@ public class MySqlConnection {
             System.out.println("CONNECTION ESTABLISHED");            
             ResultSet rs = statement.executeQuery("SELECT * FROM `games` WHERE `GameId` = " + gameId + "" );                                           
 	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
-            if(rs.next()){
-	    		System.out.println("NEWS FOUND");
-	    	}
+
+
             return rs;           
         } catch(Exception e) {
              System.out.println("Error");
@@ -247,10 +243,7 @@ public class MySqlConnection {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT * FROM `newsfeed` ORDER BY DateAndTime DESC ");
-	    	if(rs.next()){
-	    		System.out.println("NEWS FOUND");
-	    	}
-
+	    	
             return rs;
         } catch(Exception e) {
              System.out.println("Error");
@@ -480,9 +473,7 @@ public class MySqlConnection {
             ResultSet rs = st.executeQuery("SELECT * FROM `users` WHERE `UserName` = '"+username+"'" );
 
 	        System.out.println("STATEMENT EXECUTED,USER FOUND");
-            if(rs.next()){
-	    		System.out.println("USER FOUND");
-	    	}
+            
             return rs;
 
         } catch(Exception e) {
@@ -602,9 +593,7 @@ public class MySqlConnection {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT gameId,gameName FROM `games` WHERE `CreaterId` = '" + userId + "'");
-	    	if(rs.next()){
-	    		System.out.println("Gamesteps found");
-	    	}
+	    	
 
             return rs;
         } catch(Exception e) {
@@ -622,9 +611,7 @@ public class MySqlConnection {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT * FROM 'gameSteps' WHERE 'gameId' = '" + gameId +"'");
-            if(rs.next()){
-	    		System.out.println("Gamesteps found");
-	    	}
+            
 
             return rs;
         } catch(Exception e) {
