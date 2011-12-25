@@ -141,9 +141,17 @@ public class login extends AbstractPageBean {
 			return "fail";
 		}else{
             getSessionBean1().login(username);
-            connection.addNews(username+ " has just logged in " , null );
+         //   connection.addNews(username+ " has just logged in " , null );
             getSessionBean1().setUserId(connection.getUserIdbyUserName(username));
-			return "success";
+            if(username.compareToIgnoreCase("admin") == 0)
+            {
+                return "adminPage";
+            }
+            else
+            {
+                connection.addNews(username+ " has just logged in " , null );
+                return "success";
+            }
         }
     }
 
