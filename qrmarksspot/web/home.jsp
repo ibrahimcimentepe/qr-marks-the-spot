@@ -15,8 +15,9 @@
                     <webuijsf:label id="label1"
                         style="color: orange; font-family: 'Geneva','Arial','Helvetica',sans-serif; font-size: 36px; font-weight: bold; left: 408px; top: 0px; position: absolute; text-decoration: underline" text="QR MARKS THE SPOT"/>
                     <webuijsf:form id="form1">
-                        <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
-                        <webuijsf:label id="label2" style="color: orange; left: 24px; top: 120px; position: absolute" text="News Feed"/>
+                        <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" style="color: aqua; left: 983px; top: 120px"
+                            text="Log Out" visible="#{SessionBean1.loggedIn}"/>
+                        <webuijsf:label id="label2" style="color: orange; left: 24px; top: 120px; position: absolute; text-decoration: underline" text="News Feed"/>
                         <webuijsf:textField id="gameSearchTextField" style="left: 384px; top: 72px; position: absolute" text="#{home.gameToBePlayed}"/>
                         <webuijsf:button actionExpression="#{home.signup_action}" id="signup"
                             style="color: red; height: 24px; left: 983px; top: 120px; position: absolute; width: 96px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
@@ -26,19 +27,19 @@
                             style="color: red; height: 24px; left: 983px; top: 168px; position: absolute; width: 96px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
                         <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial"
                             style="color: red; height: 24px; left: 983px; top: 216px; position: absolute; width: 96px" text="Tutorial"/>
-                        <webuijsf:button actionExpression="#{home.gameCreateButton_action}" id="gameCreateButton" style="height: 24px; width: 80px"
-                            text="Create Game" visible="#{SessionBean1.loggedIn}"/>
+                        <webuijsf:button actionExpression="#{home.gameCreateButton_action}" id="gameCreateButton"
+                            style="height: 24px; left: 983px; top: 100px; width: 80px; color:red" text="Create Game" visible="#{SessionBean1.loggedIn}"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
                             style="color: aqua; height: 24px; left: 168px; top: 72px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <webuijsf:label id="usernameLabel1" style="color: aqua; left: 24px; top: 72px; position: absolute" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
-                            style="color: red; height: 48px; left: 983px; top: 312px; position: absolute; width: 96px" text="Search"/>
+                            style="color: red; height: 24px; left: 983px; top: 264px; position: absolute; width: 96px" text="Search"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink2_action}" id="hyperlink2"
-                            style="color: aqua; height: 22px; left: 984px; top: 432px; position: absolute; width: 94px" text="Report Abuse"/>
+                            style="color: aqua; height: 22px; left: 984px; top: 408px; position: absolute; width: 94px" text="Report Abuse"/>
                         <webuijsf:button actionExpression="#{home.seeQrCodesButton_action}" id="seeQrCodesButton"
-                            style="color: red; height: 24px; left: 983px; top: 384px; position: absolute; width: 96px" text="See Qr Codes"/>
+                            style="color: red; height: 24px; left: 983px; top: 312px; position: absolute; width: 96px" text="See Qr Codes"/>
                         <webuijsf:button actionExpression="#{home.button1_action}" id="button1"
-                            style="color: red; height: 24px; left: 983px; top: 408px; position: absolute; width: 96px" text="Forum"/>
+                            style="color: red; height: 24px; left: 983px; top: 360px; position: absolute; width: 96px" text="Forum"/>
                         <br/>
                         <br/>
                         <br/>
