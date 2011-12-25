@@ -12,137 +12,53 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
+                    <webuijsf:label id="label1"
+                        style="color: orange; font-family: 'Geneva','Arial','Helvetica',sans-serif; font-size: 36px; font-weight: bold; left: 408px; top: 0px; position: absolute; text-decoration: underline" text="QR MARKS THE SPOT"/>
                     <webuijsf:form id="form1">
-                        <table align="center" border="0" width="%90">
-                            <tbody>
-                                <tr>
-                                    <th style="height: 42px"></th>
-                                    <th>
-                                        <webuijsf:label id="label1"
-                                            style="color: orange; font-family: Geneva,Arial,Helvetica,sans-serif; font-size: 36px; font-weight: bold; text-decoration: underline" text="QR MARKS THE SPOT"/>
-                                    </th>
-                                    <th align="right"></th>
-                                </tr>
-                                <tr>
-                                    <td style="height: 1px"></td>
-                                    <td></td>
-                                    <td align="right">
-                                        <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 22px">
-                                        <webuijsf:label id="label2" style="color: orange" text="News Feed"/>
-                                    </td>
-                                    <td>
-                                        <webuijsf:textField id="gameSearchTextField" text="#{home.gameToBePlayed}"/>
-                                    </td>
-                                    <td align="right">
-                                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="color: red; height: 24px; width: 80px"
-                                            text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 21px"></td>
-                                    <td>
-                                        <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton" text="to the game -&gt;"/>
-                                    </td>
-                                    <td align="right">
-                                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="color: red; height: 24px; width: 80px"
-                                            text="Log In" visible="#{!SessionBean1.loggedIn}"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 25px"></td>
-                                    <td></td>
-                                    <td align="right">
-                                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="color: red; height: 24px; width: 80px" text="Tutorial"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td align="right">
-                                        <webuijsf:button actionExpression="#{home.gameCreateButton_action}" id="gameCreateButton"
-                                            style="height: 24px; width: 80px" text="Create Game" visible="#{SessionBean1.loggedIn}"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <ul>
-                            <li>
-                                <webuijsf:label text="#{home.labels[0]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[1]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[2]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[3]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[4]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[5]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[6]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[7]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[8]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[9]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[10]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[11]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[12]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[13]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[14]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[15]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[16]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[17]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[18]}"/>
-                            </li>
-                            <li>
-                                <webuijsf:label text="#{home.labels[19]}"/>
-                            </li>
-                        </ul>
+                        <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" text="Log Out" visible="#{SessionBean1.loggedIn}"/>
+                        <webuijsf:label id="label2" style="color: orange; left: 24px; top: 120px; position: absolute" text="News Feed"/>
+                        <webuijsf:textField id="gameSearchTextField" style="left: 384px; top: 72px; position: absolute" text="#{home.gameToBePlayed}"/>
+                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup"
+                            style="color: red; height: 24px; left: 983px; top: 120px; position: absolute; width: 96px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
+                        <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton"
+                            style="color: red; height: 24px; left: 383px; top: 96px; position: absolute; width: 120px" text="to the game -&gt;"/>
+                        <webuijsf:button actionExpression="#{home.login_action}" id="login"
+                            style="color: red; height: 24px; left: 983px; top: 168px; position: absolute; width: 96px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
+                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial"
+                            style="color: red; height: 24px; left: 983px; top: 216px; position: absolute; width: 96px" text="Tutorial"/>
+                        <webuijsf:button actionExpression="#{home.gameCreateButton_action}" id="gameCreateButton" style="height: 24px; width: 80px"
+                            text="Create Game" visible="#{SessionBean1.loggedIn}"/>
+                        <webuijsf:label text="#{home.labels[0]}"/>
+                        <webuijsf:label text="#{home.labels[1]}"/>
+                        <webuijsf:label text="#{home.labels[2]}"/>
+                        <webuijsf:label text="#{home.labels[3]}"/>
+                        <webuijsf:label text="#{home.labels[4]}"/>
+                        <webuijsf:label text="#{home.labels[5]}"/>
+                        <webuijsf:label text="#{home.labels[6]}"/>
+                        <webuijsf:label text="#{home.labels[7]}"/>
+                        <webuijsf:label text="#{home.labels[8]}"/>
+                        <webuijsf:label text="#{home.labels[9]}"/>
+                        <webuijsf:label text="#{home.labels[10]}"/>
+                        <webuijsf:label text="#{home.labels[11]}"/>
+                        <webuijsf:label text="#{home.labels[12]}"/>
+                        <webuijsf:label text="#{home.labels[13]}"/>
+                        <webuijsf:label text="#{home.labels[14]}"/>
+                        <webuijsf:label text="#{home.labels[15]}"/>
+                        <webuijsf:label text="#{home.labels[16]}"/>
+                        <webuijsf:label text="#{home.labels[17]}"/>
+                        <webuijsf:label text="#{home.labels[18]}"/>
+                        <webuijsf:label text="#{home.labels[19]}"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
-                            style="color: aqua; height: 24px; left: 336px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
-                        <br/>
-                        <webuijsf:label id="usernameLabel1" style="color: aqua; left: 240px; top: 24px; position: absolute" text="#{SessionBean1.userName}"/>
+                            style="color: aqua; height: 24px; left: 984px; top: 24px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
+                        <webuijsf:label id="usernameLabel1" style="color: aqua; left: 24px; top: 72px; position: absolute" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
-                            style="color: red; height: 48px; left: 671px; top: 144px; position: absolute; width: 80px" text="Search"/>
+                            style="color: red; height: 48px; left: 983px; top: 312px; position: absolute; width: 96px" text="Search"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink2_action}" id="hyperlink2"
-                            style="color: aqua; height: 22px; left: 672px; top: 192px; position: absolute; width: 94px" text="Report Abuse"/>
+                            style="color: aqua; height: 22px; left: 984px; top: 432px; position: absolute; width: 94px" text="Report Abuse"/>
                         <webuijsf:button actionExpression="#{home.seeQrCodesButton_action}" id="seeQrCodesButton"
-                            style="color: red; height: 24px; left: 671px; top: 240px; position: absolute; width: 72px" text="See Qr Codes"/>
+                            style="color: red; height: 24px; left: 983px; top: 384px; position: absolute; width: 96px" text="See Qr Codes"/>
                         <webuijsf:button actionExpression="#{home.button1_action}" id="button1"
-                            style="color: red; height: 24px; left: 671px; top: 288px; position: absolute; width: 73px" text="Forum"/>
+                            style="color: red; height: 24px; left: 983px; top: 408px; position: absolute; width: 96px" text="Forum"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
