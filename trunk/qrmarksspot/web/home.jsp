@@ -19,7 +19,7 @@
                                     <th style="height: 42px"></th>
                                     <th>
                                         <webuijsf:label id="label1"
-                                            style="font-family: Geneva,Arial,Helvetica,sans-serif; font-size: 36px; font-weight: bold; text-decoration: underline" text="QR MARKS THE SPOT"/>
+                                            style="color: orange; font-family: Geneva,Arial,Helvetica,sans-serif; font-size: 36px; font-weight: bold; text-decoration: underline" text="QR MARKS THE SPOT"/>
                                     </th>
                                     <th align="right"></th>
                                 </tr>
@@ -32,13 +32,14 @@
                                 </tr>
                                 <tr>
                                     <td style="height: 22px">
-                                        <webuijsf:label id="label2" text="News Feed"/>
+                                        <webuijsf:label id="label2" style="color: orange" text="News Feed"/>
                                     </td>
                                     <td>
                                         <webuijsf:textField id="gameSearchTextField" text="#{home.gameToBePlayed}"/>
                                     </td>
                                     <td align="right">
-                                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="height: 24px; width: 80px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
+                                        <webuijsf:button actionExpression="#{home.signup_action}" id="signup" style="color: red; height: 24px; width: 80px"
+                                            text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -47,14 +48,15 @@
                                         <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton" text="to the game -&gt;"/>
                                     </td>
                                     <td align="right">
-                                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="height: 24px; width: 80px" text="Log In" visible="#{!SessionBean1.loggedIn}"/>
+                                        <webuijsf:button actionExpression="#{home.login_action}" id="login" style="color: red; height: 24px; width: 80px"
+                                            text="Log In" visible="#{!SessionBean1.loggedIn}"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="height: 25px"></td>
                                     <td></td>
                                     <td align="right">
-                                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="height: 24px; width: 80px" text="Tutorial"/>
+                                        <webuijsf:button actionExpression="#{home.tutorial_action}" id="tutorial" style="color: red; height: 24px; width: 80px" text="Tutorial"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -134,13 +136,13 @@
                         <br/>
                         <webuijsf:label id="usernameLabel1" style="left: 240px; top: 24px; position: absolute" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
-                            style="height: 48px; left: 671px; top: 144px; position: absolute; width: 80px" text="Search"/>
+                            style="color: red; height: 48px; left: 671px; top: 144px; position: absolute; width: 80px" text="Search"/>
                         <webuijsf:hyperlink actionExpression="#{home.hyperlink2_action}" id="hyperlink2"
-                            style="height: 22px; left: 672px; top: 192px; position: absolute; width: 94px" text="Report Abuse"/>
+                            style="color: aqua; height: 22px; left: 672px; top: 192px; position: absolute; width: 94px" text="Report Abuse"/>
                         <webuijsf:button actionExpression="#{home.seeQrCodesButton_action}" id="seeQrCodesButton"
-                            style="height: 24px; left: 671px; top: 240px; position: absolute; width: 72px" text="See Qr Codes"/>
+                            style="color: red; height: 24px; left: 671px; top: 240px; position: absolute; width: 72px" text="See Qr Codes"/>
                         <webuijsf:button actionExpression="#{home.button1_action}" id="button1"
-                            style="height: 24px; left: 671px; top: 288px; position: absolute; width: 73px" text="Forum"/>
+                            style="color: red; height: 24px; left: 671px; top: 288px; position: absolute; width: 73px" text="Forum"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
