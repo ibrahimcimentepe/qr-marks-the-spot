@@ -17,7 +17,8 @@
                         <webuijsf:dropDown id="gameStepDropDown" style="left: 192px; top: 168px; position: absolute" valueChangeListenerExpression="#{showQr.gameStepDropDown_processValueChange}"/>
                         <webuijsf:dropDown id="gameNameDropDown" items="#{showQr.gameNames}" style="left: 192px; top: 96px; position: absolute" valueChangeListenerExpression="#{showQr.gameNameDropDown_processValueChange}"/>
                         <webuijsf:textArea columns="50" id="qrCodeTextArea" style="left: 192px; top: 240px; position: absolute"/>
-                        <webuijsf:button id="generateButton" style="left: 191px; top: 336px; position: absolute" text="Button"/>
+                        <webuijsf:button actionExpression="#{showQr.generateButton_action}" id="generateButton"
+                            style="left: 191px; top: 336px; position: absolute" text="Button"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
