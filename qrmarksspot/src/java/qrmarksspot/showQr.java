@@ -46,15 +46,15 @@ public class showQr extends AbstractPageBean {
     }
 
     // </editor-fold>
-    ArrayList<String> gameNames = new ArrayList();
+    String[] gameNames = new String[12];
     String selectedGameName = new String();
     String selectedGameStepQR = new String();
     String selectedGameStepName = new String();
 
 
-    ArrayList<String> gamesteps_Numberofsteps = new ArrayList<String>();
-    ArrayList<String> gamesteps_qrString = new ArrayList<String>();
-    ArrayList<String> gameIDs = new ArrayList();
+    String [] gamesteps_Numberofsteps = new String[12];
+    String [] gamesteps_qrString = new String[12];
+    String [] gameIDs = new String[12];
 
 
     public String getSelectedGameStepName() {
@@ -81,36 +81,36 @@ public class showQr extends AbstractPageBean {
 
 
 
-    public ArrayList<String> getGamesteps_Numberofsteps() {
+    public String[] getGamesteps_Numberofsteps() {
         return gamesteps_Numberofsteps;
     }
 
-    public void setGamesteps_Numberofsteps(ArrayList<String> gamesteps_Numberofsteps) {
+    public void setGamesteps_Numberofsteps(String[] gamesteps_Numberofsteps) {
         this.gamesteps_Numberofsteps = gamesteps_Numberofsteps;
     }
 
-    public ArrayList<String> getGamesteps_qrString() {
+    public String[] getGamesteps_qrString() {
         return gamesteps_qrString;
     }
 
-    public void setGamesteps_qrString(ArrayList<String> gamesteps_qrString) {
+    public void setGamesteps_qrString(String[] gamesteps_qrString) {
         this.gamesteps_qrString = gamesteps_qrString;
     }
 
 
-    public ArrayList<String> getGameIDs() {
+    public String[] getGameIDs() {
         return gameIDs;
     }
 
-    public void setGameIDs(ArrayList<String> gameIDs) {
+    public void setGameIDs(String[] gameIDs) {
         this.gameIDs = gameIDs;
     }
 
-    public ArrayList<String> getGameNames() {
+    public String[] getGameNames() {
         return gameNames;
     }
 
-    public void setGameNames(ArrayList<String> gameNames) {
+    public void setGameNames(String[] gameNames) {
         this.gameNames = gameNames;
     }
 
@@ -143,21 +143,20 @@ public class showQr extends AbstractPageBean {
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
 
-       // for(int i = 0;i<labels.length;i++){
-
-       //     labels[i] = " ";
-       // }
+       
 
         int i = 0;
         try{
             MySqlConnection con = new MySqlConnection();
             ResultSet rs = con.getGameNameByUserId(this.getSessionBean1().getUserId());
+
             while(rs.next()){
 
-                gameNames.add(rs.getString("gameName"));
-                gameIDs.add(rs.getString("gameId"));
+                if(i >= 12) continue;
 
-                //SessionBean1["label"] = labels[i];
+                gameNames[i] = (rs.getString("gameName"));
+                gameIDs[i] = (rs.getString("gameId"));
+            i++;
             }
 
         }catch(Exception e){
@@ -244,21 +243,31 @@ public class showQr extends AbstractPageBean {
 
     public void gameNameDropDown_processValueChange(ValueChangeEvent event) {
 
-        gamesteps_Numberofsteps.clear();
-        gamesteps_qrString.clear();
+        //gamesteps_Numberofsteps.clear();
+        //gamesteps_qrString.clear();
 
         try{
             MySqlConnection con = new MySqlConnection();
 
-            int index = gameNames.indexOf(selectedGameName);
+            int  index = -1;
+            for(int i=0;i<12;i++){
 
-            ResultSet rs = con.getGameStepsByGameId(gameIDs.get(index).toString());
+                if(gameNames[i] == (selectedGameName)){
+
+                    index = i;
+                }
+            }
+
+            ResultSet rs = con.getGameStepsByGameId(gameIDs[index]);
+            int i = 0;
             while(rs.next()){
 
-                gamesteps_Numberofsteps.add(rs.getString("StepNumber"));
-                gamesteps_qrString.add(rs.getString("QrString"));
+                if(i >= 12) continue;
 
-                //SessionBean1["label"] = labels[i];
+                gamesteps_Numberofsteps[i] = (rs.getString("StepNumber"));
+                gamesteps_qrString[i] = (rs.getString("QrString"));
+
+                i++;
             }
 
         }catch(Exception e){
@@ -268,8 +277,18 @@ public class showQr extends AbstractPageBean {
 
     public void gameStepDropDown_processValueChange(ValueChangeEvent event) {
 
-        int index = gamesteps_Numberofsteps.indexOf(selectedGameStepName);
-        selectedGameStepQR = gamesteps_qrString.get(index);
+        int  index = -1;
+            for(int i=0;i<12;i++){
+
+                if(gamesteps_Numberofsteps[i] == (selectedGameStepName)){
+
+                    index = i;
+                }
+            }
+        if(! (index == -1)){
+
+            selectedGameStepQR = gamesteps_qrString[index];
+        }
 
     }
     
