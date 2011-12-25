@@ -5,14 +5,18 @@
 
 package qrmarksspot;
 
+import com.sun.rave.faces.data.DefaultSelectItemsArray;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Listbox;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.DefaultTableDataProvider;
+import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import javax.faces.FacesException;
 import javax.faces.event.ValueChangeEvent;
 import Classes.MySqlConnection;
 import Classes.GameAttributes;
 import java.util.*;
+//import java.awt.*;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -31,7 +35,36 @@ public class search extends AbstractPageBean {
     String gamename2;
     String gamename3;
     String searchString;
-    List<String> myList=new ArrayList<String>();
+    String criteria;
+    String selectedGame;
+    String []foundString={""};
+
+    public String[] getFoundString() {
+        return foundString;
+    }
+
+    public void setFoundString(String[] foundString) {
+        this.foundString = foundString;
+    }
+
+    public String getSelectedGame() {
+        return selectedGame;
+    }
+
+    public void setSelectedGame(String selectedGame) {
+        this.selectedGame = selectedGame;
+    }
+
+    public String getCriteria() {
+        return criteria;
+    }
+
+    public void setCriteria(String criteria) {
+        this.criteria = criteria;
+    }
+
+
+    
     public String getGamename1() {
         return gamename1;
     }
@@ -73,6 +106,51 @@ public void setGamename1(String gamename1) {
      */
     private void _init() throws Exception {
     }
+    private DefaultSelectItemsArray dropdown1DefaultItems1 = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems1() {
+        return dropdown1DefaultItems1;
+    }
+
+    public void setDropdown1DefaultItems1(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems1 = dsia;
+    }
+    private DefaultSelectItemsArray dropdownDefaultItems = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdownDefaultItems() {
+        return dropdownDefaultItems;
+    }
+
+    public void setDropdownDefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdownDefaultItems = dsia;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems2 = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems2() {
+        return dropdown1DefaultItems2;
+    }
+
+    public void setDropdown1DefaultItems2(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems2 = dsia;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems3 = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems3() {
+        return dropdown1DefaultItems3;
+    }
+
+    public void setDropdown1DefaultItems3(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems3 = dsia;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems() {
+        return dropdown1DefaultItems;
+    }
+
+    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems = dsia;
+    }
 
     // </editor-fold>
 
@@ -101,9 +179,9 @@ public void setGamename1(String gamename1) {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-
-        this.myList.add("Hello");
-        this.myList.add("world");
+        
+       String[] menuItems={"Game Tag","Game Name","Maximum step number","Maximum Rating","Crator Name"};
+       this.dropdownDefaultItems.setItems(menuItems);
         
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -121,14 +199,7 @@ public void setGamename1(String gamename1) {
         // TODO - add your own initialization code here
     }
 
-    public List<String> getMyList() {
-        return myList;
-    }
-
-    public void setMyList(List<String> myList) {
-        this.myList = myList;
-    }
-
+    
     /**
      * <p>Callback method that is called after the component tree has been
      * restored, but before any event processing takes place.  This method
@@ -194,6 +265,9 @@ public void setGamename1(String gamename1) {
     public String[] search_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+        
+        
+        //String selectedItem=(this.dropdown1DefaultItems.get(selectedIndex));
 
         MySqlConnection con = new MySqlConnection();
         GameAttributes game = new GameAttributes();
@@ -201,6 +275,8 @@ public void setGamename1(String gamename1) {
 
         //burda gamename e göre select from where like sorgusu yapılacak
         //server a bağlanamadığım için ben yapamadım
+
+
 
 
         return temp;
@@ -216,6 +292,12 @@ public void setGamename1(String gamename1) {
         // case name where null will return to the same page.
         
         String[] temp=search_action();
+        this.setFoundString(temp);
+        String[] otherTemp=new String[temp.length];
+        for(int i=0;i<temp.length;i++){
+            otherTemp[i]=temp[i];
+        }
+        this.dropdown1DefaultItems.setItems(otherTemp);
         setGamename1(temp[0]);
         setGamename2(temp[1]);
         setGamename3(temp[2]);
@@ -265,6 +347,21 @@ public void setGamename1(String gamename1) {
         return "case3";
     }
 
+    public String button2_action() {
+        // TODO: Process the button click action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
+    }
+
+
+
+    
+
+
+
+
+
+   
 
 
     
