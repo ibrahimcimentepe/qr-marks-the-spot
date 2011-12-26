@@ -18,9 +18,6 @@
                             text="#{search.searchString}" valueChangeListenerExpression="#{search.textField1_processValueChange}"/>
                         <webuijsf:button actionExpression="#{search.button1_action}" id="button1"
                             style="height: 24px; left: 527px; top: 96px; position: absolute; width: 71px" text="Search"/>
-                        <webuijsf:hyperlink actionExpression="#{search.hyperlink1_action}" id="hyperlink1" style="left: 672px; top: 96px; position: absolute" text="#{search.gamename1}"/>
-                        <webuijsf:hyperlink actionExpression="#{search.hyperlink2_action}" id="hyperlink2" style="left: 672px; top: 120px; position: absolute" text="#{search.gamename2}"/>
-                        <webuijsf:hyperlink actionExpression="#{search.hyperlink3_action}" id="hyperlink3" style="left: 672px; top: 144px; position: absolute" text="#{search.gamename3}"/>
                         <h:commandButton action="#{search.button2_action}" id="button2"
                             style="height: 24px; left: 528px; top: 216px; position: absolute; width: 72px" value="GO!"/>
                         <h:selectOneMenu id="dropdown1" style="left: 168px; top: 96px; position: absolute; width: 120px">
