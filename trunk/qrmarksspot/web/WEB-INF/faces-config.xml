@@ -89,6 +89,10 @@
             <from-outcome>fail</from-outcome>
             <to-view-id>/login.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>adminPage</from-outcome>
+            <to-view-id>/adminPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/signup.jsp</from-view-id>
