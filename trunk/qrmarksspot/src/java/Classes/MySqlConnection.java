@@ -504,10 +504,11 @@ public class MySqlConnection {
 
     public String[] getGameNamebyGameTag(String tag)
     {
-        String[] results=new String[3];
+        String[] results2;
+        String[] results=null;
         try
         {
-            String[] results2=new String[100];
+            results2=new String[100];
             int i=0;
             Statement statement = con.createStatement();
 	    	ResultSet rs = statement.executeQuery("SELECT games.GameName FROM games INNER JOIN gametags on games.GameId=gametags.GameId WHERE gametags.TAG1 =  '"+tag+"' OR gametags.TAG2 = '"+tag+"' OR gametags.TAG3 = '"+tag+"' OR gametags.TAG4 = '"+tag+"' OR gametags.TAG5 = '"+tag+"'");
@@ -516,15 +517,21 @@ public class MySqlConnection {
                 results2[i]=rs.getString("GameName");
                 i++;
 	    	}
-            if (i>3) results=new String[i];
-            else results=new String[3];
+            results=new String[i];
+            /*
+            if (i>30) results=new String[i];
+            else results=new String[30];
+            */
             for(int j=0;j<i;j++)
             {
                 results[j]=results2[j];
             }
         }
         catch(Exception e)
-        {}
+        {
+            results= new String[1];
+            results[0]="errorInSQL";
+        }
         finally
         {
             return results;
