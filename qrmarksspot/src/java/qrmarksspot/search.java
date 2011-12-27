@@ -146,8 +146,6 @@ public class search extends AbstractPageBean {
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
         
-       String[] menuItems={"Game Tag","Maximum step number","Maximum Rating","Creator Name"};
-       String[] result={""};
        //this.dropdown2DefaultItems.setItems(result);
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -293,6 +291,13 @@ public class search extends AbstractPageBean {
                 temp[0]="ErrorinSearchAction";
                 temp[1]=e.toString();
             }
+            // Iterator
+        // This clip illustrates how to populate a text area
+        // from an array of values by using an iterator
+        // TODO: The page should have a multi-line text area
+        // and a button.  This code goes in the button_action method
+
+        
         }
         else
         {
