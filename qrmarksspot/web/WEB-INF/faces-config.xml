@@ -265,4 +265,9 @@
             <to-view-id>/displayQRcode.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>adminPage</managed-bean-name>
+        <managed-bean-class>qrmarksspot.adminPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
