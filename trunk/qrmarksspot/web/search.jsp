@@ -14,18 +14,33 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:textField columns="36" id="textField1" style="height: 24px; left: 288px; top: 96px; position: absolute; width: 288px"
-                            text="#{search.searchString}" valueChangeListenerExpression="#{search.textField1_processValueChange}"/>
                         <webuijsf:button actionExpression="#{search.button1_action}" id="button1"
-                            style="height: 24px; left: 527px; top: 96px; position: absolute; width: 71px" text="Search"/>
+                            style="height: 24px; left: 623px; top: 96px; position: absolute; width: 71px" text="Search"/>
                         <h:commandButton action="#{search.button2_action}" id="button2"
-                            style="height: 24px; left: 528px; top: 216px; position: absolute; width: 72px" value="GO!"/>
-                        <h:selectOneMenu id="dropdown1" style="left: 168px; top: 96px; position: absolute; width: 120px">
-                            <f:selectItems id="dropdown1SelectItems" value="#{search.dropdown1DefaultItems}"/>
-                        </h:selectOneMenu>
-                        <h:selectOneMenu id="dropdown2" style="left: 168px; top: 216px; position: absolute; width: 336px">
+                            style="height: 24px; left: 624px; top: 216px; position: absolute; width: 72px" value="GO!"/>
+                        <h:selectOneMenu id="dropdown2" onchange="" onselect="#{search.selectedGame}"
+                            style="left: 240px; top: 168px; position: absolute; width: 360px" valueChangeListener="#{search.dropdown2_processValueChange}">
                             <f:selectItems id="dropdown2SelectItems" value="#{search.dropdown2DefaultItems}"/>
                         </h:selectOneMenu>
+                        <webuijsf:textField columns="35" id="textField1" style="left: 384px; top: 96px; position: absolute" text="#{search.textt}"/>
+                        <webuijsf:textField columns="35" id="textField2" style="left: 384px; top: 216px; position: absolute" text="#{search.selectedGame}" valueChangeListenerExpression="#{search.textField2_processValueChange}"/>
+                        <webuijsf:staticText id="staticText1" style="color: rgb(0, 204, 204); left: 240px; top: 144px; position: absolute" text="Search Results"/>
+                        <webuijsf:staticText id="staticText2" style="color: rgb(0, 204, 204); left: 240px; top: 216px; position: absolute" text="Enter the Name of Game"/>
+                        <webuijsf:textField id="textField3" style="left: 240px; top: 96px; position: absolute" text="#{search.searchCategory}" valueChangeListenerExpression="#{search.textField3_processValueChange}"/>
+                        <webuijsf:staticText id="staticText3"
+                            style="color: rgb(0, 204, 204); height: 24px; left: 240px; top: 72px; position: absolute; width: 120px" text="Search Category"/>
+                        <webuijsf:staticText id="staticText4"
+                            style="color: rgb(0, 204, 204); height: 22px; left: 24px; top: 48px; position: absolute; width: 166px" text="Available Categories:"/>
+                        <webuijsf:staticText id="staticText5"
+                            style="color: rgb(0, 204, 204); height: 22px; left: 24px; top: 72px; position: absolute; width: 166px" text="Game Tag"/>
+                        <webuijsf:staticText id="staticText6"
+                            style="color: rgb(0, 204, 204); height: 22px; left: 24px; top: 96px; position: absolute; width: 166px" text="Creator Name"/>
+                        <webuijsf:staticText id="staticText7"
+                            style="color: rgb(0, 204, 204); height: 22px; left: 24px; top: 120px; position: absolute; width: 166px" text="Maximum Number of Steps"/>
+                        <webuijsf:staticText id="staticText8"
+                            style="color: rgb(0, 204, 204); height: 22px; left: 24px; top: 144px; position: absolute; width: 166px" text="Maximum Rating"/>
+                        <webuijsf:staticText id="staticText9"
+                            style="color: rgb(0, 204, 204); height: 22px; left: 384px; top: 72px; position: absolute; width: 118px" text="Value:"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

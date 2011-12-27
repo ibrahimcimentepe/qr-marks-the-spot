@@ -502,41 +502,7 @@ public class MySqlConnection {
         }
     }
 
-    public String[] getGameNamebyGameTag(String tag)
-    {
-        String[] results2;
-        String[] results=null;
-        try
-        {
-            results2=new String[100];
-            int i=0;
-            Statement statement = con.createStatement();
-	    	ResultSet rs = statement.executeQuery("SELECT games.GameName FROM games INNER JOIN gametags on games.GameId=gametags.GameId WHERE gametags.TAG1 =  '"+tag+"' OR gametags.TAG2 = '"+tag+"' OR gametags.TAG3 = '"+tag+"' OR gametags.TAG4 = '"+tag+"' OR gametags.TAG5 = '"+tag+"'");
-	    	while(rs.next()){
-	    		System.out.println("GAMES FOUND");
-                results2[i]=rs.getString("GameName");
-                i++;
-	    	}
-            results=new String[i];
-            /*
-            if (i>30) results=new String[i];
-            else results=new String[30];
-            */
-            for(int j=0;j<i;j++)
-            {
-                results[j]=results2[j];
-            }
-        }
-        catch(Exception e)
-        {
-            results= new String[1];
-            results[0]="errorInSQL";
-        }
-        finally
-        {
-            return results;
-        }
-    }
+   
 
     public int getGameIdbyGameName(String gameName){
         int gameId = -1;
@@ -616,21 +582,139 @@ public class MySqlConnection {
 
     public ResultSet getGameNameByUserId (int userId)
     {
-        try {
+        try
+        {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT gameId,gameName FROM `games` WHERE `CreaterId` = '" + userId + "'");
-	    	
-
-            return rs;
-        } catch(Exception e) {
+            ResultSet rs = statement.executeQuery("SELECT GameName FROM games WHERE CreaterId = "+userId);
+	    	return rs;
+        }
+        catch(Exception e) {
              System.out.println("Error");
-
              return null;
         }
     }
 
+    public String[] getGameNameByUserNameString (String userName)
+    {
+        String[] temp=new String[1];
+        temp[0]="ErrorInQueryFunction";
+        try
+        {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT GameName FROM games WHERE CreatorName = '"+userName+"'");
+            rs.last();
+            int size=rs.getRow();
+            rs.first();
+            temp= new String[size];
+            for(int i=0;i<size;i++)
+            {
+                //System.out.println("GAMES FOUND");
+                temp[i]=rs.getString(1);
+                if(i<size-1) rs.next();
+            }
+        }
+        catch(Exception e) {
+             System.out.println("Error");
+             temp= new String[2];
+             temp[0]="QuerygivesException";
+             temp[1]=e.toString();
+        }
+        return temp;
+    }
 
+    public String[] getGameNameByMaxSteps (int steps)
+    {
+        String[] temp=new String[1];
+        temp[0]="ErrorInQueryFunction";
+        try
+        {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT GameName FROM games WHERE NumberOfSteps <= "+steps);
+            rs.last();
+            int size=rs.getRow();
+            rs.first();
+            temp= new String[size];
+            for(int i=0;i<size;i++)
+            {
+                //System.out.println("GAMES FOUND");
+                temp[i]=rs.getString(1);
+                if(i<size-1) rs.next();
+            }
+        }
+        catch(Exception e) {
+             System.out.println("Error");
+             temp= new String[2];
+             temp[0]="QuerygivesException";
+             temp[1]=e.toString();
+        }
+        return temp;
+    }
+
+    public String[] getGameNameByMaxRating (int rating)
+    {
+        String[] temp=new String[1];
+        temp[0]="ErrorInQueryFunction";
+        try
+        {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT GameName FROM games WHERE Rating <= "+rating);
+            rs.last();
+            int size=rs.getRow();
+            rs.first();
+            temp= new String[size];
+            for(int i=0;i<size;i++)
+            {
+                //System.out.println("GAMES FOUND");
+                temp[i]=rs.getString(1);
+                if(i<size-1) rs.next();
+            }
+        }
+        catch(Exception e) {
+             System.out.println("Error");
+             temp= new String[2];
+             temp[0]="QuerygivesException";
+             temp[1]=e.toString();
+        }
+        return temp;
+    }
+
+     public String[] getGameNamebyGameTag(String tag)
+    {
+        String[] results2;
+        String[] results=null;
+        try
+        {
+            results2=new String[100];
+            int i=0;
+            Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT games.GameName FROM games INNER JOIN gametags on games.GameId=gametags.GameId WHERE gametags.TAG1 =  '"+tag+"' OR gametags.TAG2 = '"+tag+"' OR gametags.TAG3 = '"+tag+"' OR gametags.TAG4 = '"+tag+"' OR gametags.TAG5 = '"+tag+"'");
+	    	while(rs.next()){
+	    		System.out.println("GAMES FOUND");
+                results2[i]=rs.getString("GameName");
+                i++;
+	    	}
+            results=new String[i];
+            /*
+            if (i>30) results=new String[i];
+            else results=new String[30];
+            */
+            for(int j=0;j<i;j++)
+            {
+                results[j]=results2[j];
+            }
+        }
+        catch(Exception e)
+        {
+            results= new String[1];
+            results[0]="errorInSQL";
+        }
+
+            return results;
+    }
 
     public ResultSet getGameStepsByGameId (String gameId)
     {
