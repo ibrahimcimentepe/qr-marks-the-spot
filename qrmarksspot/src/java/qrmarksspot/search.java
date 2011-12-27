@@ -13,10 +13,18 @@ import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import javax.faces.FacesException;
+import javax.faces.component.UIComponent;
+import javax.faces.component.html.HtmlSelectOneMenu;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import Classes.MySqlConnection;
 import Classes.GameAttributes;
 import java.util.*;
+import java.sql.ResultSet;
+import java.util.Arrays;
+
+
+
 //import java.awt.*;
 
 /**
@@ -36,14 +44,31 @@ public class search extends AbstractPageBean {
     String searchString;
     String criteria;
     String selectedGame;
+    String textt;
+    String searchCategory;
+    public String getSearchCategory() {
+        return searchCategory;
+    }
 
+    public void setSearchCategory(String searchCategory) {
+        this.searchCategory = searchCategory;
+    }
+
+    public String getTextt() {
+        return textt;
+    }
+
+    public void setTextt(String textt) {
+        this.textt = textt;
+    }
+    
     public String[] getsearchResults() {
         return searchResults;
     }
 
-    public void setsearchResults(String[] sR) {
-        this.searchResults = sR.clone();
-        this.dropdown2DefaultItems.setItems(sR);
+    public void setsearchResults(String[] searchResults) {
+        this.searchResults = searchResults;
+        this.dropdown2DefaultItems.setItems(searchResults);
     }
 
     public String getSelectedGame() {
@@ -64,30 +89,6 @@ public class search extends AbstractPageBean {
 
 
     
-    public String getGamename1() {
-        return searchResults[0];
-    }
-
-    public String getGamename2() {
-        return searchResults[1];
-    }
-
-    public String getGamename3() {
-        return searchResults[2];
-    }
-
-    
-public void setGamename1(String[] sR) {
-        this.searchResults[0] = sR[0];
-    }
-
-    public void setGamename2(String[] sR) {
-        this.searchResults[1] = sR[1];
-    }
-
-    public void setGamename3(String[] sR) {
-        this.searchResults[2] = sR[2];
-    }
     public String getSearchString() {
         return searchString;
     }
@@ -104,16 +105,6 @@ public void setGamename1(String[] sR) {
      * here is subject to being replaced.</p>
      */
     private void _init() throws Exception {
-    }
-    
-    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
-
-    public DefaultSelectItemsArray getDropdown1DefaultItems() {
-        return dropdown1DefaultItems;
-    }
-
-    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
-        this.dropdown1DefaultItems = dsia;
     }
     private DefaultSelectItemsArray dropdown2DefaultItems = new DefaultSelectItemsArray();
 
@@ -155,10 +146,9 @@ public void setGamename1(String[] sR) {
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
         
-       String[] menuItems={"Game Tag","Game Name","Maximum step number","Maximum Rating","Creator Name"};
-       String[] result={"init"};
-       this.dropdown1DefaultItems.setItems(menuItems);
-       //this.dropdown2DefaultItems.setItems(result);
+       String[] menuItems={"Game Tag","Maximum step number","Maximum Rating","Creator Name"};
+       String[] result={""};
+       this.dropdown2DefaultItems.setItems(result);
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -241,23 +231,74 @@ public void setGamename1(String[] sR) {
     public String[] search_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        
-        
+
         //String selectedItem=(this.dropdown1DefaultItems.get(selectedIndex));
-
-        MySqlConnection con = new MySqlConnection();
         //GameAttributes game = new GameAttributes();
+        MySqlConnection con = new MySqlConnection();
         String[] temp=new String[1];
-        
-        try
+        temp[0]="ErrorInSearch";
+        if (getSearchCategory().equals("Game Tag"))
         {
-            temp=con.getGameNamebyGameTag(this.searchString);
+            try
+            {
+                temp=con.getGameNamebyGameTag(this.getTextt());
+            }
+            catch (Exception e)
+            {
+                temp[0]="ErrorinSearchAction";
+                //temp[1]=e.toString();
+            }
         }
-        catch (Exception e)
+        else if (getSearchCategory().equals("Creator Name"))
         {
-            temp[0]="ErrorinSearchAction";
+            try
+            {
+                //int id=con.getUserIdbyUserName(this.getTextt());
+                temp=con.getGameNameByUserNameString(this.getTextt());
+                //ResultSet rs=null;
+            }
+            catch (Exception e)
+            {
+                temp=new String[2];
+                temp[0]="ErrorinSearchAction";
+                temp[1]=e.toString();
+            }
         }
-
+        else if (getSearchCategory().equals("Maximum Number of Steps"))
+        {
+            try
+            {
+                //int id=con.getUserIdbyUserName(this.getTextt());
+                temp=con.getGameNameByMaxSteps(Integer.parseInt(this.getTextt()));
+                //ResultSet rs=null;
+            }
+            catch (Exception e)
+            {
+                temp=new String[2];
+                temp[0]="ErrorinSearchAction";
+                temp[1]=e.toString();
+            }
+        }
+        else if (getSearchCategory().equals("Maximum Rating"))
+        {
+            try
+            {
+                //int id=con.getUserIdbyUserName(this.getTextt());
+                temp=con.getGameNameByMaxRating(Integer.parseInt(this.getTextt()));
+                //ResultSet rs=null;
+            }
+            catch (Exception e)
+            {
+                temp=new String[2];
+                temp[0]="ErrorinSearchAction";
+                temp[1]=e.toString();
+            }
+        }
+        else
+        {
+            temp=new String[1];
+            temp[0]="NotEntering elseIF";
+        }
         //burda gamename e göre select from where like sorgusu yapılacak
         //server a bağlanamadığım için ben yapamadım
         
@@ -265,96 +306,54 @@ public void setGamename1(String[] sR) {
     }
 
     
-
-    public void game_name_processValueChange(ValueChangeEvent event) {
-    }
-
-    public void button1_action() {
+    public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        String[] temp=null;
+
         try
         {
+            String[] temp=new String[1];
+            temp[0]="temp";
             temp=search_action();
-            setsearchResults(temp);
+            //String[] temp=new String[1];
+            //temp[0]="TexttEmpty";
+            if(temp!=null)
+                this.setsearchResults(temp);
+            else
+            {
+                String[] t=new String[1];
+                t[0]="SearchActionReturnNull";
+                this.setsearchResults(t);
+            }
         }
         catch (Exception e)
         {
-            String[] t=new String[1];
-            t[0]="ErrorinButtonp1";
-            setsearchResults(t);
+            String[] t=new String[2];
+            t[0]="SearchActionReturnEmpty";
+            t[1]=e.toString();
+            this.setsearchResults(t);
             //System.out.println(temp);
         }
-        /*String[] otherTemp=new String[temp.length];
-        for(int i=0;i<temp.length;i++){
-            otherTemp[i]=temp[i];
-        }
-        
-        for(int i=0;i<this.searchResults.length;i++)
-            this.dropdownDefaultItems.setItems(this.searchResults);
-        */
-        try    
-        {
-            setsearchResults(this.searchResults);
-        }
-        catch (Exception e)
-        {
-            String[] t=new String[1];
-            t[0]="ErrorinButtonp2";
-            setsearchResults(t);
-            //System.out.println(searchResults[0]);
-        }  
+        return null;
     }
 
-    public void textField2_processValueChange(ValueChangeEvent event) {
-    }
-
-    public String hyperlink1_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        try{
-            MySqlConnection con = new MySqlConnection();
-            if(con.gameExists(this.searchResults[0])){
-                this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(this.searchResults[0]));
-           }
-        }
-        catch(Exception e)
-        {
-            System.out.println("Error, going to homepage");
-        }
-        return "case1";
-    }
-
-    public String hyperlink2_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        try{
-            MySqlConnection con = new MySqlConnection();
-            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(this.searchResults[1]));
-        }
-        catch(Exception e){
-
-        }
-        return "case2";
-    }
-    public String hyperlink3_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        try{
-            MySqlConnection con = new MySqlConnection();
-            this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(this.searchResults[2]));
-        }
-        catch(Exception e){
-
-        }
-        return "case3";
-    }
     public String button2_action() {
         // TODO: Process the button click action. Return value is a navigation
         // case name where null will return to the same page.
-        return null;
+
+        try{
+            MySqlConnection con = new MySqlConnection();
+            int gameId=con.getGameIdbyGameName(this.getSelectedGame());
+            this.getSessionBean1().setSelectedGameId(gameId);
+        }
+        catch(Exception e){
+            String[] t=new String[1];
+            t[0]="yemedi";
+            this.setsearchResults(t);
+        }
+
+        return "case1";
     }
-    public void dropdown1_processValueChange(ValueChangeEvent vce) {
-    }
+    
 }
 

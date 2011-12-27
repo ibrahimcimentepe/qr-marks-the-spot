@@ -211,14 +211,6 @@
             <from-outcome>case1</from-outcome>
             <to-view-id>/gamePage.jsp</to-view-id>
         </navigation-case>
-        <navigation-case>
-            <from-outcome>case2</from-outcome>
-            <to-view-id>/gamePage.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>case3</from-outcome>
-            <to-view-id>/gamePage.jsp</to-view-id>
-        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>messageSent</managed-bean-name>
