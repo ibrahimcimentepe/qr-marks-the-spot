@@ -148,7 +148,7 @@ public class search extends AbstractPageBean {
         
        String[] menuItems={"Game Tag","Maximum step number","Maximum Rating","Creator Name"};
        String[] result={""};
-       this.dropdown2DefaultItems.setItems(result);
+       //this.dropdown2DefaultItems.setItems(result);
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
