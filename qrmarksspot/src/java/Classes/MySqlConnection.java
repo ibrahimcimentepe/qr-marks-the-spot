@@ -359,6 +359,26 @@ public class MySqlConnection {
     	return str;
     }
 
+    public String[] getInfoofUser(String username)
+    {
+    	String[] str = new String[6];
+    	try{
+	    	Statement statement = con.createStatement();
+	    	ResultSet rs = statement.executeQuery("SELECT `users`.password FROM `users` WHERE `UserName` = '" + username + "'" );
+	    	if(rs.next()){
+	    		str[0] = rs.getString("Password");
+                str[1] = rs.getString("UserName");
+                str[2] = rs.getString("DateOfBirth");
+                str[3] = rs.getString("WebsiteOfUser");
+                str[4] = rs.getString("Twitter");
+                str[5] = rs.getString("Facebook");
+	    	}
+    	}
+    	catch(Exception e){
+    	}
+    	return str;
+    }
+
     public boolean userExists(String username, String password)
     {
     	boolean found = false;
