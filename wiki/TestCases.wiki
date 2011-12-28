@@ -12,8 +12,7 @@ The user enters the website in order to register to the system.
   <tr>
     <td align = "center">1</td>
     <td>Click "Sign Up" button from the main page</td>
-    <td>The page for registration which includes various text 
-fields to enter personal details should appear</td>
+    <td>The page for registration which includes various text                                                                fields to enter personal details should appear</td>
   </tr>
   <tr>
     <td align = "center">2</td>
@@ -55,7 +54,7 @@ corresponding section.</td>
   <tr>
     <td align = "center">8</td>
     <td>Click "Sign Up" button.</td>
-    <td>If the name "Seniye" is not in the database and if the date you have chosen from the calendar is not a future date, you will successfully sign up and be directed to home page.</td>
+    <td>If the name "Seniye" is not in the database and                                                                               if the date you have chosen from the calendar is not a                                                                          future date, you will successfully sign up and be directed                                                                          to home page.</td>
   </tr>
 </table>
 
