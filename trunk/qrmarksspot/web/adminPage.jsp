@@ -15,7 +15,6 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:label id="label1" style="color: orange; left: 72px; top: 96px; position: absolute" text="Welcome to administration page"/>
-                        <webuijsf:listbox id="listbox1" items="#{SessionBean1.allgames}" style="left: 24px; top: 144px; position: absolute"/>
                         <webuijsf:table augmentTitle="false" id="table1" style="left: 144px; top: 168px; position: absolute; width: 450px" title="Table" width="450">
                             <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{adminPage.defaultTableDataProvider}" sourceVar="currentRow">
                                 <webuijsf:tableColumn headerText="column1" id="tableColumn1" sort="column1">
@@ -26,6 +25,20 @@
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn headerText="column3" id="tableColumn3" sort="column3">
                                     <webuijsf:staticText id="staticText3" text="#{currentRow.value['column3']}"/>
+                                </webuijsf:tableColumn>
+                            </webuijsf:tableRowGroup>
+                        </webuijsf:table>
+                        <webuijsf:table augmentTitle="false" id="table2" style="left: 168px; top: 192px; position: absolute; width: 450px"
+                            title="buna nasil bind ederiz??bilal yardim" width="450">
+                            <webuijsf:tableRowGroup id="tableRowGroup2" rows="10" sourceData="#{adminPage.defaultTableDataProvider}" sourceVar="currentRow">
+                                <webuijsf:tableColumn headerText="column1" id="tableColumn4" sort="column1">
+                                    <webuijsf:staticText id="staticText4" text="#{currentRow.value['column1']}"/>
+                                </webuijsf:tableColumn>
+                                <webuijsf:tableColumn headerText="column2" id="tableColumn5" sort="column2">
+                                    <webuijsf:staticText id="staticText5" text="#{currentRow.value['column2']}"/>
+                                </webuijsf:tableColumn>
+                                <webuijsf:tableColumn headerText="column3" id="tableColumn6" sort="column3">
+                                    <webuijsf:staticText id="staticText6" text="#{currentRow.value['column3']}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
