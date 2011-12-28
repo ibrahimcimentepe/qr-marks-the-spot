@@ -33,6 +33,14 @@ public class GameBean implements Serializable{
 
 
     public List<Game>  games= new ArrayList<Game>();
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
+    }
     public ResultSet results;
 
     public ResultSet getResults() {
@@ -43,13 +51,6 @@ public class GameBean implements Serializable{
         this.results = results;
     }
 
-    public static List<Game> getGames() {
-        return games;
-    }
-
-    public static void setGames(List<Game> games) {
-        GameBean.games = games;
-    }
 
     public List<Game> getGameList() throws SQLException{
 
