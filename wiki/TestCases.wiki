@@ -12,7 +12,8 @@ The user enters the website in order to register to the system.
   <tr>
     <td align = "center">1</td>
     <td>Click "Sign Up" button from the main page</td>
-    <td>The page for registration which includes various text fields to enter personal details should appear</td>
+    <td>The page for registration which includes various text 
+fields to enter personal details should appear</td>
   </tr>
   <tr>
     <td align = "center">2</td>
@@ -27,11 +28,13 @@ The user enters the website in order to register to the system.
   <tr>
     <td align = "center">4</td>
     <td>Select 22 August 1989 from the calendar.</td>
-    <td>The selected date will appear in the corresponding section for "Birthday".</td>
+    <td>The selected date will appear in the corresponding 
+section for "Birthday".</td>
   </tr>
   <tr>
     <td align = "center">5</td>
-    <td>Enter the URL: www.wish-let.com in the corresponding section.</td>
+    <td>Enter the URL: www.wish-let.com in the 
+corresponding section.</td>
     <td> The URL will appear as typed. </td>
   </tr>
   <tr>
