@@ -15,24 +15,17 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:label id="label1" style="color: orange; left: 72px; top: 96px; position: absolute" text="Welcome to administration page"/>
-                        <webuijsf:listbox id="listbox1" items="#{SessionBean1.userName}" style="left: 24px; top: 144px; position: absolute"/>
-                        <webuijsf:table augmentTitle="false" id="table1" paginateButton="true" paginationControls="true"
-                            style="left: 144px; top: 144px; position: absolute; width: 450px" title="Table" width="258">
-                            <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{adminPage.mygames}" sourceVar="currentRow">
-                                <webuijsf:tableColumn headerText="gameName" id="tableColumn4" sort="gameName">
-                                    <webuijsf:label id="label2" text="#{currentRow.value['gameName']}"/>
+                        <webuijsf:listbox id="listbox1" items="#{SessionBean1.allgames}" style="left: 24px; top: 144px; position: absolute"/>
+                        <webuijsf:table augmentTitle="false" id="table1" style="left: 144px; top: 168px; position: absolute; width: 450px" title="Table" width="450">
+                            <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{adminPage.defaultTableDataProvider}" sourceVar="currentRow">
+                                <webuijsf:tableColumn headerText="column1" id="tableColumn1" sort="column1">
+                                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['column1']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn headerText="createrId" id="tableColumn5" sort="createrId">
-                                    <webuijsf:staticText id="staticText4" text="#{currentRow.value['createrId']}"/>
+                                <webuijsf:tableColumn headerText="column2" id="tableColumn2" sort="column2">
+                                    <webuijsf:staticText id="staticText2" text="#{currentRow.value['column2']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn headerText="creatorName" id="tableColumn6" sort="creatorName">
-                                    <webuijsf:staticText id="staticText5" text="#{currentRow.value['creatorName']}"/>
-                                </webuijsf:tableColumn>
-                                <webuijsf:tableColumn headerText="currentStep" id="tableColumn7" sort="currentStep">
-                                    <webuijsf:staticText id="staticText6" text="#{currentRow.value['currentStep']}"/>
-                                </webuijsf:tableColumn>
-                                <webuijsf:tableColumn headerText="description" id="tableColumn8" sort="description">
-                                    <webuijsf:staticText id="staticText7" text="#{currentRow.value['description']}"/>
+                                <webuijsf:tableColumn headerText="column3" id="tableColumn3" sort="column3">
+                                    <webuijsf:staticText id="staticText3" text="#{currentRow.value['column3']}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
