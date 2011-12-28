@@ -19,7 +19,7 @@
                         <webuijsf:button actionExpression="#{search.homeButton_action}" id="homeButton"
                             style="color: red; height: 24px; left: 23px; top: 24px; position: absolute; width: 95px" text="&lt; Go to home "/>
                         <h:inputText id="textField1" style="position: absolute; left: 96px; top: 96px" value="#{search.searchCategory}"/>
-                        <h:inputText id="textField2" style="left: 264px; top: 96px; position: absolute" value="#{search.searchString}"/>
+                        <h:inputText id="textField2" style="left: 264px; top: 96px; position: absolute" value="#{search.textt}"/>
                         <h:inputText id="textField3" style="left: 96px; top: 192px; position: absolute" value="#{search.selectedGame}"/>
                         <webuijsf:button actionExpression="#{search.button2_action}" id="button2" style="left: 287px; top: 192px; position: absolute" text="Button"/>
                         <h:selectOneMenu id="dropdown2" style="left: 96px; top: 144px; position: absolute" value="#{search.dropdown2DefaultItems}">
