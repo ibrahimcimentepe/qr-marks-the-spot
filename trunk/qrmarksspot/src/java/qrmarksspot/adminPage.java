@@ -5,15 +5,15 @@
 
 package qrmarksspot;
 
-import com.sun.rave.faces.data.DefaultTableDataModel;
-import com.sun.rave.web.ui.appbase.AbstractPageBean;
-import javax.faces.FacesException;
-
 import Classes.Game;
 import Classes.GameBean;
-import java.util.ArrayList;
+import com.sun.data.provider.impl.ListDataProvider;
+import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.model.DefaultOptionsList;
+import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import java.util.List;
-import java.sql.SQLException;
+import javax.faces.FacesException;
+
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
  * class contains component definitions (and initialization code) for
@@ -22,7 +22,7 @@ import java.sql.SQLException;
  * to respond to incoming events.</p>
  *
  * @version adminPage.java
- * @version Created on Dec 25, 2011, 9:16:12 PM
+ * @version Created on Dec 28, 2011, 7:15:29 PM
  * @author alke
  */
 
@@ -36,30 +36,10 @@ public class adminPage extends AbstractPageBean {
      */
     private void _init() throws Exception {
     }
-    private DefaultTableDataModel dataTable1Model = new DefaultTableDataModel();
-
-    public DefaultTableDataModel getDataTable1Model() {
-        return dataTable1Model;
-    }
-
-    public void setDataTable1Model(DefaultTableDataModel dtdm) {
-        this.dataTable1Model = dtdm;
-    }
 
     // </editor-fold>
-
-    //public List<Game>  mygames= new ArrayList<Game>();
     GameBean bean = new GameBean();
-
-    public List<Game>  mygames = bean.getGameList();
-
-    public GameBean getBean() {
-        return bean;
-    }
-
-    public void setBean(GameBean bean) {
-        this.bean = bean;
-    }
+    public List<Game>  mygames = bean.games;
 
     public List<Game> getMygames() {
         return mygames;
@@ -68,25 +48,30 @@ public class adminPage extends AbstractPageBean {
     public void setMygames(List<Game> mygames) {
         this.mygames = mygames;
     }
-    private DefaultTableDataModel dataTable1Model1 = new DefaultTableDataModel();
 
-    public DefaultTableDataModel getDataTable1Model1() {
-        return dataTable1Model1;
+
+    public GameBean getBean() {
+        return bean;
     }
 
-    public void setDataTable1Model1(DefaultTableDataModel dtdm) {
-        this.dataTable1Model1 = dtdm;
+    public void setBean(GameBean bean) {
+        this.bean = bean;
     }
-   // public List<Game>  mygame = GameBean.getGameList();
+    private ListDataProvider listDataProvider1 = new ListDataProvider();
 
+    public ListDataProvider getListDataProvider1() {
+        return listDataProvider1;
+    }
 
+    public void setListDataProvider1(ListDataProvider ldp) {
+        this.listDataProvider1 = ldp;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
-    public adminPage() throws SQLException{
-    //dataTable1Model1.setWrappedData(this.mygames.toArray());
-         
-
+    public adminPage() {
+         listDataProvider1.setList(this.getMygames());
+   //     this.defaultTableDataProvider.setArray(mygames);
     }
 
     /**
@@ -174,8 +159,8 @@ public class adminPage extends AbstractPageBean {
      *
      * @return reference to the scoped data bean
      */
-    protected RequestBean1 getRequestBean1() {
-        return (RequestBean1) getBean("RequestBean1");
+    protected SessionBean1 getSessionBean1() {
+        return (SessionBean1) getBean("SessionBean1");
     }
 
     /**
@@ -183,8 +168,8 @@ public class adminPage extends AbstractPageBean {
      *
      * @return reference to the scoped data bean
      */
-    protected SessionBean1 getSessionBean1() {
-        return (SessionBean1) getBean("SessionBean1");
+    protected RequestBean1 getRequestBean1() {
+        return (RequestBean1) getBean("RequestBean1");
     }
     
 }
