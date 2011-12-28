@@ -180,12 +180,14 @@ public class gamePage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
-
+            
         try {
             this.gameId = getSessionBean1().getSelectedGameId();
             MySqlConnection con = new MySqlConnection();
             this.selectedGame = con.getGame(this.gameId);
+            
      //     this.result =this.selectedGame.getString("Description");
+            
             this.gameName = this.selectedGame.getString("GameName");
             this.description = this.selectedGame.getString("Description");
             this.startingPoint = this.selectedGame.getString("StartLocation");
@@ -204,6 +206,7 @@ public class gamePage extends AbstractPageBean {
 
          //   return null;
         } catch (SQLException ex) {
+            this.setGameName("fail");
             Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
         }
         
