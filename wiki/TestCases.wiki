@@ -47,7 +47,7 @@ The user enters the website in order to register to the system.
   <tr>
     <td align = "center">7</td>
     <td>Upload a picture by selecting from "Choose file"</td>
-    <td>.......</td>
+    <td>The file name with its extension will appear.</td>
   </tr>
   <tr>
     <td align = "center">8</td>
@@ -136,9 +136,6 @@ Assume that the game creator Seniye has signed up and logged in to the system. B
     <td> Click the "Create The Game!" button.</td>
     <td> The game will be created and you will be directed to the home page.</td>
   </tr>
-
-  
-
  
 </table>
 
@@ -187,8 +184,6 @@ First of all let us assume that the user whose name is "Seniye" is already signe
 </table>
 
 After the last step Zeynep can play the game as it is described in the play game test scenario.
-
-== Test Case 2 ==
 
 
 == Test Case 3 ==
