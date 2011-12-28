@@ -41,6 +41,8 @@
                             style="color: rgb(0, 204, 204); height: 22px; left: 24px; top: 144px; position: absolute; width: 166px" text="Maximum Rating"/>
                         <webuijsf:staticText id="staticText9"
                             style="color: rgb(0, 204, 204); height: 22px; left: 384px; top: 72px; position: absolute; width: 118px" text="Value:"/>
+                        <webuijsf:button actionExpression="#{search.button2_action}" id="button2"
+                            style="color: red; height: 24px; left: 120px; top: 24px; position: absolute; width: 95px" text="&lt; Go to home "/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
