@@ -56,11 +56,95 @@ The user enters the website in order to register to the system.
   </tr>
 </table>
 
+==Test Case 2 Game Creation Module==
 
+Assume that the game creator Seniye has signed up and logged in to the system. Below is the test case for creating the game "Follow the Hints".
 
+ <table border="1">
+  <tr>
+    <th align = "left">Steps</th>
+    <th align = "left">Actions</th>
+    <th align = "left">Expected Results</th>
+  </tr>
+  <tr>
+    <td align = "center">1</td>
+    <td>Click "Create Game" button on the Home page</td>
+    <td>The page that includes text boxes that asks details about the game should appear</td>
+  </tr>
+  <tr>
+    <td align = "center">2</td>
+    <td>Write the name of the game, "Follow the Hints". in the text box "game name"</td>
+    <td>Since there is no game in the database with name "Follow the Hints", you should be allowed the enter the name "Follow the Hints"</td>
+  </tr>
+  <tr>
+    <td align = "center">3</td>
+    <td>Write the following text in the "description" text box: The person who first finishes the game will win a prize. Just go around and try to find the QR Codes.</td>
+    <td>The description should appear in the relevant text box.</td>
+  </tr>
+  <tr>
+    <td align = "center">4</td>
+    <td>Write the following text in the "Starting point of the game" text box: Bebek Starbucks</td>
+    <td>The start location info should appear in the relevant text box.</td>
+  </tr>
+  <tr>
+    <td align = "center">5</td>
+    <td>Write the following into "Borders" text box: Bebek Starbucks - Arnavutkoy Belediye Tesisleri (along the seashore)</td>
+    <td>The border info should appear in the relevant text box.</td>
+  </tr>
+  <tr>
+    <td align = "center">6</td>
+    <td>Write the following tags one by one in the "tags" section: Bebek, prize, QR</td>
+    <td>The typed tags should appear in 3 consequent lines. </td>
+  </tr>
+  <tr>
+    <td align = "center">7</td>
+    <td>Write the following into "Number of steps in the game" text box: 4</td>
+    <td>The number typed should appear in the relevant text box.</td>
+  </tr>
+  <tr>
+    <td align = "center">8</td>
+    <td>Click the "Next" button. </td>
+    <td> Once clicked next, the page that has the heading "You are designing the step 1" should appear.</td>
+  </tr>
+  <tr>
+    <td align = "center">9</td>
+<td>Write the "QR Code of The Step"as: "Who built the Bebek Mosque?".  Then write the "Location" as:"Bebek Starbucks Gate". Finally, write the "Password" as: "Architect Kemalletin"</td>
+    <td>The texts should appear as typed. </td>
+</tr>
+ <tr>
+ <td align = "center">10</td>
+    <td>Click the "Proceed to Step 2" button. </td>
+    <td> Once clicked, the page that has the heading "Now you are designing 2" should appear.</td>
+  </tr>
+  <tr>
+<td align = "center">11</td>
+    <td>Enter the QR Code of The Step, Location and Password informations for step 2. </td>
+    <td> The texts should appear as typed. </td>
+  </tr>
+  <tr>
+ <td align = "center">12</td>
+    <td>Click the "Proceed to Step 3" button.</td>
+    <td> Once clicked, the page that has the heading "Now you are designing 3" should appear. </td>
+  </tr>
+  <tr>
+<td align = "center">13</td>
+    <td>Enter the QR Code of The Step, Location and Password informations for step 3. </td>
+    <td> The texts should appear as typed. </td>
+  </tr>
+  <tr>
+<td align = "center">14</td>
+    <td> Click the "Create The Game!" button.</td>
+    <td> The game will be created and you will be directed to the home page.</td>
+  </tr>
 
+  
 
-== Test Case 1 Using Game Search Module==
+ 
+</table>
+
+The game is ready to be played.
+
+== Test Case 3 Using Game Search Module==
 
 First of all let us assume that the user whose name is "Seniye" is already signed in to our system. Note that the sign in and sign up processes are described in other test case scenarios. Also let us assume there are already some games created in the database. One of these games is called “South Campus”. Also there is no such game in the database named as “North Campus”. After these assumptions using game search module to find and play a game is as follows:
 
@@ -105,57 +189,7 @@ First of all let us assume that the user whose name is "Seniye" is already signe
 After the last step Zeynep can play the game as it is described in the play game test scenario.
 
 == Test Case 2 ==
-Assume that the game creator Seniye has signed up and created a profile page as a "game creator". Below is the test case for creating the game "Conquer the south campus".
 
- <table border="1">
-  <tr>
-    <th align = "left">Steps</th>
-    <th align = "left">Actions</th>
-    <th align = "left">Expected Results</th>
-  </tr>
-  <tr>
-    <td align = "center">1</td>
-    <td>Click "Create a new game" link on the profile page</td>
-    <td>The page that includes text boxes that asks details about the game should appear</td>
-  </tr>
-  <tr>
-    <td align = "center">2</td>
-    <td>Write the name of the game, "Conquer the south campus". in the text box "game name"</td>
-    <td>Since there is no game in the database with name "Conquer the south campus", you should be allowed the enter the name "Conquer the south campus"</td>
-  </tr>
-  <tr>
-    <td align = "center">3</td>
-    <td>Write the following text in the "description" text box: This game is designed to give an orientation about south campus of Bosphorus University</td>
-    <td>The description should appear in the relevant text box.</td>
-  </tr>
-  <tr>
-    <td align = "center">4</td>
-    <td>Write the following text in the "borders" text box: All the qr codes of this game are located inside the south campus of Bosphorus University"</td>
-    <td>The border info should appear in the relevant text box.</td>
-  </tr>
-  <tr>
-    <td align = "center">5</td>
-    <td>Write the following into "start location" text box:The first qr code is located on engineering faculty's building</td>
-    <td>The start location info should appear in the relevant text box.</td>
-  </tr>
-  <tr>
-    <td align = "center">6</td>
-    <td>Click the "Create Game" button</td>
-    <td>It is checked if there are any empty field or not. SInce there are none, passwords and qr spots" page is opened. </td>
-  </tr>
-  <tr>
-    <td align = "center">7</td>
-<td>Write the number "4" into the text box that asks for the number of steps planned for the game and click the "next" button</td>
-    <td> Once clicked next, 4x2=8 new textboxes are created under the page for each step; and these text boxes stand for the fields where you will enter the password of each step and the location of each step's qr code.</td>
-  </tr>
-  <tr>
-    <td align = "center">8</td>
-<td>Write the "Location of qr code for step 1"as: "Engineering faculty building" Password of step 1 = "12345abc". Repeat this for the following 3 steps, and click "finish creating the game button". </td>
-    <td>It is checked if there are any empty field or not. SInce there are none, the game is created in the main page. </td>
-</tr>
-</table>
-
-The game is ready to be played.
 
 == Test Case 3 ==
  
