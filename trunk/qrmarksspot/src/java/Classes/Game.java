@@ -5,11 +5,13 @@
 
 package Classes;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alke
  */
-public class Game {
+public class Game implements Serializable{
 int GameId;
 String GameName;
 String Description;
