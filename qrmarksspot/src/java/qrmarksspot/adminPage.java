@@ -8,6 +8,7 @@ package qrmarksspot;
 import Classes.Game;
 import Classes.GameBean;
 import com.sun.data.provider.impl.ListDataProvider;
+import com.sun.rave.faces.data.DefaultTableDataModel;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Table;
 import com.sun.webui.jsf.model.DefaultOptionsList;
@@ -41,7 +42,8 @@ public class adminPage extends AbstractPageBean {
 
     // </editor-fold>
     GameBean bean = new GameBean();
-    public List<Game>  mygames = GameBean.games;
+    @SuppressWarnings("static-access")
+    public List<Game>  mygames = bean.games;
 
   
     
@@ -64,15 +66,6 @@ public class adminPage extends AbstractPageBean {
     public void setBean(GameBean bean) {
         this.bean = bean;
     }
-    private DefaultTableDataProvider defaultTableDataProvider = new DefaultTableDataProvider();
-
-    public DefaultTableDataProvider getDefaultTableDataProvider() {
-        return defaultTableDataProvider;
-    }
-
-    public void setDefaultTableDataProvider(DefaultTableDataProvider dtdp) {
-        this.defaultTableDataProvider = dtdp;
-    }
     private ListDataProvider listDataProvider1 = new ListDataProvider();
 
     public ListDataProvider getListDataProvider1() {
@@ -82,13 +75,22 @@ public class adminPage extends AbstractPageBean {
     public void setListDataProvider1(ListDataProvider ldp) {
         this.listDataProvider1 = ldp;
     }
+    private DefaultTableDataModel dataTable1Model = new DefaultTableDataModel();
+
+    public DefaultTableDataModel getDataTable1Model() {
+        return dataTable1Model;
+    }
+
+    public void setDataTable1Model(DefaultTableDataModel dtdm) {
+        this.dataTable1Model = dtdm;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
     public adminPage() {
-         listDataProvider1.setList(this.getMygames());
-   //     this.defaultTableDataProvider.setArray(mygames);
-     
+     //    listDataProvider1.setList(this.getMygames());
+     //   this.defaultTableDataProvider.setArray(mygames);
+   dataTable1Model.setWrappedData(this.mygames);
          //String[] y = x.toArray(new String[0]);
     }
 
