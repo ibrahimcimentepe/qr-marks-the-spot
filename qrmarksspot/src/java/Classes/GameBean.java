@@ -68,9 +68,11 @@ public class GameBean {
                game.setStartLocation(rs.getString("StartLocation"));
 
                list.add(game);
+
+               games.add(game);
            }
 
-           GameBean.games = list;
+        //   GameBean.games = list;
             return list;
         } catch(Exception e) {
              System.out.println("Error");
