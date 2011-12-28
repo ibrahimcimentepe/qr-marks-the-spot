@@ -29,10 +29,19 @@ import org.apache.tomcat.util.modeler.ManagedBean;
  */
 //@ManagedBean(name="GameBean1")
 //@SessionScoped
-public class GameBean {
+public class GameBean implements Serializable{
 
 
-    public static List<Game>  games= new ArrayList<Game>();
+    public List<Game>  games= new ArrayList<Game>();
+    public ResultSet results;
+
+    public ResultSet getResults() {
+        return results;
+    }
+
+    public void setResults(ResultSet results) {
+        this.results = results;
+    }
 
     public static List<Game> getGames() {
         return games;
@@ -47,6 +56,7 @@ public class GameBean {
         try {
            MySqlConnection con = new MySqlConnection();
            ResultSet rs = con.getGamesList();
+           this.results = rs;
 
            List<Game> list = new ArrayList<Game>();
 
