@@ -22,7 +22,7 @@
                         <webuijsf:hyperlink actionExpression="#{search.hyperlink3_action}" id="hyperlink3" style="position: absolute; left: 120px; top: 312px" text="#{search.gamename3}"/>
                         <webuijsf:listbox id="listbox1" items="#{search.myList}" style="left: 456px; top: 192px; position: absolute" valueChangeListenerExpression="#{search.listbox1_processValueChange}"/>
                         <webuijsf:button actionExpression="#{search.homeButton_action}" id="homeButton"
-                            style="color: red; height: 24px; left: 120px; top: 24px; position: absolute; width: 95px" text="&lt; Go to home "/>
+                            style="color: red; height: 24px; left: 23px; top: 24px; position: absolute; width: 95px" text="&lt; Go to home "/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
