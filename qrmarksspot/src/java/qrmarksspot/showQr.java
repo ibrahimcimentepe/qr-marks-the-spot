@@ -8,6 +8,7 @@ package qrmarksspot;
 import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 
+import com.sun.webui.jsf.component.DropDown;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import javax.faces.event.ValueChangeEvent;
 import javax.servlet.http.HttpServletRequest;
 import qr.QR;
 import qrmarksspot.SessionBean1;
+import com.sun.rave.faces.data.DefaultSelectItemsArray;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -61,6 +63,8 @@ public class showQr extends AbstractPageBean {
     String [] gamesteps_qrString = new String[12];
     String [] gameIDs = new String[12];
 
+
+    
 
     public String getSelectedGameStepName() {
         return selectedGameStepName;
@@ -118,10 +122,25 @@ public class showQr extends AbstractPageBean {
     public void setGameNames(String[] gameNames) {
         this.gameNames = gameNames;
     }
+    private SingleSelectOptionsList dropDown1DefaultOptions = new SingleSelectOptionsList();
 
+    public SingleSelectOptionsList getDropDown1DefaultOptions() {
+        return dropDown1DefaultOptions;
+    }
 
+    public void setDropDown1DefaultOptions(SingleSelectOptionsList ssol) {
+        this.dropDown1DefaultOptions = ssol;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
 
+    public DefaultSelectItemsArray getDropdown1DefaultItems() {
+        return dropdown1DefaultItems;
+    }
 
+    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems = dsia;
+    }
+    
     /**
      * <p>Construct a new Page bean instance.</p>
      */
@@ -151,22 +170,35 @@ public class showQr extends AbstractPageBean {
        
 
         int i = 0;
-        try{
+        try
+        {
             MySqlConnection con = new MySqlConnection();
             ResultSet rs = con.getGameNameByUserId(this.getSessionBean1().getUserId());
 
-            while(rs.next()){
+            /*while(rs.next()){
 
-                if(i >= 12) continue;
+            if(i >= 12) continue;
 
-                gameNames[i] = (rs.getString("gameName"));
-                gameIDs[i] = (rs.getString("gameId"));
+            gameNames[i] = (rs.getString("gameName"));
+            gameIDs[i] = (rs.getString("gameId"));
             i++;
-            }
-
-        }catch(Exception e){
+            }*/
+            
+            //String[] temp=new String[i];
+            //temp=this.getGameNames();
+            //temp=getGameNames();
+            //this.dropdown1DefaultItems.setItems(this.getGameNames());
+        }
+        catch(Exception e)
+        {
+            String[] temp=new String[1];
+            temp[0]=e.toString();
+            this.dropdown1DefaultItems.setItems(temp);
 
         }
+        String[] temp=new String[1];
+            temp[0]="deneme";
+            this.dropdown1DefaultItems.setItems(temp);
         
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -177,6 +209,9 @@ public class showQr extends AbstractPageBean {
             log("showQr Initialization Failure", e);
             throw e instanceof FacesException ? (FacesException) e: new FacesException(e);
         }
+
+        
+
         
         // </editor-fold>
         // Perform application initialization that must complete
