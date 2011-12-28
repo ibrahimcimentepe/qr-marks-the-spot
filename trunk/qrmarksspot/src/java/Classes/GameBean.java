@@ -29,17 +29,17 @@ import org.apache.tomcat.util.modeler.ManagedBean;
  */
 //@ManagedBean(name="GameBean1")
 //@SessionScoped
-public class GameBean implements Serializable{
+public class GameBean{
 
 
-    public List<Game>  games= new ArrayList<Game>();
+    public static List<Game>  games= new ArrayList<Game>();
 
     public List<Game> getGames() {
         return games;
     }
 
     public void setGames(List<Game> games) {
-        this.games = games;
+        GameBean.games = games;
     }
     public ResultSet results;
 
