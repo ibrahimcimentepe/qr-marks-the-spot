@@ -9,8 +9,10 @@ import Classes.Game;
 import Classes.GameBean;
 import com.sun.data.provider.impl.ListDataProvider;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Table;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.DefaultTableDataProvider;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.FacesException;
 
@@ -39,7 +41,12 @@ public class adminPage extends AbstractPageBean {
 
     // </editor-fold>
     GameBean bean = new GameBean();
-    public List<Game>  mygames = bean.games;
+    public List<Game>  mygames = GameBean.games;
+
+  
+    
+    //String[] y = x.toArray(new String[0]);
+
 
     public List<Game> getMygames() {
         return mygames;
@@ -57,6 +64,15 @@ public class adminPage extends AbstractPageBean {
     public void setBean(GameBean bean) {
         this.bean = bean;
     }
+    private DefaultTableDataProvider defaultTableDataProvider = new DefaultTableDataProvider();
+
+    public DefaultTableDataProvider getDefaultTableDataProvider() {
+        return defaultTableDataProvider;
+    }
+
+    public void setDefaultTableDataProvider(DefaultTableDataProvider dtdp) {
+        this.defaultTableDataProvider = dtdp;
+    }
     private ListDataProvider listDataProvider1 = new ListDataProvider();
 
     public ListDataProvider getListDataProvider1() {
@@ -72,6 +88,8 @@ public class adminPage extends AbstractPageBean {
     public adminPage() {
          listDataProvider1.setList(this.getMygames());
    //     this.defaultTableDataProvider.setArray(mygames);
+     
+         //String[] y = x.toArray(new String[0]);
     }
 
     /**
