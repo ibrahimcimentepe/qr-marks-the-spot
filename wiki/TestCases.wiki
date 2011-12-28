@@ -31,23 +31,28 @@ The user enters the website in order to register to the system.
   </tr>
   <tr>
     <td align = "center">5</td>
-    <td>Enter the URL for your website.</td>
-    <td>........</td>
+    <td>Enter the URL: www.wish-let.com in the corresponding section.</td>
+    <td> The URL will appear as typed. </td>
   </tr>
   <tr>
     <td align = "center">6</td>
     <td>Enter your Twitter id.</td>
-    <td>.........</td>
+    <td>The id will appear as typed.</td>
   </tr>
   <tr>
     <td align = "center">7</td>
     <td>Enter your Facbook id.</td>
-    <td>..........</td>
+    <td>The id will appear as typed.</td>
+  </tr>
+  <tr>
+    <td align = "center">7</td>
+    <td>Upload a picture by selecting from "Choose file"</td>
+    <td>.......</td>
   </tr>
   <tr>
     <td align = "center">8</td>
-    <td>Upload a picture by selecting from "Choose file"</td>
-    <td>.........</td>
+    <td>Click "Sign Up" button.</td>
+    <td>If the name "Seniye" is not in the database and if the date you have chosen from the calendar is not a future date, you will successfully sign up and be directed to home page.</td>
   </tr>
 </table>
 
