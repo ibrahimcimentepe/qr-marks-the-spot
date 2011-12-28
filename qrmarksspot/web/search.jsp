@@ -14,15 +14,17 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:textField columns="47" id="textField1" style="height: 24px; left: 120px; top: 96px; position: absolute; width: 288px" text="#{search.searchString}"/>
                         <webuijsf:button actionExpression="#{search.button1_action}" id="button1"
                             style="color: red; height: 24px; left: 455px; top: 96px; position: absolute; width: 71px" text="Search"/>
-                        <webuijsf:hyperlink actionExpression="#{search.hyperlink1_action}" id="hyperlink1" style="position: absolute; left: 120px; top: 216px" text="#{search.gamename1}"/>
-                        <webuijsf:hyperlink actionExpression="#{search.hyperlink2_action}" id="hyperlink2" style="position: absolute; left: 120px; top: 264px" text="#{search.gamename2}"/>
-                        <webuijsf:hyperlink actionExpression="#{search.hyperlink3_action}" id="hyperlink3" style="position: absolute; left: 120px; top: 312px" text="#{search.gamename3}"/>
-                        <webuijsf:listbox id="listbox1" items="#{search.myList}" style="left: 456px; top: 192px; position: absolute" valueChangeListenerExpression="#{search.listbox1_processValueChange}"/>
                         <webuijsf:button actionExpression="#{search.homeButton_action}" id="homeButton"
                             style="color: red; height: 24px; left: 23px; top: 24px; position: absolute; width: 95px" text="&lt; Go to home "/>
+                        <h:inputText id="textField1" style="position: absolute; left: 96px; top: 96px" value="#{search.searchCategory}"/>
+                        <h:inputText id="textField2" style="left: 264px; top: 96px; position: absolute" value="#{search.searchString}"/>
+                        <h:inputText id="textField3" style="left: 96px; top: 192px; position: absolute" value="#{search.selectedGame}"/>
+                        <webuijsf:button actionExpression="#{search.button2_action}" id="button2" style="left: 287px; top: 192px; position: absolute" text="Button"/>
+                        <h:selectOneMenu id="dropdown2" style="left: 96px; top: 144px; position: absolute" value="#{search.dropdown2DefaultItems}">
+                            <f:selectItems id="dropdown2SelectItems" value="#{search.dropdown2DefaultItems}"/>
+                        </h:selectOneMenu>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

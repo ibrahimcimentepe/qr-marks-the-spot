@@ -97,6 +97,7 @@ public class search extends AbstractPageBean {
         this.searchString = searchString;
     }
 
+
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -115,6 +116,7 @@ public class search extends AbstractPageBean {
     public void setDropdown2DefaultItems(DefaultSelectItemsArray dsia) {
         this.dropdown2DefaultItems = dsia;
     }
+    
 
     
 
@@ -339,7 +341,7 @@ public class search extends AbstractPageBean {
             this.setsearchResults(t);
             //System.out.println(temp);
         }
-        return null;
+        return "case2";
     }
 
     public String button2_action() {
@@ -360,6 +362,11 @@ public class search extends AbstractPageBean {
 
         return "case1";
     }
-    
+
+    public String homeButton_action() {
+        // TODO: Replace with your code
+        return "homePage";
+    }
+
 }
 
