@@ -46,57 +46,7 @@ public class search extends AbstractPageBean {
     String selectedGame;
     String textt;
     String searchCategory;
-    public String getSearchCategory() {
-        return searchCategory;
-    }
-
-    public void setSearchCategory(String searchCategory) {
-        this.searchCategory = searchCategory;
-    }
-
-    public String getTextt() {
-        return textt;
-    }
-
-    public void setTextt(String textt) {
-        this.textt = textt;
-    }
     
-    public String[] getsearchResults() {
-        return searchResults;
-    }
-
-    public void setsearchResults(String[] searchResults) {
-        this.searchResults = searchResults;
-        this.dropdown2DefaultItems.setItems(searchResults);
-    }
-
-    public String getSelectedGame() {
-        return selectedGame;
-    }
-
-    public void setSelectedGame(String selectedGame) {
-        this.selectedGame = selectedGame;
-    }
-
-    public String getCriteria() {
-        return criteria;
-    }
-
-    public void setCriteria(String criteria) {
-        this.criteria = criteria;
-    }
-
-
-    
-    public String getSearchString() {
-        return searchString;
-    }
-
-    public void setSearchString(String searchString) {
-        this.searchString = searchString;
-    }
-
 
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
@@ -106,15 +56,16 @@ public class search extends AbstractPageBean {
      * here is subject to being replaced.</p>
      */
     private void _init() throws Exception {
+        dropdown1DefaultItems.setItems(new String[]{""});
     }
-    private DefaultSelectItemsArray dropdown2DefaultItems = new DefaultSelectItemsArray();
+    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
 
-    public DefaultSelectItemsArray getDropdown2DefaultItems() {
-        return dropdown2DefaultItems;
+    public DefaultSelectItemsArray getDropdown1DefaultItems() {
+        return dropdown1DefaultItems;
     }
 
-    public void setDropdown2DefaultItems(DefaultSelectItemsArray dsia) {
-        this.dropdown2DefaultItems = dsia;
+    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems = dsia;
     }
     
 
@@ -126,6 +77,55 @@ public class search extends AbstractPageBean {
      * <p>Construct a new Page bean instance.</p>
      */
     public search() {
+    }
+
+    public String getCriteria() {
+        return criteria;
+    }
+
+    public void setCriteria(String criteria) {
+        this.criteria = criteria;
+    }
+
+    public String getSearchCategory() {
+        return searchCategory;
+    }
+
+    public void setSearchCategory(String searchCategory) {
+        this.searchCategory = searchCategory;
+    }
+
+    public String[] getSearchResults() {
+        return searchResults;
+    }
+
+    public void setSearchResults(String[] searchResults) {
+        this.searchResults = searchResults;
+        this.dropdown1DefaultItems.setItems(searchResults);
+    }
+
+    public String getSearchString() {
+        return searchString;
+    }
+
+    public void setSearchString(String searchString) {
+        this.searchString = searchString;
+    }
+
+    public String getSelectedGame() {
+        return selectedGame;
+    }
+
+    public void setSelectedGame(String selectedGame) {
+        this.selectedGame = selectedGame;
+    }
+
+    public String getTextt() {
+        return textt;
+    }
+
+    public void setTextt(String textt) {
+        this.textt = textt;
     }
 
     /**
@@ -163,9 +163,7 @@ public class search extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
-        String[] temp= new String[1];
-        temp[0]="deneme";
-        this.dropdown2DefaultItems.setItems(temp);
+        
     }
      
     
@@ -230,6 +228,8 @@ public class search extends AbstractPageBean {
     protected RequestBean1 getRequestBean1() {
         return (RequestBean1) getBean("RequestBean1");
     }
+
+    
 
     public String[] search_action() {
         // TODO: Process the action. Return value is a navigation
@@ -302,7 +302,7 @@ public class search extends AbstractPageBean {
         // TODO: The page should have a multi-line text area
         // and a button.  This code goes in the button_action method
 
-        
+
         }
         else
         {
@@ -311,15 +311,15 @@ public class search extends AbstractPageBean {
         }
         //burda gamename e göre select from where like sorgusu yapılacak
         //server a bağlanamadığım için ben yapamadım
-        
+
         return temp;
     }
 
     
+
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-
         try
         {
             String[] temp=new String[1];
@@ -328,12 +328,13 @@ public class search extends AbstractPageBean {
             //String[] temp=new String[1];
             //temp[0]="TexttEmpty";
             if(temp!=null)
-                this.setsearchResults(temp);
+                this.setSearchResults(temp);
+
             else
             {
                 String[] t=new String[1];
                 t[0]="SearchActionReturnNull";
-                this.setsearchResults(t);
+                this.setSearchResults(t);
             }
         }
         catch (Exception e)
@@ -341,16 +342,15 @@ public class search extends AbstractPageBean {
             String[] t=new String[2];
             t[0]="SearchActionReturnEmpty";
             t[1]=e.toString();
-            this.setsearchResults(t);
+            this.setSearchResults(t);
             //System.out.println(temp);
         }
         return null;
     }
 
     public String button2_action() {
-        // TODO: Process the button click action. Return value is a navigation
+        // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-
         try{
             MySqlConnection con = new MySqlConnection();
             int gameId=con.getGameIdbyGameName(this.getSelectedGame());
@@ -359,17 +359,26 @@ public class search extends AbstractPageBean {
         catch(Exception e){
             String[] t=new String[1];
             t[0]="yemedi";
-            this.setsearchResults(t);
+            this.setSearchResults(t);
             return null;
         }
 
         return "case1";
     }
-
-    public String homeButton_action() {
-        // TODO: Replace with your code
+    
+    public String button3_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
         return "case2";
     }
+    
+
+
+
+   
+
+    
+
 
 }
 
