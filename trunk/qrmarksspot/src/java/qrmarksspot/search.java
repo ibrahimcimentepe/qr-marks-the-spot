@@ -355,6 +355,7 @@ public class search extends AbstractPageBean {
             String[] t=new String[1];
             t[0]="yemedi";
             this.setsearchResults(t);
+            return null;
         }
 
         return "case1";

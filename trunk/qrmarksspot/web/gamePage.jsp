@@ -16,40 +16,42 @@
                     <webuijsf:form id="form1">
                         <webuijsf:label id="labelGameDetails" style="color: red; height: 24px; left: 72px; top: 96px; position: absolute" text="Game Details"/>
                         <webuijsf:label id="usernameLabel1" style="left: 624px; top: 96px; position: absolute" text="#{SessionBean1.userName}"/>
-                        <webuijsf:label id="labelLocation" style="color: orange; height: 24px; left: 72px; top: 360px; position: absolute; width: 214px" text="Location(borders):"/>
-                        <webuijsf:label id="labelNumberOfPlayers" style="color: orange; height: 24px; left: 72px; top: 504px; position: absolute; width: 214px" text="Number Of Players:"/>
-                        <webuijsf:label id="labelNumberOfSteps" style="color: orange; height: 24px; left: 72px; top: 408px; position: absolute; width: 214px" text="How many steps to finish the game:"/>
-                        <webuijsf:label id="labelCurrentStep" style="color: orange; height: 24px; left: 72px; top: 456px; position: absolute; width: 214px" text="Current Step:"/>
-                        <webuijsf:label id="labelDescription" style="color: orange; height: 24px; left: 72px; top: 240px; position: absolute; width: 214px" text="Description:"/>
-                        <webuijsf:label id="labelStartingPoint" style="color: orange; height: 24px; left: 72px; top: 312px; position: absolute; width: 214px" text="Starting point:"/>
-                        <webuijsf:label id="labelCreator" style="color: orange; height: 24px; left: 72px; top: 600px; position: absolute; width: 214px" text="Creator:"/>
-                        <webuijsf:label id="labelRating" style="color: orange; height: 24px; left: 72px; top: 552px; position: absolute; width: 214px" text="Rating:"/>
-                        <webuijsf:label id="labelPictures" style="color: orange; left: 72px; top: 672px; position: absolute" text="Pictures"/>
+                        <webuijsf:label id="labelLocation" style="color: orange; height: 24px; left: 72px; top: 408px; position: absolute; width: 214px" text="Location(borders):"/>
+                        <webuijsf:label id="labelNumberOfPlayers" style="color: orange; height: 24px; left: 72px; top: 552px; position: absolute; width: 214px" text="Number Of Players:"/>
+                        <webuijsf:label id="labelNumberOfSteps" style="color: orange; height: 24px; left: 72px; top: 456px; position: absolute; width: 214px" text="How many steps to finish the game:"/>
+                        <webuijsf:label id="labelCurrentStep" style="color: orange; height: 24px; left: 72px; top: 504px; position: absolute; width: 214px" text="Current Step:"/>
+                        <webuijsf:label id="labelDescription" style="color: orange; height: 24px; left: 72px; top: 288px; position: absolute; width: 214px" text="Description:"/>
+                        <webuijsf:label id="labelStartingPoint" style="color: orange; height: 24px; left: 72px; top: 360px; position: absolute; width: 214px" text="Starting point:"/>
+                        <webuijsf:label id="labelCreator" style="color: orange; height: 24px; left: 72px; top: 648px; position: absolute; width: 214px" text="Creator:"/>
+                        <webuijsf:label id="labelRating" style="color: orange; height: 24px; left: 72px; top: 600px; position: absolute; width: 214px" text="Rating:"/>
+                        <webuijsf:label id="labelPictures" style="color: orange; left: 72px; top: 696px; position: absolute" text="Pictures"/>
                         <webuijsf:button actionExpression="#{gamePage.backButton_action}" id="backButton"
                             style="color: red; height: 24px; left: 71px; top: 48px; position: absolute" text="&lt; Back to home"/>
                         <webuijsf:button actionExpression="#{gamePage.bring_action}" id="bring" style="position: absolute; left: 384px; top: 72px"
                             text="bring the game" visible="false"/>
                         <webuijsf:textArea columns="96" id="textAreaDescription" readOnly="true" rows="4"
-                            style="border: 2px solid red; left: 336px; top: 216px; position: absolute" text="#{gamePage.description}"/>
+                            style="border: 2px solid red; left: 336px; top: 264px; position: absolute" text="#{gamePage.description}"/>
                         <webuijsf:textField columns="100" id="textFieldStartingPoint" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 312px; position: absolute" text="#{gamePage.startingPoint}"/>
+                            style="border: 2px solid red; left: 336px; top: 360px; position: absolute" text="#{gamePage.startingPoint}"/>
                         <webuijsf:textField columns="100" id="textFieldLocation" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 360px; position: absolute" text="#{gamePage.borders}"/>
+                            style="border: 2px solid red; left: 336px; top: 408px; position: absolute" text="#{gamePage.borders}"/>
                         <webuijsf:textField columns="100" id="textFieldNumberOfSteps" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 408px; position: absolute" text="#{gamePage.numberOfSteps}"/>
+                            style="border: 2px solid red; left: 336px; top: 456px; position: absolute" text="#{gamePage.numberOfSteps}"/>
                         <webuijsf:textField columns="100" id="textFieldCurrentStep" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 456px; position: absolute" text="#{gamePage.currentStep}"/>
+                            style="border: 2px solid red; left: 336px; top: 504px; position: absolute" text="#{gamePage.currentStep}"/>
                         <webuijsf:textField columns="100" id="textFieldNumberOfPlayers" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 504px; position: absolute" text="#{gamePage.numberOfPlayers}"/>
+                            style="border: 2px solid red; left: 336px; top: 552px; position: absolute" text="#{gamePage.numberOfPlayers}"/>
                         <webuijsf:textField columns="100" id="textFieldRating" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 552px; position: absolute" text="#{gamePage.rating}"/>
+                            style="border: 2px solid red; left: 336px; top: 600px; position: absolute" text="#{gamePage.rating}"/>
                         <webuijsf:textField columns="100" id="textFieldCreator" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 600px; position: absolute" text="#{gamePage.creatorName}"/>
-                        <webuijsf:label id="labelGameName" style="color: orange; height: 24px; left: 72px; top: 144px; position: absolute; width: 214px" text="Game Name:"/>
+                            style="border: 2px solid red; left: 336px; top: 648px; position: absolute" text="#{gamePage.creatorName}"/>
+                        <webuijsf:label id="labelGameName" style="color: orange; height: 24px; left: 72px; top: 192px; position: absolute; width: 214px" text="Game Name:"/>
                         <webuijsf:textField columns="100" id="textFieldGameName" readOnly="true"
-                            style="border: 2px solid red; left: 336px; top: 144px; position: absolute" text="#{gamePage.gameName}"/>
+                            style="border: 2px solid red; left: 336px; top: 192px; position: absolute" text="#{gamePage.gameName}"/>
                         <webuijsf:button actionExpression="#{gamePage.buttonPlayGame_action}" id="buttonPlayGame"
                             style="color: red; height: 24px; left: 264px; top: 48px; position: absolute; width: 287px" text="#{gamePage.playButton}"/>
+                        <webuijsf:textField id="textField1" style="left: 336px; top: 144px; position: absolute" text="#{gamePage.gameId}"/>
+                        <webuijsf:label id="labelGameName1" style="color: orange; height: 24px; left: 72px; top: 144px; position: absolute; width: 214px" text="Game Id:"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
