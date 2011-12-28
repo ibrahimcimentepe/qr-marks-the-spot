@@ -163,6 +163,9 @@ public class search extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+        String[] temp= new String[1];
+        temp[0]="deneme";
+        this.dropdown2DefaultItems.setItems(temp);
     }
      
     
@@ -341,7 +344,7 @@ public class search extends AbstractPageBean {
             this.setsearchResults(t);
             //System.out.println(temp);
         }
-        return "case2";
+        return null;
     }
 
     public String button2_action() {
@@ -365,7 +368,7 @@ public class search extends AbstractPageBean {
 
     public String homeButton_action() {
         // TODO: Replace with your code
-        return "homePage";
+        return "case2";
     }
 
 }

@@ -55,10 +55,6 @@
             <to-view-id>/gamePage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/search.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>failPlay</from-outcome>
             <to-view-id>/home.jsp</to-view-id>
         </navigation-case>
@@ -77,6 +73,10 @@
         <navigation-case>
             <from-outcome>case3</from-outcome>
             <to-view-id>/login.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/search.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -205,17 +205,6 @@
             <to-view-id>/profilePage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <navigation-rule>
-        <from-view-id>/search.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>homePage</from-outcome>
-            <to-view-id>/home.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/gamePage.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
     <managed-bean>
         <managed-bean-name>messageSent</managed-bean-name>
         <managed-bean-class>qrmarksspot.messageSent</managed-bean-class>
@@ -266,4 +255,15 @@
         <managed-bean-class>qrmarksspot.adminPage</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <navigation-rule>
+        <from-view-id>/search.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case2</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/gamePage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

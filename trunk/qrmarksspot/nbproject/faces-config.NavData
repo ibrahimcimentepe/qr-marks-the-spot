@@ -6,13 +6,13 @@
         <Node id="showQr.jsp" x="1400" y="150" zoom="false"/>
         <Node id="displayQRcode.jsp" x="1401" y="229" zoom="true"/>
         <Node id="forum.jsp" x="650" y="450" zoom="true"/>
-        <Node id="gameFinish.jsp" x="900" y="300" zoom="true"/>
         <Node id="messageSent.jsp" x="150" y="600" zoom="true"/>
+        <Node id="gameFinish.jsp" x="900" y="300" zoom="true"/>
         <Node id="createGame.jsp" x="900" y="150" zoom="true"/>
         <Node id="playGame.jsp" x="400" y="450" zoom="true"/>
+        <Node id="adminPage.jsp" x="1150" y="300" zoom="true"/>
         <Node id="success.jsp" x="650" y="300" zoom="true"/>
         <Node id="gameSteps.jsp" x="400" y="300" zoom="true"/>
-        <Node id="adminPage.jsp" x="1150" y="300" zoom="true"/>
         <Node id="gamePage.jsp" x="150" y="450" zoom="false"/>
         <Node id="search.jsp" x="415" y="605" zoom="false"/>
         <Node id="home.jsp" x="150" y="150" zoom="true"/>
