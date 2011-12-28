@@ -19,6 +19,9 @@
                         <webuijsf:textArea columns="50" id="qrCodeTextArea" style="left: 192px; top: 240px; position: absolute"/>
                         <webuijsf:button actionExpression="#{showQr.generateButton_action}" id="generateButton"
                             style="left: 191px; top: 336px; position: absolute" text="Button"/>
+                        <h:selectOneMenu id="dropdown1" style="position: absolute; left: 384px; top: 96px">
+                            <f:selectItems id="dropdown1SelectItems" value="#{showQr.dropdown1DefaultItems}"/>
+                        </h:selectOneMenu>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
