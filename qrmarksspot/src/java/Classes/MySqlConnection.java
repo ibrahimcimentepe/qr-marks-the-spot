@@ -601,6 +601,27 @@ public class MySqlConnection {
     }
 
 
+    public ResultSet getAbusementMessage( int currentAbusementMessageId)
+    {
+       
+        try
+        {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM abusementMessages WHERE messageId = "+currentAbusementMessageId);
+           // if(rs.next()){
+           // rs.getString("message");
+	    	return rs;
+           // }
+           // return result;
+        }
+        catch(Exception e) {
+             System.out.println("Error");
+             return null;
+        }
+      
+    }
+
 
     public ResultSet getGameNameByUserId (int userId)
     {
