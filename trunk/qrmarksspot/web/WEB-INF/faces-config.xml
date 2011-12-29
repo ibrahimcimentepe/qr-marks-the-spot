@@ -78,6 +78,10 @@
             <from-outcome>case1</from-outcome>
             <to-view-id>/search.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>case4</from-outcome>
+            <to-view-id>/tutorial.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -263,6 +267,25 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>case2</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/adminPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>tutorial</managed-bean-name>
+        <managed-bean-class>qrmarksspot.tutorial</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/tutorial.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
             <to-view-id>/home.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
