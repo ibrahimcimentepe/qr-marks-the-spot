@@ -1,15 +1,3 @@
 THE GENERAL VIEW OF OUR PAGE USAGE
 
-http://qr-marks-the-spot.googlecode.com/files/sequence_diagrams.png
-
-THE USAGE OF FORUMS
-
-http://qr-marks-the-spot.googlecode.com/files/SDiagram1.jpeg
-
-HOW TO PLAY A GAME?
-
-http://qr-marks-the-spot.googlecode.com/files/SDiagram2.jpeg
-
-HOW TO CREATE A GAME?
-
-http://qr-marks-the-spot.googlecode.com/files/SDiagram3.jpeg
+http://qr-marks-the-spot.googlecode.com/files/sequence diagram.png
