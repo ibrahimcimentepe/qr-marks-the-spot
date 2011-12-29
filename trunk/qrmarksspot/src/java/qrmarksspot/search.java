@@ -358,7 +358,7 @@ public class search extends AbstractPageBean {
         return null;
     }
 
-    public String button2_action() {
+    public String gamePageButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         try{
@@ -373,7 +373,7 @@ public class search extends AbstractPageBean {
             return null;
         }
 
-        return "case1";
+        return "toGamePage";
     }
     
     public String button3_action() {

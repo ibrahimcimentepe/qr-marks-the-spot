@@ -187,7 +187,7 @@ public class home extends AbstractPageBean {
 
     public String tutorial_action() {
         
-        return null;
+        return "case4";
     }
 
     public String logoutLink_action() {

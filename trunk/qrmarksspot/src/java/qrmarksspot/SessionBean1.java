@@ -37,7 +37,9 @@ public class SessionBean1 extends AbstractSessionBean {
     int selectedGameId = 16;
     int userId = -1;
 
-    
+    int abusementMessageId=2;
+
+
     public int getUserId() {
         return userId;
     }
