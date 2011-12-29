@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
     Document   : displayQRcode
-    Created on : 25.Ara.2011, 21:07:21
+    Created on : 29.Ara.2011, 01:45:01
     Author     : HP
 -->
 <jsp:root version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
@@ -14,7 +14,7 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:image id="image2" style="left: 48px; top: 48px; position: absolute" url="#{displayQRcode.QRpath}"/>
+                        <webuijsf:image id="image1" style="left: 96px; top: 96px; position: absolute" url="#{displayQRcode.QRpath}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
