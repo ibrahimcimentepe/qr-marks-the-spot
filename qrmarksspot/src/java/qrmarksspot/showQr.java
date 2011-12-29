@@ -42,26 +42,17 @@ public class showQr extends AbstractPageBean {
      */
     private void _init() throws Exception {
     }
-    private SingleSelectOptionsList gameStepDropDownDefaultOptions = new SingleSelectOptionsList();
-
-    public SingleSelectOptionsList getGameStepDropDownDefaultOptions() {
-        return gameStepDropDownDefaultOptions;
-    }
-
-    public void setGameStepDropDownDefaultOptions(SingleSelectOptionsList ssol) {
-        this.gameStepDropDownDefaultOptions = ssol;
-    }
 
     // </editor-fold>
-    String[] gameNames = new String[12];
+    String[] gameNames = new String[] {"game1","game2"};
     String selectedGameName = new String();
     String selectedGameStepQR = new String();
     String selectedGameStepName = new String();
 
 
-    String [] gamesteps_Numberofsteps = new String[12];
-    String [] gamesteps_qrString = new String[12];
-    String [] gameIDs = new String[12];
+    String [] gamesteps_Numberofsteps = new String[]{"1","2"};
+    String [] gamesteps_qrString = new String[] {"step1","step2"};
+    String [] gameIDs = new String[] {"1","2"};
 
 
     
@@ -122,23 +113,41 @@ public class showQr extends AbstractPageBean {
     public void setGameNames(String[] gameNames) {
         this.gameNames = gameNames;
     }
-    private SingleSelectOptionsList dropDown1DefaultOptions = new SingleSelectOptionsList();
+    private DefaultSelectItemsArray dropdown1DefaultItems1 = new DefaultSelectItemsArray();
 
-    public SingleSelectOptionsList getDropDown1DefaultOptions() {
-        return dropDown1DefaultOptions;
+    public DefaultSelectItemsArray getDropdown1DefaultItems1() {
+        return dropdown1DefaultItems1;
     }
 
-    public void setDropDown1DefaultOptions(SingleSelectOptionsList ssol) {
-        this.dropDown1DefaultOptions = ssol;
+    public void setDropdown1DefaultItems1(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems1 = dsia;
     }
-    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
+    private DefaultSelectItemsArray dropdown1DefaultItems2 = new DefaultSelectItemsArray();
 
-    public DefaultSelectItemsArray getDropdown1DefaultItems() {
-        return dropdown1DefaultItems;
+    public DefaultSelectItemsArray getDropdown1DefaultItems2() {
+        return dropdown1DefaultItems2;
     }
 
-    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
-        this.dropdown1DefaultItems = dsia;
+    public void setDropdown1DefaultItems2(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems2 = dsia;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems3 = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems3() {
+        return dropdown1DefaultItems3;
+    }
+
+    public void setDropdown1DefaultItems3(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems3 = dsia;
+    }
+    private DefaultSelectItemsArray dropdown2DefaultItems = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown2DefaultItems() {
+        return dropdown2DefaultItems;
+    }
+
+    public void setDropdown2DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown2DefaultItems = dsia;
     }
     
     /**
@@ -175,31 +184,51 @@ public class showQr extends AbstractPageBean {
             MySqlConnection con = new MySqlConnection();
             ResultSet rs = con.getGameNameByUserId(this.getSessionBean1().getUserId());
 
-            /*while(rs.next()){
+            while(rs != null && rs.next()){
 
-            if(i >= 12) continue;
+            if(i >= gameNames.length) continue;
 
-            gameNames[i] = (rs.getString("gameName"));
-            gameIDs[i] = (rs.getString("gameId"));
-            i++;
-            }*/
+            gameIDs[i] = (rs.getString("GameId"));
+            gameNames[i] = (rs.getString("GameName"));
             
-            //String[] temp=new String[i];
-            //temp=this.getGameNames();
-            //temp=getGameNames();
-            //this.dropdown1DefaultItems.setItems(this.getGameNames());
+            i++;
+            }
+            
+            this.dropdown1DefaultItems1.setItems(this.getGameNames());
+            if(gameNames.length > 0){
+            
+                this.selectedGameName = gameNames[0];
+                newValueForGameName(selectedGameName);
+            
+            } 
+            this.dropdown2DefaultItems.setItems(this.gamesteps_Numberofsteps);
+
+            if(gamesteps_Numberofsteps.length > 0){
+
+                this.selectedGameStepName = gamesteps_Numberofsteps[0];
+
+                int  index = -1;
+                for(i=0;i<gamesteps_Numberofsteps.length;i++){
+
+                if(gamesteps_Numberofsteps[i].compareTo(selectedGameStepName) == 0){
+
+                    index = i;
+                }
+            }
+        if( (index != -1)){
+
+            selectedGameStepQR = gamesteps_qrString[index];
+        }
+        else{
+            selectedGameStepQR = "default";
+        }
+            }
         }
         catch(Exception e)
         {
-            String[] temp=new String[1];
-            temp[0]=e.toString();
-            this.dropdown1DefaultItems.setItems(temp);
-
+            this.dropdown1DefaultItems1.setItems(new String [] {e.getMessage()});
         }
-        String[] temp=new String[1];
-            temp[0]="deneme";
-            this.dropdown1DefaultItems.setItems(temp);
-        
+
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
         // *Note* - this logic should NOT be modified
@@ -281,55 +310,8 @@ public class showQr extends AbstractPageBean {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
 
-    public void gameNameDropDown_processValueChange(ValueChangeEvent event) {
-
-        //gamesteps_Numberofsteps.clear();
-        //gamesteps_qrString.clear();
-
-        try{
-            MySqlConnection con = new MySqlConnection();
-
-            int  index = -1;
-            for(int i=0;i<12;i++){
-
-                if(gameNames[i] == (selectedGameName)){
-
-                    index = i;
-                }
-            }
-
-            ResultSet rs = con.getGameStepsByGameId(gameIDs[index]);
-            int i = 0;
-            while(rs.next()){
-
-                if(i >= 12) continue;
-
-                gamesteps_Numberofsteps[i] = (rs.getString("StepNumber"));
-                gamesteps_qrString[i] = (rs.getString("QrString"));
-
-                i++;
-            }
-
-        }catch(Exception e){
-
-        }
-    }
-
+    
     public void gameStepDropDown_processValueChange(ValueChangeEvent event) {
-
-        int  index = -1;
-            for(int i=0;i<12;i++){
-
-                if(gamesteps_Numberofsteps[i] == (selectedGameStepName)){
-
-                    index = i;
-                }
-            }
-        if(! (index == -1)){
-
-            selectedGameStepQR = gamesteps_qrString[index];
-        }
-
 
     }
 
@@ -338,7 +320,7 @@ public class showQr extends AbstractPageBean {
         // case name where null will return to the same page.
 
         QR code  = new QR();
-        String message ="default"; // selectedGameStepQR; //bu olmalı
+        String message = selectedGameStepQR; //bu olmalı
         int heigth = 300 ;
         int width = 300 ;
         HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
@@ -348,7 +330,66 @@ public class showQr extends AbstractPageBean {
 
         code.create(message, heigth, width, filepath);
 
-        return "case1";
+        return "case2";
+    }
+
+
+    public void newValueForGameName(String val){
+
+        try{
+            MySqlConnection con = new MySqlConnection();
+
+            int  index = -1;
+            for(int i=0;i<gameNames.length;i++){
+
+                if(gameNames[i].compareTo(val) == 0){
+
+                    index = i;
+                }
+            }
+
+            ResultSet rs = con.getGameStepsByGameId(gameIDs[index]);
+            int i = 0;
+            while(rs != null && rs.next()){
+
+                if(i >= gamesteps_Numberofsteps.length) continue;
+
+                gamesteps_Numberofsteps[i] = (rs.getString("StepNumber"));
+                gamesteps_qrString[i] = (rs.getString("QrString"));
+
+                i++;
+            }
+
+            this.dropdown2DefaultItems.setItems(this.getGamesteps_Numberofsteps());
+        }catch(Exception e){
+            this.dropdown2DefaultItems.setItems(new String[] {e.getMessage()});
+        }
+    }
+
+    public void dropdown1_processValueChange(ValueChangeEvent vce) {
+
+        newValueForGameName((String)vce.getNewValue());
+        
+    }
+
+    public void dropdown2_processValueChange(ValueChangeEvent vce) {
+
+        int  index = -1;
+            for(int i=0;i<gamesteps_Numberofsteps.length;i++){
+
+                if(gamesteps_Numberofsteps[i].compareTo(((String)vce.getNewValue())) == 0){
+
+                    index = i;
+                }
+            }
+        if( (index != -1)){
+
+            selectedGameStepQR = gamesteps_qrString[index];
+        }
+        else{
+            selectedGameStepQR = "default";
+        }
+
     }
     
 }
