@@ -1,3 +1,3 @@
 THE GENERAL VIEW OF OUR PAGE USAGE
 
-http://qr-marks-the-spot.googlecode.com/files/sequence_diagram.png
+http://qr-marks-the-spot.googlecode.com/files/sequencediagramUpdated.png
