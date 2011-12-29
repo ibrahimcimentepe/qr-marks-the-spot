@@ -58,15 +58,7 @@ public class search extends AbstractPageBean {
     private void _init() throws Exception {
         dropdown1DefaultItems.setItems(new String[]{""});
     }
-    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
-
-    public DefaultSelectItemsArray getDropdown1DefaultItems() {
-        return dropdown1DefaultItems;
-    }
-
-    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
-        this.dropdown1DefaultItems = dsia;
-    }
+    
     
 
     
@@ -77,6 +69,16 @@ public class search extends AbstractPageBean {
      * <p>Construct a new Page bean instance.</p>
      */
     public search() {
+    }
+
+    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems() {
+        return dropdown1DefaultItems;
+    }
+
+    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems = dsia;
     }
 
     public String getCriteria() {
@@ -101,7 +103,7 @@ public class search extends AbstractPageBean {
 
     public void setSearchResults(String[] searchResults) {
         this.searchResults = searchResults;
-        this.dropdown1DefaultItems.setItems(searchResults);
+        //this.dropdown1DefaultItems.setItems(searchResults);
     }
 
     public String getSearchString() {
@@ -163,6 +165,9 @@ public class search extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+        String[] t=new String[1];
+        t[0]="";
+        this.dropdown1DefaultItems.setItems(t);
         
     }
      
@@ -324,25 +329,30 @@ public class search extends AbstractPageBean {
         {
             String[] temp=new String[1];
             temp[0]="temp";
+            this.dropdown1DefaultItems.setItems(temp);
             temp=search_action();
             //String[] temp=new String[1];
             //temp[0]="TexttEmpty";
             if(temp!=null)
+            {
                 this.setSearchResults(temp);
-
+                this.dropdown1DefaultItems.setItems(temp);
+            }
             else
             {
                 String[] t=new String[1];
                 t[0]="SearchActionReturnNull";
                 this.setSearchResults(t);
+                dropdown1DefaultItems.setItems(t);
             }
         }
         catch (Exception e)
         {
-            String[] t=new String[2];
-            t[0]="SearchActionReturnEmpty";
-            t[1]=e.toString();
-            this.setSearchResults(t);
+            String[] tempp=new String[1];
+            tempp[0]="SearchActionReturnEmpty";
+            //t[1]=e.toString();
+            this.setSearchResults(tempp);
+            this.dropdown1DefaultItems.setItems(tempp);
             //System.out.println(temp);
         }
         return null;
@@ -371,14 +381,8 @@ public class search extends AbstractPageBean {
         // case name where null will return to the same page.
         return "case2";
     }
-    
 
-
-
-   
-
-    
-
-
+    public void dropdown1_processValueChange(ValueChangeEvent vce) {
+    }
 }
 

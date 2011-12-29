@@ -14,7 +14,7 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <h:selectOneMenu id="dropdown1" style="position: absolute; left: 144px; top: 168px" value="#{search.dropdown1DefaultItems}">
+                        <h:selectOneMenu id="dropdown1" style="left: 96px; top: 168px; position: absolute; width: 144px" valueChangeListener="#{search.dropdown1_processValueChange}">
                             <f:selectItems id="dropdown1SelectItems" value="#{search.dropdown1DefaultItems}"/>
                         </h:selectOneMenu>
                         <webuijsf:textField id="textField1" style="position: absolute; left: 96px; top: 72px" text="#{search.searchCategory}"/>
