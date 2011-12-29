@@ -6,7 +6,6 @@
 package qrmarksspot;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
-import com.sun.webui.jsf.component.ImageComponent;
 import javax.faces.FacesException;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  * to respond to incoming events.</p>
  *
  * @version displayQRcode.java
- * @version Created on 25.Ara.2011, 21:07:21
+ * @version Created on 29.Ara.2011, 01:45:01
  * @author HP
  */
 
@@ -36,6 +35,10 @@ public class displayQRcode extends AbstractPageBean {
 
     // </editor-fold>
 
+    /**
+     * <p>Construct a new Page bean instance.</p>
+     */
+
     String QRpath;
 
     public String getQRpath() {
@@ -45,11 +48,7 @@ public class displayQRcode extends AbstractPageBean {
     public void setQRpath(String QRpath) {
         this.QRpath = QRpath;
     }
-    /**
-     * <p>Construct a new Page bean instance.</p>
-     */
     public displayQRcode() {
-         
     }
 
     /**
@@ -68,13 +67,13 @@ public class displayQRcode extends AbstractPageBean {
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
-        // Perform application initialization that must complete
-        // *before* managed components are initialized
-        // TODO - add your own initialiation code here
+
         HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
 
         QRpath =  this.getSessionBean1().getUserId() +".png";
-        
+        // Perform application initialization that must complete
+        // *before* managed components are initialized
+        // TODO - add your own initialiation code here
         
         // <editor-fold defaultstate="collapsed" desc="Managed Component Initialization">
         // Initialize automatically managed components
@@ -132,8 +131,8 @@ public class displayQRcode extends AbstractPageBean {
      *
      * @return reference to the scoped data bean
      */
-    protected ApplicationBean1 getApplicationBean1() {
-        return (ApplicationBean1) getBean("ApplicationBean1");
+    protected RequestBean1 getRequestBean1() {
+        return (RequestBean1) getBean("RequestBean1");
     }
 
     /**
@@ -150,8 +149,8 @@ public class displayQRcode extends AbstractPageBean {
      *
      * @return reference to the scoped data bean
      */
-    protected RequestBean1 getRequestBean1() {
-        return (RequestBean1) getBean("RequestBean1");
+    protected ApplicationBean1 getApplicationBean1() {
+        return (ApplicationBean1) getBean("ApplicationBean1");
     }
     
 }
