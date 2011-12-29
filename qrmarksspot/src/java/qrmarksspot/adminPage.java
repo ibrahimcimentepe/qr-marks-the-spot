@@ -7,15 +7,22 @@ package qrmarksspot;
 
 import Classes.Game;
 import Classes.GameBean;
+import Classes.MySqlConnection;
 import com.sun.data.provider.impl.ListDataProvider;
+import com.sun.rave.faces.data.DefaultSelectItemsArray;
 import com.sun.rave.faces.data.DefaultTableDataModel;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Table;
+import com.sun.webui.jsf.component.TextArea;
 import com.sun.webui.jsf.model.DefaultOptionsList;
 import com.sun.webui.jsf.model.DefaultTableDataProvider;
+import com.sun.webui.jsf.model.SingleSelectOptionsList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.FacesException;
+import javax.faces.event.ValueChangeEvent;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -41,9 +48,31 @@ public class adminPage extends AbstractPageBean {
     }
 
     // </editor-fold>
+    String gameToBeDeleted ;
+    private int currentAbusementMessageId = 2;
+    String abusementMessage;
+    ResultSet set;
+
+    public String getAbusementMessage() {
+        return abusementMessage;
+    }
+
+    public void setAbusementMessage(String abusementMessage) {
+        this.abusementMessage = abusementMessage;
+    }
+
+    public String getGameToBeDeleted() {
+        return gameToBeDeleted;
+    }
+
+    public void setGameToBeDeleted(String gameToBeDeleted) {
+        this.gameToBeDeleted = gameToBeDeleted;
+    }
+
+
     GameBean bean = new GameBean();
-    @SuppressWarnings("static-access")
-    public List<Game>  mygames = bean.games;
+   
+    public List<Game>  mygames = GameBean.games;
 
   
     
@@ -84,14 +113,58 @@ public class adminPage extends AbstractPageBean {
     public void setDataTable1Model(DefaultTableDataModel dtdm) {
         this.dataTable1Model = dtdm;
     }
+    private DefaultSelectItemsArray dropdown1DefaultItems1 = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems1() {
+        return dropdown1DefaultItems1;
+    }
+
+    public void setDropdown1DefaultItems1(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems1 = dsia;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems2 = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems2() {
+        return dropdown1DefaultItems2;
+    }
+
+    public void setDropdown1DefaultItems2(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems2 = dsia;
+    }
+    private TextArea textArea3 = new TextArea();
+
+    public TextArea getTextArea3() {
+        return textArea3;
+    }
+
+    public void setTextArea3(TextArea ta) {
+        this.textArea3 = ta;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
     public adminPage() {
      //    listDataProvider1.setList(this.getMygames());
-     //   this.defaultTableDataProvider.setArray(mygames);
-   dataTable1Model.setWrappedData(this.mygames);
+     //   this.defaultTableDataProvider.setArray(mygames);,
+   //     listDataProvider1.setList(mygames);
+//   dataTable1Model.setWrappedData(this.mygames);
+ //   this.dropdown1DefaultItems1.setItems( (String[]) this.mygames.toArray());
+
          //String[] y = x.toArray(new String[0]);
+    //     this.currentAbusementMessageId++;
+    try {
+
+            MySqlConnection con = new MySqlConnection();
+            set =con.getAbusementMessage(getSessionBean1().abusementMessageId);
+            while(set.next()){
+            this.abusementMessage = set.getString("message");
+            }
+        }
+        catch (Exception ex) {
+          //  this.setGameName("fail");
+          //  Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+   //     getSessionBean1().abusementMessageId ++;
     }
 
     /**
@@ -128,6 +201,9 @@ public class adminPage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+       
+
+
     }
 
     /**
@@ -191,6 +267,55 @@ public class adminPage extends AbstractPageBean {
     protected RequestBean1 getRequestBean1() {
         return (RequestBean1) getBean("RequestBean1");
     }
+
+
+    public String button1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
+    }
+
+    public String imageHyperlink1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
+    }
+
+    public String deleteGameButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+
+   //     MySqlConnection.deleteGame(this.gameToBeDeleted);
+
+        return null;
+    }
+
+    public String buttonSeeNextMessage_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+     //   this.currentAbusementMessageId++;
+        int temp = getSessionBean1().abusementMessageId;
+        temp++;
+        getSessionBean1().abusementMessageId = temp;
+         if(getSessionBean1().abusementMessageId>8)
+        {
+            getSessionBean1().abusementMessageId = 2;
+        }
+
+        
+        return null;
+    }
+
+    public void textArea3_processValueChange(ValueChangeEvent event) {
+    }
+
+    public String backButton_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "case1";
+    }
+
+  
     
 }
 
