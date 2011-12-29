@@ -14,15 +14,24 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <h:selectOneMenu id="dropdown1" style="left: 96px; top: 168px; position: absolute; width: 144px" valueChangeListener="#{search.dropdown1_processValueChange}">
+                        <h:selectOneMenu id="dropdown1" style="left: 192px; top: 144px; position: absolute; width: 288px" valueChangeListener="#{search.dropdown1_processValueChange}">
                             <f:selectItems id="dropdown1SelectItems" value="#{search.dropdown1DefaultItems}"/>
                         </h:selectOneMenu>
-                        <webuijsf:textField id="textField1" style="position: absolute; left: 96px; top: 72px" text="#{search.searchCategory}"/>
-                        <webuijsf:textField id="textField2" style="position: absolute; left: 288px; top: 72px" text="#{search.textt}"/>
-                        <webuijsf:textField id="textField3" style="position: absolute; left: 312px; top: 168px" text="#{search.selectedGame}"/>
-                        <webuijsf:button actionExpression="#{search.button1_action}" id="button1" style="position: absolute; left: 528px; top: 72px" text="Button"/>
-                        <webuijsf:button actionExpression="#{search.button2_action}" id="button2" style="position: absolute; left: 504px; top: 168px" text="Button"/>
+                        <webuijsf:textField id="textField1" style="left: 192px; top: 72px; position: absolute" text="#{search.searchCategory}"/>
+                        <webuijsf:textField id="textField2" style="left: 360px; top: 72px; position: absolute" text="#{search.textt}"/>
+                        <webuijsf:textField id="textField3" style="left: 192px; top: 216px; position: absolute" text="#{search.selectedGame}"/>
+                        <webuijsf:button actionExpression="#{search.button1_action}" id="button1" style="left: 575px; top: 72px; position: absolute" text="Button"/>
+                        <webuijsf:button actionExpression="#{search.button2_action}" id="button2" style="left: 359px; top: 216px; position: absolute" text="Go"/>
                         <webuijsf:button actionExpression="#{search.button3_action}" id="button3" style="position: absolute; left: 24px; top: 24px" text="Button"/>
+                        <webuijsf:staticText id="staticText1" style="color: #00cccc; left: 192px; top: 48px; position: absolute" text="Search Category"/>
+                        <webuijsf:staticText id="staticText2" style="color: #00cccc; left: 360px; top: 48px; position: absolute" text="Search Text"/>
+                        <webuijsf:staticText id="staticText3" style="color: #00cccc; left: 24px; top: 72px; position: absolute" text="Available Categories"/>
+                        <webuijsf:staticText id="staticText4" style="color: #00cccc; left: 24px; top: 96px; position: absolute" text="Creator Name"/>
+                        <webuijsf:staticText id="staticText5" style="color: #00cccc; left: 24px; top: 120px; position: absolute" text="Game Tag"/>
+                        <webuijsf:staticText id="staticText6" style="color: #00cccc; left: 24px; top: 144px; position: absolute" text="Maximum Number of Steps"/>
+                        <webuijsf:staticText id="staticText7" style="color: #00cccc; left: 24px; top: 168px; position: absolute" text="Maximum Rating"/>
+                        <webuijsf:staticText id="staticText8" style="color: #00cccc; left: 192px; top: 120px; position: absolute" text="Search Results"/>
+                        <webuijsf:staticText id="staticText9" style="color: #00cccc; left: 192px; top: 192px; position: absolute" text="Enter Game Name"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
