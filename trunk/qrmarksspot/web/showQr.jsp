@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
     Document   : showQr
     Created on : Dec 14, 2011, 9:07:51 PM
     Author     : alke
@@ -14,14 +14,17 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:dropDown id="gameStepDropDown" style="left: 192px; top: 168px; position: absolute" valueChangeListenerExpression="#{showQr.gameStepDropDown_processValueChange}"/>
-                        <webuijsf:dropDown id="gameNameDropDown" items="#{showQr.gameNames}" style="left: 192px; top: 96px; position: absolute" valueChangeListenerExpression="#{showQr.gameNameDropDown_processValueChange}"/>
-                        <webuijsf:textArea columns="50" id="qrCodeTextArea" style="left: 192px; top: 240px; position: absolute"/>
                         <webuijsf:button actionExpression="#{showQr.generateButton_action}" id="generateButton"
-                            style="left: 191px; top: 336px; position: absolute" text="Button"/>
-                        <h:selectOneMenu id="dropdown1" style="position: absolute; left: 384px; top: 96px">
-                            <f:selectItems id="dropdown1SelectItems" value="#{showQr.dropdown1DefaultItems}"/>
+                            style="left: 95px; top: 240px; position: absolute" text="Button"/>
+                        <h:selectOneMenu id="dropdown1" onchange="webui.suntheme.common.timeoutSubmitForm(this.form, 'dropdown1');"
+                            onclick="dropdown1_processValueChange()" style="left: 96px; top: 96px; position: absolute" value="#{showQr.selectedGameName}" valueChangeListener="#{showQr.dropdown1_processValueChange}">
+                            <f:selectItems id="dropdown1SelectItems" value="#{showQr.dropdown1DefaultItems1}"/>
                         </h:selectOneMenu>
+                        <h:selectOneMenu id="dropdown2" onchange="webui.suntheme.common.timeoutSubmitForm(this.form, 'dropdown2');"
+                            style="left: 96px; top: 144px; position: absolute" value="#{showQr.selectedGameStepName}" valueChangeListener="#{showQr.dropdown2_processValueChange}">
+                            <f:selectItems id="dropdown2SelectItems" value="#{showQr.dropdown2DefaultItems}"/>
+                        </h:selectOneMenu>
+                        <webuijsf:label id="label1" style="color: white; left: 96px; top: 192px; position: absolute" text="#{showQr.selectedGameStepQR}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
