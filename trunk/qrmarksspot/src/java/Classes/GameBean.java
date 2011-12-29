@@ -80,7 +80,7 @@ public class GameBean{
 
                list.add(game);
 
-               games.add(game);
+               GameBean.games.add(game);
            }
 
         //   GameBean.games = list;
