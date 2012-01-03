@@ -24,7 +24,6 @@
                         <webuijsf:label id="labelStartingPoint" style="color: orange; height: 24px; left: 72px; top: 360px; position: absolute; width: 214px" text="Starting point:"/>
                         <webuijsf:label id="labelCreator" style="color: orange; height: 24px; left: 72px; top: 648px; position: absolute; width: 214px" text="Creator:"/>
                         <webuijsf:label id="labelRating" style="color: orange; height: 24px; left: 72px; top: 600px; position: absolute; width: 214px" text="Rating:"/>
-                        <webuijsf:label id="labelPictures" style="color: orange; left: 72px; top: 696px; position: absolute" text="Pictures"/>
                         <webuijsf:button actionExpression="#{gamePage.backButton_action}" id="backButton"
                             style="color: red; height: 24px; left: 71px; top: 48px; position: absolute" text="&lt; Back to home"/>
                         <webuijsf:button actionExpression="#{gamePage.bring_action}" id="bring" style="position: absolute; left: 384px; top: 72px"
