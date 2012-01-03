@@ -48,7 +48,7 @@ http://qr-marks-the-spot.googlecode.com/files/ProjectOutline.png
 
 <table border="1">
   <tr>
-    <th align = "left">Modules and/or actions</th>
+    <th align = "left">Milestones to complete</th>
     <th align = "left">Responsible member</th>
   </tr>
 
