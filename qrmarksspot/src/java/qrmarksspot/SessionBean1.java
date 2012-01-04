@@ -38,8 +38,16 @@ public class SessionBean1 extends AbstractSessionBean {
     int userId = -1;
 
     int abusementMessageId=2;
+    String gameNameToEdit = "";
 
+    public String getGameNameToEdit() {
+        return gameNameToEdit;
+    }
 
+    public void setGameNameToEdit(String gameNameToEdit) {
+        this.gameNameToEdit = gameNameToEdit;
+    }
+  
     public int getUserId() {
         return userId;
     }
