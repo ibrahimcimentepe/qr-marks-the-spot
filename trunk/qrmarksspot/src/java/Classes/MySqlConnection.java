@@ -236,9 +236,9 @@ public class MySqlConnection {
             System.out.println("CONNECTION ESTABLISHED");
             ResultSet rs = statement.executeQuery("SELECT * FROM `games` " );
 	        System.out.println("STATEMENT EXECUTED,GAMES FOUND");
-            if(rs.next()){
-	    		System.out.println("NEWS FOUND");
-	    	}
+    //        if(rs.next()){
+	//    		System.out.println("NEWS FOUND");
+	//    	}
             return rs;
         } catch(Exception e) {
              System.out.println("Error");
