@@ -39,10 +39,10 @@ public class gamePage extends AbstractPageBean {
 
     // </editor-fold>
         
-        String result = "bos"; //simdilik result set bos
+        String result = "bos"; 
         ResultSet selectedGame;
 
-        int gameId ;   //simdilik bir game ID
+        int gameId ;  
         String gameName;
         String description;
         String startingPoint;
@@ -185,7 +185,7 @@ public class gamePage extends AbstractPageBean {
             this.gameId = getSessionBean1().getSelectedGameId();
             MySqlConnection con = new MySqlConnection();
             this.selectedGame = con.getGame(this.gameId);
-            
+      
      //     this.result =this.selectedGame.getString("Description");
             
             this.gameName = this.selectedGame.getString("GameName");
