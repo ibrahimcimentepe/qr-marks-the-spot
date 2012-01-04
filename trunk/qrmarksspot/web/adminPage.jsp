@@ -24,6 +24,12 @@
                             style="color: red; height: 24px; left: 216px; top: 480px; position: absolute" text="See next message"/>
                         <webuijsf:button actionExpression="#{adminPage.backButton_action}" id="backButton" immediate="true"
                             style="color: red; height: 24px; left: 71px; top: 48px; position: absolute; width: 120px" text="&lt; Back to home"/>
+                        <webuijsf:label id="label2" style="color: aqua; font-size: 14px; left: 72px; top: 528px; position: absolute; text-decoration: underline" text="EDITING A GAME"/>
+                        <webuijsf:label id="label3" style="color: orange; left: 72px; top: 600px; position: absolute" text="Enter Game Name here -&gt;"/>
+                        <webuijsf:textField id="textFieldGameName" style="left: 264px; top: 600px; position: absolute" text="#{adminPage.gameNameToEdit}"/>
+                        <webuijsf:button actionExpression="#{adminPage.buttonEditGame_action}" id="buttonEditGame"
+                            style="color: red; height: 24px; left: 432px; top: 600px; position: absolute; width: 119px" text="Edit the game-&gt;"/>
+                        <webuijsf:staticText id="staticText1" style="color: yellow; left: 240px; top: 552px; position: absolute" text="list of games"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
