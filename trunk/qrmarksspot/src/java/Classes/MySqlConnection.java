@@ -524,6 +524,21 @@ public class MySqlConnection {
         }
         
     }
+    public void updateUser(String username,String newUsername,String password,String date,String web,String face,String twit){
+        try{
+            Statement statement=con.createStatement();
+            ResultSet rs=statement.executeQuery("SELECT * FROM `users` WHERE `UserName` = '"+username+"'");
+            if(rs.next()){
+                statement.executeUpdate("UPDATE `users` SET `UserName` = '"+newUsername+"',`Password` = '"+password+"',`DateOfBirth` = '"+date+"',`WebsiteOfUser` = '"+web+"',`Twitter` = '"+twit+"',`Facebook` = '"+face+"' WHERE `UserName` = '"+username+"'");
+            }
+
+        }
+        catch(Exception E){
+
+
+        }
+
+    }
     
 
     public int getUserIdbyUserName(String username){
