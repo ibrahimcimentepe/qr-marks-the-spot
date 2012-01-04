@@ -152,6 +152,15 @@ public class displayQRcode extends AbstractPageBean {
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
+
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
+    protected search getsearch() {
+        return (search) getBean("search");
+    }
     
 }
 

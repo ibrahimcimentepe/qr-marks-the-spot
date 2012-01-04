@@ -215,10 +215,11 @@ public class home extends AbstractPageBean {
         this.labels = labels;
     }
 
-    public String hyperlink1_action() {
+    public String profileName_action() {
         // TODO: Process the action. Return value is a navigation
          // case name where null will return to the same page.
-        return "case2";
+
+        return "proflink";
     }
 
     public String goToGameButton_action() {
@@ -266,6 +267,13 @@ public class home extends AbstractPageBean {
        catch(Exception e)
        {}
     }
+
+    public String button2_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
+    }
+
 
 }
 
