@@ -190,6 +190,45 @@ public class MySqlConnection {
 
     }
 
+    public ResultSet getGameByGameName(String gameName)
+    {
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM games WHERE GameName = '"+ gameName + "'");
+	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
+
+
+            rs.next();
+            return rs;
+
+        } catch(Exception e) {
+             System.out.println("Error");
+             return null;
+        }
+
+    }
+
+    public void updateGame(int gameId,String gameName,String description,String startingPoint,String borders,int numberOfSteps,int currentStep,int numberOfPlayers,int rating )
+    {
+        try {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+
+            statement.executeUpdate("UPDATE games SET GameName= '"+gameName+"' ,"+ " Description='"+description  + "' , " +
+                                                      "StartLocation='"+ startingPoint +"' ," + "Borders ='" +borders + "' , " +
+                                                      "NumberOfSteps='"+ numberOfSteps +"' ," + "CurrentStep ='" +currentStep + "' , " +
+                                                      "NumberOfPlayers='" + numberOfPlayers + "' ," +"Rating='" + rating +"'" +
+                    " WHERE GameId="+gameId);
+			//System.out.println(username + " " + password);
+          //  return true;
+        } catch(Exception e) {
+             System.out.println("Error");
+           //  return false;
+        }
+    }
+
+
     public ResultSet getGamesList()
     {
         try {
