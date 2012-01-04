@@ -33,7 +33,7 @@ import javax.faces.event.ValueChangeEvent;
  *
  * @version adminPage.java
  * @version Created on Dec 28, 2011, 7:15:29 PM
- * @author alke
+ * @author alikerimerkan
  */
 
 public class adminPage extends AbstractPageBean {
@@ -312,6 +312,10 @@ public class adminPage extends AbstractPageBean {
         return null;
     }
 
+ /**
+ * Shows the next abusement message in the text area.
+ *
+ */
     public String buttonSeeNextMessage_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -331,12 +335,19 @@ public class adminPage extends AbstractPageBean {
     public void textArea3_processValueChange(ValueChangeEvent event) {
     }
 
+ /**
+ * navigates the page to home.jsp
+ *
+ */
     public String backButton_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
+      
         return "case1";
     }
 
+ /**
+ * navigates the page to editGame.jsp
+ *
+ */
     public String buttonEditGame_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
