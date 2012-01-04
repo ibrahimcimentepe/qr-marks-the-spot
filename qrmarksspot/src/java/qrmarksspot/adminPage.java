@@ -53,7 +53,16 @@ public class adminPage extends AbstractPageBean {
     String gameToBeDeleted ;
     private int currentAbusementMessageId = 2;
     String abusementMessage;
-    ResultSet set;
+     ResultSet set;
+    ResultSet mySet;
+
+    public ResultSet getMySet() {
+        return mySet;
+    }
+
+    public void setMySet(ResultSet mySet) {
+        this.mySet = mySet;
+    }
 
     public String getGameNameToEdit() {
         return gameNameToEdit;
@@ -213,7 +222,8 @@ public class adminPage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
-       
+        MySqlConnection con = new MySqlConnection();
+       this.setMySet(con.getGamesList());
 
 
     }
