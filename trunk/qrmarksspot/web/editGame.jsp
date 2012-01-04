@@ -38,7 +38,7 @@
                         <webuijsf:textField id="textFieldStartingPoint"
                             style="border-style: solid; border-color: lime; left: 384px; top: 384px; position: absolute" text="#{editGame.startingPoint}"/>
                         <webuijsf:textField id="textFieldLocation" style="border-style: solid; border-color: lime; left: 384px; top: 432px; position: absolute" text="#{editGame.borders}"/>
-                        <webuijsf:textField id="textFieldNumberOfSteps"
+                        <webuijsf:textField id="textFieldNumberOfSteps" required="true"
                             style="border-style: solid; border-color: lime; left: 384px; top: 480px; position: absolute" text="#{editGame.numberOfSteps}"/>
                         <webuijsf:textField id="textFieldCurrentStep"
                             style="border-style: solid; border-color: lime; left: 384px; top: 528px; position: absolute" text="#{editGame.currentStep}"/>
