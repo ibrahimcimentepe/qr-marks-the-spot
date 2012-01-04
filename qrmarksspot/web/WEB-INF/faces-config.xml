@@ -59,10 +59,6 @@
             <to-view-id>/home.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>case2</from-outcome>
-            <to-view-id>/profilePage.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>abusementMessage</from-outcome>
             <to-view-id>/abusementMessage.jsp</to-view-id>
         </navigation-case>
@@ -77,6 +73,10 @@
         <navigation-case>
             <from-outcome>case1</from-outcome>
             <to-view-id>/search.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>proflink</from-outcome>
+            <to-view-id>/profile.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -186,26 +186,6 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>profilePage</managed-bean-name>
-        <managed-bean-class>qrmarksspot.profilePage</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <navigation-rule>
-        <from-view-id>/profilePage.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>homepage</from-outcome>
-            <to-view-id>/home.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>signup</from-outcome>
-            <to-view-id>/signup.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>edit</from-outcome>
-            <to-view-id>/profilePage.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <managed-bean>
         <managed-bean-name>messageSent</managed-bean-name>
         <managed-bean-class>qrmarksspot.messageSent</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -296,6 +276,22 @@
         <navigation-case>
             <from-outcome>backToHomePage</from-outcome>
             <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>profile</managed-bean-name>
+        <managed-bean-class>qrmarksspot.profile</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/profile.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>homePage</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>signOut</from-outcome>
+            <to-view-id>/login.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
