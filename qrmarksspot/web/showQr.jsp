@@ -15,7 +15,7 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:button actionExpression="#{showQr.generateButton_action}" id="generateButton"
-                            style="left: 95px; top: 240px; position: absolute" text="Button"/>
+                            style="left: 95px; top: 240px; position: absolute" text="See QR"/>
                         <h:selectOneMenu id="dropdown1" onchange="webui.suntheme.common.timeoutSubmitForm(this.form, 'dropdown1');"
                             onclick="dropdown1_processValueChange()" style="left: 96px; top: 96px; position: absolute" value="#{showQr.selectedGameName}" valueChangeListener="#{showQr.dropdown1_processValueChange}">
                             <f:selectItems id="dropdown1SelectItems" value="#{showQr.dropdown1DefaultItems1}"/>
