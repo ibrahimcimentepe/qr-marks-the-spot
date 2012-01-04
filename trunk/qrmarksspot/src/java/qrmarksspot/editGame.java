@@ -20,7 +20,7 @@ import javax.faces.FacesException;
  *
  * @version editGame.java
  * @version Created on Jan 4, 2012, 1:09:41 AM
- * @author alke
+ * @author alikerimerkan
  */
 
 public class editGame extends AbstractPageBean {
@@ -260,19 +260,31 @@ public class editGame extends AbstractPageBean {
         return (RequestBean1) getBean("RequestBean1");
     }
 
+ /**
+ * navigates the page to home.jsp
+ *
+ */
     public String buttonBackToHome_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "backToHomePage";
     }
-
+/**
+ * navigates the page to adminPage.jsp
+ *
+ */
     public String buttonBackToAdmin_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "backToAdminPage";
     }
 
-    public String buttonUpdate_action() {
+/**
+ *Updates the selected game's data wrt to edited fields in the textboxes on the page
+ *
+ *
+ */
+    public String buttonUpdate_action(){
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         MySqlConnection con = new MySqlConnection();
