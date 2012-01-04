@@ -2,11 +2,14 @@ package qrmarksspot;
 
 
 import Classes.MySqlConnection;
+import com.sun.rave.faces.data.DefaultSelectItemsArray;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Label;
 import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import java.sql.ResultSet;
 import javax.faces.FacesException;
+import javax.faces.component.html.HtmlSelectOneMenu;
+import javax.faces.event.ValueChangeEvent;
 import sun.swing.UIAction;
 
 /**
@@ -35,6 +38,17 @@ public class home extends AbstractPageBean {
 
      public String[] labels = new String[20];
      public String gameToBePlayed;
+     public String[] gameNames;
+     
+     
+
+    public String[] getGameNames() {
+        return gameNames;
+    }
+
+    public void setGameNames(String[] gameNames) {
+        this.gameNames = gameNames;
+    }
 
     public String getGameToBePlayed() {
         return gameToBePlayed;
@@ -42,6 +56,15 @@ public class home extends AbstractPageBean {
 
     public void setGameToBePlayed(String gameToBePlayed) {
         this.gameToBePlayed = gameToBePlayed;
+    }
+    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems() {
+        return dropdown1DefaultItems;
+    }
+
+    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems = dsia;
     }
     /**
      * <p>Construct a new Page bean instance.</p>
@@ -90,8 +113,37 @@ public class home extends AbstractPageBean {
         }catch(Exception e){
         
         }
-
         
+               
+        try
+        {
+            MySqlConnection con = new MySqlConnection();
+            ResultSet rs = con.getAllGameNames();
+            i = 0;
+            
+            String[] temp2 = new String[100];
+            
+            while(rs != null && rs.next()){
+
+                temp2[i] = (rs.getString("GameName"));
+
+                i++;
+            }
+
+            gameNames = new String[i]; //arbitrary length
+            
+            for(int a = 0;a<i;a++){
+            //i is the length
+                gameNames[a] = temp2[a];
+                
+            }
+
+            this.dropdown1DefaultItems.setItems(this.getGameNames());
+            
+        }catch(Exception e){
+        
+            gameNames[0] = e.getMessage();
+        } 
 
 
 
@@ -318,6 +370,14 @@ public class home extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return null;
+    }
+
+    public void dropdown1_processValueChange(ValueChangeEvent vce) {
+        
+        gameToBePlayed = (String) vce.getNewValue();
+    }
+
+    public void gameSearchTextField_processValueChange(ValueChangeEvent event) {
     }
 
 
