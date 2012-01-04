@@ -859,6 +859,20 @@ public class MySqlConnection {
       
     }
 
+    public ResultSet getAllGameNames ()
+    {
+        try
+        {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT * FROM games");
+	    	return rs;
+        }
+        catch(Exception e) {
+             System.out.println("Error");
+             return null;
+        }
+    }
 
 /**
  *Returns list of the games that are created by a user with id of 'userId'
