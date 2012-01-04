@@ -1,6 +1,6 @@
 package qrmarksspot;
 
-//import Classes.QR;
+
 import Classes.MySqlConnection;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Label;
@@ -18,6 +18,7 @@ import sun.swing.UIAction;
  *
  * @version home.java
  * @version Created on 18.Kas.2011, 15:40:54
+ * @author bilalacar,alikerimerkan,akifcemheren,ibrahimcimentepe
  */
 public class home extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
@@ -177,30 +178,54 @@ public class home extends AbstractPageBean {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
 
+ /**
+ * navigates the page to signup.jsp
+ *
+ */
     public String signup_action() {
         return "signup";
     }
-
+ /**
+ * navigates the page to login.jsp
+ *
+ */
     public String login_action() {
         return "case3";
     }
 
+ /**
+ * navigates the page to tutorial.jsp
+ *
+ */
     public String tutorial_action() {
         
         return "case4";
     }
 
+ /**
+ * clears the session variables for the current user by calling
+ * sessinBean's logout() method
+ *
+ */
     public String logoutLink_action() {
         getSessionBean1().logout();
         return null;
     }
 
+ /**
+ * navigates the page to search.jsp
+ *
+ */
     public String searchButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "case1";
     }
 
+ /**
+ * navigates the page to createGame.jsp
+ *
+ */
     public String gameCreateButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -215,6 +240,10 @@ public class home extends AbstractPageBean {
         this.labels = labels;
     }
 
+ /**
+ * navigates the page to profile.jsp
+ *
+ */
     public String profileName_action() {
         // TODO: Process the action. Return value is a navigation
          // case name where null will return to the same page.
@@ -222,6 +251,11 @@ public class home extends AbstractPageBean {
         return "proflink";
     }
 
+ /**
+ * navigates the page to gamePage.jsp
+ * if corresponding game is not found an error message is printed to screen
+ *
+ */
     public String goToGameButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -244,18 +278,30 @@ public class home extends AbstractPageBean {
         }
     }
 
+ /**
+ * navigates the page to abusementMessage.jsp
+ *
+ */
     public String hyperlink2_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "abusementMessage";
     }
 
+ /**
+ * navigates the page to showQr.jsp
+ *
+ */
     public String seeQrCodesButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "showQr";
     }
 
+ /**
+ * navigates the page to forum page
+ *
+ */
     public void button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
