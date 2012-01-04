@@ -15,7 +15,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ * @version MySqlConnection.java
+ * @version Created on 18.Kas.2011, 15:40:54
+ * @author bilalacar,alikerimerkan,akifcemheren,ibrahimcimentepe,unsalgokdag
+ */
 public class MySqlConnection {
 	public static String hostURL = "titan.cmpe.boun.edu.tr:3306/";
 	private static String driver = "com.mysql.jdbc.Driver";
@@ -47,6 +51,16 @@ public class MySqlConnection {
         System.err.println("DATABASE CONNECTION ESTABLISHED");
 	}
 
+ /**
+ * Adds a new user to the database
+ *
+ *
+ *
+ * @param username name of the user to be added
+ * @param password password of the user to be added
+ * @param birthday birthday of the user to be added
+ * @return            true if the user is added, otherwise false
+ */
     public boolean addUser(String username, String password, String birthDay)
     {
     	try {
@@ -67,6 +81,13 @@ public class MySqlConnection {
     	return true;
     }
 
+ /**
+ * Returns the playgameid with taking userID and gameID
+ *
+ *
+ *
+ * @return PlayGameId from playgame table which determines a user with userId is playing the game with gameId
+ */
     public int getPlayGameID(int userID,int gameID){
         int res=-1;
     	try {
@@ -82,6 +103,12 @@ public class MySqlConnection {
     	return res;
     }
 
+/**
+ * Returns the information about a game's given step.
+ *
+ *
+ * @return  ResultSet containing a row from 'gamesteps' table
+ */
     public ResultSet getInfoOfCurrentStep(int gameId,int currentStep){
     	try {
             Statement statement = con.createStatement();
@@ -96,7 +123,11 @@ public class MySqlConnection {
         }
     }
 
-
+/**
+ *Returns the current step of a user  in a game that is being played by him
+ *
+ * @return  Resultset that contains the resulting row data
+ */
     public ResultSet getCurrentStep(int userID,int gameID){
         try {
             Statement statement = con.createStatement();
@@ -113,6 +144,12 @@ public class MySqlConnection {
 
     }
 
+/**
+ *Inserts a new playgame row into the 'playgame' table.This means that
+ * a user with 'username' has started to play a game with 'gameID'
+ *
+ * @return  true is a playgame row is inserted,false otherwise
+ */
     public boolean addPlayGame(String username,int gameID)
     {
     try {
@@ -130,7 +167,11 @@ public class MySqlConnection {
     	return true;
     }
 
-
+/**
+ *Inserts a new game with attributes 'gameAtt' into the games table in database
+ *
+ * @return  true if the game is added succesfully,false otherwise
+ */
     public boolean addGame(GameAttributes gameAtt){
     
         try {
@@ -171,6 +212,11 @@ public class MySqlConnection {
         
     }
 
+/**
+ *Returns the attributes of a game which is determined by 'gameId'
+ *
+ * @return  Resultset that contains the corresponding row data of the game
+ */
     public ResultSet getGame(int gameId)
     {
         try {
@@ -190,6 +236,11 @@ public class MySqlConnection {
 
     }
 
+/**
+ *Returns the attributes of a game which is queried by its name(i.e. 'gameName')
+ *
+ * @return  Resultset that contains the resulting row data of game attributes
+ */
     public ResultSet getGameByGameName(String gameName)
     {
         try {
@@ -209,6 +260,11 @@ public class MySqlConnection {
 
     }
 
+/**
+ *Updates the attributes of a game which has id of 'gameId'
+ *
+ *
+ */
     public void updateGame(int gameId,String gameName,String description,String startingPoint,String borders,int numberOfSteps,int currentStep,int numberOfPlayers,int rating )
     {
         try {
@@ -229,6 +285,11 @@ public class MySqlConnection {
     }
 
 
+/**
+ *Returns the total games table in the database
+ *
+ * @return  Resultset that contains the resulting games
+ */
     public ResultSet getGamesList()
     {
         try {
@@ -247,7 +308,12 @@ public class MySqlConnection {
 
     }
 
-
+/**
+ *Adds a new step to gamesteps table in database.This means that a new gamestep is
+ * created by the game creator in game creation phase
+ *
+ * @return  true if the gamestep is inserted succesfully,false otherwise
+ */
     public boolean addGameStep(GameAttributes gameAtt, int step)
     {
         try {
@@ -275,6 +341,11 @@ public class MySqlConnection {
         return true;
     }
 
+/**
+ *Adds a new News data to the newsfeed table in the database.
+ *
+ * @return  true if the news is added successfuly,false otherwise
+ */
     public boolean addNews(String News, Date DateAndTime)
     {
     	try {
@@ -296,6 +367,11 @@ public class MySqlConnection {
     	
     }
 
+/**
+ *Returns the news which has corresponding 'number'
+ *
+ * @return  ResultSet that conteains the News row data
+ */
     public ResultSet getNews(int number){
 
         //MySqlConnection con = new MySqlConnection();
@@ -312,7 +388,12 @@ public class MySqlConnection {
              return null;
         }
     }
-    
+
+ /**
+ *Updates the picture of the user
+ *
+ * @return  true if the picture is inserted succesfully,false otherwise
+ */
     public boolean updateUserPicture(String username, InputStream in)
     {
         String INSERT_PICTURE = "update `database1`.`users` set `Picture` = ? where `UserName` = ?";
@@ -347,6 +428,11 @@ public class MySqlConnection {
         return false;
     }
 
+/**
+ *Updates the picture of the user
+ *
+ * @return  true if the picture is inserted succesfully,false otherwise
+ */
     public boolean updateUserPicture(String username, String password, String birhtDay, InputStream in, String filePath)
     {
         String INSERT_PICTURE = "insert into `database1`.`users` (`Password`, `UserName`, `DateOfBirth`, `Picture`) values (?, ?, ?, ?)";
@@ -383,6 +469,11 @@ public class MySqlConnection {
         return false;
     }
 
+/**
+ *Returns the given user's password
+ *
+ * @return  String that is the corresponding user password
+ */
     public String getpassword(String username)
     {
     	String str = null;
@@ -398,6 +489,11 @@ public class MySqlConnection {
     	return str;
     }
 
+/**
+ *Returns the given user's information
+ *
+ * @return  String array that holds corresponding user data
+ */
     public String[] getInfoofUser(String username)
     {
     	String[] str = new String[6];
@@ -418,6 +514,11 @@ public class MySqlConnection {
     	return str;
     }
 
+/**
+ *Checks whether a user with given username exists in database
+ *
+ * @return  true if user exists,false otherwise
+ */
     public boolean userExists(String username, String password)
     {
     	boolean found = false;
@@ -447,6 +548,12 @@ public class MySqlConnection {
             return found;
         }
     }
+
+/**
+ *Checks whether a game with given gamename exists in database
+ *
+ * @return  true if game exists,false otherwise
+ */
     public boolean gameExists(String gamename)
     {
     	boolean found = false;
@@ -469,6 +576,11 @@ public class MySqlConnection {
         }
     }
 
+/**
+ *Checks whether a playgame row given userID and gameID exists in database
+ *
+ * @return  true if playgame row exists,false otherwise
+ */
     public boolean playGameExists(int userID,int gameID)
     {
     	boolean found = false;
@@ -490,6 +602,12 @@ public class MySqlConnection {
             return found;
         }
     }
+
+/**
+ *Returns the name of a game given its 'gameId'
+ *
+ * @return  String that holds the name of the game
+ */
     public String getGameNameByGameId(int gameId){
 
         String res="";
@@ -509,6 +627,10 @@ public class MySqlConnection {
         }
     }
 
+/**
+ *Increments the current step that a player has in a game.
+ *
+ */
     public void incrementStep(int userId, int gameId){
         try{
             Statement statement = con.createStatement();
@@ -524,6 +646,11 @@ public class MySqlConnection {
         }
         
     }
+
+ /**
+ *Updates a user's data
+ *
+ */
     public void updateUser(String username,String newUsername,String password,String date,String web,String face,String twit){
         try{
             Statement statement=con.createStatement();
@@ -540,7 +667,11 @@ public class MySqlConnection {
 
     }
     
-
+/**
+ *Returns the Id of a user given his 'username'
+ *
+ * @return  userId
+ */
     public int getUserIdbyUserName(String username){
 
         int userId = -1;
@@ -559,6 +690,12 @@ public class MySqlConnection {
             return userId;
         }
     }
+
+/**
+ *Returns the Info of a user given his 'username'
+ *
+ * @return  userInfo
+ */
     public String getUserInfobyUserName(String username,String info){
 
         String resultString;
@@ -581,6 +718,12 @@ public class MySqlConnection {
 
         return resultString;
     }
+
+/**
+ *Returns the Info of a user given his 'username'
+ *
+ * @return  userInfo
+ */
     public ResultSet getUserInformationbyUserName(String username){
 
         try {
@@ -600,7 +743,11 @@ public class MySqlConnection {
     }
 
    
-
+/**
+ *Returns the Id of a game given its 'gameName'
+ *
+ * @return  gameId
+ */
     public int getGameIdbyGameName(String gameName){
         int gameId = -1;
     	try{
@@ -618,7 +765,12 @@ public class MySqlConnection {
         return gameId;
     
     }
-    
+
+/**
+ *Returns the Id of a user given his 'username'
+ *
+ * @return  userId
+ */
     public int sizeOfGameBox(String username){
         int res = 0;
     	try{
@@ -636,6 +788,8 @@ public class MySqlConnection {
             return res;
         }
     }
+
+
     public int[] gameBoxList(String username){
         int sizeOfList=this.sizeOfGameBox(username);
         int res[]=new int[sizeOfList];
@@ -658,6 +812,10 @@ public class MySqlConnection {
         }
     }
 
+/**
+ *Inserts an abusement message to abusementMessages table in the database
+ *
+ */
     public void sendAbusementReport(int userId, String message)
     {
         try {
@@ -675,7 +833,11 @@ public class MySqlConnection {
 
     }
 
-
+/**
+ *Returns the abusement message given its abusementMessageId
+ *
+ * @return  ResultSet that contains the corresponding abusement messsage
+ */
     public ResultSet getAbusementMessage( int currentAbusementMessageId)
     {
        
@@ -698,6 +860,11 @@ public class MySqlConnection {
     }
 
 
+/**
+ *Returns list of the games that are created by a user with id of 'userId'
+ *
+ * @return  ResultSet that contains the corresponding rows from games table
+ */
     public ResultSet getGameNameByUserId (int userId)
     {
         try
@@ -713,6 +880,11 @@ public class MySqlConnection {
         }
     }
 
+/**
+ *Returns list of the games that are created by a user with name of 'userName'
+ *
+ * @return  String[] that contains the corresponding gamenames from games table
+ */
     public String[] getGameNameByUserNameString (String userName)
     {
         String[] temp=new String[1];
@@ -742,6 +914,11 @@ public class MySqlConnection {
         return temp;
     }
 
+/**
+ *Returns list of the games that has number of steps equals to 'steps'
+ *
+ * @return  String[] that contains the corresponding rows from games table
+ */
     public String[] getGameNameByMaxSteps (int steps)
     {
         String[] temp=new String[1];
@@ -771,6 +948,11 @@ public class MySqlConnection {
         return temp;
     }
 
+/**
+ *Returns list of the games that has the given 'rating'
+ *
+ * @return  String[] that contains the corresponding rows from games table
+ */
     public String[] getGameNameByMaxRating (int rating)
     {
         String[] temp=new String[1];
@@ -800,6 +982,11 @@ public class MySqlConnection {
         return temp;
     }
 
+/**
+ *Returns list of the games that has the tags equal to 'tag'
+ *
+ * @return  String[] that contains the corresponding rows from games table
+ */
      public String[] getGameNamebyGameTag(String tag)
     {
         String[] results2;
@@ -834,6 +1021,11 @@ public class MySqlConnection {
             return results;
     }
 
+/**
+ *Returns list of the gamesteps of a game with 'gameId'
+ *
+ * @return  ResultSet that contains the corresponding rows from gamesteps table
+ */
     public ResultSet getGameStepsByGameId (String gameId)
     {
         try {
@@ -852,6 +1044,11 @@ public class MySqlConnection {
 
     }
 
+/**
+ *Returns list of the games that are created by a user with name of 'username'
+ *
+ * @return  String[] that contains the corresponding rows from playgame table
+ */
     public String[] getGameNameOfUser(String username)
     {
         String[] temp=new String[1];
