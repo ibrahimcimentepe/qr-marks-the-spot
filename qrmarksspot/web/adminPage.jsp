@@ -29,7 +29,6 @@
                         <webuijsf:textField id="textFieldGameName" style="left: 264px; top: 600px; position: absolute" text="#{adminPage.gameNameToEdit}"/>
                         <webuijsf:button actionExpression="#{adminPage.buttonEditGame_action}" id="buttonEditGame"
                             style="color: red; height: 24px; left: 432px; top: 600px; position: absolute; width: 119px" text="Edit the game-&gt;"/>
-                        <webuijsf:staticText id="staticText1" style="color: yellow; left: 240px; top: 552px; position: absolute" text="list of games"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
