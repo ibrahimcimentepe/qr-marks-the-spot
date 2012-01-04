@@ -48,10 +48,22 @@ public class adminPage extends AbstractPageBean {
     }
 
     // </editor-fold>
+    
+    String gameNameToEdit ="";
     String gameToBeDeleted ;
     private int currentAbusementMessageId = 2;
     String abusementMessage;
     ResultSet set;
+
+    public String getGameNameToEdit() {
+        return gameNameToEdit;
+    }
+
+    public void setGameNameToEdit(String gameNameToEdit) {
+        this.gameNameToEdit = gameNameToEdit;
+    }
+
+   
 
     public String getAbusementMessage() {
         return abusementMessage;
@@ -313,6 +325,14 @@ public class adminPage extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "case1";
+    }
+
+    public String buttonEditGame_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        getSessionBean1().setGameNameToEdit(this.getGameNameToEdit());
+        return "editGame";
+        
     }
 
   
