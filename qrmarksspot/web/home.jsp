@@ -21,7 +21,6 @@
                         <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" style="color: aqua; left: 983px; top: 120px"
                             text="Log Out" visible="#{SessionBean1.loggedIn}"/>
                         <webuijsf:label id="label2" style="color: orange; left: 24px; top: 120px; position: absolute; text-decoration: underline" text="News Feed"/>
-                        <webuijsf:textField id="gameSearchTextField" style="left: 384px; top: 72px; position: absolute" text="#{home.gameToBePlayed}"/>
                         <webuijsf:button actionExpression="#{home.signup_action}" id="signup"
                             style="color: red; height: 24px; left: 983px; top: 120px; position: absolute; width: 96px" text="Sign Up" visible="#{!SessionBean1.loggedIn}"/>
                         <webuijsf:button actionExpression="#{home.goToGameButton_action}" id="goToGameButton"
@@ -111,6 +110,11 @@
                                 <webuijsf:label style="color:yellow" text="#{home.labels[19]}"/>
                             </ul>
                         </colgroup>
+                        <h:selectOneMenu id="dropdown1" onchange="webui.suntheme.common.timeoutSubmitForm(this.form, 'dropdown1');"
+                            style="left: 384px; top: 72px; position: absolute" value="#{home.gameToBePlayed}" valueChangeListener="#{home.dropdown1_processValueChange}">
+                            <f:selectItems id="dropdown1SelectItems" value="#{home.dropdown1DefaultItems}"/>
+                        </h:selectOneMenu>
+                        <webuijsf:label id="label3" style="color: rgb(255, 255, 255); left: 528px; top: 72px; position: absolute" text="#{home.gameToBePlayed}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
