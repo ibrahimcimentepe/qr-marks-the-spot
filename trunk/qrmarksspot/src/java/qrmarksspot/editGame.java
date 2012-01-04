@@ -276,7 +276,12 @@ public class editGame extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         MySqlConnection con = new MySqlConnection();
+        try{
         con.updateGame(this.gameId, this.gameName, this.description, this.startingPoint, this.borders, this.numberOfSteps, this.currentStep, this.numberOfPlayers, this.rating);
+        }
+        catch(Exception ex){
+            this.gameName =" ERROR!Control your integer values";
+        }
         return null;
     }
     
