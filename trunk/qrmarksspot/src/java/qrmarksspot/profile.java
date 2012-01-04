@@ -44,6 +44,55 @@ public class profile extends AbstractPageBean {
 
     // </editor-fold>
     String username;
+    String newUsername;
+
+    public String getNewDate() {
+        return newDate;
+    }
+
+    public void setNewDate(String newDate) {
+        this.newDate = newDate;
+    }
+
+    public String getNewFacebook() {
+        return newFacebook;
+    }
+
+    public void setNewFacebook(String newFacebook) {
+        this.newFacebook = newFacebook;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    public String getNewTwitter() {
+        return newTwitter;
+    }
+
+    public void setNewTwitter(String newTwitter) {
+        this.newTwitter = newTwitter;
+    }
+
+    public String getNewUsername() {
+        return newUsername;
+    }
+
+    public void setNewUsername(String newUsername) {
+        this.newUsername = newUsername;
+    }
+
+    public String getNewWeb() {
+        return newWeb;
+    }
+
+    public void setNewWeb(String newWeb) {
+        this.newWeb = newWeb;
+    }
     boolean username_RO;
 
     public boolean isDate_RO() {
@@ -95,14 +144,19 @@ public class profile extends AbstractPageBean {
     }
     String title="Welcome ";
     String password;
+    String newPassword;
     boolean password_RO;
     String facebook;
+    String newFacebook;
     boolean facebook_RO;
     String twitter;
+    String newTwitter;
     boolean twitter_RO;
     String web;
+    String newWeb;
     boolean web_RO;
     String date;
+    String newDate;
     boolean date_RO;
     String[] games;
     boolean apply_visible;
@@ -207,15 +261,7 @@ public class profile extends AbstractPageBean {
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
         
-        try{
-            MySqlConnection con = new MySqlConnection();
-            this.setUsername(this.getSessionBean1().getEffectiveUserName());
-            this.setPassword(con.getUserInfobyUserName(username, "Password"));
-            this.setDate(con.getUserInfobyUserName(username, "DateOfBirth"));
-            this.setFacebook(con.getUserInfobyUserName(username, "Facebook"));
-            this.setTwitter(con.getUserInfobyUserName(username, "Twitter"));
-            this.setWeb(con.getUserInfobyUserName(username, "WebsiteOfUser"));
-            this.setTitle(this.getTitle()+this.getUsername());
+            this.setFields();
             this.setUsername_RO(true);
             this.setPassword_RO(true);
             this.setDate_RO(true);
@@ -227,10 +273,7 @@ public class profile extends AbstractPageBean {
             //this.setGames(con.getGameNameOfUser(username));
             //this.setDropdown1DefaultItems(this.getGames());
             //this.dropdown1DefaultItems(this.getGames());
-        }
-        catch(Exception E){
-            System.out.println("Error");
-        }
+        
 
         
 
@@ -330,34 +373,44 @@ public class profile extends AbstractPageBean {
     public String button3_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        this.setUsername_RO(false);
-        this.setPassword_RO(false);
-        this.setDate_RO(false);
-        this.setFacebook_RO(false);
-        this.setTwitter_RO(false);
-        this.setWeb_RO(false);
+        this.setNewUsername(this.getSessionBean1().getEffectiveUserName());
+        this.setNewPassword(this.getPassword());
+        this.setNewDate(this.getDate());
+        this.setNewFacebook(this.getFacebook());
+        this.setNewTwitter(this.getTwitter());
+        this.setNewWeb(this.getWeb());
         this.setApply_visible(true);
         return null;
+    }
+
+    public void setFields(){
+        try{
+            MySqlConnection con = new MySqlConnection();
+            this.setUsername(this.getSessionBean1().getEffectiveUserName());
+            this.setPassword(con.getUserInfobyUserName(username, "Password"));
+            this.setDate(con.getUserInfobyUserName(username, "DateOfBirth"));
+            this.setFacebook(con.getUserInfobyUserName(username, "Facebook"));
+            this.setTwitter(con.getUserInfobyUserName(username, "Twitter"));
+            this.setWeb(con.getUserInfobyUserName(username, "WebsiteOfUser"));
+            this.setTitle("Welcome "+this.getUsername());
+        }catch(Exception e){
+
+        }
+
     }
 
     public String button4_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
-        this.setUsername_RO(true);
-        this.setPassword_RO(true);
-        this.setDate_RO(true);
-        this.setFacebook_RO(true);
-        this.setTwitter_RO(true);
-        this.setWeb_RO(true);
         this.setApply_visible(false);
         try{
             MySqlConnection con=new MySqlConnection();
-
-
-
+            con.updateUser(this.getSessionBean1().effectiveUserName, this.getNewUsername(), this.getNewPassword(),this.getNewDate() , this.getNewWeb(), this.getNewFacebook(), this.getNewTwitter());
+            this.getSessionBean1().setEffectiveUserName(this.getNewUsername());
+            this.setFields();
         }
         catch(Exception E){
-
+            System.out.println("There is an error related to updateUser()");
         }
 
 
