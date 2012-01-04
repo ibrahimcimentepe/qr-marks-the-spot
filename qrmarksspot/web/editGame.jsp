@@ -12,7 +12,7 @@
                 <webuijsf:head id="head1">
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body id="body1" style="-rave-layout: grid">
+                <webuijsf:body id="body1" imageURL="resources/logobg.jpg" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
                         <webuijsf:label id="labelTitle" style="color: orange; font-size: 24px; left: 480px; top: 72px; position: absolute" text="Welcome To Game Edition Page"/>
                         <webuijsf:button actionExpression="#{editGame.buttonBackToAdmin_action}" id="buttonBackToAdmin"
