@@ -15,6 +15,9 @@
                     <webuijsf:label id="label1"
                         style="color: orange; font-family: 'Geneva','Arial','Helvetica',sans-serif; font-size: 36px; font-weight: bold; left: 408px; top: 0px; position: absolute; text-decoration: underline" text="QR MARKS THE SPOT"/>
                     <webuijsf:form id="form1">
+                        <ul style="left: 384px; top: 157px; position: absolute">
+                            <webuijsf:label style="color:yellow" text="#{home.labels[8]}"/>
+                        </ul>
                         <webuijsf:hyperlink actionExpression="#{home.logoutLink_action}" id="logoutLink" style="color: aqua; left: 983px; top: 120px"
                             text="Log Out" visible="#{SessionBean1.loggedIn}"/>
                         <webuijsf:label id="label2" style="color: orange; left: 24px; top: 120px; position: absolute; text-decoration: underline" text="News Feed"/>
@@ -29,7 +32,7 @@
                             style="color: red; height: 24px; left: 983px; top: 216px; position: absolute; width: 96px" text="Tutorial"/>
                         <webuijsf:button actionExpression="#{home.gameCreateButton_action}" id="gameCreateButton"
                             style="height: 24px; left: 983px; top: 100px; width: 80px; color:red" text="Create Game" visible="#{SessionBean1.loggedIn}"/>
-                        <webuijsf:hyperlink actionExpression="#{home.hyperlink1_action}" id="hyperlink1"
+                        <webuijsf:hyperlink actionExpression="#{home.profileName_action}" id="profileName"
                             style="color: aqua; height: 24px; left: 168px; top: 72px; position: absolute; width: 22px" text="#{SessionBean1.effectiveUserName}"/>
                         <webuijsf:label id="usernameLabel1" style="color: aqua; left: 24px; top: 72px; position: absolute" text="#{SessionBean1.userName}"/>
                         <webuijsf:button actionExpression="#{home.searchButton_action}" id="searchButton1"
@@ -73,9 +76,6 @@
                             </ul>
                             <ul>
                                 <webuijsf:label style="color:yellow" text="#{home.labels[7]}"/>
-                            </ul>
-                            <ul>
-                                <webuijsf:label style="color:yellow" text="#{home.labels[8]}"/>
                             </ul>
                             <ul>
                                 <webuijsf:label style="color:yellow" text="#{home.labels[9]}"/>
