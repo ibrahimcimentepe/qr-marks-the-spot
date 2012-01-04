@@ -44,15 +44,15 @@ public class showQr extends AbstractPageBean {
     }
 
     // </editor-fold>
-    String[] gameNames = new String[] {"game1","game2"};
+    String[] gameNames ;
     String selectedGameName = new String();
     String selectedGameStepQR = new String();
     String selectedGameStepName = new String();
 
 
-    String [] gamesteps_Numberofsteps = new String[]{"1","2"};
-    String [] gamesteps_qrString = new String[] {"step1","step2"};
-    String [] gameIDs = new String[] {"1","2"};
+    String [] gamesteps_Numberofsteps;
+    String [] gamesteps_qrString;
+    String [] gameIDs;
 
 
     
@@ -184,16 +184,27 @@ public class showQr extends AbstractPageBean {
             MySqlConnection con = new MySqlConnection();
             ResultSet rs = con.getGameNameByUserId(this.getSessionBean1().getUserId());
 
+            String[] temp = new String[100];
+            String[] temp2 = new String[100];
+            
             while(rs != null && rs.next()){
 
-            if(i >= gameNames.length) continue;
 
-            gameIDs[i] = (rs.getString("GameId"));
-            gameNames[i] = (rs.getString("GameName"));
-            
-            i++;
+                temp[i] = (rs.getString("GameId"));
+                temp2[i] = (rs.getString("GameName"));
+
+                i++;
             }
-            
+
+            gameNames = new String[i]; //arbitrary length
+            gameIDs = new String[i];
+
+            for(int a = 0;a<i;a++){
+            //i is the length
+                gameNames[a] = temp2[a];
+                gameIDs[a] = temp[a];
+            }
+
             this.dropdown1DefaultItems1.setItems(this.getGameNames());
             if(gameNames.length > 0){
             
@@ -203,14 +214,14 @@ public class showQr extends AbstractPageBean {
             } 
             this.dropdown2DefaultItems.setItems(this.gamesteps_Numberofsteps);
 
-            if(gamesteps_Numberofsteps.length > 0){
+            if(gamesteps_Numberofsteps != null && gamesteps_Numberofsteps.length > 0){
 
                 this.selectedGameStepName = gamesteps_Numberofsteps[0];
 
                 int  index = -1;
                 for(i=0;i<gamesteps_Numberofsteps.length;i++){
 
-                if(gamesteps_Numberofsteps[i].compareTo(selectedGameStepName) == 0){
+                if(gamesteps_Numberofsteps[i] != null && gamesteps_Numberofsteps[i].compareTo(selectedGameStepName) == 0){
 
                     index = i;
                 }
@@ -324,8 +335,21 @@ public class showQr extends AbstractPageBean {
         int heigth = 300 ;
         int width = 300 ;
         HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        String path = req.getPathTranslated();
 
-        String filepath  = req.getPathTranslated().substring(0, req.getPathTranslated().lastIndexOf('\\')) + "\\"+ this.getSessionBean1().getUserId() +".png";
+        int lastIndex = req.getPathTranslated().lastIndexOf('/');    //linux
+        String concatChar = "/";
+        if(lastIndex == -1){
+
+            lastIndex = req.getPathTranslated().lastIndexOf('\\');  //windows
+            concatChar = "\\";
+        }
+        if(lastIndex == -1){     //error
+
+            lastIndex = 0;
+            concatChar = "/";
+        }
+        String filepath  = req.getPathTranslated().substring(0,lastIndex ) + concatChar+ this.getSessionBean1().getUserId() +".png";
         //SessionBean1["QRpath"] = filepath;
 
         code.create(message, heigth, width, filepath);
@@ -339,25 +363,39 @@ public class showQr extends AbstractPageBean {
         try{
             MySqlConnection con = new MySqlConnection();
 
+
+
             int  index = -1;
             for(int i=0;i<gameNames.length;i++){
 
-                if(gameNames[i].compareTo(val) == 0){
+                if(gameNames[i] != null && gameNames[i].compareTo(val) == 0){
 
                     index = i;
                 }
             }
 
+
             ResultSet rs = con.getGameStepsByGameId(gameIDs[index]);
+            
+            String[] temp = new String[100];
+            String[] temp2 = new String[100];
             int i = 0;
             while(rs != null && rs.next()){
 
-                if(i >= gamesteps_Numberofsteps.length) continue;
-
-                gamesteps_Numberofsteps[i] = (rs.getString("StepNumber"));
-                gamesteps_qrString[i] = (rs.getString("QrString"));
+               
+                temp2[i] = (rs.getString("StepNumber"));
+                temp[i] = (rs.getString("QrString"));
 
                 i++;
+            }
+
+            gamesteps_Numberofsteps = new String[i]; //arbitrary length
+            gamesteps_qrString = new String[i];
+
+            for(int a = 0;a<i;a++){
+            //i is the length
+                gamesteps_Numberofsteps[a] = temp2[a];
+                gamesteps_qrString[a] = temp[a];
             }
 
             this.dropdown2DefaultItems.setItems(this.getGamesteps_Numberofsteps());
