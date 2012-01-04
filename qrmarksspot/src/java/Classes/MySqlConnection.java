@@ -544,7 +544,28 @@ public class MySqlConnection {
             return userId;
         }
     }
+    public String getUserInfobyUserName(String username,String info){
 
+        String resultString;
+        try {
+            ResultSet rs = this.getUserInformationbyUserName(username);
+
+            if(rs.next()){
+                System.out.println("USER FOUND");
+                resultString=rs.getString(info);
+            }
+            else{
+                resultString=null;
+            }
+
+
+        } catch(Exception e) {
+             System.out.println("Error");
+             resultString=null;
+        }
+
+        return resultString;
+    }
     public ResultSet getUserInformationbyUserName(String username){
 
         try {
@@ -814,6 +835,38 @@ public class MySqlConnection {
         }
 
 
+    }
+
+    public String[] getGameNameOfUser(String username)
+    {
+        String[] temp=new String[1];
+        String[] resultString=new String[1];
+        temp[0]="ErrorInQueryFunction";
+        try
+        {
+            Statement statement = con.createStatement();
+            System.out.println("CONNECTION ESTABLISHED");
+            ResultSet rs = statement.executeQuery("SELECT PlayGameId FROM playgame WHERE UserName = '"+username+"'");
+            rs.last();
+            int size=rs.getRow();
+            rs.first();
+            temp= new String[size];
+            resultString=new String[size];
+            for(int i=0;i<size;i++)
+            {
+                //System.out.println("GAMES FOUND");
+                //temp[i]=Integer.toString(rs.getInt("GameId"));
+                resultString[i]=this.getGameNameByGameId(rs.getInt("GameId"));
+                if(i<size-1) rs.next();
+            }
+        }
+        catch(Exception e) {
+             System.out.println("Error");
+             temp= new String[2];
+             temp[0]="QuerygivesException";
+             temp[1]=e.toString();
+        }
+        return resultString;
     }
 
     @Override
