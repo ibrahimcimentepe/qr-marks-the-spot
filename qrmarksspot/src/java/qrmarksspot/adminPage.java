@@ -48,6 +48,32 @@ public class adminPage extends AbstractPageBean {
     }
 
     // </editor-fold>
+
+     int rowCount = 0;
+     public String[] labels = new String[20];
+     public String gameToBePlayed;
+     public String[] gameNames;
+
+    public String[] getGameNames() {
+        return gameNames;
+    }
+
+    public void setGameNames(String[] gameNames) {
+        this.gameNames = gameNames;
+    }
+
+    public String getGameToBePlayed() {
+        return gameToBePlayed;
+    }
+
+    public void setGameToBePlayed(String gameToBePlayed) {
+        this.gameToBePlayed = gameToBePlayed;
+    }
+
+
+
+
+
     
     String gameNameToEdit ="";
     String gameToBeDeleted ;
@@ -161,31 +187,37 @@ public class adminPage extends AbstractPageBean {
     public void setTextArea3(TextArea ta) {
         this.textArea3 = ta;
     }
+    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
+
+    public DefaultSelectItemsArray getDropdown1DefaultItems() {
+        return dropdown1DefaultItems;
+    }
+
+    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
+        this.dropdown1DefaultItems = dsia;
+    }
     /**
      * <p>Construct a new Page bean instance.</p>
      */
-    public adminPage() {
-     //    listDataProvider1.setList(this.getMygames());
-     //   this.defaultTableDataProvider.setArray(mygames);,
-   //     listDataProvider1.setList(mygames);
-//   dataTable1Model.setWrappedData(this.mygames);
- //   this.dropdown1DefaultItems1.setItems( (String[]) this.mygames.toArray());
+    public adminPage() throws SQLException {
+  
+//    try {
 
-         //String[] y = x.toArray(new String[0]);
-    //     this.currentAbusementMessageId++;
-    try {
+//            MySqlConnection con = new MySqlConnection();
+//            set =con.getAbusementMessage(getSessionBean1().abusementMessageId);
+//            while(set.next()){
+//            this.abusementMessage = set.getString("message");
+//            }
+//        }
+//        catch (Exception ex) {
+       
+//        }
 
-            MySqlConnection con = new MySqlConnection();
-            set =con.getAbusementMessage(getSessionBean1().abusementMessageId);
-            while(set.next()){
-            this.abusementMessage = set.getString("message");
-            }
-        }
-        catch (Exception ex) {
-          //  this.setGameName("fail");
-          //  Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-   //     getSessionBean1().abusementMessageId ++;
+
+
+
+       
+   
     }
 
     /**
@@ -222,8 +254,38 @@ public class adminPage extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
-        MySqlConnection con = new MySqlConnection();
-       this.setMySet(con.getGamesList());
+      //  MySqlConnection con = new MySqlConnection();
+      // this.setMySet(con.getGamesList());
+        int i;
+         try
+        {
+            MySqlConnection con = new MySqlConnection();
+            ResultSet rs = con.getAllGameNames();
+            i = 0;
+
+            String[] temp2 = new String[100];
+
+            while(rs != null && rs.next()){
+
+                temp2[i] = (rs.getString("GameName"));
+
+                i++;
+            }
+
+            gameNames = new String[i]; //arbitrary length
+
+            for(int a = 0;a<i;a++){
+            //i is the length
+                gameNames[a] = temp2[a];
+
+            }
+
+            this.dropdown1DefaultItems.setItems(this.getGameNames());
+
+        }catch(Exception e){
+        
+            gameNames[0] = e.getMessage();
+        }
 
 
     }
@@ -316,17 +378,44 @@ public class adminPage extends AbstractPageBean {
  * Shows the next abusement message in the text area.
  *
  */
-    public String buttonSeeNextMessage_action() {
+    public String buttonSeeNextMessage_action() throws SQLException {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
      //   this.currentAbusementMessageId++;
-        int temp = getSessionBean1().abusementMessageId;
-        temp++;
-        getSessionBean1().abusementMessageId = temp;
-         if(getSessionBean1().abusementMessageId>8)
+         this.rowCount = 0;
+        MySqlConnection con = new MySqlConnection();
+        ResultSet rs =con.getAbusementMessageList();
+while ( rs.next() )
+{
+    // Process the row.
+    rowCount++;
+}
+
+
+        
+         if(getSessionBean1().abusementMessageId>this.rowCount+1)
         {
             getSessionBean1().abusementMessageId = 2;
         }
+
+
+        try {
+
+            MySqlConnection con2 = new MySqlConnection();
+            set =con2.getAbusementMessage(getSessionBean1().abusementMessageId);
+
+            while(set.next()){
+            this.abusementMessage = set.getString("message");
+            }
+        }
+        catch (Exception ex) {
+          //  this.setGameName("fail");
+          //  Logger.getLogger(gamePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        int temp = getSessionBean1().abusementMessageId;
+       temp++;
+        getSessionBean1().abusementMessageId = temp;
 
         
         return null;
@@ -354,6 +443,10 @@ public class adminPage extends AbstractPageBean {
         getSessionBean1().setGameNameToEdit(this.getGameNameToEdit());
         return "editGame";
         
+    }
+
+    public void dropdown1_processValueChange(ValueChangeEvent vce) {
+    //    this.gameNameToEdit = this.dr
     }
 
   
