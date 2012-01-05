@@ -1,3 +1,7 @@
+This class diagram is our system's common usage. One creates a game and the other enrolls it. Also admin can change anything related to games.
+
+http://qr-marks-the-spot.googlecode.com/files/class1.jpeg
+
 We use MVC Pattern for this project.
 
 =Controller=
