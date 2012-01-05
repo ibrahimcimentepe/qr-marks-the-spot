@@ -1,3 +1,4 @@
+#labels httpcode.google.compqr-marks-the-spotwikiMeeting_21Meeting21-14.12.2011-15.12.2011
 Meeting Notes:
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_1 Meeting #1 - (07.10.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_2_2 Meeting #2 - (10.10.2011)]
@@ -21,3 +22,4 @@ Meeting Notes:
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_20 Meeting #20 - (12.12.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_21 Meeting #21 - (14.12.2011 - 15.12.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_22 Meeting #22 - (19.12.2011)]
+* [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_23 Meeting #23 - (21.12.2011 - 22.12.2011)]
