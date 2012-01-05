@@ -4,5 +4,4 @@
  * [http://code.google.com/p/qr-marks-the-spot/wiki/StateChartDiagram  StateChart Diagram]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Sequence_Diagram Sequence Diagrams]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/contextDiagram Context Diagrams]
- * [http://code.google.com/p/qr-marks-the-spot/wiki/ArchitecturalDesign Architectural Design]
- * [http://code.google.com/p/qr-marks-the-spot/wiki/classDiagram Class Diagram]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/ArchitecturalDesign Class Diagram and Architectural Design]
