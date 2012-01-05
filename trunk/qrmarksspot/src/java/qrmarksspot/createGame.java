@@ -154,7 +154,7 @@ public class createGame extends AbstractPageBean {
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
     }
-
+    //this next button is used to update information of current step
     public String nextButtonOfCreateGame_action() {
         MySqlConnection con = new MySqlConnection();
         GameAttributes game = new GameAttributes();
