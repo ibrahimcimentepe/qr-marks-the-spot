@@ -140,11 +140,6 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>gameFinish</managed-bean-name>
-        <managed-bean-class>qrmarksspot.gameFinish</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
         <managed-bean-name>success</managed-bean-name>
         <managed-bean-class>qrmarksspot.success</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -175,11 +170,6 @@
             <to-view-id>/signup.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <managed-bean>
-        <managed-bean-name>forum</managed-bean-name>
-        <managed-bean-class>qrmarksspot.forum</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
     <managed-bean>
         <managed-bean-name>search</managed-bean-name>
         <managed-bean-class>qrmarksspot.search</managed-bean-class>
@@ -244,6 +234,14 @@
         <navigation-case>
             <from-outcome>case2</from-outcome>
             <to-view-id>/home.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>toGamePage</from-outcome>
+            <to-view-id>/gamePage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>toGamePage</from-outcome>
+            <to-view-id>/gamePage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
