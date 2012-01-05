@@ -357,12 +357,22 @@ public class profile extends AbstractPageBean {
         return (RequestBean1) getBean("RequestBean1");
     }
 
+    /*
+     *  This button navigates the page to the homePage.jsp
+     *
+     *
+     */
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "homePage";
     }
 
+    /*
+     *  This button navigates the page to the log in screen and logs out the current user.
+     *
+     *
+     */
     public String button2_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -370,6 +380,9 @@ public class profile extends AbstractPageBean {
         return "signOut";
     }
 
+    /*
+     *  This is edit button that opens new windows for editing purpose
+     */
     public String button3_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -383,6 +396,9 @@ public class profile extends AbstractPageBean {
         return null;
     }
 
+    /*
+     *  This is initializing function that fills the fields according the user informations
+     */
     public void setFields(){
         try{
             MySqlConnection con = new MySqlConnection();
@@ -398,7 +414,9 @@ public class profile extends AbstractPageBean {
         }
 
     }
-
+    /*
+     *  This button is apply changes button to update all the changes done by the user.
+     */
     public String button4_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.

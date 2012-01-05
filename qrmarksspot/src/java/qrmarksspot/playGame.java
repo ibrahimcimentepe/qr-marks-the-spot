@@ -36,13 +36,14 @@ public class playGame extends AbstractPageBean {
     }
 
     // </editor-fold>
+    //variables for textfields, pairs can be seen through JSP=>XML code
     String title;
     int playGameID;
     String gameName;
     int currentStep;
     int nofSteps;
-    String currentStepString="You are currently at step ";
-    String currentGameString="You are playing ";
+    String currentStepString;
+    String currentGameString;
 
     public String getCurrentGameString() {
         return currentGameString;
@@ -105,16 +106,16 @@ public class playGame extends AbstractPageBean {
         // TODO - add your own initialiation code here
         clearTheBoxes();
         title="WELCOME "+this.getSessionBean1().effectiveUserName;
-        
+        // initially, we set all the textfields according to game specifications
         try{
             MySqlConnection con = new MySqlConnection();
             this.setGameName(con.getGameNameByGameId(this.getSessionBean1().getSelectedGameId()));
-            this.setCurrentGameString(""+currentGameString+gameName);
+            this.setCurrentGameString("You are playing "+gameName);
 
             this.setNofSteps(con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps"));
             this.setCurrentStep(con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer"));
 
-            this.setCurrentStepString(""+currentStepString + currentStep);
+            this.setCurrentStepString("You are currently at step " + this.getCurrentStep());
             this.setLocation(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode")));
             this.setPassword(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep")));
         }catch(Exception e){
@@ -136,6 +137,7 @@ public class playGame extends AbstractPageBean {
         // *after* managed components are initialized
         // TODO - add your own initialization code here
     }
+    //to clear all the textfields
     public void clearTheBoxes(){
         title="";
         playGameID=0;
@@ -145,6 +147,7 @@ public class playGame extends AbstractPageBean {
         currentStepString="You are currently at step ";
         currentGameString="You are playing ";
     }
+    //to fill all the boxes with the information of played game
     public void fillTheBoxes(){
         try{
             MySqlConnection con = new MySqlConnection();
@@ -274,6 +277,7 @@ public class playGame extends AbstractPageBean {
         return (SessionBean1) getBean("SessionBean1");
     }
 
+    //when you click this button, you are using the found password to go to next level in the game
     public String nextButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -295,8 +299,11 @@ public class playGame extends AbstractPageBean {
             }
 
         }catch(Exception e){
-
+            givenPass="Try Again!";
+            System.out.println(e.getMessage());
         }
+
+
 
         //this.fillTheBoxes();
 

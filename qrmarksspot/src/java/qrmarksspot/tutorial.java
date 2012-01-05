@@ -20,6 +20,12 @@ import javax.faces.FacesException;
  * @author alke
  */
 
+
+/*
+ *  It has only one functionality inside and it is ot inform users with
+ *  a pdf file created by admins.
+ *
+ */
 public class tutorial extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 

@@ -235,7 +235,10 @@ public class search extends AbstractPageBean {
     }
 
     
-
+    /*
+     *  Makes the search according to the values inside the textboxes.
+     *
+     */
     public String[] search_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -321,7 +324,10 @@ public class search extends AbstractPageBean {
     }
 
     
-
+    /*
+     *  Search button that initilizes the selected specific search process.
+     *  And it fills the dropdown with found games.
+     */
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -357,7 +363,9 @@ public class search extends AbstractPageBean {
         }
         return null;
     }
-
+    /*
+     *  Useless action, code is here to keep some information about working, but not totally working code
+     */
     public String gamePageButton_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -375,7 +383,9 @@ public class search extends AbstractPageBean {
 
         return "toGamePage";
     }
-    
+    /*
+     *  This is simply goToHomepage button
+     */
     public String button3_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
@@ -384,5 +394,30 @@ public class search extends AbstractPageBean {
 
     public void dropdown1_processValueChange(ValueChangeEvent vce) {
     }
+    /*
+     *  This button opens the selected game which the name is written in the textfield.
+     */
+    public String button2_action() {
+        // TODO: Replace with your code
+        String result="";
+        try{
+            MySqlConnection con = new MySqlConnection();
+            if(con.gameExists(this.getSelectedGame())){
+                this.getSessionBean1().setSelectedGameId(con.getGameIdbyGameName(this.getSelectedGame()));
+                result="toGamePage";
+            }else{
+                this.setSelectedGame("There is no such game!");
+                result="failPlay";
+            }
+        }catch(Exception e){
+            System.out.println("Error, going to homepage");
+            this.setSelectedGame("There is no such game!");
+            result="failPlay";
+        }finally{
+            return result;
+        }
+    }
+
+
 }
 

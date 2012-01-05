@@ -20,6 +20,7 @@ import javax.faces.FacesException;
  * @author 23
  */
 
+// this page was created temporarily, but there is not much time left for design issues.
 public class success extends AbstractPageBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
