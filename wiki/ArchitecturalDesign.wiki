@@ -24,16 +24,16 @@ We use MVC Pattern for this project.
  * Game Creating Utilities
  * Tutorial Pages
  * Forums, Comments, Tracking Games
- * Voting Mechanisms
  * Profile Page
  * Advertisements
  * Forms Management (Authentication, Submit Pages, Election)
- * Google Maps (Game Location, QR spots)
 ==Components==
 
 ==Interactions==
 
 =Model=
+
+http://qr-marks-the-spot.googlecode.com/files/MVC.jpeg
 
 ==Components==
 Account Database
