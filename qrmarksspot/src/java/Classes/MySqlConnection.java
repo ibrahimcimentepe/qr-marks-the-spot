@@ -132,7 +132,7 @@ public class MySqlConnection {
         try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and `UserId` = " + userID +"" );
+            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and `UserId` = '" + userID +"'" );
 	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
 
 
