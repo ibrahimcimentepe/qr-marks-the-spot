@@ -19,7 +19,7 @@
                         </h:selectOneMenu>
                         <webuijsf:textField id="textField1" style="left: 192px; top: 72px; position: absolute" text="#{search.searchCategory}"/>
                         <webuijsf:textField id="textField2" style="left: 360px; top: 72px; position: absolute" text="#{search.textt}"/>
-                        <webuijsf:textField id="textField3" style="left: 192px; top: 216px; position: absolute" text="#{search.selectedGame}"/>
+                        <webuijsf:textField id="textField3" style="left: 192px; top: 216px; position: absolute" text="#{search.selectedGame}" valueChangeListenerExpression="#{search.textField3_processValueChange}"/>
                         <webuijsf:button actionExpression="#{search.button1_action}" id="button1" style="left: 575px; top: 72px; position: absolute" text="Search"/>
                         <webuijsf:button actionExpression="#{search.button2_action}" id="button2" style="left: 359px; top: 216px; position: absolute" text="Go"/>
                         <webuijsf:button actionExpression="#{search.button3_action}" id="button3" style="position: absolute; left: 24px; top: 24px" text="Go to Home"/>
