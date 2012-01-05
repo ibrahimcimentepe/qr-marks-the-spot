@@ -143,7 +143,8 @@ public class signup extends AbstractPageBean {
     protected RequestBean1 getRequestBean1() {
         return (RequestBean1) getBean("RequestBean1");
     }
-    /*
+
+    /**
      *  Classic registration page, takes the information to the textfields,
      *  then updates the database.
      */
