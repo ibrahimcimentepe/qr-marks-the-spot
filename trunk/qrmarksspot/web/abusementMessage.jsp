@@ -20,6 +20,7 @@
                             style="color: red; height: 24px; left: 815px; top: 624px; position: absolute; width: 139px" text="Send"/>
                         <webuijsf:button actionExpression="#{abusementMessage.button1_action}" id="button1"
                             style="color: red; height: 24px; left: 96px; top: 96px; position: absolute; width: 95px" text="&lt; Back to home"/>
+                        <webuijsf:label id="label2" style="color: aqua; height: 216px; left: 96px; top: 216px; position: absolute; width: 192px" text="Please give explicit information regarding your complaints about any game or any user.You should exactly write the name of the game and/or the user for us to take action against it. "/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
