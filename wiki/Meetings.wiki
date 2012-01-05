@@ -20,3 +20,4 @@ Meeting Notes:
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_19 Meeting #19 - (07.12.2011 - 08.12.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_20 Meeting #20 - (12.12.2011)]
  * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_21 Meeting #21 - (14.12.2011 - 15.12.2011)]
+ * [http://code.google.com/p/qr-marks-the-spot/wiki/Meeting_22 Meeting #22 - (19.12.2011)]
