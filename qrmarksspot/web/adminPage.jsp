@@ -29,6 +29,11 @@
                         <webuijsf:textField id="textFieldGameName" style="left: 264px; top: 600px; position: absolute" text="#{adminPage.gameNameToEdit}"/>
                         <webuijsf:button actionExpression="#{adminPage.buttonEditGame_action}" id="buttonEditGame"
                             style="color: red; height: 24px; left: 432px; top: 600px; position: absolute; width: 119px" text="Edit the game-&gt;"/>
+                        <h:selectOneMenu id="dropdown1" onchange="webui.suntheme.common.timeoutSubmitForm(this.form, 'dropdown1');"
+                            style="left: 264px; top: 576px; position: absolute" value="#{adminPage.gameNameToEdit}" valueChangeListener="#{adminPage.dropdown1_processValueChange}">
+                            <f:selectItems id="dropdown1SelectItems" value="#{adminPage.dropdown1DefaultItems}"/>
+                        </h:selectOneMenu>
+                        <webuijsf:label id="label4" style="color: orange; left: 72px; top: 576px; position: absolute" text="List of the games on the system:"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
