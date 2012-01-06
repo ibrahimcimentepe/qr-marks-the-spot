@@ -104,6 +104,9 @@ public class playGame extends AbstractPageBean {
         // Perform application initialization that must complete
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
+        String temp1,temp2,temp3;
+        int inttemp1,inttemp2,inttemp3;
+        ResultSet temprs;
         clearTheBoxes();
         title="WELCOME "+this.getSessionBean1().effectiveUserName;
         // initially, we set all the textfields according to game specifications
@@ -113,12 +116,22 @@ public class playGame extends AbstractPageBean {
             this.setCurrentGameString("You are playing "+gameName);
 
             this.setNofSteps(con.getGame(this.getSessionBean1().getSelectedGameId()).getInt("NumberOfSteps"));
-            this.setCurrentStep(con.getCurrentStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId()).getInt("CurrentStepOfPlayer"));
+            inttemp1=this.getSessionBean1().getUserId();
+            inttemp2=this.getSessionBean1().getSelectedGameId();
+            temprs=con.getCurrentStep(inttemp1,inttemp2 );
+            temprs.next();
+            inttemp3=temprs.getInt("CurrentStepOfPlayer");
+            this.setCurrentStep(inttemp3);
 
             this.setCurrentStepString("You are currently at step " + this.getCurrentStep());
-            this.setLocation(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("LocationOfQrCode")));
-            this.setPassword(String.format(con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep).getString("PasswordOfStep")));
+            temprs=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep);
+            temprs.next();
+            this.setLocation(String.format(temprs.getString("LocationOfQrCode")));
+            temprs=con.getInfoOfCurrentStep(this.getSessionBean1().getSelectedGameId(), currentStep);
+            temprs.next();
+            this.setPassword(String.format(temprs.getString("PasswordOfStep")));
         }catch(Exception e){
+            e.printStackTrace();
             System.out.println("There is an error");
         } 
 
