@@ -78,6 +78,10 @@
             <from-outcome>proflink</from-outcome>
             <to-view-id>/profile.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>case4</from-outcome>
+            <to-view-id>/tutorial.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/login.jsp</from-view-id>
@@ -290,6 +294,13 @@
         <navigation-case>
             <from-outcome>signOut</from-outcome>
             <to-view-id>/login.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/tutorial.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/home.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
