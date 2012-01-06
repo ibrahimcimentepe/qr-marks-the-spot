@@ -129,19 +129,20 @@ public class MySqlConnection {
  * @return  Resultset that contains the resulting row data
  */
     public ResultSet getCurrentStep(int userID,int gameID){
+        ResultSet rs = null;
         try {
             Statement statement = con.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
-            ResultSet rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and `UserId` = '" + userID +"'" );
+            rs = statement.executeQuery("SELECT * FROM `playgame` WHERE `GameId` = " + gameID + " and `UserId` = '" + userID +"'" );
 	        System.out.println("STATEMENT EXECUTED,GAME FOUND");
 
 
-            return rs;
+            
         } catch(Exception e) {
              System.out.println("Error");
-             return null;
+             e.printStackTrace();
         }
-
+        return rs;
     }
 
 /**
