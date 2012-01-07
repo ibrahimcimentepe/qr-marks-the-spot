@@ -178,5 +178,11 @@ public class login extends AbstractPageBean {
     public void setWarning(String warning) {
         this.warning = warning;
     }
+
+    public String homepage_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "toHome";
+    }
 }
 

@@ -39,7 +39,24 @@ public class home extends AbstractPageBean {
      public String[] labels = new String[20];
      public String gameToBePlayed;
      public String[] gameNames;
-     
+     public String forumTag;
+     public boolean forumVisible;
+
+    public boolean isForumVisible() {
+        return forumVisible;
+    }
+
+    public void setForumVisible(boolean forumVisible) {
+        this.forumVisible = forumVisible;
+    }
+
+    public String getForumTag() {
+        return forumTag;
+    }
+
+    public void setForumTag(String forumTag) {
+        this.forumTag = forumTag;
+    }
      
 
     public String[] getGameNames() {
@@ -93,6 +110,7 @@ public class home extends AbstractPageBean {
         // *before* managed components are initialized
         // TODO - add your own initialiation code here
 
+        setForumVisible(false);
         for(int i = 0;i<labels.length;i++){
 
             labels[i] = " ";
@@ -360,10 +378,13 @@ public class home extends AbstractPageBean {
         try
        {
            java.awt.Desktop.getDesktop().browse(new java.net.URI("http://titan.cmpe.boun.edu.tr:8080/jforum/forums/list.page"));
-
+           setForumVisible(true);
+           setForumTag("Our Forum Address: http://titan.cmpe.boun.edu.tr:8080/jforum/forums/list.page");
        }
        catch(Exception e)
-       {}
+       {
+
+       }
     }
 
     public String button2_action() {

@@ -32,15 +32,6 @@ public class profile extends AbstractPageBean {
      */
     private void _init() throws Exception {
     }
-    private DefaultSelectItemsArray dropdown1DefaultItems = new DefaultSelectItemsArray();
-
-    public DefaultSelectItemsArray getDropdown1DefaultItems() {
-        return dropdown1DefaultItems;
-    }
-
-    public void setDropdown1DefaultItems(DefaultSelectItemsArray dsia) {
-        this.dropdown1DefaultItems = dsia;
-    }
 
     // </editor-fold>
     String username;
