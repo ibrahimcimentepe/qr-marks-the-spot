@@ -19,6 +19,8 @@
                         <webuijsf:passwordField id="password" password="#{login.password}" style="position: absolute; left: 312px; top: 120px"/>
                         <webuijsf:button actionExpression="#{login.login_action}" id="login" style="color: red; left: 216px; top: 144px; position: absolute" text="Login"/>
                         <webuijsf:label id="warning1" style="position: absolute; left: 216px; top: 168px" styleClass="errorMessage" text="#{login.warning}"/>
+                        <webuijsf:button actionExpression="#{login.homepage_action}" id="homepage"
+                            style="height: 24px; left: 311px; top: 144px; position: absolute; width: 120px" text="Return to Homepage"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

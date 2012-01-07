@@ -34,10 +34,6 @@
                             style="color: red; left: 167px; top: 288px; position: absolute" text="Sign Out"/>
                         <webuijsf:button actionExpression="#{profile.button3_action}" id="button3"
                             style="color: red; left: 239px; top: 288px; position: absolute" text="Edit"/>
-                        <webuijsf:label id="label8" style="color: orange; height: 24px; left: 624px; top: 120px; position: absolute; width: 238px" text="Currently Being Played Games"/>
-                        <h:selectOneMenu id="dropdown1" style="height: 24px; left: 624px; top: 144px; position: absolute; width: 240px">
-                            <f:selectItems id="dropdown1SelectItems" value="#{profile.dropdown1DefaultItems}"/>
-                        </h:selectOneMenu>
                         <webuijsf:button actionExpression="#{profile.button4_action}" id="button4"
                             style="height: 24px; left: 551px; top: 240px; position: absolute; width: 96px" text="Apply Changes" visible="#{profile.apply_visible}"/>
                         <webuijsf:textField columns="30" id="textField7" style="left: 360px; top: 120px; position: absolute" text="#{profile.newUsername}" visible="#{profile.apply_visible}"/>

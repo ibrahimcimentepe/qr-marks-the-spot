@@ -115,6 +115,8 @@
                             <f:selectItems id="dropdown1SelectItems" value="#{home.dropdown1DefaultItems}"/>
                         </h:selectOneMenu>
                         <webuijsf:label id="label3" style="color: rgb(255, 255, 255); left: 528px; top: 72px; position: absolute" text="#{home.gameToBePlayed}"/>
+                        <webuijsf:textField id="textField1"/>
+                        <webuijsf:textField columns="80" id="textField2" style="left: 384px; top: 120px; position: absolute" text="#{home.forumTag}"  visible="#{home.forumVisible}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
