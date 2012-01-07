@@ -327,6 +327,8 @@ public class gamePage extends AbstractPageBean {
             MySqlConnection con = new MySqlConnection();
             if(!(con.playGameExists(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId())))
                 con.addPlayGame(this.getSessionBean1().effectiveUserName, this.getSessionBean1().getSelectedGameId());
+            else if(con.getStep(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId())==-1)
+                return "success";
         }catch(Exception e){
             
         }

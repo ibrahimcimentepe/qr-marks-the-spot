@@ -11,6 +11,7 @@ import javax.faces.FacesException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.faces.event.ValueChangeEvent;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -108,6 +109,7 @@ public class playGame extends AbstractPageBean {
         int inttemp1,inttemp2,inttemp3;
         ResultSet temprs;
         clearTheBoxes();
+
         title="WELCOME "+this.getSessionBean1().effectiveUserName;
         // initially, we set all the textfields according to game specifications
         try{
@@ -151,6 +153,7 @@ public class playGame extends AbstractPageBean {
         // TODO - add your own initialization code here
     }
     //to clear all the textfields
+
     public void clearTheBoxes(){
         title="";
         playGameID=0;
@@ -299,6 +302,8 @@ public class playGame extends AbstractPageBean {
             if(password.equalsIgnoreCase(givenPass)){
                 if(currentStep==nofSteps){
                     result="success";
+                    MySqlConnection con = new MySqlConnection();
+                    con.setStepNegative(this.getSessionBean1().getUserId(), this.getSessionBean1().getSelectedGameId());
                 }
                 else{
                     result=null;
@@ -321,6 +326,21 @@ public class playGame extends AbstractPageBean {
         //this.fillTheBoxes();
 
         return result;
-    }  
+    }
+
+    public String homepage_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "toHome";
+    }
+
+    public String logout_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        this.getSessionBean1().setLoggedIn(false);
+        return "logout";
+    }
+
+    
 }
 
