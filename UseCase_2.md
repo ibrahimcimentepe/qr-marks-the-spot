@@ -1,0 +1,1 @@
+![http://img9.imageshack.us/img9/5434/diagram1k.jpg](http://img9.imageshack.us/img9/5434/diagram1k.jpg)

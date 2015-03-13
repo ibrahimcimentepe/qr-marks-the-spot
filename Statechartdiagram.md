@@ -1,0 +1,1 @@
+![http://qr-marks-the-spot.googlecode.com/files/STATECHART.jpeg](http://qr-marks-the-spot.googlecode.com/files/STATECHART.jpeg)

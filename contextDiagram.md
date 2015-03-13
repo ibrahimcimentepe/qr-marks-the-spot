@@ -1,0 +1,1 @@
+![http://img593.imageshack.us/img593/5495/qrmarkscontextdiagram.png](http://img593.imageshack.us/img593/5495/qrmarkscontextdiagram.png)

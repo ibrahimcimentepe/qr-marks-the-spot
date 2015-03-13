@@ -1,0 +1,1 @@
+![http://qr-marks-the-spot.googlecode.com/files/state_diagram_last.jpeg](http://qr-marks-the-spot.googlecode.com/files/state_diagram_last.jpeg)
